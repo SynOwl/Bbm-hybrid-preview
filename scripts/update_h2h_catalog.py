@@ -1,52 +1,76 @@
 #!/usr/bin/env python3
-"""Refresh the rolling 31-calendar-day Hearts2Hearts YouTube catalog."""
-from datetime import datetime, timedelta, timezone
+"""Build a permanent, paginated Hearts2Hearts YouTube archive."""
+from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import urllib.error
+import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
 
 CHANNEL_ID = "UC7Q3HUnJA3nvjZR2JeMn2Cw"
-FEEDS = [
-    ("uploads", f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"),
-    # YouTube's automatic long-form and Shorts playlists. If unavailable,
-    # the main channel feed remains a working fallback.
-    ("video", f"https://www.youtube.com/feeds/videos.xml?playlist_id=UULF{CHANNEL_ID[2:]}"),
-    ("short", f"https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH{CHANNEL_ID[2:]}"),
-]
-OUT = Path("data/h2h-monthly.json")
-NS = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
+UPLOADS_PLAYLIST_ID = "UU" + CHANNEL_ID[2:]
+SHORTS_PLAYLIST_ID = "UUSH" + CHANNEL_ID[2:]
+OUT = Path("data/h2h-archive.json")
+API_BASE = "https://www.googleapis.com/youtube/v3"
 
 
-def fetch_feed(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "BBM-H2H-Rolling-Catalog/2.0"})
-    with urllib.request.urlopen(req, timeout=30) as response:
-        root = ET.fromstring(response.read())
-    entries = []
-    for entry in root.findall("atom:entry", NS):
-        title = (entry.findtext("atom:title", default="", namespaces=NS) or "").strip()
-        video_id = (entry.findtext("yt:videoId", default="", namespaces=NS) or "").strip()
-        published_raw = (entry.findtext("atom:published", default="", namespaces=NS) or "").strip()
-        if not video_id or not title or not published_raw:
-            continue
-        try:
-            published = datetime.fromisoformat(published_raw.replace("Z", "+00:00")).astimezone(timezone.utc)
-        except ValueError:
-            continue
-        entries.append((video_id, title, published))
-    return entries
+def api_get(resource, params):
+    query = urllib.parse.urlencode(params)
+    url = f"{API_BASE}/{resource}?{query}"
+    req = urllib.request.Request(url, headers={"User-Agent": "BBM-H2H-Archive/4.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=45) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")[:1200]
+        raise RuntimeError(f"YouTube API {resource} failed ({exc.code}): {detail}") from exc
 
+
+def fetch_playlist(playlist_id, api_key):
+    """Read every playlist page; never silently accept a partial archive."""
+    items = []
+    page_token = None
+    page = 0
+    while True:
+        params = {
+            "part": "snippet,contentDetails",
+            "playlistId": playlist_id,
+            "maxResults": 50,
+            "key": api_key,
+        }
+        if page_token:
+            params["pageToken"] = page_token
+        payload = api_get("playlistItems", params)
+        page_items = payload.get("items", [])
+        for entry in page_items:
+            snippet = entry.get("snippet", {})
+            video_id = (snippet.get("resourceId") or {}).get("videoId")
+            title = (snippet.get("title") or "").strip()
+            published = snippet.get("publishedAt") or snippet.get("publishedAt")
+            if video_id and title and published and video_id != "0":
+                items.append({
+                    "id": video_id,
+                    "title": title,
+                    "published": published,
+                })
+        page += 1
+        print(f"Playlist {playlist_id}: page {page}, {len(items)} item(s)")
+        page_token = payload.get("nextPageToken")
+        if not page_token:
+            break
+    return items
 
 
 def translate_title_to_indonesian(title):
-    """Best-effort title translation; return empty string when the service is unavailable."""
-    import urllib.parse
+    """Best-effort free translation; preserve original title on failure."""
     query = urllib.parse.urlencode({
         "client": "gtx", "sl": "auto", "tl": "id", "dt": "t", "q": title
     })
-    url = "https://translate.googleapis.com/translate_a/single?" + query
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(
+        "https://translate.googleapis.com/translate_a/single?" + query,
+        headers={"User-Agent": "Mozilla/5.0"},
+    )
     try:
         with urllib.request.urlopen(req, timeout=20) as response:
             payload = json.loads(response.read().decode("utf-8"))
@@ -56,79 +80,93 @@ def translate_title_to_indonesian(title):
         ).strip()
         return translated if translated and translated.casefold() != title.casefold() else ""
     except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError, IndexError) as exc:
-        print(f"Translation unavailable for title: {exc}")
+        print(f"Translation unavailable: {exc}")
         return ""
 
 
 def main():
-    now = datetime.now(timezone.utc)
-    cutoff_date = now.date() - timedelta(days=30)  # today + previous 30 calendar days
-    videos_by_id = {}
-    successful_feeds = 0
+    api_key = os.environ.get("YOUTUBE_API_KEY", "").strip()
+    if not api_key:
+        raise RuntimeError("Set the YOUTUBE_API_KEY GitHub Actions secret before building the full archive.")
 
-    # Preserve already collected entries (including user-supplied links), but
-    # expire anything older than the rolling 31-calendar-day window.
+    previous = {"videos": [], "shorts": []}
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding="utf-8"))
-            for item in previous.get("videos", []):
-                if not isinstance(item, dict) or not item.get("id") or not item.get("published"):
-                    continue
-                try:
-                    published = datetime.fromisoformat(item["published"].replace("Z", "+00:00"))
-                except (ValueError, TypeError):
-                    continue
-                if published.date() >= cutoff_date:
-                    videos_by_id[item["id"]] = item
         except (OSError, ValueError, TypeError):
-            pass
+            print("Previous archive unreadable; rebuilding from YouTube.")
 
-    for feed_kind, url in FEEDS:
-        try:
-            entries = fetch_feed(url)
-            successful_feeds += 1
-        except (urllib.error.URLError, TimeoutError, ET.ParseError, OSError) as exc:
-            print(f"Feed {feed_kind} unavailable: {exc}")
+    old_by_id = {}
+    for group in ("videos", "shorts"):
+        for item in previous.get(group, []):
+            if isinstance(item, dict) and item.get("id"):
+                old_by_id[item["id"]] = item
+
+    # The uploads playlist is the source of all channel uploads.
+    uploads = fetch_playlist(UPLOADS_PLAYLIST_ID, api_key)
+    # The channel's automatic Shorts playlist provides reliable category membership.
+    shorts_raw = fetch_playlist(SHORTS_PLAYLIST_ID, api_key)
+    short_ids = {item["id"] for item in shorts_raw}
+
+    def build_item(raw, is_short):
+        video_id = raw["id"]
+        title = raw["title"]
+        old = old_by_id.get(video_id, {})
+        title_id = old.get("title_id", "")
+        if old.get("title") != title or not title_id:
+            title_id = translate_title_to_indonesian(title)
+        return {
+            "id": video_id,
+            "title": title,
+            "title_id": title_id,
+            "kind": "short" if is_short else "video",
+            "isShort": is_short,
+            "published": raw["published"],
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg",
+            "source": "youtube-official",
+        }
+
+    videos = []
+    shorts = []
+    seen = set()
+    for raw in uploads:
+        if raw["id"] in seen:
             continue
+        seen.add(raw["id"])
+        if raw["id"] in short_ids:
+            shorts.append(build_item(raw, True))
+        else:
+            videos.append(build_item(raw, False))
 
-        for video_id, title, published in entries:
-            if published.date() < cutoff_date:
-                continue
-            is_short = feed_kind == "short"
-            old_item = videos_by_id.get(video_id, {})
-            translated_title = old_item.get("title_id", "")
-            if old_item.get("title") != title or not translated_title:
-                translated_title = translate_title_to_indonesian(title)
-            item = {
-                "id": video_id,
-                "title": title,
-                "title_id": translated_title,
-                "type": "mv" if "mv" in title.lower() else "youtube",
-                "kind": "short" if is_short else ("video" if feed_kind == "video" else "upload"),
-                "isShort": is_short,
-                "published": published.isoformat(),
-                "url": f"https://www.youtube.com/watch?v={video_id}",
-                "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg",
-                "source": "youtube-official"
-            }
-            videos_by_id[video_id] = item
+    # Shorts missing from the uploads response are still retained from the Shorts playlist.
+    upload_ids = {item["id"] for item in uploads}
+    for raw in shorts_raw:
+        if raw["id"] not in upload_ids and raw["id"] not in seen:
+            shorts.append(build_item(raw, True))
+            seen.add(raw["id"])
 
-    if successful_feeds == 0 and not videos_by_id:
-        raise RuntimeError("All YouTube feeds failed and no saved catalog is available.")
+    def newest_first(items):
+        return sorted(items, key=lambda x: x.get("published", ""), reverse=True)
 
-    videos = list(videos_by_id.values())
-    videos.sort(key=lambda item: item.get("published", ""), reverse=True)
+    videos = newest_first(videos)
+    shorts = newest_first(shorts)
+    now = datetime.now(timezone.utc).isoformat()
     payload = {
-        "schemaVersion": 3,
-        "windowDays": 31,
-        "updatedAt": now.isoformat(),
-        "source": {"youtube": "https://www.youtube.com/@hearts2hearts.official"},
-        "collectionPolicy": "Official Hearts2Hearts uploads from today and the previous 30 calendar days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
-        "videos": videos
+        "schemaVersion": 4,
+        "updatedAt": now,
+        "channel": {
+            "name": "Hearts2Hearts",
+            "id": CHANNEL_ID,
+            "url": "https://www.youtube.com/@hearts2hearts.official",
+        },
+        "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
+        "videos": videos,
+        "shorts": shorts,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(videos)} item(s) from the rolling 31-calendar-day window.")
+    print(f"Archive complete: {len(videos)} video(s), {len(shorts)} Short(s).")
 
 
 if __name__ == "__main__":
