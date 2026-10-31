@@ -1,6 +1,11 @@
-name: Update H2H monthly content
+name: Update H2H rolling 31-day content
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_h2h_catalog.py"
+      - ".github/workflows/update-h2h-catalog.yml"
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
@@ -9,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: h2h-monthly-content
+  group: h2h-rolling-content
   cancel-in-progress: false
 
 jobs:
@@ -22,7 +27,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Build current-month official YouTube catalog
+      - name: Build rolling 31-calendar-day official YouTube catalog
         run: python3 scripts/update_h2h_catalog.py
       - name: Commit catalog when changed
         run: |
@@ -32,6 +37,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No H2H catalog changes."
           else
-            git commit -m "chore: refresh monthly H2H YouTube content"
+            git commit -m "chore: refresh rolling 31-day H2H YouTube content"
             git push origin HEAD:main
           fi
