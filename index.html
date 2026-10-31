@@ -2527,7 +2527,7 @@ async function muatThumbnailYouTube(){
                 if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
                 var published=new Date(x.published);
                 if(isNaN(published.getTime()) || published<batas) return null;
-                return {id:id,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg'),published:published};
+                return {id:id,title:x.title_id||x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg'),published:published};
             }catch(e){return null;}
         }).filter(Boolean).sort(function(a,b){return b.published-a.published;});
         H2H_SHORTS_ITEMS=items;
