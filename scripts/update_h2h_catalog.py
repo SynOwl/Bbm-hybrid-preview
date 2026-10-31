@@ -1,23 +1,29 @@
 #!/usr/bin/env python3
-"""Refresh all current-month uploads from the official Hearts2Hearts YouTube channel RSS."""
-from datetime import datetime, timezone
+"""Refresh the rolling 31-calendar-day Hearts2Hearts YouTube catalog."""
+from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 
 CHANNEL_ID = "UC7Q3HUnJA3nvjZR2JeMn2Cw"
-RSS_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
+FEEDS = [
+    ("uploads", f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"),
+    # YouTube's automatic long-form and Shorts playlists. If unavailable,
+    # the main channel feed remains a working fallback.
+    ("video", f"https://www.youtube.com/feeds/videos.xml?playlist_id=UULF{CHANNEL_ID[2:]}"),
+    ("short", f"https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH{CHANNEL_ID[2:]}"),
+]
 OUT = Path("data/h2h-monthly.json")
 NS = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
 
-def main():
-    now = datetime.now(timezone.utc)
-    month = now.strftime("%Y-%m")
-    req = urllib.request.Request(RSS_URL, headers={"User-Agent": "BBM-H2H-Monthly-Updater/1.0"})
+
+def fetch_feed(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "BBM-H2H-Rolling-Catalog/2.0"})
     with urllib.request.urlopen(req, timeout=30) as response:
         root = ET.fromstring(response.read())
-    videos = []
+    entries = []
     for entry in root.findall("atom:entry", NS):
         title = (entry.findtext("atom:title", default="", namespaces=NS) or "").strip()
         video_id = (entry.findtext("yt:videoId", default="", namespaces=NS) or "").strip()
@@ -28,38 +34,75 @@ def main():
             published = datetime.fromisoformat(published_raw.replace("Z", "+00:00")).astimezone(timezone.utc)
         except ValueError:
             continue
-        if published.strftime("%Y-%m") != month:
-            continue
-        videos.append({
-            "id": video_id, "title": title,
-            "type": "mv" if "mv" in title.lower() else "youtube",
-            "published": published.isoformat(),
-            "url": f"https://www.youtube.com/watch?v={video_id}",
-            "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg",
-            "source": "youtube-official"
-        })
-    # RSS only exposes recent uploads; retain already-collected items from this month.
+        entries.append((video_id, title, published))
+    return entries
+
+
+def main():
+    now = datetime.now(timezone.utc)
+    cutoff_date = now.date() - timedelta(days=30)  # today + previous 30 calendar days
+    videos_by_id = {}
+    successful_feeds = 0
+
+    # Preserve already collected entries (including user-supplied links), but
+    # expire anything older than the rolling 31-calendar-day window.
     if OUT.exists():
         try:
             previous = json.loads(OUT.read_text(encoding="utf-8"))
-            if previous.get("month") == month:
-                known = {v.get("id"): v for v in previous.get("videos", []) if v.get("id")}
-                known.update({v["id"]: v for v in videos})
-                videos = list(known.values())
+            for item in previous.get("videos", []):
+                if not isinstance(item, dict) or not item.get("id") or not item.get("published"):
+                    continue
+                try:
+                    published = datetime.fromisoformat(item["published"].replace("Z", "+00:00"))
+                except (ValueError, TypeError):
+                    continue
+                if published.date() >= cutoff_date:
+                    videos_by_id[item["id"]] = item
         except (OSError, ValueError, TypeError):
             pass
-    videos.sort(key=lambda v: v["published"], reverse=True)
+
+    for feed_kind, url in FEEDS:
+        try:
+            entries = fetch_feed(url)
+            successful_feeds += 1
+        except (urllib.error.URLError, TimeoutError, ET.ParseError, OSError) as exc:
+            print(f"Feed {feed_kind} unavailable: {exc}")
+            continue
+
+        for video_id, title, published in entries:
+            if published.date() < cutoff_date:
+                continue
+            is_short = feed_kind == "short"
+            item = {
+                "id": video_id,
+                "title": title,
+                "type": "mv" if "mv" in title.lower() else "youtube",
+                "kind": "short" if is_short else ("video" if feed_kind == "video" else "upload"),
+                "isShort": is_short,
+                "published": published.isoformat(),
+                "url": f"https://www.youtube.com/watch?v={video_id}",
+                "thumbnail": f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg",
+                "source": "youtube-official"
+            }
+            videos_by_id[video_id] = item
+
+    if successful_feeds == 0 and not videos_by_id:
+        raise RuntimeError("All YouTube feeds failed and no saved catalog is available.")
+
+    videos = list(videos_by_id.values())
+    videos.sort(key=lambda item: item.get("published", ""), reverse=True)
     payload = {
-        "schemaVersion": 2,
-        "month": month,
+        "schemaVersion": 3,
+        "windowDays": 31,
         "updatedAt": now.isoformat(),
         "source": {"youtube": "https://www.youtube.com/@hearts2hearts.official"},
-        "collectionPolicy": "All official YouTube uploads from the current month; previous month's collection is replaced.",
+        "collectionPolicy": "Official Hearts2Hearts uploads from today and the previous 30 calendar days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
         "videos": videos
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(videos)} official YouTube upload(s) for {month}")
+    print(f"Wrote {len(videos)} item(s) from the rolling 31-calendar-day window.")
+
 
 if __name__ == "__main__":
     main()
