@@ -2555,7 +2555,7 @@ function renderArsipH2H(){
     var filtered=all.filter(function(item){
         return !H2H_SEARCH_QUERY || (item.title||'').toLocaleLowerCase('id-ID').includes(H2H_SEARCH_QUERY);
     });
-    if(count)count.textContent=filtered.length+' '+(H2H_ACTIVE_CATEGORY==='shorts'?'Shorts':'video')+' ditemukan';
+    if(count)count.textContent=filtered.length+' '+(H2H_ACTIVE_CATEGORY==='shorts'?'Shorts':'video')+' dalam 31 hari terakhir';
     box.textContent='';
     if(!filtered.length){
         box.textContent=all.length?'Tidak ada judul yang cocok dengan pencarian.':'Arsip belum tersedia. Coba muat ulang nanti.';
@@ -2581,13 +2581,16 @@ async function muatThumbnailYouTube(){
         if(!response.ok)throw new Error('archive unavailable');
         var data=await response.json();
         function clean(items){
+            var cutoff=new Date();
+            cutoff.setDate(cutoff.getDate()-31);
             return (Array.isArray(items)?items:[]).map(function(x){
                 if(!x||typeof x.id!=='string'||!/^[A-Za-z0-9_-]{11}$/.test(x.id))return null;
                 var published=new Date(x.published||'');
                 return {id:x.id,title:x.title_id||x.title||'Video H2H',
                     thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+x.id+'/hqdefault.jpg'),
                     published:isNaN(published.getTime())?new Date(0):published};
-            }).filter(Boolean).sort(function(a,b){return b.published-a.published;});
+            }).filter(function(item){return item&&item.published.getTime()>=cutoff.getTime();})
+              .sort(function(a,b){return b.published-a.published;});
         }
         H2H_ARCHIVE.videos=clean(data.videos);
         H2H_ARCHIVE.shorts=clean(data.shorts);
