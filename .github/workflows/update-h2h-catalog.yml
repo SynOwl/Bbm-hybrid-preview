@@ -1,4 +1,4 @@
-name: Update H2H rolling 31-day content
+name: Update H2H permanent YouTube archive
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: h2h-rolling-content
+  group: h2h-permanent-archive
   cancel-in-progress: false
 
 jobs:
@@ -27,16 +27,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Build rolling 31-calendar-day official YouTube catalog
+      - name: Check YouTube API secret
+        id: api-key
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "::warning::Add YOUTUBE_API_KEY in repository Actions secrets to enable the complete archive."
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build permanent paginated archive
+        if: steps.api-key.outputs.available == 'true'
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python3 scripts/update_h2h_catalog.py
-      - name: Commit catalog when changed
+      - name: Commit archive when changed
+        if: steps.api-key.outputs.available == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/h2h-monthly.json
+          git add data/h2h-archive.json
           if git diff --cached --quiet; then
-            echo "No H2H catalog changes."
+            echo "No H2H archive changes."
           else
-            git commit -m "chore: refresh rolling 31-day H2H YouTube content"
+            git commit -m "chore: refresh permanent H2H YouTube archive"
             git push origin HEAD:main
           fi
