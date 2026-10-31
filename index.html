@@ -736,7 +736,7 @@ body{position:relative!important;touch-action:pan-y!important}
 
 <div id="s-member" class="screen">
 <div class="head">💖 Hearts2Hearts OT8</div>
-<div class="info">💖 Profil 8 member Hearts2Hearts. Ketuk nama untuk membuka biodata dan galeri. Tekan 📸 untuk memilih foto dari Galeri HP. Foto pilihan Grace disimpan terpisah di penyimpanan aplikasi, jadi tidak ditimpa pembaruan arsip video atau katalog profil. Gunakan tombol “Kembalikan ke Foto Resmi” jika ingin memakai foto resmi lagi.</div>
+<div class="info">💖 Profil 8 member Hearts2Hearts. Ketuk nama untuk membuka biodata dan galeri. Tekan 📸 untuk memilih foto dari Galeri HP. Foto pilihan Grace disimpan terpisah di penyimpanan aplikasi, jadi tidak ditimpa pembaruan arsip video atau katalog profil. Gunakan tombol “Kembalikan ke Foto Resmi” jika ingin memakai foto resmi lagi.<br><small>Foto profil resmi terakhir disinkronkan: <b id="h2hPhotoUpdated">memuat katalog...</b></small></div>
 <div class="grup-banner" id="grupBanner" onclick="grupBannerClick()"><div class="empty">📸 Upload Foto Grup H2H OT8<small>Tap untuk pilih foto</small></div></div>
 <button class="btn-s" onclick="hapusGrup()">🗑️ Hapus Foto Grup</button>
 <div class="member-grid" id="memberGrid"></div>
@@ -1585,8 +1585,13 @@ function muatKatalogProfilH2H(){
     .then(function(data){
         if(!data||!Array.isArray(data.members))return;
         data.members.forEach(function(m){if(m&&m.id&&m.photoUrl)h2hFotoResmi[m.id]=m.photoUrl;});
+        var stamp=document.getElementById('h2hPhotoUpdated');
+        if(stamp)stamp.textContent=data.updatedAt?new Date(data.updatedAt).toLocaleDateString('id-ID'):'tersedia';
         renderMember();
-    }).catch(function(){});
+    }).catch(function(){
+        var stamp=document.getElementById('h2hPhotoUpdated');
+        if(stamp)stamp.textContent='katalog online belum tersedia';
+    });
 }
 
 function usiaMember(tanggal){var p=tanggal.split(' '),bln={Januari:0,Februari:1,Maret:2,April:3,Mei:4,Juni:5,Juli:6,Agustus:7,September:8,Oktober:9,November:10,Desember:11};var d=parseInt(p[0],10),m=bln[p[1]],y=parseInt(p[2],10);if(m===undefined)return '—';var now=new Date(),age=now.getFullYear()-y;if(now.getMonth()<m||(now.getMonth()===m&&now.getDate()<d))age--;return age+' tahun';}
