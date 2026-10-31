@@ -700,13 +700,10 @@ button:focus-visible,[role=button]:focus-visible,.grid-item:focus-visible,.card-
 
 <div id="s-video" class="screen">
 <div class="head">🎬 Galeri Video H2H</div>
-<div class="info">🎬 Pilih video, lalu geser ke atas/bawah untuk video berikutnya. Thumbnail diambil langsung dari cuplikan videonya 💖</div>
-<div class="game-list" id="videoGlobalList" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; padding-bottom:20px;">
-    <!-- Video otomatis dimuat di sini -->
-</div>
-<section id="galeri-streaming-yt" style="margin:30px 0;">
+<div class="info">Pilih video untuk membukanya langsung di aplikasi atau situs YouTube. Tombol kembali dan scroll halaman tetap tersedia di sini 💖</div>
+<section id="galeri-streaming-yt" style="margin:18px 0;">
 <h3 class="yt-section-title">Video Terbaru <span class="badge-streaming">YouTube</span></h3>
-<div class="yt-disclaimer">⚠️ Video diputar melalui YouTube. Iklan atau rekomendasi YouTube mungkin muncul. Konten dan iklan mengikuti kebijakan YouTube; fitur unduh offline tidak tersedia untuk streaming.</div>
+<div class="yt-disclaimer">Video diputar langsung melalui YouTube. Iklan atau rekomendasi YouTube mungkin muncul. Video offline tidak tersedia di galeri ini.</div>
 <div id="yt-thumbnail-container" class="yt-grid"><p style="text-align:center;width:100%">Memuat video terbaru...</p></div>
 </section>
 <button class="btn-s" onclick="go('s-dash')">← Kembali</button>
@@ -2502,17 +2499,24 @@ async function muatThumbnailYouTube(){
         var response=await fetch('data/h2h-monthly.json',{cache:'no-store'});
         if(!response.ok) throw new Error('catalog unavailable');
         var data=await response.json();
-        var items=(Array.isArray(data)?data:(data.videos||data.items||[])).filter(function(x){return x&&typeof x.url==='string';}).map(function(x){
-            var m=x.url.match(/[?&]v=([A-Za-z0-9_-]{11})/); return m?{id:m[1],title:x.title||'Video terbaru'}:null;
+        var items=(Array.isArray(data)?data:(data.videos||data.items||[])).map(function(x){
+            if(!x || typeof x.url!=='string') return null;
+            try{
+                var u=new URL(x.url);
+                if(u.hostname!=='youtube.com' && u.hostname!=='www.youtube.com' && u.hostname!=='youtu.be' && u.hostname!=='m.youtube.com') return null;
+                var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.split('/').filter(Boolean).pop());
+                if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
+                return {url:x.url,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg')};
+            }catch(e){return null;}
         }).filter(Boolean);
         box.textContent='';
         if(!items.length){box.textContent='Belum ada video terbaru.';return;}
         items.forEach(function(item){
-            var card=document.createElement('button');card.type='button';card.className='yt-card';card.setAttribute('aria-label','Putar '+item.title);
-            var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src='https://img.youtube.com/vi/'+item.id+'/mqdefault.jpg';
+            var card=document.createElement('a');card.className='yt-card';card.href=item.url;card.target='_blank';card.rel='noopener noreferrer';card.setAttribute('aria-label','Buka '+item.title+' di YouTube');
+            var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src=item.thumbnail;
             var play=document.createElement('span');play.className='yt-play-icon';play.textContent='▶';
             var title=document.createElement('span');title.className='yt-title-overlay';title.textContent=item.title;
-            card.append(img,play,title);card.addEventListener('click',function(){putarVideoYouTube(item.id,item.title);});box.appendChild(card);
+            card.append(img,play,title);box.appendChild(card);
         });
     }catch(e){box.textContent='Video terbaru belum dapat dimuat. Coba lagi nanti.';}
 }
