@@ -752,8 +752,8 @@ body{position:relative!important;touch-action:pan-y!important}
 
 <div id="videoModal" class="ig-reels-modal">
     <video id="videoPlayer" loop playsinline onclick="togglePlayPause()"></video>
-    <iframe id="youtubePlayer" title="Pemutar YouTube H2H" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen playsinline style="display:none;position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;z-index:1;"></iframe>
-    <div id="youtubeSwipeSurface" aria-label="Usap ke atas atau bawah untuk berpindah video Shorts" style="display:none;position:absolute;inset:0;z-index:2;background:transparent;touch-action:none;"></div>
+    <iframe id="youtubePlayer" title="Pemutar YouTube H2H" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen playsinline style="display:none;position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;z-index:1;will-change:transform,opacity;"></iframe>
+    <div id="youtubeSwipeSurface" aria-label="Usap ke atas atau bawah untuk berpindah video Shorts" style="display:none;position:absolute;inset:0;z-index:2;background:transparent;touch-action:pan-x;"></div>
     
     <div class="ig-reels-ui">
         <!-- Tombol Close (Kiri Atas) -->
@@ -2503,7 +2503,7 @@ function putarVideoYouTube(videoId, judul) {
     var iframe=document.getElementById('youtubePlayer');
     if(video){video.pause();video.removeAttribute('src');video.load();video.style.display='none';}
     if(typeof currentVideoObjectUrl!=='undefined' && currentVideoObjectUrl){URL.revokeObjectURL(currentVideoObjectUrl);currentVideoObjectUrl=null;}
-    if(iframe){iframe.src='https://www.youtube-nocookie.com/embed/'+videoId+'?autoplay=1&rel=0&enablejsapi=1';iframe.style.display='block';}
+    if(iframe){iframe.src='https://www.youtube-nocookie.com/embed/'+videoId+'?autoplay=1&rel=0&enablejsapi=1&playsinline=1';iframe.style.display='block';}
     var swipeSurface=document.getElementById('youtubeSwipeSurface');
     if(swipeSurface) swipeSurface.style.display='block';
     currentH2HShortIndex=H2H_SHORTS_ITEMS.findIndex(function(item){return item.id===videoId;});
@@ -3486,39 +3486,85 @@ function renderVideoGlobal() {
 }
 
 
-// ===== SWIPE SHORTS YOUTUBE DI DALAM PEMUTAR =====
+// ===== SWIPE SHORTS: GERAK MENGIKUTI JARI + TRANSISI VERTIKAL =====
+var h2hSwipeBusy=false;
 function setupSwipe() {
     var surface=document.getElementById('youtubeSwipeSurface');
     if(!surface || surface.dataset.ready==='1') return;
     surface.dataset.ready='1';
-    var startY=0, startX=0, tracking=false;
+    var startY=0,startX=0,lastY=0,tracking=false,axisLocked=false;
+    function resetDrag(){
+        var frame=document.getElementById('youtubePlayer');
+        if(frame){frame.style.transition='transform 220ms cubic-bezier(.22,.8,.25,1), opacity 180ms ease';frame.style.transform='translate3d(0,0,0)';frame.style.opacity='1';}
+        tracking=false;axisLocked=false;
+    }
     surface.addEventListener('touchstart',function(e){
-        if(!e.touches || !e.touches.length) return;
-        startY=e.touches[0].clientY; startX=e.touches[0].clientX; tracking=true;
+        if(h2hSwipeBusy || !e.touches || e.touches.length!==1) return;
+        startY=lastY=e.touches[0].clientY;startX=e.touches[0].clientX;tracking=true;axisLocked=false;
+        var frame=document.getElementById('youtubePlayer');
+        if(frame) frame.style.transition='none';
     },{passive:true});
-    surface.addEventListener('touchend',function(e){
-        if(!tracking || !e.changedTouches || !e.changedTouches.length) return;
-        tracking=false;
-        var dy=startY-e.changedTouches[0].clientY;
-        var dx=Math.abs(startX-e.changedTouches[0].clientX);
-        if(Math.abs(dy)>65 && Math.abs(dy)>dx*1.2){
-            e.preventDefault();
-            if(dy>0) putarH2HShortBerikutnya();
-            else putarH2HShortSebelumnya();
+    surface.addEventListener('touchmove',function(e){
+        if(!tracking || !e.touches || !e.touches.length) return;
+        var t=e.touches[0],dy=t.clientY-startY,dx=t.clientX-startX;lastY=t.clientY;
+        if(!axisLocked && Math.abs(dy)>8 && Math.abs(dy)>Math.abs(dx)*1.15) axisLocked=true;
+        if(!axisLocked) return;
+        if(e.cancelable)e.preventDefault();
+        var frame=document.getElementById('youtubePlayer');
+        if(frame){
+            var damped=dy*.88;
+            frame.style.transform='translate3d(0,'+damped+'px,0)';
+            frame.style.opacity=String(Math.max(.72,1-Math.abs(damped)/1400));
         }
     },{passive:false});
-    surface.addEventListener('touchcancel',function(){tracking=false;},{passive:true});
+    surface.addEventListener('touchend',function(e){
+        if(!tracking)return;
+        var t=e.changedTouches&&e.changedTouches[0],dy=t?t.clientY-startY:lastY-startY,dx=t?Math.abs(t.clientX-startX):0;
+        tracking=false;
+        if(axisLocked && Math.abs(dy)>Math.max(70,window.innerHeight*.13) && Math.abs(dy)>dx*1.15){
+            if(dy<0) jalankanTransisiShort(1);
+            else jalankanTransisiShort(-1);
+        }else resetDrag();
+    },{passive:true});
+    surface.addEventListener('touchcancel',resetDrag,{passive:true});
 }
-function putarH2HShortBerikutnya(){
-    if(currentH2HShortIndex<0 || currentH2HShortIndex>=H2H_SHORTS_ITEMS.length-1){toast('Tidak ada Shorts berikutnya di katalog 💖');return;}
-    var next=H2H_SHORTS_ITEMS[currentH2HShortIndex+1];
-    putarVideoYouTube(next.id,next.title);
+function jalankanTransisiShort(arah){
+    if(h2hSwipeBusy)return;
+    var targetIndex=currentH2HShortIndex+arah;
+    if(currentH2HShortIndex<0 || targetIndex<0 || targetIndex>=H2H_SHORTS_ITEMS.length){
+        toast(arah>0?'Tidak ada Shorts berikutnya di katalog 💖':'Ini Shorts paling awal di katalog 💖');
+        var frame=document.getElementById('youtubePlayer');
+        if(frame){frame.style.transition='transform 220ms ease';frame.style.transform='translate3d(0,0,0)';frame.style.opacity='1';}
+        return;
+    }
+    h2hSwipeBusy=true;
+    var frame=document.getElementById('youtubePlayer');
+    var height=window.innerHeight||window.screen.height||600;
+    if(frame){
+        frame.style.transition='transform 190ms cubic-bezier(.2,.75,.25,1), opacity 170ms ease';
+        frame.style.transform='translate3d(0,'+(arah>0?-height:height)+'px,0)';
+        frame.style.opacity='.35';
+    }
+    var target=H2H_SHORTS_ITEMS[targetIndex];
+    window.setTimeout(function(){
+        currentH2HShortIndex=targetIndex;
+        putarVideoYouTube(target.id,target.title);
+        if(frame){
+            frame.style.transition='none';
+            frame.style.transform='translate3d(0,'+(arah>0?height:-height)+'px,0)';
+            frame.style.opacity='1';
+            requestAnimationFrame(function(){
+                requestAnimationFrame(function(){
+                    frame.style.transition='transform 260ms cubic-bezier(.22,.8,.25,1)';
+                    frame.style.transform='translate3d(0,0,0)';
+                    window.setTimeout(function(){frame.style.transition='';h2hSwipeBusy=false;},280);
+                });
+            });
+        }else h2hSwipeBusy=false;
+    },190);
 }
-function putarH2HShortSebelumnya(){
-    if(currentH2HShortIndex<=0){toast('Ini Shorts paling awal di katalog 💖');return;}
-    var prev=H2H_SHORTS_ITEMS[currentH2HShortIndex-1];
-    putarVideoYouTube(prev.id,prev.title);
-}
+function putarH2HShortBerikutnya(){jalankanTransisiShort(1);}
+function putarH2HShortSebelumnya(){jalankanTransisiShort(-1);}
 
 function putarVideoBerikutnya() {
     if (currentVideoIndex < SEMUA_VIDEO_GALERI.length - 1) {
