@@ -1603,7 +1603,7 @@ function renderMember(){
     for(var i=0;i<MEMBER.length;i++){
         var m=MEMBER[i];
         var foto = fotoMemberUntukTampil(m.id);
-        var avaInner = '<img src="'+foto+'" onclick="event.stopPropagation();openLightbox(\\''+foto+'\\')" onerror="fallbackFotoMember(this,\\''+m.id+'\\')"><span style="display:none; font-size:30px;">'+m.emoji+'</span>';
+        var avaInner = "<img src='"+foto+"' onclick=\"event.stopPropagation();openLightbox(this.src)\" onerror=\"fallbackFotoMember(this,'"+m.id+"')\"><span style=\"display:none; font-size:30px;\">"+m.emoji+"</span>";
         var galeriHtml = '<div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px;">';
         var jumlahFotoM = JUMLAH_FOTO[m.id] || 1;
         for(var j=1; j<=jumlahFotoM; j++) {
@@ -1634,7 +1634,7 @@ function renderMember(){
                         return '<button type="button" class="upload-btn" style="background:linear-gradient(135deg,#0288D1,#03A9F4); width:auto; padding:8px 12px; font-size:11px; margin:0;" onclick="putarVideo(\'h2h/'+m.id+'/'+v+'\', \''+capBtn+'\')">▶️ Video '+(idx+1)+'</button>';
                     }).join('') +
                     '</div>' : '') +
-                '<button type="button" class="upload-btn" onclick="triggerUpload(\\'member\\',\\''+m.id+'\\')">📸 Ganti Foto dari Galeri</button>'+(fotoMemberCustomAda(m.id)?'<button type="button" class="upload-btn" style="border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.22)" onclick="kembalikanFotoResmi(\\''+m.id+'\\')">↩️ Kembalikan ke Foto Resmi</button>':'')+
+                '<button type="button" class="upload-btn" data-type="member" data-member="'+m.id+'" onclick="triggerUpload(this.dataset.type,this.dataset.member)">📸 Ganti Foto dari Galeri</button>'+(fotoMemberCustomAda(m.id)?'<button type="button" class="upload-btn" style="border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.22)" data-member="'+m.id+'" onclick="kembalikanFotoResmi(this.dataset.member)">↩️ Kembalikan ke Foto Resmi</button>':'')+
             '</div></div>';
     }
     grid.innerHTML=html;
