@@ -748,13 +748,17 @@ button:focus-visible,[role=button]:focus-visible,.grid-item:focus-visible,.card-
     
     <div class="ig-reels-ui">
         <!-- Tombol Close (Kiri Atas) -->
-        <div class="ig-top-bar" style="display:flex; justify-content:space-between; width:100%;">
+        <div class="ig-top-bar" style="display:flex; justify-content:flex-start; align-items:center; gap:10px; width:100%;">
             <button class="ig-btn-close" onclick="tutupVideo()">✕</button>
-            <button id="btnToggleFS" class="ig-btn-close" style="width:auto; padding:0 15px; border-radius:20px; font-size:13px;" onclick="toggleVideoFullscreen()">⛶ Full Screen (Miring)</button>
+            <button id="btnToggleFS" class="ig-btn-close" style="width:auto; padding:0 15px; border-radius:20px; font-size:13px;" onclick="toggleVideoFullscreen()">⛶ Miring</button>
         </div>
         
         <!-- Tombol Aksi Kanan (Simpan & Share) -->
         <div class="ig-actions">
+            <div class="ig-action-btn" onclick="mintaVideoOfflineKeMami()">
+                <span class="ig-icon">📥</span>
+                <span class="ig-text">Minta Offline</span>
+            </div>
             <div class="ig-action-btn" onclick="shareVideo()">
                 <span class="ig-icon">🔗</span>
                 <span class="ig-text">Bagikan</span>
@@ -2476,7 +2480,7 @@ function putarVideo(src, caption) {
         if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
         else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
         if (screen.orientation && screen.orientation.lock) screen.orientation.lock('portrait').catch(function(){});
-        if (btnFS) btnFS.innerHTML = '⛶ Full Screen (Miring)';
+        if (btnFS) btnFS.innerHTML = '⛶ Miring';
     }
 }
 
@@ -2540,37 +2544,41 @@ function togglePlayPause() {
     icon.offsetHeight; // trigger reflow
     icon.style.animation = 'fadeOutIcon 0.6s ease-out forwards';
 }
+function sinkronTombolOrientasiVideo() {
+    var btn=document.getElementById('btnToggleFS');
+    if(!btn) return;
+    var landscape=(screen.orientation && /landscape/.test(screen.orientation.type)) || (window.matchMedia && window.matchMedia('(orientation: landscape)').matches);
+    btn.innerHTML=landscape?'↩ Portrait':'⛶ Miring';
+}
 function toggleVideoFullscreen() {
-    var modal = document.getElementById('videoModal');
-    var btnFS = document.getElementById('btnToggleFS');
-    var isFS = document.fullscreenElement || document.webkitFullscreenElement;
-    
-    if (!isFS) {
-        // JIKA BELUM FULLSCREEN -> JADIKAN MIRING
-        var el = document.documentElement;
-        if (el.requestFullscreen) el.requestFullscreen().catch(function(){});
-        else if (modal.requestFullscreen) modal.requestFullscreen().catch(function(){});
-        else if (modal.webkitRequestFullscreen) modal.webkitRequestFullscreen();
-        
-        setTimeout(function() {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock('landscape').catch(function(){});
-            }
-        }, 200);
-        
-        if(btnFS) btnFS.innerHTML = '📱 Kembali Tegak';
-        
+    var modal=document.getElementById('videoModal');
+    var isFS=document.fullscreenElement || document.webkitFullscreenElement;
+    if(!isFS) {
+        var el=modal || document.documentElement;
+        var req=el.requestFullscreen || el.webkitRequestFullscreen;
+        if(req) {
+            var result=req.call(el);
+            if(result && result.catch) result.catch(function(){toast('Mode fullscreen tidak didukung di browser ini.');});
+        } else { toast('Fullscreen tidak didukung di browser ini.'); }
+        if(screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(function(){toast('Putar HP ke posisi miring untuk landscape.');});
+        } else { toast('Silakan putar HP ke posisi miring.'); }
     } else {
-        // JIKA SUDAH FULLSCREEN -> BALIK KE TEGAK (NETRAL)
-        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-        
-        if (screen.orientation && screen.orientation.lock) {
-            screen.orientation.lock('portrait').catch(function(){});
-        }
-        
-        if(btnFS) btnFS.innerHTML = '⛶ Full Screen (Miring)';
+        var exit=document.exitFullscreen || document.webkitExitFullscreen;
+        if(exit) { var result=exit.call(document); if(result && result.catch) result.catch(function(){}); }
+        if(screen.orientation && screen.orientation.unlock) screen.orientation.unlock();
+        if(screen.orientation && screen.orientation.lock) screen.orientation.lock('portrait').catch(function(){});
     }
+    setTimeout(sinkronTombolOrientasiVideo,250);
+}
+document.addEventListener('fullscreenchange',sinkronTombolOrientasiVideo);
+document.addEventListener('webkitfullscreenchange',sinkronTombolOrientasiVideo);
+if(screen.orientation && screen.orientation.addEventListener) screen.orientation.addEventListener('change',sinkronTombolOrientasiVideo);
+window.addEventListener('resize',sinkronTombolOrientasiVideo);
+function mintaVideoOfflineKeMami() {
+    var judul=(document.getElementById('videoDesc')||{}).textContent||'video yang sedang diputar';
+    var sumber=currentVideoSrc||'';
+    bukaWA('Halo Mami, boleh kirimkan file video ini supaya bisa disimpan dan ditonton offline?\\nVideo: '+judul+'\\nLink: '+sumber);
 }
 
 window.addEventListener('popstate',function(){ var modal=document.getElementById('videoModal'); if(modal&&modal.classList.contains('show')) tutupVideo(false); });
