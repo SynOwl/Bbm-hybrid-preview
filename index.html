@@ -2496,7 +2496,7 @@ function putarVideoYouTube(videoId, judul) {
     var actions=document.querySelector('#videoModal .ig-actions'); if(actions&&actions.children[0]) actions.children[0].style.display='none';
     var modal=document.getElementById('videoModal'); if(modal) modal.classList.add('show');
 }
-async async function muatThumbnailYouTube(){
+async function muatThumbnailYouTube(){
     var box=document.getElementById('yt-thumbnail-container'); if(!box)return;
     try{
         var response=await fetch('data/h2h-monthly.json',{cache:'no-store'});
