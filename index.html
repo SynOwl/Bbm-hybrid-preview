@@ -1642,14 +1642,13 @@ function renderMember(){
 function toggleMember(e,id){if(e)e.stopPropagation();var c=document.getElementById('card-'+id);if(c)c.classList.toggle('open');}
 
 function loadGrupFoto(){
-    var jumlahOt8 = JUMLAH_FOTO['ot8'] || 1;
-    var nomorAcak = Math.floor(Math.random() * jumlahOt8) + 1;
+    var fotoDefault='https://hips.hearstapps.com/hmg-prod/images/eee8b03c-98a3-4740-b83b-b0953f98fd68.png?crop=0.492xw%3A0.984xh%3B0.00489xw%2C0.00977xh&resize=1200%3A%2A';
     var foto='';
-    try { foto = localStorage.getItem('fotoGrupH2H') || ('h2h/ot8/' + (modeAcak ? nomorAcak : 1) + '.jpg'); } catch(e) { foto = 'h2h/ot8/' + (modeAcak ? nomorAcak : 1) + '.jpg'; }
+    try { foto = localStorage.getItem('fotoGrupH2H') || fotoDefault; } catch(e) { foto = fotoDefault; }
     var b=document.getElementById('grupBanner');
     if(!b)return;
-    if(foto){ b.innerHTML='<img src="'+foto+'" onclick="event.stopPropagation();openLightbox(\''+foto+'\')" onerror="this.src=\'\'; this.style.display=\'none\';"><span class="edit-badge" onclick="event.stopPropagation();triggerUpload(\'grup\')">🔄 Ganti</span>'; }
-    else { b.innerHTML='<div class="empty">📸 Upload Foto Grup H2H OT8<small>Tap untuk pilih foto</small></div>'; }
+    if(foto){ b.innerHTML='<img src="'+foto+'" alt="Foto grup Hearts2Hearts OT8" onclick="event.stopPropagation();openLightbox(\''+foto+'\')" onerror="this.onerror=null;this.src=\''+fotoDefault+'\';"><span class="edit-badge" onclick="event.stopPropagation();triggerUpload(\'grup\')">🔄 Ganti</span>'; }
+    else { b.innerHTML='<div class="empty">📸 Foto Grup H2H OT8<small>Tap Ganti untuk pilih foto lain</small></div>'; }
 }
 function grupBannerClick(){var foto='';try{foto=localStorage.getItem('fotoGrupH2H')||'';}catch(e){}if(foto)openLightbox(foto);else triggerUpload('grup');}
 function hapusGrup(){if(!confirm('Hapus foto grup?'))return;try{localStorage.removeItem('fotoGrupH2H');}catch(e){}loadGrupFoto();renderTema();terapkanTampilanFoto();toast('🗑️ Foto grup dihapus');}
