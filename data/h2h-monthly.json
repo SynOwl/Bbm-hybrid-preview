@@ -159,6 +159,16 @@
       "url": "https://www.youtube.com/watch?v=lu9GinsuyUQ",
       "thumbnail": "https://img.youtube.com/vi/lu9GinsuyUQ/hqdefault.jpg",
       "source": "youtube-official"
+    },
+    {
+      "id": "tqYG8ciETJI",
+      "title": "Hearts2Hearts Shorts — 1 Oktober 2026 (judul menunggu verifikasi)",
+      "type": "youtube",
+      "published": "2026-10-01T00:00:00+00:00",
+      "url": "https://www.youtube.com/watch?v=tqYG8ciETJI",
+      "thumbnail": "https://img.youtube.com/vi/tqYG8ciETJI/hqdefault.jpg",
+      "source": "user-provided-link",
+      "verification": "Tanggal diberikan pengguna; judul dan isi video belum dapat diverifikasi"
     }
   ]
 }
