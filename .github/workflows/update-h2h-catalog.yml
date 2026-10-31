@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/update_h2h_catalog.py"
+      - "scripts/update_h2h_member_photos.py"
       - ".github/workflows/update-h2h-catalog.yml"
   schedule:
     - cron: "17 2 * * *"
@@ -27,6 +28,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Refresh official H2H member portraits
+        continue-on-error: true
+        run: python3 scripts/update_h2h_member_photos.py
       - name: Check YouTube API secret
         id: api-key
         env:
@@ -43,16 +47,16 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python3 scripts/update_h2h_catalog.py
-      - name: Commit archive when changed
-        if: steps.api-key.outputs.available == 'true'
+      - name: Commit refreshed H2H catalogs when changed
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/h2h-archive.json
+          git add data/h2h-archive.json data/h2h-members.json
           if git diff --cached --quiet; then
-            echo "No H2H archive changes."
+            echo "No H2H catalog changes."
           else
-            git commit -m "chore: refresh permanent H2H YouTube archive"
+            git commit -m "chore: refresh H2H content and member photo catalogs"
             # Incorporate any Pages or manual commits made while the archive was building.
             git pull --rebase origin main
             git push origin HEAD:main
