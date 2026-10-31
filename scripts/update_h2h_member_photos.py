@@ -11,14 +11,14 @@ import urllib.request
 SOURCE_URL = "https://weverse.io/hearts2hearts/highlight"
 OUT = Path("data/h2h-members.json")
 MEMBERS = {
-    "jiwoo": r"\\bjiwoo\\b",
-    "carmen": r"\\bcarmen\\b",
-    "yuha": r"\\byuha\\b",
-    "stella": r"\\bstella\\b",
-    "juun": r"\\bjuun\\b",
-    "ana": r"\\ba[-\\s]?na\\b",
-    "ian": r"\\bian\\b",
-    "yeon": r"\\bye[-\\s]?on\\b",
+    "jiwoo": r"\bjiwoo\\b",
+    "carmen": r"\bcarmen\\b",
+    "yuha": r"\byuha\\b",
+    "stella": r"\bstella\\b",
+    "juun": r"\bjuun\\b",
+    "ana": r"\ba[-\s]?na\\b",
+    "ian": r"\bian\\b",
+    "yeon": r"\bye[-\s]?on\\b",
 }
 
 
@@ -129,7 +129,7 @@ def main():
         "members": members,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("Updated official H2H member portraits: " + ", ".join(MEMBERS))
 
 
