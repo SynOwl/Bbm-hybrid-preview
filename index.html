@@ -338,6 +338,12 @@ button:focus-visible,[role=button]:focus-visible,.grid-item:focus-visible,.card-
 .badge-streaming{font-size:.68rem;font-weight:700;padding:4px 8px;border-radius:20px;background:#e62117;color:#fff}
 .yt-disclaimer{font-size:.78rem;line-height:1.5;color:var(--text-secondary,#888);margin:0 0 14px}
 .yt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}
+.yt-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}
+.yt-tab{border:1px solid rgba(255,255,255,.42);border-radius:14px;padding:12px 10px;background:rgba(0,0,0,.22);color:#fff;font-size:14px;font-weight:800;cursor:pointer}
+.yt-tab.active{background:linear-gradient(135deg,var(--acc1),var(--acc2));border-color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.yt-search{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.4);border-radius:14px;background:rgba(0,0,0,.22);color:#fff;font-size:14px;margin:2px 0 10px;outline:none}
+.yt-search::placeholder{color:rgba(255,255,255,.75)}
+.yt-archive-count{font-size:12px;font-weight:700;margin:0 2px 10px;color:#fff;opacity:.9}
 .yt-card{display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;background:#222;text-align:left;color:#fff;cursor:pointer}
 .yt-thumbnail{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .yt-play-icon{display:block;text-align:center;font-size:1.5rem;color:#fff}
@@ -714,9 +720,16 @@ body{position:relative!important;touch-action:pan-y!important}
 <div class="head">🎬 Galeri Video H2H</div>
 <div class="info">Pilih video untuk membukanya langsung di aplikasi atau situs YouTube. Tombol kembali dan scroll halaman tetap tersedia di sini 💖</div>
 <section id="galeri-streaming-yt" style="margin:18px 0;">
-<h3 class="yt-section-title">Video Terbaru <span class="badge-streaming">YouTube</span></h3>
-<div class="yt-disclaimer">Video diputar langsung melalui YouTube. Iklan atau rekomendasi YouTube mungkin muncul. Video offline tidak tersedia di galeri ini.</div>
-<div id="yt-thumbnail-container" class="yt-grid"><p style="text-align:center;width:100%">Memuat video terbaru...</p></div>
+<h3 class="yt-section-title">Arsip YouTube H2H <span class="badge-streaming">ARSIP</span></h3>
+<div class="yt-disclaimer">Koleksi video dan Shorts resmi Hearts2Hearts. Pilih menu untuk melihat koleksi terpisah.</div>
+<div class="yt-tabs" role="tablist" aria-label="Jenis arsip H2H">
+<button type="button" class="yt-tab active" id="yt-tab-video" onclick="pilihKategoriH2H('videos')">🎬 Video</button>
+<button type="button" class="yt-tab" id="yt-tab-shorts" onclick="pilihKategoriH2H('shorts')">📱 Shorts</button>
+</div>
+<input id="yt-search" class="yt-search" type="search" placeholder="Cari judul video..." oninput="cariArsipH2H(this.value)" aria-label="Cari arsip H2H">
+<div id="yt-archive-count" class="yt-archive-count">Memuat arsip...</div>
+<div id="yt-thumbnail-container" class="yt-grid"><p style="text-align:center;width:100%">Memuat arsip H2H...</p></div>
+<button id="yt-load-more" type="button" class="btn-s" style="display:none;margin-top:14px" onclick="muatLagiArsipH2H()">Muat lainnya</button>
 </section>
 <button class="btn-s" onclick="go('s-dash')">← Kembali</button>
 </div>
@@ -2512,37 +2525,79 @@ function putarVideoYouTube(videoId, judul) {
     // Kedua aksi tetap tersedia: Minta Offline (WhatsApp) dan Bagikan.
     var modal=document.getElementById('videoModal'); if(modal){ modal.classList.add('show'); if(!videoModalHistoryState){ history.pushState({bbmVideo:true},'','#video'); videoModalHistoryState=true; } }
 }
-async function muatThumbnailYouTube(){
-    var box=document.getElementById('yt-thumbnail-container'); if(!box)return;
-    try{
-        var response=await fetch('data/h2h-monthly.json',{cache:'no-store'});
-        if(!response.ok) throw new Error('catalog unavailable');
-        var data=await response.json();
-        var batas=new Date(); batas.setHours(0,0,0,0); batas.setDate(batas.getDate()-30);
-        var items=(Array.isArray(data)?data:(data.videos||data.items||[])).map(function(x){
-            if(!x||typeof x.url!=='string'||!x.published) return null;
-            try{
-                var u=new URL(x.url);
-                var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.split('/').filter(Boolean).pop());
-                if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
-                var published=new Date(x.published);
-                if(isNaN(published.getTime()) || published<batas) return null;
-                return {id:id,title:x.title_id||x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg'),published:published};
-            }catch(e){return null;}
-        }).filter(Boolean).sort(function(a,b){return b.published-a.published;});
-        H2H_SHORTS_ITEMS=items;
-        box.textContent='';
-        if(!items.length){box.textContent='Belum ada video dalam 31 hari terakhir.';return;}
-        items.forEach(function(item){
-            var card=document.createElement('button');card.type='button';card.className='yt-card';card.setAttribute('aria-label','Putar '+item.title+' di aplikasi');
-            var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src=item.thumbnail;
-            var play=document.createElement('span');play.className='yt-play-icon';play.textContent='▶';
-            var title=document.createElement('span');title.className='yt-title-overlay';title.textContent=item.title;
-            card.append(img,play,title);card.addEventListener('click',function(){putarVideoYouTube(item.id,item.title);});box.appendChild(card);
-        });
-    }catch(e){box.textContent='Video terbaru belum dapat dimuat. Coba lagi nanti.';}
+var H2H_ARCHIVE={videos:[],shorts:[]};
+var H2H_ACTIVE_CATEGORY='videos';
+var H2H_SEARCH_QUERY='';
+var H2H_RENDER_LIMIT=24;
+function pilihKategoriH2H(category){
+    H2H_ACTIVE_CATEGORY=category==='shorts'?'shorts':'videos';
+    var a=document.getElementById('yt-tab-video'),b=document.getElementById('yt-tab-shorts');
+    if(a)a.classList.toggle('active',H2H_ACTIVE_CATEGORY==='videos');
+    if(b)b.classList.toggle('active',H2H_ACTIVE_CATEGORY==='shorts');
+    H2H_RENDER_LIMIT=24;
+    renderArsipH2H();
 }
-
+function cariArsipH2H(value){
+    H2H_SEARCH_QUERY=String(value||'').trim().toLocaleLowerCase('id-ID');
+    H2H_RENDER_LIMIT=24;
+    renderArsipH2H();
+}
+function muatLagiArsipH2H(){
+    H2H_RENDER_LIMIT+=24;
+    renderArsipH2H();
+}
+function renderArsipH2H(){
+    var box=document.getElementById('yt-thumbnail-container');
+    var count=document.getElementById('yt-archive-count');
+    var more=document.getElementById('yt-load-more');
+    if(!box)return;
+    var all=H2H_ARCHIVE[H2H_ACTIVE_CATEGORY]||[];
+    var filtered=all.filter(function(item){
+        return !H2H_SEARCH_QUERY || (item.title||'').toLocaleLowerCase('id-ID').includes(H2H_SEARCH_QUERY);
+    });
+    if(count)count.textContent=filtered.length+' '+(H2H_ACTIVE_CATEGORY==='shorts'?'Shorts':'video')+' ditemukan';
+    box.textContent='';
+    if(!filtered.length){
+        box.textContent=all.length?'Tidak ada judul yang cocok dengan pencarian.':'Arsip belum tersedia. Coba muat ulang nanti.';
+        if(more)more.style.display='none';
+        return;
+    }
+    filtered.slice(0,H2H_RENDER_LIMIT).forEach(function(item){
+        var card=document.createElement('button');card.type='button';card.className='yt-card';
+        card.setAttribute('aria-label','Putar '+item.title+' di YouTube');
+        var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src=item.thumbnail;
+        var play=document.createElement('span');play.className='yt-play-icon';play.textContent='▶';
+        var title=document.createElement('span');title.className='yt-title-overlay';title.textContent=item.title;
+        card.append(img,play,title);
+        card.addEventListener('click',function(){putarVideoYouTube(item.id,item.title);});
+        box.appendChild(card);
+    });
+    if(more)more.style.display=filtered.length>H2H_RENDER_LIMIT?'flex':'none';
+}
+async function muatThumbnailYouTube(){
+    var box=document.getElementById('yt-thumbnail-container');if(!box)return;
+    try{
+        var response=await fetch('data/h2h-archive.json',{cache:'no-store'});
+        if(!response.ok)throw new Error('archive unavailable');
+        var data=await response.json();
+        function clean(items){
+            return (Array.isArray(items)?items:[]).map(function(x){
+                if(!x||typeof x.id!=='string'||!/^[A-Za-z0-9_-]{11}$/.test(x.id))return null;
+                var published=new Date(x.published||'');
+                return {id:x.id,title:x.title_id||x.title||'Video H2H',
+                    thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+x.id+'/hqdefault.jpg'),
+                    published:isNaN(published.getTime())?new Date(0):published};
+            }).filter(Boolean).sort(function(a,b){return b.published-a.published;});
+        }
+        H2H_ARCHIVE.videos=clean(data.videos);
+        H2H_ARCHIVE.shorts=clean(data.shorts);
+        H2H_SHORTS_ITEMS=H2H_ARCHIVE.shorts;
+        renderArsipH2H();
+    }catch(e){
+        box.textContent='Arsip H2H belum dapat dimuat. Koneksi internet atau pembaruan katalog mungkin belum tersedia.';
+        var count=document.getElementById('yt-archive-count');if(count)count.textContent='Gagal memuat arsip';
+    }
+}
 function togglePlayPause() {
     var player = document.getElementById('videoPlayer');
     var icon = document.getElementById('playPauseIcon');
