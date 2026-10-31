@@ -38,6 +38,28 @@ def fetch_feed(url):
     return entries
 
 
+
+def translate_title_to_indonesian(title):
+    """Best-effort title translation; return empty string when the service is unavailable."""
+    import urllib.parse
+    query = urllib.parse.urlencode({
+        "client": "gtx", "sl": "auto", "tl": "id", "dt": "t", "q": title
+    })
+    url = "https://translate.googleapis.com/translate_a/single?" + query
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        translated = "".join(
+            part[0] for part in (payload[0] or [])
+            if isinstance(part, list) and part and isinstance(part[0], str)
+        ).strip()
+        return translated if translated and translated.casefold() != title.casefold() else ""
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError, IndexError) as exc:
+        print(f"Translation unavailable for title: {exc}")
+        return ""
+
+
 def main():
     now = datetime.now(timezone.utc)
     cutoff_date = now.date() - timedelta(days=30)  # today + previous 30 calendar days
@@ -73,9 +95,14 @@ def main():
             if published.date() < cutoff_date:
                 continue
             is_short = feed_kind == "short"
+            old_item = videos_by_id.get(video_id, {})
+            translated_title = old_item.get("title_id", "")
+            if old_item.get("title") != title or not translated_title:
+                translated_title = translate_title_to_indonesian(title)
             item = {
                 "id": video_id,
                 "title": title,
+                "title_id": translated_title,
                 "type": "mv" if "mv" in title.lower() else "youtube",
                 "kind": "short" if is_short else ("video" if feed_kind == "video" else "upload"),
                 "isShort": is_short,
