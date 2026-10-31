@@ -697,7 +697,7 @@ body{position:relative!important;touch-action:pan-y!important}
 <div id="s-grup" class="screen">
 <div class="head">💖 Tentang Hearts2Hearts</div>
 <div class="info" style="text-align:center;padding:20px;">
-<img id="logoH2HImg" src="" onclick="openLightbox(this.src)" style="width:140px;height:140px;object-fit:cover;border-radius:50%;border:4px solid rgba(255,255,255,.85);box-shadow:0 6px 20px rgba(0,0,0,.5);margin:0 auto 10px;display:none;cursor:zoom-in;">
+<img id="logoH2HImg" src="" alt="Logo resmi Hearts2Hearts" onclick="openLightbox(this.src)" style="width:150px;height:150px;object-fit:contain;background:#fff;padding:8px;border-radius:24px;border:3px solid rgba(255,255,255,.9);box-shadow:0 6px 20px rgba(0,0,0,.25);margin:0 auto 12px;display:none;cursor:zoom-in;">
 <div id="logoFallback" style="display:block;font-size:60px;letter-spacing:8px;margin-bottom:8px;">💖🌟💖</div>
 <h1 style="font-size:24px;font-weight:900;margin-bottom:6px;">Hearts2Hearts</h1>
 <p>하츠투하츠 · H2H</p><p><b>Debut:</b> 24 Februari 2025</p><p><b>Agensi:</b> SM Entertainment</p><p><b>Jumlah anggota:</b> 8</p><p><b>Fandom:</b> S2U (하츄)</p>
@@ -987,7 +987,7 @@ function muatLogoH2H() {
     var img = document.getElementById('logoH2HImg');
     var fb = document.getElementById('logoFallback');
     if (!img) return;
-    var kandidat = ['h2h/logo.jpg', 'h2h/logo.png', 'h2h/logo.jpeg', 'h2h/Logo.jpg', 'h2h/LOGO.jpg'];
+    var kandidat = ['logo.jpg', 'h2h/logo.jpg', 'h2h/logo.png', 'h2h/logo.jpeg', 'h2h/Logo.jpg', 'h2h/LOGO.jpg'];
     var idx = 0;
     function coba() {
         if (idx >= kandidat.length) { img.style.display = 'none'; if (fb) fb.style.display = 'block'; return; }
