@@ -21,7 +21,7 @@ body[data-tema="ian"]{--bg1:#A7FFEB;--bg2:#009688;--acc1:#00695C;--acc2:#004D40}
 body[data-tema="yeon"]{--bg1:#FFF59D;--bg2:#FBC02D;--acc1:#F57F17;--acc2:#E65100}
 body[data-tema="h2h"]{--bg1:#B3E5FC;--bg2:#03A9F4;--acc1:#0288D1;--acc2:#01579B}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Segoe UI',Tahoma,sans-serif;-webkit-tap-highlight-color:transparent}
-body{min-height:100vh;background:linear-gradient(180deg,var(--bg1),var(--bg2));background-size:cover;background-position:center;background-attachment:fixed;padding:14px 10px 30px;color:#FFF;transition:.4s;text-shadow:0 2px 6px rgba(0,0,0,.8),0 1px 3px rgba(0,0,0,.95)}
+html{min-height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:auto}\nbody{min-height:100vh;min-height:100dvh;height:auto;overflow-x:hidden;overflow-y:auto;touch-action:pan-y;background:linear-gradient(180deg,var(--bg1),var(--bg2));background-size:cover;background-position:center;background-attachment:scroll;padding:14px 10px 30px;color:#FFF;transition:.4s;text-shadow:0 2px 6px rgba(0,0,0,.8),0 1px 3px rgba(0,0,0,.95)}
 .video-modal{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;}
 .video-modal.show{display:flex;}
 .video-modal video{max-width:100%;max-height:75vh;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,.8);}
@@ -2495,7 +2495,7 @@ function putarVideoYouTube(videoId, judul) {
     if(iframe){iframe.src='https://www.youtube-nocookie.com/embed/'+videoId+'?autoplay=1&rel=0';iframe.style.display='block';}
     currentVideoSrc='https://www.youtube.com/watch?v='+videoId;
     var desc=document.getElementById('videoDesc'); if(desc) desc.textContent=judul||'Video YouTube';
-    var actions=document.querySelector('#videoModal .ig-actions'); if(actions&&actions.children[0]) actions.children[0].style.display='none';
+    // Kedua aksi tetap tersedia: Minta Offline (WhatsApp) dan Bagikan.
     var modal=document.getElementById('videoModal'); if(modal){ modal.classList.add('show'); if(!videoModalHistoryState){ history.pushState({bbmVideo:true},'','#video'); videoModalHistoryState=true; } }
 }
 async function muatThumbnailYouTube(){
