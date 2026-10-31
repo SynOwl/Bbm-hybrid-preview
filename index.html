@@ -3588,5 +3588,11 @@ function initApp(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initApp);else initApp();
 </script>
+
+<!-- Tombol cadangan gulir untuk perangkat yang sulit melakukan swipe -->
+<div id="scrollFallbackControls" aria-label="Kontrol gulir halaman" style="position:fixed;right:12px;bottom:18px;z-index:9000;display:flex;flex-direction:column;gap:9px;padding:5px;">
+<button type="button" aria-label="Gulir ke atas" onclick="window.scrollBy({top:-Math.max(280,window.innerHeight*.75),left:0,behavior:'smooth'});document.documentElement.scrollBy({top:-Math.max(280,window.innerHeight*.75),behavior:'smooth'});" style="width:46px;height:46px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(20,35,65,.82);color:#fff;font-size:25px;font-weight:900;box-shadow:0 3px 10px #0005;">↑</button>
+<button type="button" aria-label="Gulir ke bawah" onclick="window.scrollBy({top:Math.max(280,window.innerHeight*.75),left:0,behavior:'smooth'});document.documentElement.scrollBy({top:Math.max(280,window.innerHeight*.75),behavior:'smooth'});" style="width:46px;height:46px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(20,35,65,.82);color:#fff;font-size:25px;font-weight:900;box-shadow:0 3px 10px #0005;">↓</button>
+</div>
 </body>
 </html>
