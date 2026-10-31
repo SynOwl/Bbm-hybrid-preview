@@ -1558,6 +1558,16 @@ function simpanFotoMemberPermanen(id,value){
         catch(e){throw err||e;}
     });
 }
+function fallbackFotoMember(img,id){
+    if(!img)return;
+    if(img.dataset.fallbackTried!=='1'){
+        img.dataset.fallbackTried='1';
+        img.src='h2h/'+id+'/1.jpg';
+        return;
+    }
+    img.style.display='none';
+    if(img.nextElementSibling)img.nextElementSibling.style.display='block';
+}
 function kembalikanFotoResmi(id){
     if(!confirm('Kembalikan foto '+id+' ke foto resmi H2H?'))return;
     hapusFotoMemberDB(id).then(function(){
@@ -1567,10 +1577,7 @@ function kembalikanFotoResmi(id){
         var card=document.getElementById('card-'+id);if(card)card.classList.add('open');
         toast('✅ Foto resmi '+id+' dipakai lagi');
     }).catch(function(){
-        delete fotoMemberCustom[id];
-        try{localStorage.removeItem('fotoH2H_'+id);}catch(e){}
-        renderMember();
-        toast('✅ Pilihan foto direset');
+        toast('⚠️ Foto custom belum berhasil dihapus. Foto lama tetap dipertahankan.');
     });
 }
 function muatKatalogProfilH2H(){
@@ -1591,7 +1598,7 @@ function renderMember(){
     for(var i=0;i<MEMBER.length;i++){
         var m=MEMBER[i];
         var foto = fotoMemberUntukTampil(m.id);
-        var avaInner = '<img src="'+foto+'" onclick="event.stopPropagation();openLightbox(\\''+foto+'\\')" onerror="this.style.display=\\'none\\'; this.nextElementSibling.style.display=\\'block\\';"><span style="display:none; font-size:30px;">'+m.emoji+'</span>';
+        var avaInner = '<img src="'+foto+'" onclick="event.stopPropagation();openLightbox(\\''+foto+'\\')" onerror="fallbackFotoMember(this,\\''+m.id+'\\')"><span style="display:none; font-size:30px;">'+m.emoji+'</span>';
         var galeriHtml = '<div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px;">';
         var jumlahFotoM = JUMLAH_FOTO[m.id] || 1;
         for(var j=1; j<=jumlahFotoM; j++) {
