@@ -2518,18 +2518,21 @@ async function muatThumbnailYouTube(){
         var response=await fetch('data/h2h-monthly.json',{cache:'no-store'});
         if(!response.ok) throw new Error('catalog unavailable');
         var data=await response.json();
+        var batas=new Date(); batas.setHours(0,0,0,0); batas.setDate(batas.getDate()-30);
         var items=(Array.isArray(data)?data:(data.videos||data.items||[])).map(function(x){
-            if(!x||typeof x.url!=='string') return null;
+            if(!x||typeof x.url!=='string'||!x.published) return null;
             try{
                 var u=new URL(x.url);
                 var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.split('/').filter(Boolean).pop());
                 if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
-                return {id:id,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg')};
+                var published=new Date(x.published);
+                if(isNaN(published.getTime()) || published<batas) return null;
+                return {id:id,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg'),published:published};
             }catch(e){return null;}
-        }).filter(Boolean);
+        }).filter(Boolean).sort(function(a,b){return b.published-a.published;});
         H2H_SHORTS_ITEMS=items;
         box.textContent='';
-        if(!items.length){box.textContent='Belum ada video terbaru.';return;}
+        if(!items.length){box.textContent='Belum ada video dalam 31 hari terakhir.';return;}
         items.forEach(function(item){
             var card=document.createElement('button');card.type='button';card.className='yt-card';card.setAttribute('aria-label','Putar '+item.title+' di aplikasi');
             var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src=item.thumbnail;
