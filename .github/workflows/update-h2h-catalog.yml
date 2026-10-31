@@ -53,5 +53,7 @@ jobs:
             echo "No H2H archive changes."
           else
             git commit -m "chore: refresh permanent H2H YouTube archive"
+            # Incorporate any Pages or manual commits made while the archive was building.
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
