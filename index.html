@@ -297,6 +297,10 @@ body{min-height:100vh;background:linear-gradient(180deg,var(--bg1),var(--bg2));b
 /* === TAMPILAN VIDEO ALA REELS/TIKTOK === */
 .ig-reels-modal { position: fixed; inset: 0; background: #000; z-index: 9999; display: none; overflow: hidden; }
 .ig-reels-modal.show { display: block; }
+.ig-reels-modal { overscroll-behavior:contain; touch-action:pan-y; }
+.ig-reels-modal iframe { touch-action:auto; }
+.ig-reels-ui { z-index:3; }
+.ig-top-bar { position:relative; z-index:4; }
 #videoPlayer { width: 100%; height: 100%; object-fit: contain; background: #000; }
 .ig-reels-ui { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; }
 .ig-top-bar { display: flex; justify-content: flex-start; padding: 20px; pointer-events: auto; }
@@ -751,10 +755,6 @@ button:focus-visible,[role=button]:focus-visible,.grid-item:focus-visible,.card-
         
         <!-- Tombol Aksi Kanan (Simpan & Share) -->
         <div class="ig-actions">
-            <div class="ig-action-btn" onclick="simpanVideoKeHP()">
-                <span class="ig-icon">💾</span>
-                <span class="ig-text">Unduh Offline</span>
-            </div>
             <div class="ig-action-btn" onclick="shareVideo()">
                 <span class="ig-icon">🔗</span>
                 <span class="ig-text">Bagikan</span>
@@ -2480,6 +2480,7 @@ function putarVideo(src, caption) {
     }
 }
 
+var videoModalHistoryState = false;
 function putarVideoYouTube(videoId, judul) {
     if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) return;
     videoLoadToken++;
@@ -2491,7 +2492,7 @@ function putarVideoYouTube(videoId, judul) {
     currentVideoSrc='https://www.youtube.com/watch?v='+videoId;
     var desc=document.getElementById('videoDesc'); if(desc) desc.textContent=judul||'Video YouTube';
     var actions=document.querySelector('#videoModal .ig-actions'); if(actions&&actions.children[0]) actions.children[0].style.display='none';
-    var modal=document.getElementById('videoModal'); if(modal) modal.classList.add('show');
+    var modal=document.getElementById('videoModal'); if(modal){ modal.classList.add('show'); if(!videoModalHistoryState){ history.pushState({bbmVideo:true},'','#video'); videoModalHistoryState=true; } }
 }
 async function muatThumbnailYouTube(){
     var box=document.getElementById('yt-thumbnail-container'); if(!box)return;
@@ -2500,23 +2501,22 @@ async function muatThumbnailYouTube(){
         if(!response.ok) throw new Error('catalog unavailable');
         var data=await response.json();
         var items=(Array.isArray(data)?data:(data.videos||data.items||[])).map(function(x){
-            if(!x || typeof x.url!=='string') return null;
+            if(!x||typeof x.url!=='string') return null;
             try{
                 var u=new URL(x.url);
-                if(u.hostname!=='youtube.com' && u.hostname!=='www.youtube.com' && u.hostname!=='youtu.be' && u.hostname!=='m.youtube.com') return null;
                 var id=u.hostname==='youtu.be'?u.pathname.slice(1):(u.searchParams.get('v')||u.pathname.split('/').filter(Boolean).pop());
                 if(!/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
-                return {url:x.url,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg')};
+                return {id:id,title:x.title||'Video terbaru',thumbnail:x.thumbnail||('https://img.youtube.com/vi/'+id+'/hqdefault.jpg')};
             }catch(e){return null;}
         }).filter(Boolean);
         box.textContent='';
         if(!items.length){box.textContent='Belum ada video terbaru.';return;}
         items.forEach(function(item){
-            var card=document.createElement('a');card.className='yt-card';card.href=item.url;card.target='_blank';card.rel='noopener noreferrer';card.setAttribute('aria-label','Buka '+item.title+' di YouTube');
+            var card=document.createElement('button');card.type='button';card.className='yt-card';card.setAttribute('aria-label','Putar '+item.title+' di aplikasi');
             var img=document.createElement('img');img.className='yt-thumbnail';img.loading='lazy';img.alt='';img.src=item.thumbnail;
             var play=document.createElement('span');play.className='yt-play-icon';play.textContent='▶';
             var title=document.createElement('span');title.className='yt-title-overlay';title.textContent=item.title;
-            card.append(img,play,title);box.appendChild(card);
+            card.append(img,play,title);card.addEventListener('click',function(){putarVideoYouTube(item.id,item.title);});box.appendChild(card);
         });
     }catch(e){box.textContent='Video terbaru belum dapat dimuat. Coba lagi nanti.';}
 }
@@ -2573,7 +2573,8 @@ function toggleVideoFullscreen() {
     }
 }
 
-function tutupVideo() {
+window.addEventListener('popstate',function(){ var modal=document.getElementById('videoModal'); if(modal&&modal.classList.contains('show')) tutupVideo(false); });
+function tutupVideo(dariTombol) {
     var modal = document.getElementById('videoModal');
     var player = document.getElementById('videoPlayer');
     var youtubePlayer = document.getElementById('youtubePlayer');
@@ -2587,6 +2588,8 @@ function tutupVideo() {
         player.style.display = 'block';
         if(youtubePlayer) { youtubePlayer.src = ''; youtubePlayer.style.display = 'none'; }
         modal.classList.remove('show');
+        var perluKembali=videoModalHistoryState && dariTombol!==false; videoModalHistoryState=false;
+        if(perluKembali && history.state && history.state.bbmVideo) history.back();
         
         // Keluar Fullscreen & Balik Tegak
         if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
