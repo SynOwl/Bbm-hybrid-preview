@@ -987,15 +987,15 @@ function muatLogoH2H() {
     var img = document.getElementById('logoH2HImg');
     var fb = document.getElementById('logoFallback');
     if (!img) return;
-    var kandidat = ['logo.jpg', 'h2h/logo.jpg', 'h2h/logo.png', 'h2h/logo.jpeg', 'h2h/Logo.jpg', 'h2h/LOGO.jpg'];
-    var idx = 0;
-    function coba() {
-        if (idx >= kandidat.length) { img.style.display = 'none'; if (fb) fb.style.display = 'block'; return; }
-        img.onerror = function () { idx++; coba(); };
-        img.onload = function () { img.style.display = 'block'; if (fb) fb.style.display = 'none'; };
-        img.src = kandidat[idx];
-    }
-    coba();
+    img.onerror = function () {
+        img.style.display = 'none';
+        if (fb) fb.style.display = 'block';
+    };
+    img.onload = function () {
+        img.style.display = 'block';
+        if (fb) fb.style.display = 'none';
+    };
+    img.src = 'https://s2u-fansite.vercel.app/images/logo-h2h.png';
 }
 
 // ===== SPLASH SCREEN (BUG 10 REVISI) =====
