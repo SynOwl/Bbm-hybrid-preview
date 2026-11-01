@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-31T18:40:40.299100+00:00",
+  "updatedAt": "2026-11-01T09:23:07.519009+00:00",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -2573,6 +2573,17 @@
     }
   ],
   "shorts": [
+    {
+      "id": "JThbuvI7HMo",
+      "title": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-01T04:00:01Z",
+      "url": "https://www.youtube.com/watch?v=JThbuvI7HMo",
+      "thumbnail": "https://img.youtube.com/vi/JThbuvI7HMo/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "AMXIyyyiBv8",
       "title": "we on a moonride 🌕 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
