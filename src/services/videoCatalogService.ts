@@ -40,16 +40,16 @@ export const MIRROR_SOURCES = [
   },
   {
     name: 'GitHub API Raw',
-    url: 'https://api.github.com/repos/SynOwl/Bbm-hybrid-preview/contents/data/h2h-archive.json?ref=fix%2Frestore-missing-h2h-shorts',
+    url: 'https://api.github.com/repos/SynOwl/Bbm-hybrid-preview/contents/data/h2h-archive.json?ref=main',
     headers: { Accept: 'application/vnd.github.raw+json' },
   },
   {
     name: 'jsDelivr CDN',
-    url: 'https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@fix/restore-missing-h2h-shorts/data/h2h-archive.json',
+    url: 'https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@main/data/h2h-archive.json',
   },
   {
     name: 'raw.githubusercontent.com',
-    url: 'https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/fix/restore-missing-h2h-shorts/data/h2h-archive.json',
+    url: 'https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/data/h2h-archive.json',
   },
 ];
 
