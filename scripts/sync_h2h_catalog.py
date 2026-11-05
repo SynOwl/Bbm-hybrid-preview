@@ -28,18 +28,44 @@ def scrape(tab):
 
 def normalize(raw, short):
     vid, title = raw.get('id'), raw.get('title')
-    ts = raw.get('release_timestamp') or raw.get('timestamp')
-    if not vid or not title or not ts:
+    if not vid or not title:
         return None
     if raw.get('channel_id') and raw['channel_id'] != CHANNEL_ID:
         return None
-    try:
-        published = datetime.fromtimestamp(float(ts), UTC)
-    except (TypeError, ValueError, OverflowError):
+
+    # yt-dlp's flat Shorts playlist can omit timestamp/release_timestamp for
+    # newly published entries while still providing upload_date. Do not drop
+    # those uploads: use the exact timestamp when present, otherwise preserve
+    # the published calendar date at a neutral UTC midday.
+    ts = raw.get('release_timestamp')
+    if ts is None:
+        ts = raw.get('timestamp')
+    published = None
+    if ts is not None:
+        try:
+            published = datetime.fromtimestamp(float(ts), UTC)
+        except (TypeError, ValueError, OverflowError, OSError):
+            published = None
+
+    if published is None:
+        date_value = raw.get('release_date') or raw.get('upload_date')
+        if date_value:
+            date_text = str(date_value).strip()
+            for date_format in ('%Y%m%d', '%Y-%m-%d'):
+                try:
+                    published = datetime.strptime(date_text[:10], date_format).replace(
+                        hour=12, minute=0, second=0, tzinfo=UTC
+                    )
+                    break
+                except ValueError:
+                    continue
+    if published is None:
         return None
+
     return {'id': str(vid), 'title': str(title), 'title_id': str(title),
             'kind': 'short' if short else 'video', 'isShort': short,
             'published': stamp(published),
+            'publishedDateOnly': not (raw.get('release_timestamp') is not None or raw.get('timestamp') is not None),
             'url': 'https://www.youtube.com/watch?v=' + str(vid),
             'thumbnail': 'https://img.youtube.com/vi/' + str(vid) + '/hqdefault.jpg',
             'source': 'youtube-official'}
