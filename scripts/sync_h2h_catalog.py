@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, subprocess, sys
 import urllib.request
-import xml.etree.ElementTree as ET
+import re
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
@@ -11,9 +11,6 @@ MONTHLY = ROOT / 'data/h2h-monthly.json'
 STATUS = ROOT / 'data/h2h-sync-status.json'
 CHANNEL = 'https://www.youtube.com/@hearts2hearts.official'
 CHANNEL_ID = 'UC7Q3HUnJA3nvjZR2JeMn2Cw'
-RSS_URL = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID
-ATOM_NS = '{http://www.w3.org/2005/Atom}'
-YT_NS = '{http://www.youtube.com/xml/schemas/2015}'
 UTC = timezone.utc
 
 def stamp(dt):
@@ -31,34 +28,22 @@ def scrape(tab):
         raise RuntimeError('Daftar YouTube ' + tab + ' kosong/tidak valid')
     return entries
 
-def scrape_rss():
+def discover_recent_channel_ids():
+    # Secondary discovery source: public channel page maintained from public
+    # YouTube channel data. IDs are never trusted on their own; each is checked
+    # against the official channel ID by yt-dlp before entering the catalog.
+    url = 'https://topcreadores.com/canal/' + CHANNEL_ID
     request = urllib.request.Request(
-        RSS_URL,
+        url,
         headers={'User-Agent': 'Mozilla/5.0 (compatible; BBMxH2H-Catalog/1.0)'}
     )
     with urllib.request.urlopen(request, timeout=30) as response:
-        root = ET.fromstring(response.read())
-
-    entries = []
-    for entry in root.findall(ATOM_NS + 'entry'):
-        channel_id = entry.findtext(YT_NS + 'channelId')
-        video_id = entry.findtext(YT_NS + 'videoId')
-        title = entry.findtext(ATOM_NS + 'title')
-        published_text = entry.findtext(ATOM_NS + 'published')
-        if channel_id != CHANNEL_ID or not video_id or not title or not published_text:
-            continue
-        try:
-            published = datetime.fromisoformat(published_text.replace('Z', '+00:00'))
-        except ValueError:
-            continue
-        entries.append({
-            'id': video_id,
-            'title': title,
-            'timestamp': published.timestamp(),
-            'channel_id': channel_id,
-            '_rss_fallback': True,
-        })
-    return entries
+        page = response.read().decode('utf-8', errors='replace')
+    ids = re.findall(
+        r'(?:youtube\.com/(?:watch\?v=|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})',
+        page
+    )
+    return list(dict.fromkeys(ids))
 
 
 def extract_video(video_id):
@@ -128,41 +113,41 @@ def main():
         shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id')}
         added_v, added_s = [], []
 
-        # The channel RSS feed is a second discovery path for uploads that may
-        # not have appeared yet in the /videos or /shorts tab extraction.
-        # Fetch full metadata only for IDs missing from both archive lists.
+        # Secondary discovery catches recent channel uploads missing from
+        # the YouTube tab extractors. Every candidate is re-fetched from
+        # YouTube and must match the official channel ID before being stored.
         try:
-            rss_entries = scrape_rss()
-            rss_added = 0
-            for rss_item in rss_entries:
-                video_id = rss_item['id']
+            discovered_ids = discover_recent_channel_ids()
+            discovered_added = 0
+            for video_id in discovered_ids:
                 if video_id in videos or video_id in shorts:
                     continue
                 try:
                     metadata = extract_video(video_id)
-                    if metadata.get('channel_id') and metadata['channel_id'] != CHANNEL_ID:
+                    if metadata.get('channel_id') != CHANNEL_ID:
+                        print('Discovery candidate rejected (channel mismatch): ' + video_id, file=sys.stderr)
                         continue
                     duration = metadata.get('duration')
                     if duration is None:
-                        print('RSS fallback: duration unavailable for ' + video_id, file=sys.stderr)
+                        print('Discovery candidate skipped (duration unavailable): ' + video_id, file=sys.stderr)
                         continue
-                    raw_item = {**metadata, **rss_item}
                     is_short = float(duration) <= 180
-                    item = normalize(raw_item, is_short)
+                    item = normalize(metadata, is_short)
                     if not item:
                         continue
                     target, added = (shorts, added_s) if is_short else (videos, added_v)
                     target[video_id] = item
                     added.append(video_id)
-                    rss_added += 1
-                    print('RSS fallback added ' + ('Short' if is_short else 'video') + ': ' + item['title'])
-                except Exception as rss_error:
-                    print('RSS fallback could not inspect ' + video_id + ': ' + str(rss_error)[:180], file=sys.stderr)
-            print('RSS fallback checked ' + str(len(rss_entries)) + ' entries; added ' + str(rss_added))
-        except Exception as rss_error:
-            # Keep the primary yt-dlp tab collection usable if YouTube RSS is
-            # temporarily unavailable.
-            print('RSS fallback unavailable: ' + str(rss_error)[:220], file=sys.stderr)
+                    discovered_added += 1
+                    print('Channel-page fallback added ' + ('Short' if is_short else 'video') + ': ' + item['title'])
+                except Exception as discovery_error:
+                    print('Channel-page fallback could not inspect ' + video_id + ': ' + str(discovery_error)[:180], file=sys.stderr)
+            print('Channel-page fallback checked ' + str(len(discovered_ids)) + ' IDs; added ' + str(discovered_added))
+        except Exception as discovery_error:
+            # Primary yt-dlp tab collection remains usable if the secondary
+            # public discovery page is temporarily unavailable.
+            print('Channel-page fallback unavailable: ' + str(discovery_error)[:220], file=sys.stderr)
+
         for raw, is_short, target, added in ([(x, False, videos, added_v) for x in raw_videos] + [(x, True, shorts, added_s) for x in raw_shorts]):
             item = normalize(raw, is_short)
             if not item:
