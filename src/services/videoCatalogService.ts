@@ -28,8 +28,9 @@ export interface ProcessedCatalogResult {
   stats: CatalogStats;
 }
 
-const STORAGE_KEY_CATALOG = 'bbm_cached_h2h_archive_v4';
-const STORAGE_KEY_FETCH_TIME = 'bbm_cached_h2h_archive_fetch_time';
+// v5 separates the cache from older catalogs that may lack the two restored Shorts.
+const STORAGE_KEY_CATALOG = 'bbm_cached_h2h_archive_v5';
+const STORAGE_KEY_FETCH_TIME = 'bbm_cached_h2h_archive_fetch_time_v5';
 
 // Mirror endpoints disusun tanpa header kustom non-safelisted agar tidak memicu HTTP OPTIONS Preflight
 export const MIRROR_SOURCES = [
@@ -321,15 +322,26 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
 
   // Kasus 1 & 2: Setidaknya ada satu mirror online yang berhasil diakses
   if (bestOnline) {
-    // 'updated': mirror berhasil dan timestamp online lebih baru daripada cache lokal
-    if (bestOnline.timestamp > cachedTime) {
+    // If the online catalog contains either restored Short missing from the local cache,
+    // refresh even when the local updatedAt timestamp is newer.
+    const onlineHasId1 = bestOnline.data.shorts.some((s: any) => s?.id === 'KLUCXIGvx0c');
+    const onlineHasId2 = bestOnline.data.shorts.some((s: any) => s?.id === 'nl-YbxNFlGk');
+    const cacheHasId1 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'KLUCXIGvx0c'));
+    const cacheHasId2 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'nl-YbxNFlGk'));
+    const onlineRepairsMissingShorts =
+      (onlineHasId1 && !cacheHasId1) || (onlineHasId2 && !cacheHasId2);
+
+    // 'updated': newer online catalog, or online catalog repairs missing Shorts.
+    if (bestOnline.timestamp > cachedTime || onlineRepairsMissingShorts) {
       simpanKeLocalStorageAman(bestOnline.data);
       fetchResult = {
         status: 'updated',
         data: bestOnline.data,
         source: bestOnline.source,
         isNewer: true,
-        message: `Katalog berhasil diperbarui dari ${bestOnline.source}.`,
+        message: onlineRepairsMissingShorts
+          ? `Katalog diperbaiki dari ${bestOnline.source}; Shorts yang hilang dipulihkan.`
+          : `Katalog berhasil diperbarui dari ${bestOnline.source}.`,
       };
     } else {
       // 'unchanged': mirror berhasil, tetapi timestamp online sama dengan atau lebih lama daripada cache lokal.
