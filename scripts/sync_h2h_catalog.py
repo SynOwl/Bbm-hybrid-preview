@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import json, subprocess, sys
+import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
@@ -9,6 +11,9 @@ MONTHLY = ROOT / 'data/h2h-monthly.json'
 STATUS = ROOT / 'data/h2h-sync-status.json'
 CHANNEL = 'https://www.youtube.com/@hearts2hearts.official'
 CHANNEL_ID = 'UC7Q3HUnJA3nvjZR2JeMn2Cw'
+RSS_URL = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID
+ATOM_NS = '{http://www.w3.org/2005/Atom}'
+YT_NS = '{http://www.youtube.com/xml/schemas/2015}'
 UTC = timezone.utc
 
 def stamp(dt):
@@ -25,6 +30,43 @@ def scrape(tab):
     if not isinstance(entries, list) or not entries:
         raise RuntimeError('Daftar YouTube ' + tab + ' kosong/tidak valid')
     return entries
+
+def scrape_rss():
+    request = urllib.request.Request(
+        RSS_URL,
+        headers={'User-Agent': 'Mozilla/5.0 (compatible; BBMxH2H-Catalog/1.0)'}
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        root = ET.fromstring(response.read())
+
+    entries = []
+    for entry in root.findall(ATOM_NS + 'entry'):
+        channel_id = entry.findtext(YT_NS + 'channelId')
+        video_id = entry.findtext(YT_NS + 'videoId')
+        title = entry.findtext(ATOM_NS + 'title')
+        published_text = entry.findtext(ATOM_NS + 'published')
+        if channel_id != CHANNEL_ID or not video_id or not title or not published_text:
+            continue
+        try:
+            published = datetime.fromisoformat(published_text.replace('Z', '+00:00'))
+        except ValueError:
+            continue
+        entries.append({
+            'id': video_id,
+            'title': title,
+            'timestamp': published.timestamp(),
+            'channel_id': channel_id,
+            '_rss_fallback': True,
+        })
+    return entries
+
+
+def extract_video(video_id):
+    url = 'https://www.youtube.com/watch?v=' + video_id
+    cmd = ['yt-dlp', '--dump-single-json', '--no-warnings', '--skip-download', url]
+    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=120)
+    return json.loads(result.stdout)
+
 
 def normalize(raw, short):
     vid, title = raw.get('id'), raw.get('title')
@@ -85,6 +127,42 @@ def main():
         videos = {x['id']: x for x in archive['videos'] if isinstance(x, dict) and x.get('id')}
         shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id')}
         added_v, added_s = [], []
+
+        # The channel RSS feed is a second discovery path for uploads that may
+        # not have appeared yet in the /videos or /shorts tab extraction.
+        # Fetch full metadata only for IDs missing from both archive lists.
+        try:
+            rss_entries = scrape_rss()
+            rss_added = 0
+            for rss_item in rss_entries:
+                video_id = rss_item['id']
+                if video_id in videos or video_id in shorts:
+                    continue
+                try:
+                    metadata = extract_video(video_id)
+                    if metadata.get('channel_id') and metadata['channel_id'] != CHANNEL_ID:
+                        continue
+                    duration = metadata.get('duration')
+                    if duration is None:
+                        print('RSS fallback: duration unavailable for ' + video_id, file=sys.stderr)
+                        continue
+                    raw_item = {**metadata, **rss_item}
+                    is_short = float(duration) <= 180
+                    item = normalize(raw_item, is_short)
+                    if not item:
+                        continue
+                    target, added = (shorts, added_s) if is_short else (videos, added_v)
+                    target[video_id] = item
+                    added.append(video_id)
+                    rss_added += 1
+                    print('RSS fallback added ' + ('Short' if is_short else 'video') + ': ' + item['title'])
+                except Exception as rss_error:
+                    print('RSS fallback could not inspect ' + video_id + ': ' + str(rss_error)[:180], file=sys.stderr)
+            print('RSS fallback checked ' + str(len(rss_entries)) + ' entries; added ' + str(rss_added))
+        except Exception as rss_error:
+            # Keep the primary yt-dlp tab collection usable if YouTube RSS is
+            # temporarily unavailable.
+            print('RSS fallback unavailable: ' + str(rss_error)[:220], file=sys.stderr)
         for raw, is_short, target, added in ([(x, False, videos, added_v) for x in raw_videos] + [(x, True, shorts, added_s) for x in raw_shorts]):
             item = normalize(raw, is_short)
             if not item:
