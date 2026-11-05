@@ -136,6 +136,7 @@ export interface AppContextType {
   catalogShorts: YouTubeArchiveItem[];
   catalogStats: CatalogStats | null;
   catalogLastCheckedAt: Date | null;
+  catalogLastRefreshedAt: Date | null;
   catalogLoading: boolean;
   catalogRefreshing: boolean;
   refreshCatalog: (manual?: boolean) => Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }>;
@@ -243,6 +244,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   });
   const [catalogRefreshing, setCatalogRefreshing] = useState<boolean>(false);
   const [catalogLastCheckedAt, setCatalogLastCheckedAt] = useState<Date | null>(null);
+  // Waktu refresh katalog terakhir yang berhasil, mengikuti jam perangkat dan bertahan setelah aplikasi dibuka ulang.
+  const [catalogLastRefreshedAt, setCatalogLastRefreshedAt] = useState<Date | null>(() => {
+    try {
+      const saved = localStorage.getItem('bbm_catalog_last_successful_refresh_v1');
+      if (!saved) return null;
+      const parsed = new Date(saved);
+      return Number.isNaN(parsed.getTime()) ? null : parsed;
+    } catch {
+      return null;
+    }
+  });
   const lastCatalogFetchRef = useRef<number>(0);
   const inFlightFetchRef = useRef<Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }> | null>(null);
 
@@ -295,7 +307,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setCatalogShorts(processed.shorts);
         setCatalogStats(processed.stats);
         if (best.status === 'updated' || best.status === 'unchanged') {
-          lastCatalogFetchRef.current = Date.now();
+          const refreshedAt = new Date();
+          lastCatalogFetchRef.current = refreshedAt.getTime();
+          setCatalogLastRefreshedAt(refreshedAt);
+          try {
+            localStorage.setItem('bbm_catalog_last_successful_refresh_v1', refreshedAt.toISOString());
+          } catch {
+            // Timestamp tetap ditampilkan selama sesi aktif jika penyimpanan lokal tidak tersedia.
+          }
         }
         return { status: best.status, message: best.message, source: best.source };
       } catch (err: any) {
@@ -1120,6 +1139,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         catalogShorts,
         catalogStats,
         catalogLastCheckedAt,
+        catalogLastRefreshedAt,
         catalogLoading,
         catalogRefreshing,
         refreshCatalog,
