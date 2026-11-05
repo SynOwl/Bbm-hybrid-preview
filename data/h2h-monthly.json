@@ -1,12 +1,25 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-05T05:00:00Z",
+  "updatedAt": "2026-11-05T08:05:00Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "TgxtTjOCK3I",
+      "title": "daily routine",
+      "title_id": "daily routine",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-04T12:00:00Z",
+      "publishedDateOnly": true,
+      "url": "https://www.youtube.com/watch?v=TgxtTjOCK3I",
+      "thumbnail": "https://img.youtube.com/vi/TgxtTjOCK3I/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "2ISiz1gSCvQ",
       "title": "it's basically christmas already",
