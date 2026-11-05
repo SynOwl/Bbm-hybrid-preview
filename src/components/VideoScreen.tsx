@@ -132,7 +132,13 @@ export const VideoScreen: React.FC = () => {
             onClick={handleRefreshClick}
             disabled={catalogRefreshing || catalogLoading}
           >
-            {catalogRefreshing ? '⏳ Memeriksa Mirror...' : '🔄 Refresh Katalog'}
+            {catalogRefreshing ? '⏳ Memeriksa Mirror...' : '🔄 Refresh Katalog'} ·{' '}
+            {deviceNow.toLocaleTimeString('id-ID', {
+              timeZone: 'Asia/Jakarta',
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false,
+            })}{' '}WIB
           </button>
         </div>
 
