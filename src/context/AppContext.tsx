@@ -244,6 +244,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const lastCatalogFetchRef = useRef<number>(0);
   const inFlightFetchRef = useRef<Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }> | null>(null);
 
+  // Referensi layar aktif agar polling katalog 5 menit hanya berjalan saat halaman Video terbuka.
+  const activeScreenRef = useRef<ScreenId>(screen);
+  useEffect(() => {
+    activeScreenRef.current = screen;
+  }, [screen]);
+
   const refreshCatalog = useCallback(async (manual = false): Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }> => {
     // 1. Proteksi konkurensi (Koreksi 2): Jika sedang ada proses fetch yang berjalan, hindari request duplikat!
     if (inFlightFetchRef.current) {
@@ -572,6 +578,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         void refreshCatalog(false);
       }
     }, 15 * 60 * 1000);
+    // Saat pengguna sedang membuka Video, periksa katalog lebih sering (setiap 5 menit).
+    // Pemeriksaan hanya berjalan ketika tab aplikasi terlihat; debounce 5 menit dan
+    // proteksi in-flight di refreshCatalog mencegah request yang bertumpuk.
+    const videoCatalogIntervalId = window.setInterval(() => {
+      if (document.visibilityState === 'visible' && activeScreenRef.current === 's-video') {
+        void refreshCatalog(false);
+      }
+    }, 5 * 60 * 1000);
     window.addEventListener('focus', onResume);
     window.addEventListener('online', onOnline);
     document.addEventListener('visibilitychange', onResume);
@@ -580,6 +594,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       disposed = true;
       window.clearInterval(intervalId);
       window.clearInterval(catalogIntervalId);
+      window.clearInterval(videoCatalogIntervalId);
       window.removeEventListener('focus', onResume);
       window.removeEventListener('online', onOnline);
       document.removeEventListener('visibilitychange', onResume);
