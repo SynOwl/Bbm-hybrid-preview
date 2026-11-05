@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { YouTubeArchiveItem } from '../types';
 import { suaraKlik } from '../utils/audio';
@@ -11,6 +11,7 @@ export const VideoScreen: React.FC = () => {
     catalogVideos,
     catalogShorts,
     catalogStats,
+    catalogLastCheckedAt,
     catalogLoading,
     catalogRefreshing,
     refreshCatalog,
@@ -19,6 +20,25 @@ export const VideoScreen: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'videos' | 'shorts'>('shorts');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [limit, setLimit] = useState<number>(24);
+
+  // Jam perangkat diperbarui berkala agar waktu yang terlihat tidak membeku.
+  const [deviceNow, setDeviceNow] = useState<Date>(() => new Date());
+  useEffect(() => {
+    const clockId = window.setInterval(() => setDeviceNow(new Date()), 30_000);
+    return () => window.clearInterval(clockId);
+  }, []);
+
+  // Semua waktu status ditampilkan eksplisit dalam zona waktu WIB.
+  const formatWaktuWIB = (date: Date): string =>
+    date.toLocaleString('id-ID', {
+      timeZone: 'Asia/Jakarta',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }) + ' WIB';
 
   // Format tanggal dalam bahasa Indonesia
   const formatTanggal = (date: Date): string => {
@@ -94,11 +114,17 @@ export const VideoScreen: React.FC = () => {
             <div style={{ fontSize: '11px', opacity: 0.85, marginTop: '2px' }}>
               Jendela 31 hari: {formatTanggal(cutoff)} – {formatTanggal(now)}
             </div>
-            {catalogStats?.updatedAt && (
-              <div style={{ fontSize: '10px', opacity: 0.75, marginTop: '2px' }}>
-                Update: {new Date(catalogStats.updatedAt).toLocaleString('id-ID')}
-              </div>
-            )}
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '4px' }}>
+              🗂️ Katalog terakhir diperbarui: {catalogStats?.updatedAt && !Number.isNaN(new Date(catalogStats.updatedAt).getTime())
+                ? formatWaktuWIB(new Date(catalogStats.updatedAt))
+                : 'Belum diketahui'}
+            </div>
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
+              🔄 Pemeriksaan aplikasi terakhir: {catalogLastCheckedAt ? formatWaktuWIB(catalogLastCheckedAt) : 'Menunggu pemeriksaan pertama'}
+            </div>
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
+              🕒 Jam perangkat: {formatWaktuWIB(deviceNow)}
+            </div>
           </div>
           <button
             type="button"
