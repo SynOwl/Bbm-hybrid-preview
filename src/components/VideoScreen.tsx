@@ -28,7 +28,7 @@ export const VideoScreen: React.FC = () => {
     let active = true;
     const loadSyncStatus = async () => {
       try {
-        const response = await fetch(`/data/h2h-sync-status.json?t=${Date.now()}`, { cache: 'no-store' });
+        const response = await fetch(`${import.meta.env.BASE_URL}data/h2h-sync-status.json?t=${Date.now()}`, { cache: 'no-store' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         if (active && data && typeof data === 'object') setSyncStatus(data);
