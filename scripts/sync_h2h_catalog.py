@@ -42,8 +42,10 @@ def scrape_shorts_playlist():
     return [x for x in entries if not x.get('channel_id') or x.get('channel_id') == CHANNEL_ID]
 
 
-def extract_video(video_id):
-    url = 'https://www.youtube.com/watch?v=' + video_id
+def extract_video(video_id, is_short=False):
+    # Use the Shorts URL form for Shorts; some entries in the generated UUSH
+    # playlist do not resolve correctly through the watch?v= URL form.
+    url = ('https://www.youtube.com/shorts/' if is_short else 'https://www.youtube.com/watch?v=') + video_id
     cmd = ['yt-dlp', '--dump-single-json', '--no-warnings', '--skip-download', url]
     result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=120)
     return json.loads(result.stdout)
@@ -136,7 +138,7 @@ def main():
                 # New flat-playlist entries sometimes omit all date fields.
                 # Enrich only new candidates with full official YouTube metadata.
                 try:
-                    metadata = extract_video(str(raw['id']))
+                    metadata = extract_video(str(raw['id']), is_short)
                     merged = dict(metadata)
                     for key, value in raw.items():
                         if value not in (None, ''):
@@ -148,7 +150,8 @@ def main():
                     if item:
                         print('Enriched new ' + ('Short' if is_short else 'video') + ' metadata: ' + item['title'])
                 except Exception as metadata_error:
-                    print('Could not enrich new candidate ' + str(raw['id']) + ': ' + str(metadata_error)[:180], file=sys.stderr)
+                    detail = getattr(metadata_error, 'stderr', None) or str(metadata_error)
+                    print('Could not enrich new candidate ' + str(raw['id']) + ': ' + str(detail)[:500], file=sys.stderr)
             if not item:
                 print('Skipping invalid catalog entry: ' + str(raw.get('id')) + ' | ' + str(raw.get('title')) +
                       ' | timestamp=' + str(raw.get('timestamp')) + ' | upload_date=' + str(raw.get('upload_date')),
