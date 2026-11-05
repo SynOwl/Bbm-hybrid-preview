@@ -111,6 +111,9 @@ export const VideoScreen: React.FC = () => {
     );
   };
 
+  const now = new Date();
+  const cutoff = new Date(now.getTime() - 31 * 24 * 60 * 60 * 1000);
+
   return (
     <div className="screen">
       <div className="head">🎬 Galeri Video & Shorts H2H</div>
