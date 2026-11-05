@@ -11,8 +11,6 @@ export const VideoScreen: React.FC = () => {
     catalogVideos,
     catalogShorts,
     catalogStats,
-    catalogLastCheckedAt,
-    catalogLastRefreshedAt,
     catalogLoading,
     catalogRefreshing,
     refreshCatalog,
@@ -22,12 +20,34 @@ export const VideoScreen: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [limit, setLimit] = useState<number>(24);
 
-  // Jam perangkat diperbarui berkala agar waktu yang terlihat tidak membeku.
-  const [deviceNow, setDeviceNow] = useState<Date>(() => new Date());
+  type SyncStatus = { status?: string; message?: string; checkedAt?: string | null; completedAt?: string | null; catalogUpdatedAt?: string | null; newVideos?: number; newShorts?: number };
+  const [syncStatus, setSyncStatus] = useState<SyncStatus | null>(null);
+
+  // Status dan waktu sinkronisasi berasal dari metadata GitHub, bukan jam HP.
   useEffect(() => {
-    const clockId = window.setInterval(() => setDeviceNow(new Date()), 30_000);
-    return () => window.clearInterval(clockId);
+    let active = true;
+    const loadSyncStatus = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.BASE_URL}data/h2h-sync-status.json?t=${Date.now()}`, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (active && data && typeof data === 'object') setSyncStatus(data);
+      } catch (error) {
+        console.warn('Status sinkronisasi GitHub belum dapat dibaca:', error);
+      }
+    };
+    loadSyncStatus();
+    const timer = window.setInterval(loadSyncStatus, 5 * 60 * 1000);
+    return () => { active = false; window.clearInterval(timer); };
   }, []);
+
+  const statusLabel = syncStatus?.status === 'updated'
+    ? '✅ Katalog GitHub diperbarui'
+    : syncStatus?.status === 'no_changes'
+      ? 'ℹ️ Belum ada update baru di YouTube'
+      : syncStatus?.status === 'failed'
+        ? '⚠️ Sinkronisasi YouTube gagal'
+        : '⏳ Menunggu pemeriksaan GitHub pertama';
 
   // Semua waktu status ditampilkan eksplisit dalam zona waktu WIB.
   const formatWaktuWIB = (date: Date): string =>
@@ -115,16 +135,20 @@ export const VideoScreen: React.FC = () => {
             <div style={{ fontSize: '11px', opacity: 0.85, marginTop: '2px' }}>
               Jendela 31 hari: {formatTanggal(cutoff)} – {formatTanggal(now)}
             </div>
-            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '4px' }}>
-              🗂️ Katalog terakhir diperbarui: {catalogLastRefreshedAt
-                ? formatWaktuWIB(catalogLastRefreshedAt)
-                : 'Menunggu refresh berhasil'}
+            <div style={{ fontSize: '10px', opacity: 0.95, marginTop: '5px', fontWeight: 700 }}>
+              {statusLabel}
+            </div>
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '3px' }}>
+              🛰️ Pemeriksaan YouTube (server): {syncStatus?.checkedAt ? formatWaktuWIB(new Date(syncStatus.checkedAt)) : 'Belum tersedia'}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
-              🔄 Pemeriksaan aplikasi terakhir: {catalogLastCheckedAt ? formatWaktuWIB(catalogLastCheckedAt) : 'Menunggu pemeriksaan pertama'}
+              ☁️ Sinkronisasi GitHub selesai: {syncStatus?.completedAt ? formatWaktuWIB(new Date(syncStatus.completedAt)) : 'Belum tersedia'}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
-              🕒 Jam perangkat: {formatWaktuWIB(deviceNow)}
+              📲 Versi katalog yang dimuat aplikasi: {catalogStats?.updatedAt ? formatWaktuWIB(new Date(catalogStats.updatedAt)) : 'Belum ada katalog'}
+            </div>
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
+              {syncStatus?.message || 'Menunggu status sinkronisasi dari GitHub.'}
             </div>
           </div>
           <button
@@ -133,13 +157,7 @@ export const VideoScreen: React.FC = () => {
             onClick={handleRefreshClick}
             disabled={catalogRefreshing || catalogLoading}
           >
-            {catalogRefreshing ? '⏳ Memeriksa Mirror...' : '🔄 Refresh Katalog'} ·{' '}
-            {deviceNow.toLocaleTimeString('id-ID', {
-              timeZone: 'Asia/Jakarta',
-              hour: '2-digit',
-              minute: '2-digit',
-              hour12: false,
-            })}{' '}WIB
+            {catalogRefreshing ? '⏳ Memeriksa GitHub...' : '🔄 Ambil Katalog GitHub'}
           </button>
         </div>
 
