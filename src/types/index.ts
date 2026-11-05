@@ -74,6 +74,8 @@ export interface H2HEvent {
 }
 
 export interface H2HMember {
+  photoUrl?: string;
+  photoGallery?: string[];
   id: string;
   nama: string;
   hangul: string;
@@ -141,4 +143,27 @@ export interface LocalVideoItem {
   thumb?: string;
   label: string;
   folder: string;
+}
+
+
+export interface H2HProfile {
+  schemaVersion: number;
+  updatedAt: string;
+  source: string;
+  sourceUrl: string;
+  group: {
+    name: string;
+    hangul: string;
+    logoUrl: string;
+    groupPhotoUrl: string;
+    debutDate: string;
+    agency: string;
+    memberCount: number;
+    fandom: string;
+    summary: string;
+    concept: string;
+    history: Array<{ year: string; items: string[] }>;
+    discography: Array<{ title: string; description: string }>;
+  };
+  members: H2HMember[];
 }

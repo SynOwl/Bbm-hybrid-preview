@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, subprocess, sys
+import json, os, subprocess, sys, urllib.parse, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
@@ -11,6 +11,66 @@ CHANNEL = 'https://www.youtube.com/@hearts2hearts.official'
 CHANNEL_ID = 'UC7Q3HUnJA3nvjZR2JeMn2Cw'
 SHORTS_PLAYLIST_ID = 'UUSH' + CHANNEL_ID[2:]
 UTC = timezone.utc
+YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY', '').strip()
+YOUTUBE_API = 'https://www.googleapis.com/youtube/v3'
+
+def api_get(endpoint, params):
+    query = dict(params)
+    query['key'] = YOUTUBE_API_KEY
+    url = YOUTUBE_API + '/' + endpoint + '?' + urllib.parse.urlencode(query)
+    try:
+        with urllib.request.urlopen(url, timeout=35) as response:
+            return json.loads(response.read().decode('utf-8'))
+    except urllib.error.HTTPError as exc:
+        raise RuntimeError('YouTube Data API ' + endpoint + ' returned HTTP ' + str(exc.code)) from None
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        raise RuntimeError('YouTube Data API ' + endpoint + ' request failed: ' + type(exc).__name__) from None
+
+def api_uploads_playlist():
+    data = api_get('channels', {'part': 'snippet,contentDetails', 'id': CHANNEL_ID})
+    items = data.get('items') or []
+    if len(items) != 1 or items[0].get('id') != CHANNEL_ID:
+        raise RuntimeError('YouTube Data API tidak mengonfirmasi channel ID resmi')
+    playlist_id = items[0].get('contentDetails', {}).get('relatedPlaylists', {}).get('uploads')
+    if not playlist_id:
+        raise RuntimeError('Uploads playlist resmi tidak ditemukan')
+    return playlist_id
+
+def api_playlist_entries(playlist_id, max_pages=4):
+    video_ids, page_token = [], None
+    for _ in range(max_pages):
+        params = {'part': 'snippet,contentDetails', 'playlistId': playlist_id, 'maxResults': 50}
+        if page_token:
+            params['pageToken'] = page_token
+        data = api_get('playlistItems', params)
+        for entry in data.get('items') or []:
+            snippet = entry.get('snippet') or {}
+            video_id = (entry.get('contentDetails') or {}).get('videoId') or (snippet.get('resourceId') or {}).get('videoId')
+            if video_id and snippet.get('channelId') in (None, CHANNEL_ID):
+                video_ids.append(str(video_id))
+        page_token = data.get('nextPageToken')
+        if not page_token:
+            break
+    video_ids = list(dict.fromkeys(video_ids))
+    result = []
+    for offset in range(0, len(video_ids), 50):
+        batch = video_ids[offset:offset + 50]
+        details = api_get('videos', {'part': 'snippet,contentDetails', 'id': ','.join(batch)})
+        for video in details.get('items') or []:
+            snippet = video.get('snippet') or {}
+            if video.get('id') and snippet.get('channelId') == CHANNEL_ID:
+                published_at = snippet.get('publishedAt')
+                timestamp = None
+                if published_at:
+                    try:
+                        timestamp = datetime.fromisoformat(published_at.replace('Z', '+00:00')).timestamp()
+                    except (TypeError, ValueError):
+                        timestamp = None
+                result.append({'id': video['id'], 'title': snippet.get('title'),
+                    'channel_id': snippet.get('channelId'), 'timestamp': timestamp,
+                    'release_timestamp': timestamp})
+    return result
+
 
 def stamp(dt):
     return dt.astimezone(UTC).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
@@ -106,7 +166,34 @@ def main():
             raise RuntimeError('Arsip bukan kanal Hearts2Hearts resmi')
         if not isinstance(archive.get('videos'), list) or not isinstance(archive.get('shorts'), list):
             raise RuntimeError('Struktur arsip tidak valid')
-        raw_videos, raw_shorts = scrape('videos'), scrape('shorts')
+        api_status = 'not_configured'
+        collection_source = 'yt-dlp'
+        if YOUTUBE_API_KEY:
+            api_status = 'configured'
+            try:
+                uploads_playlist = api_uploads_playlist()
+                raw_videos = api_playlist_entries(uploads_playlist, max_pages=3)
+                if not raw_videos:
+                    raise RuntimeError('Uploads playlist API kosong/tidak valid')
+                collection_source = 'YouTube Data API v3'
+                api_status = 'videos_ok'
+                print('Videos source: YouTube Data API v3; verified channel ' + CHANNEL_ID)
+            except Exception as api_error:
+                print('YouTube Data API videos unavailable; using yt-dlp fallback: ' + str(api_error)[:220], file=sys.stderr)
+                raw_videos = scrape('videos')
+                api_status = 'failed_fallback'
+            try:
+                raw_shorts = api_playlist_entries(SHORTS_PLAYLIST_ID, max_pages=5)
+                if not raw_shorts:
+                    raise RuntimeError('Playlist Shorts resmi tidak tersedia melalui API')
+                print('Shorts source: official UUSH playlist via YouTube Data API v3')
+                api_status = 'videos_and_shorts_ok' if api_status == 'videos_ok' else api_status
+            except Exception as api_error:
+                print('YouTube Data API Shorts playlist unavailable; using verified yt-dlp discovery fallback: ' + str(api_error)[:220], file=sys.stderr)
+                raw_shorts = scrape('shorts')
+                api_status = 'shorts_fallback' if api_status == 'videos_ok' else api_status
+        else:
+            raw_videos, raw_shorts = scrape('videos'), scrape('shorts')
         videos = {x['id']: x for x in archive['videos'] if isinstance(x, dict) and x.get('id')}
         shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id')}
         added_v, added_s = [], []
@@ -114,16 +201,17 @@ def main():
         # Merge the channel Shorts tab with YouTube's generated Shorts-only
         # playlist. The playlist often exposes the newest Shorts before the
         # channel tab extractor catches up; IDs are deduplicated below.
-        try:
-            playlist_shorts = scrape_shorts_playlist()
-            by_id = {x.get('id'): x for x in raw_shorts if x.get('id')}
-            for entry in playlist_shorts:
-                if entry.get('id'):
-                    by_id[entry['id']] = entry
-            raw_shorts = list(by_id.values())
-            print('Shorts sources: channel tab + official UUSH playlist; merged ' + str(len(raw_shorts)) + ' unique entries')
-        except Exception as playlist_error:
-            print('Official UUSH Shorts playlist unavailable; keeping channel tab results: ' + str(playlist_error)[:220], file=sys.stderr)
+        if not (YOUTUBE_API_KEY and api_status == 'videos_and_shorts_ok'):
+            try:
+                playlist_shorts = scrape_shorts_playlist()
+                by_id = {x.get('id'): x for x in raw_shorts if x.get('id')}
+                for entry in playlist_shorts:
+                    if entry.get('id'):
+                        by_id[entry['id']] = entry
+                raw_shorts = list(by_id.values())
+                print('Shorts sources: channel tab + official UUSH playlist; merged ' + str(len(raw_shorts)) + ' unique entries')
+            except Exception as playlist_error:
+                print('Official UUSH Shorts playlist unavailable; keeping channel tab results: ' + str(playlist_error)[:220], file=sys.stderr)
 
         new_short_candidates = [
             {'id': x.get('id'), 'title': x.get('title'), 'timestamp': x.get('timestamp'),
@@ -201,7 +289,7 @@ def main():
                 'message': 'Katalog GitHub diperbarui dari kanal YouTube resmi.' if new_uploads else 'Pemeriksaan berhasil; belum ada upload baru.',
                 'checkedAt': stamp(started), 'completedAt': stamp(now), 'catalogUpdatedAt': archive.get('updatedAt'),
                 'newVideos': len(added_v), 'newShorts': len(added_s), 'newVideoIds': added_v, 'newShortIds': added_s,
-                'archiveVideos': len(all_v), 'archiveShorts': len(all_s), 'monthlyItems': len(monthly), 'channelId': CHANNEL_ID}
+                'archiveVideos': len(all_v), 'archiveShorts': len(all_s), 'monthlyItems': len(monthly), 'channelId': CHANNEL_ID, 'apiKeyConfigured': bool(YOUTUBE_API_KEY), 'apiStatus': api_status, 'collectionSource': collection_source}
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(status, ensure_ascii=False))
         return 0
@@ -213,7 +301,7 @@ def main():
             status = {'schemaVersion': 1, 'status': 'failed',
                 'message': 'Sinkronisasi gagal: ' + str(exc)[:250], 'checkedAt': stamp(started),
                 'completedAt': stamp(now), 'catalogUpdatedAt': previous.get('catalogUpdatedAt'),
-                'newVideos': 0, 'newShorts': 0, 'channelId': CHANNEL_ID}
+                'newVideos': 0, 'newShorts': 0, 'channelId': CHANNEL_ID, 'apiKeyConfigured': bool(YOUTUBE_API_KEY), 'apiStatus': 'failed'}
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(status, ensure_ascii=False), file=sys.stderr)
         return 1
