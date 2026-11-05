@@ -8,8 +8,9 @@ export interface RawCatalogData {
     id?: string;
     url?: string;
   };
+  // Monthly catalog combines videos and Shorts in videos[]; archive uses both arrays.
   videos: any[];
-  shorts: any[];
+  shorts?: any[];
 }
 
 export interface CatalogStats {
@@ -34,22 +35,32 @@ const STORAGE_KEY_FETCH_TIME = 'bbm_cached_h2h_archive_fetch_time_v5';
 
 // Mirror endpoints disusun tanpa header kustom non-safelisted agar tidak memicu HTTP OPTIONS Preflight
 export const MIRROR_SOURCES = [
+  // Prefer the 31-day catalog; its videos[] includes Shorts marked isShort/kind.
   {
-    name: 'GitHub Pages',
-    url: 'https://synowl.github.io/Bbm-hybrid-preview/data/h2h-archive.json',
+    name: 'GitHub Raw (Katalog 31 Hari)',
+    url: 'https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/data/h2h-monthly.json',
   },
   {
-    name: 'GitHub API Raw',
-    url: 'https://api.github.com/repos/SynOwl/Bbm-hybrid-preview/contents/data/h2h-archive.json?ref=main',
+    name: 'jsDelivr (Katalog 31 Hari)',
+    url: 'https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@main/data/h2h-monthly.json',
+  },
+  {
+    name: 'GitHub Pages (Katalog 31 Hari)',
+    url: 'https://synowl.github.io/Bbm-hybrid-preview/data/h2h-monthly.json',
+  },
+  {
+    name: 'GitHub API Raw (Katalog 31 Hari)',
+    url: 'https://api.github.com/repos/SynOwl/Bbm-hybrid-preview/contents/data/h2h-monthly.json?ref=main',
     headers: { Accept: 'application/vnd.github.raw+json' },
   },
+  // Full archive remains a fallback if the monthly catalog is unavailable.
   {
-    name: 'jsDelivr CDN',
-    url: 'https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@main/data/h2h-archive.json',
+    name: 'GitHub Raw (Arsip Cadangan)',
+    url: 'https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/data/h2h-archive.json',
   },
   {
-    name: 'raw.githubusercontent.com',
-    url: 'https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/data/h2h-archive.json',
+    name: 'jsDelivr (Arsip Cadangan)',
+    url: 'https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@main/data/h2h-archive.json',
   },
 ];
 
@@ -70,7 +81,8 @@ export function isValidIsoDate(dateStr: unknown): boolean {
 export function validateCatalogStructure(json: any): json is RawCatalogData {
   if (!json || typeof json !== 'object') return false;
   if (!isValidIsoDate(json.updatedAt)) return false;
-  if (!Array.isArray(json.videos) || !Array.isArray(json.shorts)) return false;
+  if (!Array.isArray(json.videos)) return false;
+  if (json.shorts !== undefined && !Array.isArray(json.shorts)) return false;
   return true;
 }
 
@@ -170,25 +182,21 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
 
   // Kasus 1 & 2: Setidaknya ada satu mirror online yang berhasil diakses
   if (bestOnline) {
-    // If the online catalog contains either restored Short missing from the local cache,
-    // refresh even when the local updatedAt timestamp is newer.
-    const onlineHasId1 = bestOnline.data.shorts.some((s: any) => s?.id === 'KLUCXIGvx0c');
-    const onlineHasId2 = bestOnline.data.shorts.some((s: any) => s?.id === 'nl-YbxNFlGk');
-    const cacheHasId1 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'KLUCXIGvx0c'));
-    const cacheHasId2 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'nl-YbxNFlGk'));
-    const onlineRepairsMissingShorts =
-      (onlineHasId1 && !cacheHasId1) || (onlineHasId2 && !cacheHasId2);
+    // Equal updatedAt timestamps can still contain different items.
+    const onlineContentChanged = Boolean(
+      existingCache && JSON.stringify(bestOnline.data) !== JSON.stringify(existingCache)
+    );
 
-    // 'updated': newer online catalog, or online catalog repairs missing Shorts.
-    if (bestOnline.timestamp > cachedTime || onlineRepairsMissingShorts) {
+    // Prefer newer online data, or changed online content with the same timestamp.
+    if (bestOnline.timestamp > cachedTime || (bestOnline.timestamp === cachedTime && onlineContentChanged)) {
       simpanKeLocalStorageAman(bestOnline.data);
       fetchResult = {
         status: 'updated',
         data: bestOnline.data,
         source: bestOnline.source,
         isNewer: true,
-        message: onlineRepairsMissingShorts
-          ? `Katalog diperbaiki dari ${bestOnline.source}; Shorts yang hilang dipulihkan.`
+        message: onlineContentChanged && bestOnline.timestamp === cachedTime
+          ? `Isi katalog disegarkan dari ${bestOnline.source}.`
           : `Katalog berhasil diperbarui dari ${bestOnline.source}.`,
       };
     } else {
@@ -388,8 +396,14 @@ export function filterAndProcessCatalog(
     return list;
   };
 
-  const videos = processCategory(raw.videos, false);
-  const shorts = processCategory(raw.shorts, true);
+  // Monthly JSON combines all items in videos[]; archive JSON separates Shorts.
+  const combined = [
+    ...(Array.isArray(raw.videos) ? raw.videos : []),
+    ...(Array.isArray(raw.shorts) ? raw.shorts : []),
+  ];
+  const unique = Array.from(new Map(combined.filter((x: any) => x?.id).map((x: any) => [x.id, x])).values());
+  const videos = processCategory(unique.filter((x: any) => !(x.isShort === true || x.kind === 'short')), false);
+  const shorts = processCategory(unique.filter((x: any) => x.isShort === true || x.kind === 'short'), true);
 
   const stats: CatalogStats = {
     updatedAt: raw.updatedAt,
