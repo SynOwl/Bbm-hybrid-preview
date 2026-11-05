@@ -294,15 +294,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       try {
         const best = await fetchBestCatalogFromMirrors();
         const processed = filterAndProcessCatalog(best.data, best.source);
-        const hasId1InContext = processed.shorts.some((s) => s.id === 'KLUCXIGvx0c');
-        const hasId2InContext = processed.shorts.some((s) => s.id === 'nl-YbxNFlGk');
-        if (typeof window !== 'undefined') {
-          console.log('5. AppContext catalogShorts diperbarui:', {
-            shortsCount: processed.shorts.length,
-            hasKLUCXIGvx0c: hasId1InContext,
-            hasNlYbxNFlGk: hasId2InContext,
-          });
-        }
         setCatalogVideos(processed.videos);
         setCatalogShorts(processed.shorts);
         setCatalogStats(processed.stats);
