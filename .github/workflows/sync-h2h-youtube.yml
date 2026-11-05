@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '*/10 * * * *'
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/sync-h2h-youtube.yml'
+      - 'scripts/sync_h2h_catalog.py'
   # Run once when the sync implementation itself changes. Catalog data commits
   # are intentionally excluded to prevent a self-triggering loop.
   push:
@@ -30,7 +34,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 1
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,8 +46,20 @@ jobs:
         id: sync
         continue-on-error: true
         run: python scripts/sync_h2h_catalog.py
+      - name: Verify YouTube Data API integration on pull requests
+        if: github.event_name == 'pull_request'
+        run: |
+          python - <<'PY'
+          import json, os
+          status = json.load(open('data/h2h-sync-status.json', encoding='utf-8'))
+          if not os.environ.get('YOUTUBE_API_KEY'):
+              raise SystemExit('YOUTUBE_API_KEY secret is unavailable to this workflow run')
+          if status.get('apiStatus') not in ('videos_ok', 'videos_and_shorts_ok', 'shorts_fallback'):
+              raise SystemExit('YouTube Data API did not successfully retrieve the official uploads playlist: ' + str(status.get('apiStatus')))
+          print('YouTube Data API verified; status=' + str(status.get('apiStatus')))
+          PY
       - name: Commit only catalog data files to main
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
