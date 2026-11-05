@@ -166,7 +166,7 @@ def main():
             raise RuntimeError('Arsip bukan kanal Hearts2Hearts resmi')
         if not isinstance(archive.get('videos'), list) or not isinstance(archive.get('shorts'), list):
             raise RuntimeError('Struktur arsip tidak valid')
-api_status = 'not_configured'
+        api_status = 'not_configured'
         collection_source = 'yt-dlp'
         if YOUTUBE_API_KEY:
             api_status = 'configured'
