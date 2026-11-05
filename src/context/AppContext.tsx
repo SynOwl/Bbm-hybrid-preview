@@ -135,6 +135,7 @@ export interface AppContextType {
   catalogVideos: YouTubeArchiveItem[];
   catalogShorts: YouTubeArchiveItem[];
   catalogStats: CatalogStats | null;
+  catalogLastCheckedAt: Date | null;
   catalogLoading: boolean;
   catalogRefreshing: boolean;
   refreshCatalog: (manual?: boolean) => Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }>;
@@ -241,6 +242,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return ambilDariLocalStorageAman() === null;
   });
   const [catalogRefreshing, setCatalogRefreshing] = useState<boolean>(false);
+  const [catalogLastCheckedAt, setCatalogLastCheckedAt] = useState<Date | null>(null);
   const lastCatalogFetchRef = useRef<number>(0);
   const inFlightFetchRef = useRef<Promise<{ status: 'updated' | 'unchanged' | 'failed'; message: string; source?: string }> | null>(null);
 
@@ -309,6 +311,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         }
         return { status: 'failed', message: err.message || 'Katalog gagal dimuat.' };
       } finally {
+        setCatalogLastCheckedAt(new Date());
         setCatalogLoading(false);
         setCatalogRefreshing(false);
         inFlightFetchRef.current = null;
@@ -1116,6 +1119,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         catalogVideos,
         catalogShorts,
         catalogStats,
+        catalogLastCheckedAt,
         catalogLoading,
         catalogRefreshing,
         refreshCatalog,
