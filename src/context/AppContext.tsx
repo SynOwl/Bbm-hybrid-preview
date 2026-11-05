@@ -128,7 +128,10 @@ export interface AppContextType {
   openLightbox: (src: string) => void;
   closeLightbox: () => void;
   videoModal: { show: boolean; src: string; title: string; isYouTube: boolean; youtubeId?: string };
-  openVideoPlayer: (src: string, title?: string, isYouTube?: boolean, youtubeId?: string) => void;
+  videoQueue: YouTubeArchiveItem[];
+  currentVideoIndex: number;
+  openVideoPlayer: (src: string, title?: string, isYouTube?: boolean, youtubeId?: string, queue?: YouTubeArchiveItem[], index?: number) => void;
+  navigateVideo: (direction: -1 | 1) => void;
   closeVideoPlayer: () => void;
   activeGameMode: 'waktu' | 'seru';
   setActiveGameMode: (mode: 'waktu' | 'seru') => void;
@@ -225,6 +228,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     title: '',
     isYouTube: false,
   });
+  const [videoQueue, setVideoQueue] = useState<YouTubeArchiveItem[]>([]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(-1);
 
   // Katalog YouTube & Shorts: Inisialisasi instan dari cache lokal jika tersedia
   const [catalogVideos, setCatalogVideos] = useState<YouTubeArchiveItem[]>(() => {
@@ -1117,18 +1122,30 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setLightbox({ show: false, src: '' });
   };
 
-  const openVideoPlayer = (src: string, title?: string, isYouTube = false, youtubeId?: string) => {
+  const openVideoPlayer = (src: string, title?: string, isYouTube = false, youtubeId?: string, queue: YouTubeArchiveItem[] = [], index = -1) => {
+    setVideoQueue(queue);
+    setCurrentVideoIndex(index);
+    setVideoModal({ show: true, src, title: title || 'Video H2H', isYouTube, youtubeId });
+  };
+
+  const navigateVideo = (direction: -1 | 1) => {
+    const nextIndex = currentVideoIndex + direction;
+    if (nextIndex < 0 || nextIndex >= videoQueue.length) return;
+    const next = videoQueue[nextIndex];
+    setCurrentVideoIndex(nextIndex);
     setVideoModal({
       show: true,
-      src,
-      title: title || 'Video H2H',
-      isYouTube,
-      youtubeId,
+      src: `https://www.youtube.com/watch?v=${next.id}`,
+      title: next.title,
+      isYouTube: true,
+      youtubeId: next.id,
     });
   };
 
   const closeVideoPlayer = () => {
     setVideoModal({ show: false, src: '', title: '', isYouTube: false });
+    setVideoQueue([]);
+    setCurrentVideoIndex(-1);
   };
 
   return (
@@ -1205,7 +1222,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         openLightbox,
         closeLightbox,
         videoModal,
+        videoQueue,
+        currentVideoIndex,
         openVideoPlayer,
+        navigateVideo,
         closeVideoPlayer,
         activeGameMode,
         setActiveGameMode,
