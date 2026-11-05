@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-05T05:00:00Z",
+  "updatedAt": "2026-11-05T08:05:00Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -2573,6 +2573,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "TgxtTjOCK3I",
+      "title": "daily routine",
+      "title_id": "daily routine",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-04T12:00:00Z",
+      "publishedDateOnly": true,
+      "url": "https://www.youtube.com/watch?v=TgxtTjOCK3I",
+      "thumbnail": "https://img.youtube.com/vi/TgxtTjOCK3I/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "2ISiz1gSCvQ",
       "title": "it's basically christmas already",
