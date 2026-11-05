@@ -16,7 +16,6 @@ export const VideoScreen: React.FC = () => {
     refreshCatalog,
   } = useApp();
 
-  const [activeCategory, setActiveCategory] = useState<'videos' | 'shorts'>('shorts');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [limit, setLimit] = useState<number>(24);
 
@@ -98,7 +97,10 @@ export const VideoScreen: React.FC = () => {
     }
   };
 
-  const currentList = activeCategory === 'videos' ? catalogVideos : catalogShorts;
+  // Video biasa dan Shorts ditampilkan dalam satu feed, tanpa duplikasi, terbaru lebih dulu.
+  const currentList = Array.from(
+    new Map([...catalogVideos, ...catalogShorts].map((item) => [item.id, item])).values()
+  ).sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime());
   const filteredList = currentList.filter((item) =>
     searchQuery.trim() ? item.title.toLowerCase().includes(searchQuery.toLowerCase()) : true
   );
@@ -123,10 +125,9 @@ export const VideoScreen: React.FC = () => {
 
   return (
     <div className="screen">
-      <div className="head">🎬 Galeri Video & Shorts H2H</div>
+      <div className="head">🎬 Galeri Video H2H</div>
       <div className="info">
-        Koleksi video dan Shorts resmi kanal Hearts2Hearts langsung dari arsip GitHub terbaru.
-        Konten otomatis diurutkan dari yang paling baru 💖
+        Semua video resmi Hearts2Hearts, termasuk Shorts dan MV, ada dalam satu daftar dan diurutkan dari yang paling baru 💖
       </div>
 
       <section style={{ margin: '14px 0' }}>
@@ -170,37 +171,11 @@ export const VideoScreen: React.FC = () => {
 
 
 
-        {/* Tab Kategori Shorts vs Video (Shorts dibuka default agar langsung terlihat update terbaru) */}
-        <div className="yt-tabs" role="tablist">
-          <button
-            type="button"
-            className={`yt-tab ${activeCategory === 'shorts' ? 'active' : ''}`}
-            onClick={() => {
-              suaraKlik();
-              setActiveCategory('shorts');
-              setLimit(24);
-            }}
-          >
-            📱 Shorts ({catalogShorts.length})
-          </button>
-          <button
-            type="button"
-            className={`yt-tab ${activeCategory === 'videos' ? 'active' : ''}`}
-            onClick={() => {
-              suaraKlik();
-              setActiveCategory('videos');
-              setLimit(24);
-            }}
-          >
-            🎬 Video ({catalogVideos.length})
-          </button>
-        </div>
-
         {/* Kolom Pencarian */}
         <input
           className="yt-search"
           type="search"
-          placeholder={`Cari judul ${activeCategory === 'shorts' ? 'Shorts' : 'video'}...`}
+          placeholder="Cari judul video atau Shorts..."
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
@@ -210,7 +185,7 @@ export const VideoScreen: React.FC = () => {
 
         <div className="yt-archive-count">
           Menampilkan {Math.min(displayedList.length, filteredList.length)} dari {filteredList.length}{' '}
-          {activeCategory === 'shorts' ? 'Shorts' : 'video'} aktif (31 hari terakhir)
+          video dan Shorts aktif (31 hari terakhir)
         </div>
 
         {catalogLoading ? (
