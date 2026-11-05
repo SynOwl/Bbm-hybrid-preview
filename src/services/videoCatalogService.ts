@@ -84,78 +84,6 @@ export interface CatalogFetchResult {
   message: string;
 }
 
-export interface MirrorDiagnosticLog {
-  name: string;
-  url: string;
-  status: number | string;
-  durationMs: number;
-  success: boolean;
-  error?: string;
-  updatedAt?: string;
-  shortsCount?: number;
-  hasId1: boolean;
-  hasId2: boolean;
-}
-
-export interface BrowserCatalogDiagnostics {
-  timestamp: string;
-  localStorageCache: {
-    exists: boolean;
-    updatedAt: string | null;
-    fetchTime: string | null;
-    videosCount: number;
-    shortsCount: number;
-    hasId1: boolean;
-    hasId2: boolean;
-  };
-  mirrors: MirrorDiagnosticLog[];
-  masterTimeoutTriggered: boolean;
-  selection: {
-    selectedSource: string;
-    status: CatalogFetchStatus;
-    updatedAt: string;
-    cachedTime: number;
-    bestOnlineTime: number;
-    comparison: string;
-    hasId1: boolean;
-    hasId2: boolean;
-  } | null;
-  processing: {
-    totalShortsLoaded: number;
-    totalShortsFiltered31d: number;
-    hasId1: boolean;
-    hasId2: boolean;
-    id1Index: number;
-    id2Index: number;
-  } | null;
-}
-
-// Objek diagnostik runtime yang dapat diakses di console browser via window.__BBM_DIAGNOSTICS__
-let latestDiagnostics: BrowserCatalogDiagnostics = {
-  timestamp: new Date().toISOString(),
-  localStorageCache: {
-    exists: false,
-    updatedAt: null,
-    fetchTime: null,
-    videosCount: 0,
-    shortsCount: 0,
-    hasId1: false,
-    hasId2: false,
-  },
-  mirrors: [],
-  masterTimeoutTriggered: false,
-  selection: null,
-  processing: null,
-};
-
-export function getLatestDiagnostics(): BrowserCatalogDiagnostics {
-  return latestDiagnostics;
-}
-
-if (typeof window !== 'undefined') {
-  (window as any).__BBM_DIAGNOSTICS__ = latestDiagnostics;
-}
-
 /**
  * Mengambil data dari satu mirror dengan timeout lokal dan pembatalan dari parent master signal
  */
@@ -163,7 +91,7 @@ async function fetchSingleMirror(
   mirror: { name: string; url: string; headers?: Record<string, string> },
   nonce: string,
   parentSignal: AbortSignal,
-  diagnosticLogs: MirrorDiagnosticLog[]
+
 ): Promise<{ data: RawCatalogData; source: string; timestamp: number }> {
   const sep = mirror.url.includes('?') ? '&' : '?';
   const targetUrl = `${mirror.url}${sep}_t=${nonce}`;
@@ -172,7 +100,6 @@ async function fetchSingleMirror(
   const onParentAbort = () => localController.abort();
   parentSignal.addEventListener('abort', onParentAbort);
   const timeoutId = setTimeout(() => localController.abort(), 4500); // 4.5s per mirror
-  const startTime = performance.now();
 
   try {
     const res = await fetch(targetUrl, {
@@ -185,66 +112,17 @@ async function fetchSingleMirror(
     const elapsed = Math.round(performance.now() - startTime);
 
     if (!res.ok) {
-      diagnosticLogs.push({
-        name: mirror.name,
-        url: mirror.url,
-        status: res.status,
-        durationMs: elapsed,
-        success: false,
-        error: `HTTP ${res.status}`,
-        hasId1: false,
-        hasId2: false,
-      });
       throw new Error(`HTTP ${res.status}`);
     }
 
     const json = await res.json();
     if (!validateCatalogStructure(json)) {
-      diagnosticLogs.push({
-        name: mirror.name,
-        url: mirror.url,
-        status: res.status,
-        durationMs: elapsed,
-        success: false,
-        error: 'JSON struktur/updatedAt tidak valid',
-        hasId1: false,
-        hasId2: false,
-      });
       throw new Error('Struktur JSON tidak valid atau updatedAt tidak berformat tanggal ISO');
     }
-
-    const hasId1 = Array.isArray(json.shorts) && json.shorts.some((s: any) => s && s.id === 'KLUCXIGvx0c');
-    const hasId2 = Array.isArray(json.shorts) && json.shorts.some((s: any) => s && s.id === 'nl-YbxNFlGk');
-
-    diagnosticLogs.push({
-      name: mirror.name,
-      url: mirror.url,
-      status: res.status,
-      durationMs: elapsed,
-      success: true,
-      updatedAt: json.updatedAt,
-      shortsCount: json.shorts?.length || 0,
-      hasId1,
-      hasId2,
-    });
 
     const catalogTime = new Date(json.updatedAt).getTime();
     return { data: json, source: mirror.name, timestamp: catalogTime };
   } catch (err: any) {
-    const elapsed = Math.round(performance.now() - startTime);
-    const existing = diagnosticLogs.find((l) => l.name === mirror.name);
-    if (!existing) {
-      diagnosticLogs.push({
-        name: mirror.name,
-        url: mirror.url,
-        status: err.name === 'AbortError' ? 'TIMEOUT / ABORTED' : 'FETCH_ERROR',
-        durationMs: elapsed,
-        success: false,
-        error: err.message,
-        hasId1: false,
-        hasId2: false,
-      });
-    }
     throw err;
   } finally {
     clearTimeout(timeoutId);
@@ -260,47 +138,20 @@ async function fetchSingleMirror(
 export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult> {
   const nonce = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
 
-  // 1. Diagnostik Pemeriksaan LocalStorage Browser Aktual
-  let rawCacheFromStorage: any = null;
-  let cacheFetchTime: string | null = null;
-  if (typeof localStorage !== 'undefined') {
-    try {
-      const rawStr = localStorage.getItem(STORAGE_KEY_CATALOG);
-      cacheFetchTime = localStorage.getItem(STORAGE_KEY_FETCH_TIME);
-      if (rawStr) {
-        rawCacheFromStorage = JSON.parse(rawStr);
-      }
-    } catch {}
-  }
-
   const existingCache = ambilDariLocalStorageAman();
   const cachedTime = existingCache ? new Date(existingCache.updatedAt).getTime() : 0;
-
-  const storageDiag = {
-    exists: Boolean(rawCacheFromStorage),
-    updatedAt: rawCacheFromStorage?.updatedAt || null,
-    fetchTime: cacheFetchTime,
-    videosCount: rawCacheFromStorage?.videos?.length || 0,
-    shortsCount: rawCacheFromStorage?.shorts?.length || 0,
-    hasId1: Array.isArray(rawCacheFromStorage?.shorts) && rawCacheFromStorage.shorts.some((s: any) => s && s.id === 'KLUCXIGvx0c'),
-    hasId2: Array.isArray(rawCacheFromStorage?.shorts) && rawCacheFromStorage.shorts.some((s: any) => s && s.id === 'nl-YbxNFlGk'),
-  };
-
-  const mirrorDiagnostics: MirrorDiagnosticLog[] = [];
-  let masterTimeoutTriggered = false;
 
   // Master controller dengan timeout total 5 detik untuk membatasi waktu tunggu
   const masterController = new AbortController();
   const masterTimeout = setTimeout(() => {
-    masterTimeoutTriggered = true;
-    masterController.abort();
+        masterController.abort();
   }, 5000);
 
   let successfulCandidates: Array<{ data: RawCatalogData; source: string; timestamp: number }> = [];
 
   try {
     const results = await Promise.allSettled(
-      MIRROR_SOURCES.map((m) => fetchSingleMirror(m, nonce, masterController.signal, mirrorDiagnostics))
+      MIRROR_SOURCES.map((m) => fetchSingleMirror(m, nonce, masterController.signal))
     );
 
     for (const r of results) {
@@ -385,42 +236,6 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
     } else {
       throw new Error('Tidak ada katalog valid yang berhasil dimuat dari jaringan maupun penyimpanan lokal.');
     }
-  }
-
-  const hasId1InSelected = Array.isArray(fetchResult.data.shorts) && fetchResult.data.shorts.some((s: any) => s && s.id === 'KLUCXIGvx0c');
-  const hasId2InSelected = Array.isArray(fetchResult.data.shorts) && fetchResult.data.shorts.some((s: any) => s && s.id === 'nl-YbxNFlGk');
-
-  // Catat ke telemetry diagnostik runtime
-  latestDiagnostics = {
-    timestamp: new Date().toISOString(),
-    localStorageCache: storageDiag,
-    mirrors: mirrorDiagnostics,
-    masterTimeoutTriggered,
-    selection: {
-      selectedSource: fetchResult.source,
-      status: fetchResult.status,
-      updatedAt: fetchResult.data.updatedAt,
-      cachedTime,
-      bestOnlineTime: bestOnline ? bestOnline.timestamp : 0,
-      comparison: bestOnline
-        ? (bestOnline.timestamp > cachedTime
-            ? 'ONLINE_LEBIH_BARU'
-            : (bestOnline.timestamp === cachedTime ? 'SAMA_PERSIS' : 'CACHE_LOKAL_LEBIH_BARU'))
-        : 'TIDAK_ADA_ONLINE',
-      hasId1: hasId1InSelected,
-      hasId2: hasId2InSelected,
-    },
-    processing: latestDiagnostics.processing,
-  };
-
-  if (typeof window !== 'undefined') {
-    (window as any).__BBM_DIAGNOSTICS__ = latestDiagnostics;
-    console.group('🔍 [DIAGNOSTIK BROWSER BBM x H2H] fetchBestCatalogFromMirrors');
-    console.log('1. LocalStorage Browser:', storageDiag);
-    console.table(mirrorDiagnostics);
-    console.log('2. Master Timeout Terpicu?', masterTimeoutTriggered);
-    console.log('3. Data Terpilih:', latestDiagnostics.selection);
-    console.groupEnd();
   }
 
   return fetchResult;
@@ -578,28 +393,6 @@ export function filterAndProcessCatalog(
 
   const videos = processCategory(raw.videos, false);
   const shorts = processCategory(raw.shorts, true);
-
-  const hasId1InProcessed = shorts.some((s) => s.id === 'KLUCXIGvx0c');
-  const hasId2InProcessed = shorts.some((s) => s.id === 'nl-YbxNFlGk');
-  const id1Index = shorts.findIndex((s) => s.id === 'KLUCXIGvx0c');
-  const id2Index = shorts.findIndex((s) => s.id === 'nl-YbxNFlGk');
-
-  latestDiagnostics = {
-    ...latestDiagnostics,
-    processing: {
-      totalShortsLoaded: raw.shorts?.length || 0,
-      totalShortsFiltered31d: shorts.length,
-      hasId1: hasId1InProcessed,
-      hasId2: hasId2InProcessed,
-      id1Index,
-      id2Index,
-    },
-  };
-
-  if (typeof window !== 'undefined') {
-    (window as any).__BBM_DIAGNOSTICS__ = latestDiagnostics;
-    console.log('4. Hasil filterAndProcessCatalog:', latestDiagnostics.processing);
-  }
 
   const stats: CatalogStats = {
     updatedAt: raw.updatedAt,
