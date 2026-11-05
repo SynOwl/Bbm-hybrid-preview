@@ -40,7 +40,7 @@ def discover_recent_channel_ids():
     with urllib.request.urlopen(request, timeout=30) as response:
         page = response.read().decode('utf-8', errors='replace')
     ids = re.findall(
-        r'(?:youtube\\.com/(?:watch\\?v=|shorts/)|youtu\\.be/)([A-Za-z0-9_-]{11})',
+        r'(?:youtube\.com/(?:watch\?v=|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})',
         page
     )
     return list(dict.fromkeys(ids))
