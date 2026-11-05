@@ -73,7 +73,10 @@ def main():
         now = datetime.now(UTC)
         all_v = sorted(videos.values(), key=lambda x: x.get('published', ''), reverse=True)
         all_s = sorted(shorts.values(), key=lambda x: x.get('published', ''), reverse=True)
-        archive['videos'], archive['shorts'], archive['updatedAt'] = all_v, all_s, stamp(now)
+        has_new_uploads = bool(added_v or added_s)
+        archive['videos'], archive['shorts'] = all_v, all_s
+        if has_new_uploads:
+            archive['updatedAt'] = stamp(now)
         ARCHIVE.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         cutoff = now - timedelta(days=30)
         monthly = []
@@ -89,14 +92,14 @@ def main():
                     'published': x['published'], 'url': x.get('url'), 'thumbnail': x.get('thumbnail'),
                     'source': 'youtube-official'})
         monthly.sort(key=lambda x: x['published'], reverse=True)
-        monthly_data = {'schemaVersion': 3, 'windowDays': 31, 'updatedAt': stamp(now),
+        monthly_data = {'schemaVersion': 3, 'windowDays': 31, 'updatedAt': archive.get('updatedAt', stamp(now)),
             'source': {'youtube': CHANNEL},
             'collectionPolicy': 'Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.',
             'videos': monthly}
         MONTHLY.write_text(json.dumps(monthly_data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         status = {'schemaVersion': 1, 'status': 'updated' if added_v or added_s else 'no_changes',
             'message': 'Katalog GitHub diperbarui dari kanal YouTube resmi.' if added_v or added_s else 'Pemeriksaan berhasil; belum ada upload baru.',
-            'checkedAt': stamp(started), 'completedAt': stamp(now), 'catalogUpdatedAt': stamp(now),
+            'checkedAt': stamp(started), 'completedAt': stamp(now), 'catalogUpdatedAt': archive.get('updatedAt'),
             'newVideos': len(added_v), 'newShorts': len(added_s), 'newVideoIds': added_v, 'newShortIds': added_s,
             'archiveVideos': len(all_v), 'archiveShorts': len(all_s), 'monthlyItems': len(monthly), 'channelId': CHANNEL_ID}
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
