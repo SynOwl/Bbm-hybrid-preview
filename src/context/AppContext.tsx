@@ -345,19 +345,102 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (typeof window !== 'undefined') window.scrollTo(0, 0);
   };
 
-  // Check battery
+  // Pemantauan baterai: peringatan 25%, 20%, 15%, 10%, 5% saat tidak dicas,
+  // serta pengingat cabut charger ketika penuh. Berjalan selama halaman BBM aktif.
   useEffect(() => {
-    if (typeof navigator !== 'undefined' && (navigator as unknown as { getBattery?: () => Promise<{ level: number; addEventListener: (t: string, cb: () => void) => void }> }).getBattery) {
-      (navigator as unknown as { getBattery: () => Promise<{ level: number; addEventListener: (t: string, cb: () => void) => void }> })
-        .getBattery()
-        .then((b) => {
-          setBattery(Math.round(b.level * 100) + '%');
-          b.addEventListener('levelchange', () => {
-            setBattery(Math.round(b.level * 100) + '%');
-          });
+    type BatteryManagerLike = {
+      level: number;
+      charging: boolean;
+      addEventListener: (type: 'levelchange' | 'chargingchange', listener: () => void) => void;
+      removeEventListener: (type: 'levelchange' | 'chargingchange', listener: () => void) => void;
+    };
+    type BatteryNavigator = Navigator & { getBattery?: () => Promise<BatteryManagerLike> };
+
+    let disposed = false;
+    let manager: BatteryManagerLike | null = null;
+    let lastAlertedThreshold: number | null = null;
+    let fullAlertShown = false;
+    let previousCharging: boolean | null = null;
+
+    try {
+      const savedThreshold = Number(localStorage.getItem('bbm_battery_last_alert_threshold'));
+      if ([25, 20, 15, 10, 5].includes(savedThreshold)) lastAlertedThreshold = savedThreshold;
+      fullAlertShown = localStorage.getItem('bbm_battery_full_alert_shown') === '1';
+    } catch {
+      // Tetap jalankan pemantauan tanpa penyimpanan lintas sesi.
+    }
+
+    const sendBatteryNotice = (message: string) => {
+      showToast(message);
+      // Notifikasi sistem hanya dipakai jika izin sebelumnya sudah diberikan.
+      // Tidak memunculkan permintaan izin otomatis kepada anak.
+      if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
+        try {
+          new Notification('BBM x H2H', { body: message, tag: 'bbm-battery-alert' });
+        } catch {
+          // Toast dalam aplikasi tetap menjadi jalur utama.
+        }
+      }
+    };
+
+    const updateBattery = () => {
+      if (!manager || disposed) return;
+      const percent = Math.max(0, Math.min(100, Math.round(manager.level * 100)));
+      setBattery(percent + '%');
+
+      if (previousCharging !== null && manager.charging !== previousCharging && manager.charging) {
+        lastAlertedThreshold = null;
+        fullAlertShown = false;
+        try {
+          localStorage.removeItem('bbm_battery_last_alert_threshold');
+          localStorage.removeItem('bbm_battery_full_alert_shown');
+        } catch {}
+      }
+      if (previousCharging !== null && manager.charging !== previousCharging && !manager.charging) {
+        fullAlertShown = false;
+        try { localStorage.removeItem('bbm_battery_full_alert_shown'); } catch {}
+      }
+      previousCharging = manager.charging;
+
+      if (manager.charging) {
+        if (percent >= 100 && !fullAlertShown) {
+          fullAlertShown = true;
+          try { localStorage.setItem('bbm_battery_full_alert_shown', '1'); } catch {}
+          sendBatteryNotice('🔋 Baterai sudah 100%! Cabut charger, ya.');
+        }
+        return;
+      }
+
+      const threshold = [25, 20, 15, 10, 5].find((value) => percent <= value);
+      if (threshold !== undefined && (lastAlertedThreshold === null || threshold < lastAlertedThreshold)) {
+        lastAlertedThreshold = threshold;
+        try { localStorage.setItem('bbm_battery_last_alert_threshold', String(threshold)); } catch {}
+        sendBatteryNotice(`🔋 Baterai tinggal ${percent}% (batas ${threshold}%). Yuk, cas perangkat.`);
+      }
+    };
+
+    const batteryNavigator = typeof navigator !== 'undefined' ? navigator as BatteryNavigator : null;
+    if (batteryNavigator?.getBattery) {
+      batteryNavigator.getBattery()
+        .then((batteryManager) => {
+          if (disposed) return;
+          manager = batteryManager;
+          updateBattery();
+          manager.addEventListener('levelchange', updateBattery);
+          manager.addEventListener('chargingchange', updateBattery);
         })
         .catch(() => setBattery('🔋'));
+    } else {
+      setBattery('🔋');
     }
+
+    return () => {
+      disposed = true;
+      if (manager) {
+        manager.removeEventListener('levelchange', updateBattery);
+        manager.removeEventListener('chargingchange', updateBattery);
+      }
+    };
   }, []);
 
   // Initialize data on mount
