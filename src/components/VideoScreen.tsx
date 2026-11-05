@@ -111,20 +111,6 @@ export const VideoScreen: React.FC = () => {
     );
   };
 
-  const now = new Date();
-  const cutoff = new Date(now.getTime() - 31 * 24 * 60 * 60 * 1000);
-
-  const hasId1InScreen = catalogShorts.some((s) => s.id === 'KLUCXIGvx0c');
-  const hasId2InScreen = catalogShorts.some((s) => s.id === 'nl-YbxNFlGk');
-
-  if (typeof window !== 'undefined') {
-    console.log('6. VideoScreen catalogShorts diterima:', {
-      totalShorts: catalogShorts.length,
-      hasKLUCXIGvx0c: hasId1InScreen,
-      hasNlYbxNFlGk: hasId2InScreen,
-    });
-  }
-
   return (
     <div className="screen">
       <div className="head">🎬 Galeri Video & Shorts H2H</div>
