@@ -97,20 +97,29 @@ def main():
             'collectionPolicy': 'Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.',
             'videos': monthly}
         MONTHLY.write_text(json.dumps(monthly_data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        status = {'schemaVersion': 1, 'status': 'updated' if added_v or added_s else 'no_changes',
-            'message': 'Katalog GitHub diperbarui dari kanal YouTube resmi.' if added_v or added_s else 'Pemeriksaan berhasil; belum ada upload baru.',
-            'checkedAt': stamp(started), 'completedAt': stamp(now), 'catalogUpdatedAt': archive.get('updatedAt'),
-            'newVideos': len(added_v), 'newShorts': len(added_s), 'newVideoIds': added_v, 'newShortIds': added_s,
-            'archiveVideos': len(all_v), 'archiveShorts': len(all_s), 'monthlyItems': len(monthly), 'channelId': CHANNEL_ID}
+        new_uploads = bool(added_v or added_s)
+        next_state = 'updated' if new_uploads else 'no_changes'
+        if not new_uploads and previous.get('status') == 'no_changes':
+            # Avoid a noisy data commit every 10 minutes when nothing changed.
+            status = previous
+        else:
+            status = {'schemaVersion': 1, 'status': next_state,
+                'message': 'Katalog GitHub diperbarui dari kanal YouTube resmi.' if new_uploads else 'Pemeriksaan berhasil; belum ada upload baru.',
+                'checkedAt': stamp(started), 'completedAt': stamp(now), 'catalogUpdatedAt': archive.get('updatedAt'),
+                'newVideos': len(added_v), 'newShorts': len(added_s), 'newVideoIds': added_v, 'newShortIds': added_s,
+                'archiveVideos': len(all_v), 'archiveShorts': len(all_s), 'monthlyItems': len(monthly), 'channelId': CHANNEL_ID}
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(status, ensure_ascii=False))
         return 0
     except Exception as exc:
         now = datetime.now(UTC)
-        status = {'schemaVersion': 1, 'status': 'failed',
-            'message': 'Sinkronisasi gagal: ' + str(exc)[:250], 'checkedAt': stamp(started),
-            'completedAt': stamp(now), 'catalogUpdatedAt': previous.get('catalogUpdatedAt'),
-            'newVideos': 0, 'newShorts': 0, 'channelId': CHANNEL_ID}
+        if previous.get('status') == 'failed':
+            status = previous
+        else:
+            status = {'schemaVersion': 1, 'status': 'failed',
+                'message': 'Sinkronisasi gagal: ' + str(exc)[:250], 'checkedAt': stamp(started),
+                'completedAt': stamp(now), 'catalogUpdatedAt': previous.get('catalogUpdatedAt'),
+                'newVideos': 0, 'newShorts': 0, 'channelId': CHANNEL_ID}
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(status, ensure_ascii=False), file=sys.stderr)
         return 1
