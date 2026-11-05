@@ -245,6 +245,24 @@ export const MemberScreen: React.FC = () => {
                     💡 {m.fun}
                   </div>
 
+                  {m.photoGallery && m.photoGallery.length > 1 && (
+                    <div style={{ marginTop: '10px' }}>
+                      <div style={{ fontSize: '12px', fontWeight: 800, marginBottom: '7px' }}>📷 Galeri Foto {m.nama}</div>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '6px' }}>
+                        {m.photoGallery.map((photo, index) => (
+                          <img
+                            key={photo}
+                            src={photo}
+                            alt={`Foto ${m.nama} ${index + 1}`}
+                            loading="lazy"
+                            onClick={() => openLightbox(photo)}
+                            style={{ width: '100%', aspectRatio: '1 / 1', objectFit: 'cover', borderRadius: '9px', cursor: 'zoom-in', border: '1px solid rgba(255,255,255,.35)' }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     type="button"
                     className="btn-s"

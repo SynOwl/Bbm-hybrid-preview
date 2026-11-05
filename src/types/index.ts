@@ -75,6 +75,7 @@ export interface H2HEvent {
 
 export interface H2HMember {
   photoUrl?: string;
+  photoGallery?: string[];
   id: string;
   nama: string;
   hangul: string;

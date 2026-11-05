@@ -6,7 +6,7 @@
   "group": {
     "name": "Hearts2Hearts",
     "hangul": "하츠투하츠",
-    "logoUrl": "https://banner.yt/UC7Q3HUnJA3nvjZR2JeMn2Cw/avatar?format=webp",
+    "logoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/logo/logo.jpeg",
     "groupPhotoUrl": "https://hips.hearstapps.com/hmg-prod/images/eee8b03c-98a3-4740-b83b-b0953f98fd68.png?crop=0.492xw%3A0.984xh%3B0.00489xw%2C0.00977xh&resize=1200%3A%2A",
     "debutDate": "24 Februari 2025",
     "agency": "SM Entertainment",
@@ -93,7 +93,14 @@
       "hewan": "",
       "julukan": "",
       "fun": "Profil publik: Jiwoo merupakan salah satu dari delapan anggota Hearts2Hearts. Detail tambahan yang tidak memiliki sumber tepercaya sengaja tidak dicantumkan.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfOTIg/MDAxNzgyMTE4MDg5MzE5.haaIQLz5WRqMeb-6mFHHrluz8GsmrMFhI65Y29-uw5sg.nGwYJJpTAszJMGWAJJqE5nLweII8yggw6DzYhPeVz3wg.JPEG/a243a0c3-4a29-48a2-82a5-a4eabb9b62be.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/4.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/jiwoo/5.jpg"
+      ]
     },
     {
       "id": "carmen",
@@ -111,7 +118,15 @@
       "hewan": "",
       "julukan": "",
       "fun": "Carmen berasal dari Indonesia dan menjadi bagian dari formasi debut Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfMjI5/MDAxNzgyMTE4MDcwNDM1.HLRAE08j-3JCA60WRFnArMRZ-4M5l2fsqU0FnP-uVwgg.S36pa46eeAq48PXm2ffWyENhGU6NzreO_SQxAf1jDVMg.JPEG/4419ecdf-039f-4e9a-af8f-203038799d96.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/4.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/5.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/carmen/6.jpg"
+      ]
     },
     {
       "id": "yuha",
@@ -129,7 +144,11 @@
       "hewan": "",
       "julukan": "",
       "fun": "Yuha merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfMiAg/MDAxNzgyMTE4MTA2Mjk2.cR7PJRN4wqShEwDB0raw8rd3GZFWVU9SeerqqkoPz90g.VlAzo7iA6_5KV9F0HXNDMHKS3O5BbUDSS4eKax-WSGEg.JPEG/12e55e33-bb78-4b4a-8916-b36a6deed55e.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yuha/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yuha/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yuha/2.jpg"
+      ]
     },
     {
       "id": "stella",
@@ -147,7 +166,13 @@
       "hewan": "",
       "julukan": "",
       "fun": "Stella merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfOTAg/MDAxNzgyMTE4MTIyNjM2.CHOjIZrSYoc09-eyltU94NJ_tCwH5_dd6_A3zPMQY18g.2VNXAt7HouMOWB9EmChH7poXRjtS95vR7zcAoTxkk-og.JPEG/eeb244d1-dae4-429a-8f04-327f066a23de.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/stella/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/stella/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/stella/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/stella/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/stella/4.jpg"
+      ]
     },
     {
       "id": "juun",
@@ -165,7 +190,23 @@
       "hewan": "",
       "julukan": "",
       "fun": "Juun merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfMjAg/MDAxNzgyMTE4MTM3MTEw.5SrBzpLus_Qu4yjMQT-fEtNcGHR99QXLQN2oTRHc5vQg.EJa68zPzqoAUMNA9dsuwScMObeIqtsaiEWW5PY-tsGog.JPEG/194cd82e-b5d4-4e2f-83bf-7b73f8df76d5.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/4.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/5.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/6.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/7.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/8.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/9.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/10.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/11.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/12.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/13.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/juun/14.jpg"
+      ]
     },
     {
       "id": "ana",
@@ -183,7 +224,11 @@
       "hewan": "",
       "julukan": "",
       "fun": "A-na merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfMjEy/MDAxNzgyMTE4MTUwNjY1.6SfomJpw1k2U0cCGseQuGsVT8C-hFRcSD78XD99x2vYg.yQIZfjDwEpVo2UMopI3qKmkUPsfORwm_QPjI9c80OXcg.JPEG/f577b622-aa04-4b7c-b9fd-537fa0ddc1bd.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ana/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ana/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ana/2.jpg"
+      ]
     },
     {
       "id": "ian",
@@ -201,7 +246,13 @@
       "hewan": "",
       "julukan": "",
       "fun": "Ian merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfMjY3/MDAxNzgyMTE4MTY0NTky.keQ-RWOriyWcX8EEoqwAZ5tCjHYvqpT9u3nycADF8wgg._CwyH8JJW1HNLG2d-XLT-K0IKL8QF-CWjLCvFkLKSZEg.JPEG/8d89dac4-eccb-4724-bea7-6f77eae7ed5e.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/4.jpg"
+      ]
     },
     {
       "id": "yeon",
@@ -219,7 +270,13 @@
       "hewan": "",
       "julukan": "",
       "fun": "Ye-on adalah anggota termuda dalam formasi Hearts2Hearts.",
-      "photoUrl": "https://phinf.wevpstatic.net/MjAyNjA2MjJfNjEg/MDAxNzgyMTE4MTgwMDkx.isYdaTlGTV6S0t4vy8mLJBf9Sc5NHwkJlq5pbv2KfQYg.bcVas9O7Xb5aQRqtuuHZrmQWplLfa7kQjZhlcU9_JlYg.JPEG/4a391cd0-2e14-4adc-96a3-8cebdac2912e.jpeg?type=w670"
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/4.jpg"
+      ]
     }
   ]
 }
