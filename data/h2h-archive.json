@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-05T03:55:00Z",
+  "updatedAt": "2026-11-05T05:00:00Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -2573,6 +2573,17 @@
     }
   ],
   "shorts": [
+    {
+      "id": "2ISiz1gSCvQ",
+      "title": "it's basically christmas already",
+      "title_id": "it's basically christmas already",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-04T10:30:00Z",
+      "url": "https://www.youtube.com/watch?v=2ISiz1gSCvQ",
+      "thumbnail": "https://img.youtube.com/vi/2ISiz1gSCvQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "KLUCXIGvx0c",
       "title": "summer daydream",
