@@ -172,42 +172,7 @@ export const VideoScreen: React.FC = () => {
           </button>
         </div>
 
-        {/* Panel Diagnostik Sementara Sisi Browser (Dapat dibuka langsung di Preview) */}
-        <details style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '10px 12px', margin: '10px 0', fontSize: '11px', color: '#cbd5e1', textAlign: 'left', lineHeight: '1.5' }}>
-          <summary style={{ cursor: 'pointer', fontWeight: 800, color: '#38bdf8' }}>
-            🔬 Panel Diagnostik Browser (Klik untuk Buka Hasil Uji Nyata)
-          </summary>
-          <div style={{ marginTop: '8px', borderTop: '1px solid #1e293b', paddingTop: '8px' }}>
-            <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: '4px' }}>📊 Status Layar VideoScreen:</div>
-            <div>• Total catalogShorts di state: <strong>{catalogShorts.length}</strong></div>
-            <div>• ID 1 (<code>KLUCXIGvx0c</code> - summer daydream): <strong style={{ color: hasId1InScreen ? '#4ade80' : '#f87171' }}>{hasId1InScreen ? '✅ DITERIMA DI SCREEN' : '❌ TIDAK ADA'}</strong></div>
-            <div>• ID 2 (<code>nl-YbxNFlGk</code> - whatsinmydrafts): <strong style={{ color: hasId2InScreen ? '#4ade80' : '#f87171' }}>{hasId2InScreen ? '✅ DITERIMA DI SCREEN' : '❌ TIDAK ADA'}</strong></div>
 
-            <div style={{ fontWeight: 700, color: '#f1f5f9', marginTop: '8px', marginBottom: '4px' }}>💾 LocalStorage Browser Aktual:</div>
-            <div>• Kunci: <code>bbm_cached_h2h_archive_v4</code></div>
-            <div>• Status: {typeof localStorage !== 'undefined' && localStorage.getItem('bbm_cached_h2h_archive_v4') ? (
-              (() => {
-                try {
-                  const c = JSON.parse(localStorage.getItem('bbm_cached_h2h_archive_v4') || '{}');
-                  const has1 = Array.isArray(c.shorts) && c.shorts.some((s: any) => s.id === 'KLUCXIGvx0c');
-                  const has2 = Array.isArray(c.shorts) && c.shorts.some((s: any) => s.id === 'nl-YbxNFlGk');
-                  return (
-                    <span style={{ color: '#e2e8f0' }}>
-                      Ada (updatedAt: <strong>{c.updatedAt}</strong>, Videos: {c.videos?.length || 0}, Shorts: {c.shorts?.length || 0}, ID 1: {has1 ? '✅ Ada' : '❌ Belum Ada'}, ID 2: {has2 ? '✅ Ada' : '❌ Belum Ada'})
-                    </span>
-                  );
-                } catch {
-                  return <span style={{ color: '#f87171' }}>Format JSON korup</span>;
-                }
-              })()
-            ) : (
-              <span style={{ color: '#94a3b8' }}>Kosong / Belum tersimpan</span>
-            )}</div>
-
-            <div style={{ fontWeight: 700, color: '#f1f5f9', marginTop: '8px', marginBottom: '4px' }}>🌐 Objek window.__BBM_DIAGNOSTICS__:</div>
-            <div>Detail mirror dan durasi lengkap tersedia di DevTools Console (<code>window.__BBM_DIAGNOSTICS__</code>).</div>
-          </div>
-        </details>
 
         {/* Tab Kategori Shorts vs Video (Shorts dibuka default agar langsung terlihat update terbaru) */}
         <div className="yt-tabs" role="tablist">
