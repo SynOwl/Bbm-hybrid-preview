@@ -42,6 +42,13 @@ def scrape_shorts_playlist():
     return [x for x in entries if not x.get('channel_id') or x.get('channel_id') == CHANNEL_ID]
 
 
+def extract_video(video_id):
+    url = 'https://www.youtube.com/watch?v=' + video_id
+    cmd = ['yt-dlp', '--dump-single-json', '--no-warnings', '--skip-download', url]
+    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=120)
+    return json.loads(result.stdout)
+
+
 def normalize(raw, short):
     vid, title = raw.get('id'), raw.get('title')
     if not vid or not title:
@@ -116,9 +123,36 @@ def main():
         except Exception as playlist_error:
             print('Official UUSH Shorts playlist unavailable; keeping channel tab results: ' + str(playlist_error)[:220], file=sys.stderr)
 
+        new_short_candidates = [
+            {'id': x.get('id'), 'title': x.get('title'), 'timestamp': x.get('timestamp'),
+             'release_timestamp': x.get('release_timestamp'), 'upload_date': x.get('upload_date')}
+            for x in raw_shorts if x.get('id') and x.get('id') not in shorts
+        ]
+        print('New Shorts candidates before normalization: ' + json.dumps(new_short_candidates, ensure_ascii=False))
+
         for raw, is_short, target, added in ([(x, False, videos, added_v) for x in raw_videos] + [(x, True, shorts, added_s) for x in raw_shorts]):
             item = normalize(raw, is_short)
+            if not item and raw.get('id') and raw['id'] not in target:
+                # New flat-playlist entries sometimes omit all date fields.
+                # Enrich only new candidates with full official YouTube metadata.
+                try:
+                    metadata = extract_video(str(raw['id']))
+                    merged = dict(metadata)
+                    for key, value in raw.items():
+                        if value not in (None, ''):
+                            merged[key] = value
+                    if merged.get('channel_id') and merged['channel_id'] != CHANNEL_ID:
+                        print('Skipping candidate from another channel: ' + str(raw['id']), file=sys.stderr)
+                        continue
+                    item = normalize(merged, is_short)
+                    if item:
+                        print('Enriched new ' + ('Short' if is_short else 'video') + ' metadata: ' + item['title'])
+                except Exception as metadata_error:
+                    print('Could not enrich new candidate ' + str(raw['id']) + ': ' + str(metadata_error)[:180], file=sys.stderr)
             if not item:
+                print('Skipping invalid catalog entry: ' + str(raw.get('id')) + ' | ' + str(raw.get('title')) +
+                      ' | timestamp=' + str(raw.get('timestamp')) + ' | upload_date=' + str(raw.get('upload_date')),
+                      file=sys.stderr)
                 continue
             old = target.get(item['id'])
             if old:
