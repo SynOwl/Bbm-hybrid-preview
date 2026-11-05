@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-01T09:23:07.519009+00:00",
+  "updatedAt": "2026-11-05T03:55:00Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -2573,6 +2573,28 @@
     }
   ],
   "shorts": [
+    {
+      "id": "KLUCXIGvx0c",
+      "title": "summer daydream",
+      "title_id": "",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-03T08:30:03Z",
+      "url": "https://www.youtube.com/watch?v=KLUCXIGvx0c",
+      "thumbnail": "https://img.youtube.com/vi/KLUCXIGvx0c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "nl-YbxNFlGk",
+      "title": "너 어디야 #whatsinmydrafts",
+      "title_id": "",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-02T10:30:10Z",
+      "url": "https://www.youtube.com/watch?v=nl-YbxNFlGk",
+      "thumbnail": "https://img.youtube.com/vi/nl-YbxNFlGk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "JThbuvI7HMo",
       "title": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
