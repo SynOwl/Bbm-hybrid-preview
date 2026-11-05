@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-05T08:05:00Z",
+  "updatedAt": "2026-11-05T14:10:58Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "EwZosfbK5Ec",
+      "title": "XOXO, GOS2IP GIRL",
+      "title_id": "XOXO, GOS2IP GIRL",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-05T11:00:08Z",
+      "url": "https://www.youtube.com/watch?v=EwZosfbK5Ec",
+      "thumbnail": "https://img.youtube.com/vi/EwZosfbK5Ec/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "TgxtTjOCK3I",
+      "title": "daily routine",
+      "title_id": "daily routine",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-04T11:30:01Z",
+      "url": "https://www.youtube.com/watch?v=TgxtTjOCK3I",
+      "thumbnail": "https://img.youtube.com/vi/TgxtTjOCK3I/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "TgxtTjOCK3I",
       "title": "daily routine",
@@ -14,8 +38,7 @@
       "type": "youtube",
       "kind": "short",
       "isShort": true,
-      "published": "2026-11-04T12:00:00Z",
-      "publishedDateOnly": true,
+      "published": "2026-11-04T11:30:01Z",
       "url": "https://www.youtube.com/watch?v=TgxtTjOCK3I",
       "thumbnail": "https://img.youtube.com/vi/TgxtTjOCK3I/hqdefault.jpg",
       "source": "youtube-official"
@@ -25,23 +48,59 @@
       "title": "it's basically christmas already",
       "title_id": "it's basically christmas already",
       "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-04T10:30:28Z",
+      "url": "https://www.youtube.com/watch?v=2ISiz1gSCvQ",
+      "thumbnail": "https://img.youtube.com/vi/2ISiz1gSCvQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "2ISiz1gSCvQ",
+      "title": "it's basically christmas already",
+      "title_id": "it's basically christmas already",
+      "type": "youtube",
       "kind": "short",
       "isShort": true,
-      "published": "2026-11-04T10:30:00Z",
+      "published": "2026-11-04T10:30:28Z",
       "url": "https://www.youtube.com/watch?v=2ISiz1gSCvQ",
       "thumbnail": "https://img.youtube.com/vi/2ISiz1gSCvQ/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
       "id": "KLUCXIGvx0c",
-      "title": "summer daydream",
-      "title_id": "summer daydream",
+      "title": "summer daydream ♾️ #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "summer daydream ♾️ #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-03T08:30:03Z",
+      "url": "https://www.youtube.com/watch?v=KLUCXIGvx0c",
+      "thumbnail": "https://img.youtube.com/vi/KLUCXIGvx0c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "KLUCXIGvx0c",
+      "title": "summer daydream ♾️ #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "summer daydream ♾️ #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-03T08:30:03Z",
       "url": "https://www.youtube.com/watch?v=KLUCXIGvx0c",
       "thumbnail": "https://img.youtube.com/vi/KLUCXIGvx0c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "nl-YbxNFlGk",
+      "title": "너 어디야 #whatsinmydrafts",
+      "title_id": "너 어디야 #whatsinmydrafts",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-02T10:30:10Z",
+      "url": "https://www.youtube.com/watch?v=nl-YbxNFlGk",
+      "thumbnail": "https://img.youtube.com/vi/nl-YbxNFlGk/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -61,11 +120,35 @@
       "title": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "title_id": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-01T04:00:01Z",
+      "url": "https://www.youtube.com/watch?v=JThbuvI7HMo",
+      "thumbnail": "https://img.youtube.com/vi/JThbuvI7HMo/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "JThbuvI7HMo",
+      "title": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "take the backseat #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "type": "youtube",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-01T04:00:01Z",
       "url": "https://www.youtube.com/watch?v=JThbuvI7HMo",
       "thumbnail": "https://img.youtube.com/vi/JThbuvI7HMo/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "AMXIyyyiBv8",
+      "title": "we on a moonride 🌕 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "we on a moonride 🌕 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-31T04:00:13Z",
+      "url": "https://www.youtube.com/watch?v=AMXIyyyiBv8",
+      "thumbnail": "https://img.youtube.com/vi/AMXIyyyiBv8/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -78,6 +161,18 @@
       "published": "2026-10-31T04:00:13Z",
       "url": "https://www.youtube.com/watch?v=AMXIyyyiBv8",
       "thumbnail": "https://img.youtube.com/vi/AMXIyyyiBv8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "TTT-eWm5SRs",
+      "title": "gotta serve the face first #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "gotta serve the face first #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-30T13:00:34Z",
+      "url": "https://www.youtube.com/watch?v=TTT-eWm5SRs",
+      "thumbnail": "https://img.youtube.com/vi/TTT-eWm5SRs/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -107,6 +202,18 @@
     {
       "id": "qwzdHudtTC0",
       "title": "thumbs up if u like it #Hearts2Hearts #하츠투하츠 #YUHA #A_NA #YE_ON",
+      "title_id": "thumbs up if u like it #Hearts2Hearts #하츠투하츠 #YUHA #A_NA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-30T08:02:50Z",
+      "url": "https://www.youtube.com/watch?v=qwzdHudtTC0",
+      "thumbnail": "https://img.youtube.com/vi/qwzdHudtTC0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "qwzdHudtTC0",
+      "title": "thumbs up if u like it #Hearts2Hearts #하츠투하츠 #YUHA #A_NA #YE_ON",
       "title_id": "jempol jika kamu menyukainya #Hearts2Hearts #Hearts2Hearts #YUHA #A_NA #YE_ON",
       "type": "youtube",
       "kind": "short",
@@ -114,6 +221,18 @@
       "published": "2026-10-30T08:02:50Z",
       "url": "https://www.youtube.com/watch?v=qwzdHudtTC0",
       "thumbnail": "https://img.youtube.com/vi/qwzdHudtTC0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "JCxRa5yW-qU",
+      "title": "나정이안이라구!!나좋아하지마.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
+      "title_id": "나정이안이라구!!나좋아하지마.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T14:00:00Z",
+      "url": "https://www.youtube.com/watch?v=JCxRa5yW-qU",
+      "thumbnail": "https://img.youtube.com/vi/JCxRa5yW-qU/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -131,6 +250,18 @@
     {
       "id": "tNnBos7sx-E",
       "title": "just feel it",
+      "title_id": "just feel it",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T11:30:01Z",
+      "url": "https://www.youtube.com/watch?v=tNnBos7sx-E",
+      "thumbnail": "https://img.youtube.com/vi/tNnBos7sx-E/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "tNnBos7sx-E",
+      "title": "just feel it",
       "title_id": "rasakan saja",
       "type": "youtube",
       "kind": "short",
@@ -138,6 +269,18 @@
       "published": "2026-10-28T11:30:01Z",
       "url": "https://www.youtube.com/watch?v=tNnBos7sx-E",
       "thumbnail": "https://img.youtube.com/vi/tNnBos7sx-E/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "1ASoYBKsLc0",
+      "title": "don't start with me",
+      "title_id": "don't start with me",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T11:00:34Z",
+      "url": "https://www.youtube.com/watch?v=1ASoYBKsLc0",
+      "thumbnail": "https://img.youtube.com/vi/1ASoYBKsLc0/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -155,6 +298,18 @@
     {
       "id": "9ifa1Rzhn-U",
       "title": "being an it girl",
+      "title_id": "being an it girl",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T10:30:34Z",
+      "url": "https://www.youtube.com/watch?v=9ifa1Rzhn-U",
+      "thumbnail": "https://img.youtube.com/vi/9ifa1Rzhn-U/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "9ifa1Rzhn-U",
+      "title": "being an it girl",
       "title_id": "menjadi gadis itu",
       "type": "youtube",
       "kind": "short",
@@ -162,6 +317,18 @@
       "published": "2026-10-28T10:30:34Z",
       "url": "https://www.youtube.com/watch?v=9ifa1Rzhn-U",
       "thumbnail": "https://img.youtube.com/vi/9ifa1Rzhn-U/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "fYsmgcLhZxY",
+      "title": "rate our fit",
+      "title_id": "rate our fit",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T10:00:04Z",
+      "url": "https://www.youtube.com/watch?v=fYsmgcLhZxY",
+      "thumbnail": "https://img.youtube.com/vi/fYsmgcLhZxY/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -179,6 +346,18 @@
     {
       "id": "rHzVGsoo4QY",
       "title": "girl what?",
+      "title_id": "girl what?",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T09:30:39Z",
+      "url": "https://www.youtube.com/watch?v=rHzVGsoo4QY",
+      "thumbnail": "https://img.youtube.com/vi/rHzVGsoo4QY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "rHzVGsoo4QY",
+      "title": "girl what?",
       "title_id": "gadis apa?",
       "type": "youtube",
       "kind": "short",
@@ -186,6 +365,18 @@
       "published": "2026-10-28T09:30:39Z",
       "url": "https://www.youtube.com/watch?v=rHzVGsoo4QY",
       "thumbnail": "https://img.youtube.com/vi/rHzVGsoo4QY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "odaFGmi69bA",
+      "title": "always.",
+      "title_id": "always.",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-28T09:00:06Z",
+      "url": "https://www.youtube.com/watch?v=odaFGmi69bA",
+      "thumbnail": "https://img.youtube.com/vi/odaFGmi69bA/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -203,6 +394,18 @@
     {
       "id": "Tw-bhPwwTxk",
       "title": "are you ready?",
+      "title_id": "are you ready?",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-27T13:00:00Z",
+      "url": "https://www.youtube.com/watch?v=Tw-bhPwwTxk",
+      "thumbnail": "https://img.youtube.com/vi/Tw-bhPwwTxk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Tw-bhPwwTxk",
+      "title": "are you ready?",
       "title_id": "Apakah kamu siap?",
       "type": "youtube",
       "kind": "short",
@@ -210,6 +413,18 @@
       "published": "2026-10-27T13:00:00Z",
       "url": "https://www.youtube.com/watch?v=Tw-bhPwwTxk",
       "thumbnail": "https://img.youtube.com/vi/Tw-bhPwwTxk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "0cX7fffXook",
+      "title": "\"Rise and shine upper east siders its officially fall”",
+      "title_id": "\"Rise and shine upper east siders its officially fall”",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-27T12:00:25Z",
+      "url": "https://www.youtube.com/watch?v=0cX7fffXook",
+      "thumbnail": "https://img.youtube.com/vi/0cX7fffXook/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -239,6 +454,18 @@
     {
       "id": "_9of7zm0Prs",
       "title": "hop on the moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
+      "title_id": "hop on the moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-26T13:30:13Z",
+      "url": "https://www.youtube.com/watch?v=_9of7zm0Prs",
+      "thumbnail": "https://img.youtube.com/vi/_9of7zm0Prs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "_9of7zm0Prs",
+      "title": "hop on the moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
       "title_id": "naik moonride 🌙 #Hearts2Hearts #H2H #Moonride #JIWOO",
       "type": "youtube",
       "kind": "short",
@@ -251,6 +478,18 @@
     {
       "id": "2fxmRgdzekQ",
       "title": "heard you like it #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
+      "title_id": "heard you like it #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-26T12:30:27Z",
+      "url": "https://www.youtube.com/watch?v=2fxmRgdzekQ",
+      "thumbnail": "https://img.youtube.com/vi/2fxmRgdzekQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "2fxmRgdzekQ",
+      "title": "heard you like it #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
       "title_id": "kudengar kamu menyukainya #Hearts2Hearts #H2H #Moonride #JUNE",
       "type": "youtube",
       "kind": "short",
@@ -258,6 +497,18 @@
       "published": "2026-10-26T12:30:27Z",
       "url": "https://www.youtube.com/watch?v=2fxmRgdzekQ",
       "thumbnail": "https://img.youtube.com/vi/2fxmRgdzekQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "gMKjXgU01fc",
+      "title": "울지 말아요, 장미의 아가씨 #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "울지 말아요, 장미의 아가씨 #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-25T03:30:05Z",
+      "url": "https://www.youtube.com/watch?v=gMKjXgU01fc",
+      "thumbnail": "https://img.youtube.com/vi/gMKjXgU01fc/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -287,6 +538,18 @@
     {
       "id": "4oPOtuUzFLk",
       "title": "기억하나요? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "기억하나요? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-24T10:00:30Z",
+      "url": "https://www.youtube.com/watch?v=4oPOtuUzFLk",
+      "thumbnail": "https://img.youtube.com/vi/4oPOtuUzFLk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "4oPOtuUzFLk",
+      "title": "기억하나요? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
       "title_id": "Apakah kamu ingat? #Hati2Hati #Hati2Hati #H2H #YUHA #Yuha",
       "type": "youtube",
       "kind": "short",
@@ -294,6 +557,18 @@
       "published": "2026-10-24T10:00:30Z",
       "url": "https://www.youtube.com/watch?v=4oPOtuUzFLk",
       "thumbnail": "https://img.youtube.com/vi/4oPOtuUzFLk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "yJpG1qVjLpQ",
+      "title": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-24T03:30:24Z",
+      "url": "https://www.youtube.com/watch?v=yJpG1qVjLpQ",
+      "thumbnail": "https://img.youtube.com/vi/yJpG1qVjLpQ/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -311,6 +586,18 @@
     {
       "id": "pUEQtxxPcHU",
       "title": "you dont want it, you need it #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
+      "title_id": "you dont want it, you need it #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-23T12:30:30Z",
+      "url": "https://www.youtube.com/watch?v=pUEQtxxPcHU",
+      "thumbnail": "https://img.youtube.com/vi/pUEQtxxPcHU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "pUEQtxxPcHU",
+      "title": "you dont want it, you need it #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
       "title_id": "kamu tidak menginginkannya, kamu membutuhkannya #Hearts2Hearts #Hearts2Hearts #H2H #JUUN #Joeun",
       "type": "youtube",
       "kind": "short",
@@ -318,6 +605,18 @@
       "published": "2026-10-23T12:30:30Z",
       "url": "https://www.youtube.com/watch?v=pUEQtxxPcHU",
       "thumbnail": "https://img.youtube.com/vi/pUEQtxxPcHU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "fQDl-VFSsDI",
+      "title": "뭐야 이거 #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
+      "title_id": "뭐야 이거 #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-23T10:30:11Z",
+      "url": "https://www.youtube.com/watch?v=fQDl-VFSsDI",
+      "thumbnail": "https://img.youtube.com/vi/fQDl-VFSsDI/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -335,6 +634,18 @@
     {
       "id": "jSE1go9P9ak",
       "title": "웅웅 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
+      "title_id": "웅웅 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-23T08:32:32Z",
+      "url": "https://www.youtube.com/watch?v=jSE1go9P9ak",
+      "thumbnail": "https://img.youtube.com/vi/jSE1go9P9ak/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "jSE1go9P9ak",
+      "title": "웅웅 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
       "title_id": "Woong Woong #Hati2Hati #Hati2Hati #H2H #JIWOO #IAN",
       "type": "youtube",
       "kind": "short",
@@ -342,6 +653,18 @@
       "published": "2026-10-23T08:32:32Z",
       "url": "https://www.youtube.com/watch?v=jSE1go9P9ak",
       "thumbnail": "https://img.youtube.com/vi/jSE1go9P9ak/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "F6La_T9WKmM",
+      "title": "감당할 수 있겠니 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "title_id": "감당할 수 있겠니 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-22T12:30:23Z",
+      "url": "https://www.youtube.com/watch?v=F6La_T9WKmM",
+      "thumbnail": "https://img.youtube.com/vi/F6La_T9WKmM/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -359,6 +682,18 @@
     {
       "id": "pbu1sTejWuE",
       "title": "couldnt be more iconic #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "couldnt be more iconic #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-22T08:00:22Z",
+      "url": "https://www.youtube.com/watch?v=pbu1sTejWuE",
+      "thumbnail": "https://img.youtube.com/vi/pbu1sTejWuE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "pbu1sTejWuE",
+      "title": "couldnt be more iconic #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "sangat ikonik #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -366,6 +701,18 @@
       "published": "2026-10-22T08:00:22Z",
       "url": "https://www.youtube.com/watch?v=pbu1sTejWuE",
       "thumbnail": "https://img.youtube.com/vi/pbu1sTejWuE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "6GNsw25sQBE",
+      "title": "who's next #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "who's next #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-22T03:00:34Z",
+      "url": "https://www.youtube.com/watch?v=6GNsw25sQBE",
+      "thumbnail": "https://img.youtube.com/vi/6GNsw25sQBE/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -383,6 +730,18 @@
     {
       "id": "nLcpfm-dp5E",
       "title": "which one is your favorite? #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "which one is your favorite? #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-21T17:45:01Z",
+      "url": "https://www.youtube.com/watch?v=nLcpfm-dp5E",
+      "thumbnail": "https://img.youtube.com/vi/nLcpfm-dp5E/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "nLcpfm-dp5E",
+      "title": "which one is your favorite? #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "yang mana favoritmu? #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -390,6 +749,18 @@
       "published": "2026-10-21T17:45:01Z",
       "url": "https://www.youtube.com/watch?v=nLcpfm-dp5E",
       "thumbnail": "https://img.youtube.com/vi/nLcpfm-dp5E/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "x209MzeMeYs",
+      "title": "얼만큼 귀여워요? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "얼만큼 귀여워요? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-21T03:30:08Z",
+      "url": "https://www.youtube.com/watch?v=x209MzeMeYs",
+      "thumbnail": "https://img.youtube.com/vi/x209MzeMeYs/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -407,6 +778,18 @@
     {
       "id": "tQZ07VWN_kA",
       "title": "the quotes #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "the quotes #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-20T12:00:07Z",
+      "url": "https://www.youtube.com/watch?v=tQZ07VWN_kA",
+      "thumbnail": "https://img.youtube.com/vi/tQZ07VWN_kA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "tQZ07VWN_kA",
+      "title": "the quotes #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
       "title_id": "kutipan #Hearts2Hearts #Hearts2Hearts #H2H #STELLA #Stella",
       "type": "youtube",
       "kind": "short",
@@ -414,6 +797,18 @@
       "published": "2026-10-20T12:00:07Z",
       "url": "https://www.youtube.com/watch?v=tQZ07VWN_kA",
       "thumbnail": "https://img.youtube.com/vi/tQZ07VWN_kA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "k6BKWnQYSbQ",
+      "title": "never miss a frame #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #지우",
+      "title_id": "never miss a frame #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #지우",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-20T10:00:09Z",
+      "url": "https://www.youtube.com/watch?v=k6BKWnQYSbQ",
+      "thumbnail": "https://img.youtube.com/vi/k6BKWnQYSbQ/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -431,6 +826,18 @@
     {
       "id": "OzEJsMfGI5s",
       "title": "gotcha #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #JUUN",
+      "title_id": "gotcha #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #JUUN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-20T08:00:31Z",
+      "url": "https://www.youtube.com/watch?v=OzEJsMfGI5s",
+      "thumbnail": "https://img.youtube.com/vi/OzEJsMfGI5s/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "OzEJsMfGI5s",
+      "title": "gotcha #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #JUUN",
       "title_id": "gotcha #Hati2Hati #Hati2Hati #CARMEN #A_NA #JUUN",
       "type": "youtube",
       "kind": "short",
@@ -438,6 +845,18 @@
       "published": "2026-10-20T08:00:31Z",
       "url": "https://www.youtube.com/watch?v=OzEJsMfGI5s",
       "thumbnail": "https://img.youtube.com/vi/OzEJsMfGI5s/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "f6sX-ZG7H9M",
+      "title": "she always play like that #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
+      "title_id": "she always play like that #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-19T14:36:39Z",
+      "url": "https://www.youtube.com/watch?v=f6sX-ZG7H9M",
+      "thumbnail": "https://img.youtube.com/vi/f6sX-ZG7H9M/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -467,6 +886,18 @@
     {
       "id": "p5DWavL-7Ro",
       "title": "잘먹었다ㅋ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
+      "title_id": "잘먹었다ㅋ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-19T07:55:02Z",
+      "url": "https://www.youtube.com/watch?v=p5DWavL-7Ro",
+      "thumbnail": "https://img.youtube.com/vi/p5DWavL-7Ro/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "p5DWavL-7Ro",
+      "title": "잘먹었다ㅋ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
       "title_id": "Aku makan enak haha ​​#Hearts2Hearts #Hearts2Hearts #H2H #YUHA #IAN",
       "type": "youtube",
       "kind": "short",
@@ -474,6 +905,18 @@
       "published": "2026-10-19T07:55:02Z",
       "url": "https://www.youtube.com/watch?v=p5DWavL-7Ro",
       "thumbnail": "https://img.youtube.com/vi/p5DWavL-7Ro/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "gcxFETsYLlU",
+      "title": "met my match #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
+      "title_id": "met my match #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-19T03:30:01Z",
+      "url": "https://www.youtube.com/watch?v=gcxFETsYLlU",
+      "thumbnail": "https://img.youtube.com/vi/gcxFETsYLlU/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -491,6 +934,18 @@
     {
       "id": "1Kf9iR2csr4",
       "title": "manifesting #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
+      "title_id": "manifesting #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-18T14:01:23Z",
+      "url": "https://www.youtube.com/watch?v=1Kf9iR2csr4",
+      "thumbnail": "https://img.youtube.com/vi/1Kf9iR2csr4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "1Kf9iR2csr4",
+      "title": "manifesting #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
       "title_id": "mewujudkan #Hearts2Hearts #Hearts2Hearts #H2H #JUUN #Joeun",
       "type": "youtube",
       "kind": "short",
@@ -498,6 +953,18 @@
       "published": "2026-10-18T14:01:23Z",
       "url": "https://www.youtube.com/watch?v=1Kf9iR2csr4",
       "thumbnail": "https://img.youtube.com/vi/1Kf9iR2csr4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "vjYp3X3ItpM",
+      "title": "lesson learned from the master of cuteness #Hearts2Hearts #하츠투하츠 #ICONICHEART",
+      "title_id": "lesson learned from the master of cuteness #Hearts2Hearts #하츠투하츠 #ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-18T10:40:35Z",
+      "url": "https://www.youtube.com/watch?v=vjYp3X3ItpM",
+      "thumbnail": "https://img.youtube.com/vi/vjYp3X3ItpM/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -515,6 +982,18 @@
     {
       "id": "ybmjWyp4KFQ",
       "title": "냐옹 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "냐옹 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-18T08:30:16Z",
+      "url": "https://www.youtube.com/watch?v=ybmjWyp4KFQ",
+      "thumbnail": "https://img.youtube.com/vi/ybmjWyp4KFQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "ybmjWyp4KFQ",
+      "title": "냐옹 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
       "title_id": "Meong #Hati2Hati #Hati2Hati #H2H #IAN #Ian",
       "type": "youtube",
       "kind": "short",
@@ -522,6 +1001,18 @@
       "published": "2026-10-18T08:30:16Z",
       "url": "https://www.youtube.com/watch?v=ybmjWyp4KFQ",
       "thumbnail": "https://img.youtube.com/vi/ybmjWyp4KFQ/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QEj9pEi1B6Q",
+      "title": "wow so guinea #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "wow so guinea #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-18T03:30:25Z",
+      "url": "https://www.youtube.com/watch?v=QEj9pEi1B6Q",
+      "thumbnail": "https://img.youtube.com/vi/QEj9pEi1B6Q/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -539,6 +1030,18 @@
     {
       "id": "EG0XcjDyboo",
       "title": "GIRL. WALK. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "GIRL. WALK. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-17T11:30:30Z",
+      "url": "https://www.youtube.com/watch?v=EG0XcjDyboo",
+      "thumbnail": "https://img.youtube.com/vi/EG0XcjDyboo/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "EG0XcjDyboo",
+      "title": "GIRL. WALK. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "title_id": "GADIS. BERJALAN. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "type": "youtube",
       "kind": "short",
@@ -546,6 +1049,18 @@
       "published": "2026-10-17T11:30:30Z",
       "url": "https://www.youtube.com/watch?v=EG0XcjDyboo",
       "thumbnail": "https://img.youtube.com/vi/EG0XcjDyboo/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-KjoYcss_-s",
+      "title": "안싸웠어요 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "title_id": "안싸웠어요 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-17T10:30:30Z",
+      "url": "https://www.youtube.com/watch?v=-KjoYcss_-s",
+      "thumbnail": "https://img.youtube.com/vi/-KjoYcss_-s/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -563,6 +1078,18 @@
     {
       "id": "6hoq6RdKZmE",
       "title": "막내로 살아남기 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "막내로 살아남기 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-17T09:30:16Z",
+      "url": "https://www.youtube.com/watch?v=6hoq6RdKZmE",
+      "thumbnail": "https://img.youtube.com/vi/6hoq6RdKZmE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "6hoq6RdKZmE",
+      "title": "막내로 살아남기 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "Bertahan sebagai yang termuda #Hearts2Hearts #Hearts2Hearts#ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -570,6 +1097,18 @@
       "published": "2026-10-17T09:30:16Z",
       "url": "https://www.youtube.com/watch?v=6hoq6RdKZmE",
       "thumbnail": "https://img.youtube.com/vi/6hoq6RdKZmE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "hvjjMqg_2eQ",
+      "title": "you know my move #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
+      "title_id": "you know my move #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-17T03:30:12Z",
+      "url": "https://www.youtube.com/watch?v=hvjjMqg_2eQ",
+      "thumbnail": "https://img.youtube.com/vi/hvjjMqg_2eQ/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -587,6 +1126,18 @@
     {
       "id": "iAgx2Sj8co0",
       "title": "같이 할 친구 @@ #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "같이 할 친구 @@ #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-16T13:00:29Z",
+      "url": "https://www.youtube.com/watch?v=iAgx2Sj8co0",
+      "thumbnail": "https://img.youtube.com/vi/iAgx2Sj8co0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "iAgx2Sj8co0",
+      "title": "같이 할 친구 @@ #Hearts2Hearts #하츠투하츠 #H2H",
       "title_id": "Teman untuk bersama @@ #Hearts2Hearts #Hearts2Hearts #H2H",
       "type": "youtube",
       "kind": "short",
@@ -599,6 +1150,18 @@
     {
       "id": "i1Ts1sN3IiY",
       "title": "Next chapter, now begins 🔹#Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
+      "title_id": "Next chapter, now begins 🔹#Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-16T10:01:04Z",
+      "url": "https://www.youtube.com/watch?v=i1Ts1sN3IiY",
+      "thumbnail": "https://img.youtube.com/vi/i1Ts1sN3IiY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "i1Ts1sN3IiY",
+      "title": "Next chapter, now begins 🔹#Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
       "title_id": "Bab berikutnya, sekarang dimulai 🔹#Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
       "type": "youtube",
       "kind": "short",
@@ -606,6 +1169,18 @@
       "published": "2026-10-16T10:01:04Z",
       "url": "https://www.youtube.com/watch?v=i1Ts1sN3IiY",
       "thumbnail": "https://img.youtube.com/vi/i1Ts1sN3IiY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "E5anaolkL3w",
+      "title": "Tap into the world 🕹️ #Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
+      "title_id": "Tap into the world 🕹️ #Hearts2Hearts #하츠투하츠 #H2H #NextChapter #Hearts2Hearts_NextChapter",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-16T10:00:35Z",
+      "url": "https://www.youtube.com/watch?v=E5anaolkL3w",
+      "thumbnail": "https://img.youtube.com/vi/E5anaolkL3w/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -635,6 +1210,18 @@
     {
       "id": "DA-Yt7UHwao",
       "title": "can't help myself #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "can't help myself #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-16T08:00:30Z",
+      "url": "https://www.youtube.com/watch?v=DA-Yt7UHwao",
+      "thumbnail": "https://img.youtube.com/vi/DA-Yt7UHwao/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "DA-Yt7UHwao",
+      "title": "can't help myself #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "tidak bisa menahan diri #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -647,6 +1234,18 @@
     {
       "id": "6P705w_FoGc",
       "title": "u think we glitching #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "u think we glitching #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-16T03:30:08Z",
+      "url": "https://www.youtube.com/watch?v=6P705w_FoGc",
+      "thumbnail": "https://img.youtube.com/vi/6P705w_FoGc/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "6P705w_FoGc",
+      "title": "u think we glitching #Hearts2Hearts #하츠투하츠 #H2H",
       "title_id": "kamu pikir kita melakukan kesalahan #Hearts2Hearts #하츠투하츠 #H2H",
       "type": "youtube",
       "kind": "short",
@@ -654,6 +1253,18 @@
       "published": "2026-10-16T03:30:08Z",
       "url": "https://www.youtube.com/watch?v=6P705w_FoGc",
       "thumbnail": "https://img.youtube.com/vi/6P705w_FoGc/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "zYj1u_rYLTY",
+      "title": "the iconic intro #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "the iconic intro #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-15T13:00:04Z",
+      "url": "https://www.youtube.com/watch?v=zYj1u_rYLTY",
+      "thumbnail": "https://img.youtube.com/vi/zYj1u_rYLTY/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -683,6 +1294,18 @@
     {
       "id": "r5-EXCbGGuA",
       "title": "not this song but #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "not this song but #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-15T08:30:20Z",
+      "url": "https://www.youtube.com/watch?v=r5-EXCbGGuA",
+      "thumbnail": "https://img.youtube.com/vi/r5-EXCbGGuA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "r5-EXCbGGuA",
+      "title": "not this song but #Hearts2Hearts #하츠투하츠 #H2H",
       "title_id": "bukan lagu ini tapi #Hearts2Hearts #하츠투하츠 #H2H",
       "type": "youtube",
       "kind": "short",
@@ -695,6 +1318,18 @@
     {
       "id": "caVYwJgmjig",
       "title": "who did best? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
+      "title_id": "who did best? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-15T03:30:01Z",
+      "url": "https://www.youtube.com/watch?v=caVYwJgmjig",
+      "thumbnail": "https://img.youtube.com/vi/caVYwJgmjig/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "caVYwJgmjig",
+      "title": "who did best? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
       "title_id": "siapa yang melakukan yang terbaik? #Hati2Hati #Hati2Hati #CARMEN #A_NA #YE_ON",
       "type": "youtube",
       "kind": "short",
@@ -702,6 +1337,18 @@
       "published": "2026-10-15T03:30:01Z",
       "url": "https://www.youtube.com/watch?v=caVYwJgmjig",
       "thumbnail": "https://img.youtube.com/vi/caVYwJgmjig/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "UP9vIOPRpPo",
+      "title": "real or fake? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "real or fake? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-13T12:30:39Z",
+      "url": "https://www.youtube.com/watch?v=UP9vIOPRpPo",
+      "thumbnail": "https://img.youtube.com/vi/UP9vIOPRpPo/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -731,6 +1378,18 @@
     {
       "id": "KwndWYBIBhw",
       "title": "jack n rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
+      "title_id": "jack n rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-13T05:00:28Z",
+      "url": "https://www.youtube.com/watch?v=KwndWYBIBhw",
+      "thumbnail": "https://img.youtube.com/vi/KwndWYBIBhw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "KwndWYBIBhw",
+      "title": "jack n rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
       "title_id": "jack n rose #Hati2Hati #Hati2Hati #H2H #STELLA #YUHA",
       "type": "youtube",
       "kind": "short",
@@ -743,6 +1402,18 @@
     {
       "id": "IIQN3Z0VAp0",
       "title": "don’t u dare forget abt this line #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "don’t u dare forget abt this line #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-13T03:00:04Z",
+      "url": "https://www.youtube.com/watch?v=IIQN3Z0VAp0",
+      "thumbnail": "https://img.youtube.com/vi/IIQN3Z0VAp0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "IIQN3Z0VAp0",
+      "title": "don’t u dare forget abt this line #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "title_id": "jangan berani-berani melupakan baris ini #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "type": "youtube",
       "kind": "short",
@@ -750,6 +1421,18 @@
       "published": "2026-10-13T03:00:04Z",
       "url": "https://www.youtube.com/watch?v=IIQN3Z0VAp0",
       "thumbnail": "https://img.youtube.com/vi/IIQN3Z0VAp0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QhmHBEChurk",
+      "title": "사랑의 화살을 받아랏 #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "사랑의 화살을 받아랏 #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-12T12:30:06Z",
+      "url": "https://www.youtube.com/watch?v=QhmHBEChurk",
+      "thumbnail": "https://img.youtube.com/vi/QhmHBEChurk/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -779,6 +1462,18 @@
     {
       "id": "-0MvvjwPnaU",
       "title": "it’s too ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "it’s too ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-12T10:33:57Z",
+      "url": "https://www.youtube.com/watch?v=-0MvvjwPnaU",
+      "thumbnail": "https://img.youtube.com/vi/-0MvvjwPnaU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-0MvvjwPnaU",
+      "title": "it’s too ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "itu terlalu ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -786,6 +1481,18 @@
       "published": "2026-10-12T10:33:57Z",
       "url": "https://www.youtube.com/watch?v=-0MvvjwPnaU",
       "thumbnail": "https://img.youtube.com/vi/-0MvvjwPnaU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "WaxAJEx1y1c",
+      "title": "need some ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "need some ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-12T09:30:30Z",
+      "url": "https://www.youtube.com/watch?v=WaxAJEx1y1c",
+      "thumbnail": "https://img.youtube.com/vi/WaxAJEx1y1c/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -803,6 +1510,18 @@
     {
       "id": "bbnLEtPdpLE",
       "title": "rawrrr #Hearts2Hearts #하츠투하츠 #H2H  #STELLA #IAN",
+      "title_id": "rawrrr #Hearts2Hearts #하츠투하츠 #H2H  #STELLA #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-12T05:00:21Z",
+      "url": "https://www.youtube.com/watch?v=bbnLEtPdpLE",
+      "thumbnail": "https://img.youtube.com/vi/bbnLEtPdpLE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "bbnLEtPdpLE",
+      "title": "rawrrr #Hearts2Hearts #하츠투하츠 #H2H  #STELLA #IAN",
       "title_id": "rawrrr #Hati2Hati #Hati2Hati #H2H #STELLA #IAN",
       "type": "youtube",
       "kind": "short",
@@ -810,6 +1529,18 @@
       "published": "2026-10-12T05:00:21Z",
       "url": "https://www.youtube.com/watch?v=bbnLEtPdpLE",
       "thumbnail": "https://img.youtube.com/vi/bbnLEtPdpLE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "OVSw8ME7xvk",
+      "title": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
+      "title_id": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-11T13:01:04Z",
+      "url": "https://www.youtube.com/watch?v=OVSw8ME7xvk",
+      "thumbnail": "https://img.youtube.com/vi/OVSw8ME7xvk/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -827,6 +1558,18 @@
     {
       "id": "oRssAsGCl1s",
       "title": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-11T12:00:08Z",
+      "url": "https://www.youtube.com/watch?v=oRssAsGCl1s",
+      "thumbnail": "https://img.youtube.com/vi/oRssAsGCl1s/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "oRssAsGCl1s",
+      "title": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
       "title_id": "aku masih di sini #Hearts2Hearts #Hearts2Hearts #H2H #IAN #Ian",
       "type": "youtube",
       "kind": "short",
@@ -834,6 +1577,18 @@
       "published": "2026-10-11T12:00:08Z",
       "url": "https://www.youtube.com/watch?v=oRssAsGCl1s",
       "thumbnail": "https://img.youtube.com/vi/oRssAsGCl1s/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "DGVd3zMnBwo",
+      "title": "2027 Hearts2Hearts SEASON’S GREETINGS TRAILER",
+      "title_id": "2027 Hearts2Hearts SEASON’S GREETINGS TRAILER",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-11T03:00:05Z",
+      "url": "https://www.youtube.com/watch?v=DGVd3zMnBwo",
+      "thumbnail": "https://img.youtube.com/vi/DGVd3zMnBwo/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -851,6 +1606,18 @@
     {
       "id": "63ghDobqnw8",
       "title": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
+      "title_id": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-10T09:00:04Z",
+      "url": "https://www.youtube.com/watch?v=63ghDobqnw8",
+      "thumbnail": "https://img.youtube.com/vi/63ghDobqnw8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "63ghDobqnw8",
+      "title": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
       "title_id": "apakah itu kita lagi? #Hati2Hati #Hati2Hati #H2H #JUUN #A_NA",
       "type": "youtube",
       "kind": "short",
@@ -863,6 +1630,18 @@
     {
       "id": "XVqIN-xEnkE",
       "title": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
+      "title_id": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-10T05:01:03Z",
+      "url": "https://www.youtube.com/watch?v=XVqIN-xEnkE",
+      "thumbnail": "https://img.youtube.com/vi/XVqIN-xEnkE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "XVqIN-xEnkE",
+      "title": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
       "title_id": "ingatlah itu #Hearts2Hearts #Hearts2Hearts #H2H #CARMEN #JUUN",
       "type": "youtube",
       "kind": "short",
@@ -870,6 +1649,18 @@
       "published": "2026-10-10T05:01:03Z",
       "url": "https://www.youtube.com/watch?v=XVqIN-xEnkE",
       "thumbnail": "https://img.youtube.com/vi/XVqIN-xEnkE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "ni1QNOlIvYk",
+      "title": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-09T13:00:23Z",
+      "url": "https://www.youtube.com/watch?v=ni1QNOlIvYk",
+      "thumbnail": "https://img.youtube.com/vi/ni1QNOlIvYk/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -899,6 +1690,18 @@
     {
       "id": "5KSbZpVJCOk",
       "title": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "title_id": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-09T08:00:27Z",
+      "url": "https://www.youtube.com/watch?v=5KSbZpVJCOk",
+      "thumbnail": "https://img.youtube.com/vi/5KSbZpVJCOk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "5KSbZpVJCOk",
+      "title": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
       "title_id": "Bunga emosi mekar dalam sekejap #Hearts2Hearts #Hearts2Hearts #H2H #JIWOO #A_NA",
       "type": "youtube",
       "kind": "short",
@@ -906,6 +1709,18 @@
       "published": "2026-10-09T08:00:27Z",
       "url": "https://www.youtube.com/watch?v=5KSbZpVJCOk",
       "thumbnail": "https://img.youtube.com/vi/5KSbZpVJCOk/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "clIGsw-4qW0",
+      "title": "attempt: do not let her know #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "attempt: do not let her know #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-09T03:00:03Z",
+      "url": "https://www.youtube.com/watch?v=clIGsw-4qW0",
+      "thumbnail": "https://img.youtube.com/vi/clIGsw-4qW0/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -923,6 +1738,18 @@
     {
       "id": "CdbImJh_ud8",
       "title": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
+      "title_id": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-08T13:50:11Z",
+      "url": "https://www.youtube.com/watch?v=CdbImJh_ud8",
+      "thumbnail": "https://img.youtube.com/vi/CdbImJh_ud8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "CdbImJh_ud8",
+      "title": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
       "title_id": "memasuki malam jazz di NYC seperti #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
       "type": "youtube",
       "kind": "short",
@@ -930,6 +1757,18 @@
       "published": "2026-10-08T13:50:11Z",
       "url": "https://www.youtube.com/watch?v=CdbImJh_ud8",
       "thumbnail": "https://img.youtube.com/vi/CdbImJh_ud8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "JCngqkL_3ZA",
+      "title": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-08T10:04:43Z",
+      "url": "https://www.youtube.com/watch?v=JCngqkL_3ZA",
+      "thumbnail": "https://img.youtube.com/vi/JCngqkL_3ZA/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -947,6 +1786,18 @@
     {
       "id": "FNQfLaayR98",
       "title": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
+      "title_id": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-08T08:30:22Z",
+      "url": "https://www.youtube.com/watch?v=FNQfLaayR98",
+      "thumbnail": "https://img.youtube.com/vi/FNQfLaayR98/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "FNQfLaayR98",
+      "title": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
       "title_id": "WOW keren banget ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship #ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -954,6 +1805,18 @@
       "published": "2026-10-08T08:30:22Z",
       "url": "https://www.youtube.com/watch?v=FNQfLaayR98",
       "thumbnail": "https://img.youtube.com/vi/FNQfLaayR98/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QmD54lZR0QI",
+      "title": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
+      "title_id": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-08T03:00:16Z",
+      "url": "https://www.youtube.com/watch?v=QmD54lZR0QI",
+      "thumbnail": "https://img.youtube.com/vi/QmD54lZR0QI/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -971,6 +1834,18 @@
     {
       "id": "QbQgDJI0l8c",
       "title": "so you coming back or what #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
+      "title_id": "so you coming back or what #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T13:00:12Z",
+      "url": "https://www.youtube.com/watch?v=QbQgDJI0l8c",
+      "thumbnail": "https://img.youtube.com/vi/QbQgDJI0l8c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QbQgDJI0l8c",
+      "title": "so you coming back or what #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
       "title_id": "jadi kamu kembali lagi atau apa #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
       "type": "youtube",
       "kind": "short",
@@ -978,6 +1853,18 @@
       "published": "2026-10-07T13:00:12Z",
       "url": "https://www.youtube.com/watch?v=QbQgDJI0l8c",
       "thumbnail": "https://img.youtube.com/vi/QbQgDJI0l8c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "LeOL4sv2zFU",
+      "title": "even the wind loves us here! #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "even the wind loves us here! #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T10:30:11Z",
+      "url": "https://www.youtube.com/watch?v=LeOL4sv2zFU",
+      "thumbnail": "https://img.youtube.com/vi/LeOL4sv2zFU/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -995,6 +1882,18 @@
     {
       "id": "bx5e3t_h0qA",
       "title": "can we join you zara unnie??!!? #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "can we join you zara unnie??!!? #Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T09:32:17Z",
+      "url": "https://www.youtube.com/watch?v=bx5e3t_h0qA",
+      "thumbnail": "https://img.youtube.com/vi/bx5e3t_h0qA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "bx5e3t_h0qA",
+      "title": "can we join you zara unnie??!!? #Hearts2Hearts #하츠투하츠 #H2H",
       "title_id": "bisakah kami bergabung denganmu zara unnie??!!? #Hati2Hati #Hati2Hati #H2H",
       "type": "youtube",
       "kind": "short",
@@ -1002,6 +1901,18 @@
       "published": "2026-10-07T09:32:17Z",
       "url": "https://www.youtube.com/watch?v=bx5e3t_h0qA",
       "thumbnail": "https://img.youtube.com/vi/bx5e3t_h0qA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "svhMgHQXZ_E",
+      "title": "say hi! *shakes shoulders* #Hearts2Hearts #하츠투하츠 #Billlie @Billlie  #ICONICHEART",
+      "title_id": "say hi! *shakes shoulders* #Hearts2Hearts #하츠투하츠 #Billlie @Billlie  #ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T08:30:31Z",
+      "url": "https://www.youtube.com/watch?v=svhMgHQXZ_E",
+      "thumbnail": "https://img.youtube.com/vi/svhMgHQXZ_E/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
@@ -1019,6 +1930,18 @@
     {
       "id": "XxCP3DMNr_s",
       "title": "산책길이 지루하신가요 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "산책길이 지루하신가요 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T05:03:13Z",
+      "url": "https://www.youtube.com/watch?v=XxCP3DMNr_s",
+      "thumbnail": "https://img.youtube.com/vi/XxCP3DMNr_s/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "XxCP3DMNr_s",
+      "title": "산책길이 지루하신가요 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "title_id": "Bosan jalan-jalan #Hearts2Hearts #Hearts2Hearts #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "type": "youtube",
       "kind": "short",
@@ -1031,6 +1954,18 @@
     {
       "id": "QB06cB7WL-E",
       "title": "YES! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "YES! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-10-07T03:00:19Z",
+      "url": "https://www.youtube.com/watch?v=QB06cB7WL-E",
+      "thumbnail": "https://img.youtube.com/vi/QB06cB7WL-E/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QB06cB7WL-E",
+      "title": "YES! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
       "title_id": "YA! #Hati2Hati #Hati2Hati #H2H #A_NA #A_NA",
       "type": "youtube",
       "kind": "short",
@@ -1038,54 +1973,6 @@
       "published": "2026-10-07T03:00:19Z",
       "url": "https://www.youtube.com/watch?v=QB06cB7WL-E",
       "thumbnail": "https://img.youtube.com/vi/QB06cB7WL-E/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "TmgDKJyEbhU",
-      "title": "all i wanna do #Hearts2Hearts #하츠투하츠 #IAN #이안",
-      "title_id": "semua yang ingin aku lakukan #Hearts2Hearts #Hearts2Hearts #IAN #Ian",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-06T13:00:00Z",
-      "url": "https://www.youtube.com/watch?v=TmgDKJyEbhU",
-      "thumbnail": "https://img.youtube.com/vi/TmgDKJyEbhU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "P_PEqKUd8cQ",
-      "title": "time to step up #Hearts2Hearts #하츠투하츠 #H2H#CARMEN #카르멘",
-      "title_id": "saatnya melangkah #Hearts2Hearts #Hearts2Hearts #H2H#CARMEN #Carmen",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-06T11:30:06Z",
-      "url": "https://www.youtube.com/watch?v=P_PEqKUd8cQ",
-      "thumbnail": "https://img.youtube.com/vi/P_PEqKUd8cQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "3ceZcvZQEAM",
-      "title": "draft from girls night #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "draft dari girls night #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-06T09:30:21Z",
-      "url": "https://www.youtube.com/watch?v=3ceZcvZQEAM",
-      "thumbnail": "https://img.youtube.com/vi/3ceZcvZQEAM/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "y-RAgmXJ01Q",
-      "title": "here's the bts #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "inilah bts #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-06T08:30:18Z",
-      "url": "https://www.youtube.com/watch?v=y-RAgmXJ01Q",
-      "thumbnail": "https://img.youtube.com/vi/y-RAgmXJ01Q/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
