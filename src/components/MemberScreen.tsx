@@ -11,6 +11,7 @@ export const MemberScreen: React.FC = () => {
     setFotoGrup,
     memberCustomPhotos,
     memberOfficialPhotos,
+    h2hProfile,
     saveMemberPhoto,
     resetMemberPhoto,
     openLightbox,
@@ -19,6 +20,8 @@ export const MemberScreen: React.FC = () => {
     applyTema,
   } = useApp();
 
+  const members = h2hProfile?.members?.length === 8 ? h2hProfile.members : MEMBER;
+  const defaultGroupPhoto = h2hProfile?.group?.groupPhotoUrl || 'https://hips.hearstapps.com/hmg-prod/images/eee8b03c-98a3-4740-b83b-b0953f98fd68.png?crop=0.492xw%3A0.984xh%3B0.00489xw%2C0.00977xh&resize=1200%3A%2A';
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [activeUploadMemberId, setActiveUploadMemberId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -67,16 +70,14 @@ export const MemberScreen: React.FC = () => {
   const handleRemoveGroupPhoto = () => {
     suaraKlik();
     if (window.confirm('Hapus foto grup?')) {
-      setFotoGrup(
-        'https://hips.hearstapps.com/hmg-prod/images/eee8b03c-98a3-4740-b83b-b0953f98fd68.png?crop=0.492xw%3A0.984xh%3B0.00489xw%2C0.00977xh&resize=1200%3A%2A'
-      );
+      setFotoGrup(defaultGroupPhoto);
       showToast('🗑️ Foto grup direset');
     }
   };
 
   return (
     <div className="screen">
-      <div className="head">💖 Hearts2Hearts OT8</div>
+      <div className="head">💖 {h2hProfile?.group?.name || 'Hearts2Hearts'} OT8</div>
       <div className="info">
         💖 Profil 8 member Hearts2Hearts. Ketuk nama untuk membuka biodata. Tekan 📸 untuk memilih
         foto dari Galeri HP. Foto disimpan di HP Grace, terpisah dari katalog online.
@@ -160,13 +161,14 @@ export const MemberScreen: React.FC = () => {
 
       {/* 8 Members Grid */}
       <div className="member-grid">
-        {MEMBER.map((m) => {
+        {members.map((m) => {
           const isExpanded = expandedId === m.id;
           const customPhoto = memberCustomPhotos[m.id];
           const officialPhoto = memberOfficialPhotos[m.id];
           const displayPhoto =
             customPhoto ||
             officialPhoto ||
+            m.photoUrl ||
             `https://api.dicebear.com/7.x/bottts/svg?seed=${m.id}`;
 
           return (
