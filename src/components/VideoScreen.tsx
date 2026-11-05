@@ -12,6 +12,7 @@ export const VideoScreen: React.FC = () => {
     catalogShorts,
     catalogStats,
     catalogLastCheckedAt,
+    catalogLastRefreshedAt,
     catalogLoading,
     catalogRefreshing,
     refreshCatalog,
@@ -115,9 +116,9 @@ export const VideoScreen: React.FC = () => {
               Jendela 31 hari: {formatTanggal(cutoff)} – {formatTanggal(now)}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '4px' }}>
-              🗂️ Katalog terakhir diperbarui: {catalogStats?.updatedAt && !Number.isNaN(new Date(catalogStats.updatedAt).getTime())
-                ? formatWaktuWIB(new Date(catalogStats.updatedAt))
-                : 'Belum diketahui'}
+              🗂️ Katalog terakhir diperbarui: {catalogLastRefreshedAt
+                ? formatWaktuWIB(catalogLastRefreshedAt)
+                : 'Menunggu refresh berhasil'}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
               🔄 Pemeriksaan aplikasi terakhir: {catalogLastCheckedAt ? formatWaktuWIB(catalogLastCheckedAt) : 'Menunggu pemeriksaan pertama'}
