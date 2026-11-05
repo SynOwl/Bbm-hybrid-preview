@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
-import { ScreenId, H2HEvent, RekapItem, H2HMember, SheetsSyncStatus, GraceStatusPayload, YouTubeArchiveItem } from '../types';
+import { ScreenId, H2HEvent, RekapItem, H2HMember, SheetsSyncStatus, GraceStatusPayload, YouTubeArchiveItem, H2HProfile } from '../types';
 import {
   MAX_SAVING,
   XP_PER_LEVEL,
@@ -93,6 +93,7 @@ export interface AppContextType {
   setFotoGrup: (src: string) => void;
   memberCustomPhotos: Record<string, string>;
   memberOfficialPhotos: Record<string, string>;
+  h2hProfile: H2HProfile | null;
   saveMemberPhoto: (id: string, src: string) => Promise<void>;
   resetMemberPhoto: (id: string) => Promise<void>;
   rekapList: RekapItem[];
@@ -178,6 +179,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   );
   const [memberCustomPhotos, setMemberCustomPhotos] = useState<Record<string, string>>({});
   const [memberOfficialPhotos, setMemberOfficialPhotos] = useState<Record<string, string>>({});
+  const [h2hProfile, setH2HProfile] = useState<H2HProfile | null>(null);
 
   const [rekapList, setRekapList] = useState<RekapItem[]>([]);
   const [sheetsSyncStatus, setSheetsSyncStatus] = useState<SheetsSyncStatus>(() => {
@@ -588,20 +590,40 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (!force && nowMs - lastPhotoRefresh < 60_000) return;
       lastPhotoRefresh = nowMs;
       try {
-        const response = await fetch('data/h2h-members.json', {
+        const response = await fetch(`data/h2h-profile.json?t=${nowMs}`, {
           cache: 'no-store',
           headers: { 'Cache-Control': 'no-cache' },
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
-        if (disposed || !data || !Array.isArray(data.members)) return;
+        if (disposed || !data || !Array.isArray(data.members) || data.members.length !== 8 || !data.group) {
+          throw new Error('Katalog profil H2H tidak lengkap.');
+        }
+        setH2HProfile(data as H2HProfile);
         const map: Record<string, string> = {};
         data.members.forEach((member: { id?: string; photoUrl?: string }) => {
           if (member?.id && member?.photoUrl) map[member.id] = member.photoUrl;
         });
         setMemberOfficialPhotos(map);
+        // Foto pilihan pengguna tidak pernah ditimpa oleh foto grup dari katalog.
+        if (!localStorage.getItem('fotoGrupH2H') && data.group.groupPhotoUrl) {
+          setFotoGrupState(data.group.groupPhotoUrl);
+        }
       } catch {
-        // Data resmi yang sudah tampil tetap dipakai jika jaringan gagal.
+        // Pertahankan profil yang sudah tampil; file foto lama tetap menjadi fallback.
+        try {
+          const legacyResponse = await fetch(`data/h2h-members.json?t=${nowMs}`, { cache: 'no-store' });
+          if (!legacyResponse.ok) return;
+          const legacy = await legacyResponse.json();
+          if (disposed || !Array.isArray(legacy.members)) return;
+          const map: Record<string, string> = {};
+          legacy.members.forEach((member: { id?: string; photoUrl?: string }) => {
+            if (member?.id && member?.photoUrl) map[member.id] = member.photoUrl;
+          });
+          setMemberOfficialPhotos((previous) => ({ ...map, ...previous }));
+        } catch {
+          // Data yang sudah tampil tetap dipakai jika jaringan gagal.
+        }
       }
     };
 
@@ -674,6 +696,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     void refreshOfficialPhotos(true);
     void refreshCatalog(false);
     const intervalId = window.setInterval(checkCalendarState, 60_000);
+    const profileIntervalId = window.setInterval(() => {
+      if (document.visibilityState === 'visible') void refreshOfficialPhotos();
+    }, 15 * 60 * 1000);
     const catalogIntervalId = window.setInterval(() => {
       if (document.visibilityState === 'visible') {
         void refreshCatalog(false);
@@ -694,6 +719,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return () => {
       disposed = true;
       window.clearInterval(intervalId);
+      window.clearInterval(profileIntervalId);
       window.clearInterval(catalogIntervalId);
       window.clearInterval(videoCatalogIntervalId);
       window.removeEventListener('focus', onResume);
@@ -1193,6 +1219,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setFotoGrup,
         memberCustomPhotos,
         memberOfficialPhotos,
+        h2hProfile,
         saveMemberPhoto,
         resetMemberPhoto,
         rekapList,
