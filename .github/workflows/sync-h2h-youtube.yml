@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/sync-h2h-youtube.yml'
       - 'scripts/sync_h2h_catalog.py'
+      - 'data/h2h-profile.json'
   # Run once when the sync implementation itself changes. Catalog data commits
   # are intentionally excluded to prevent a self-triggering loop.
   push:
@@ -16,6 +17,7 @@ on:
     paths:
       - '.github/workflows/sync-h2h-youtube.yml'
       - 'scripts/sync_h2h_catalog.py'
+      - 'data/h2h-profile.json'
 
 permissions:
   contents: write
@@ -57,6 +59,32 @@ jobs:
           if status.get('apiStatus') not in ('videos_ok', 'videos_and_shorts_ok', 'shorts_fallback'):
               raise SystemExit('YouTube Data API did not successfully retrieve the official uploads playlist: ' + str(status.get('apiStatus')))
           print('YouTube Data API verified; status=' + str(status.get('apiStatus')))
+          PY
+      - name: Validate centralized H2H group and member profile catalog
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/h2h-profile.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          group = data.get('group') or {}
+          members = data.get('members') or []
+          expected = {'jiwoo', 'carmen', 'yuha', 'stella', 'juun', 'ana', 'ian', 'yeon'}
+          actual = {member.get('id') for member in members}
+          if len(members) != 8 or actual != expected:
+              raise SystemExit('Profile catalog must contain exactly the eight expected H2H members.')
+          required_group = ('name', 'logoUrl', 'groupPhotoUrl', 'debutDate', 'agency', 'fandom')
+          missing_group = [key for key in required_group if not group.get(key)]
+          if missing_group:
+              raise SystemExit('Missing group fields: ' + ', '.join(missing_group))
+          for member in members:
+              for key in ('nama', 'namaLengkap', 'tgl', 'posisi', 'photoUrl'):
+                  if not member.get(key):
+                      raise SystemExit(f"Missing {key} for member {member.get('id')}")
+              if not member['photoUrl'].startswith('https://'):
+                  raise SystemExit(f"Photo URL must use HTTPS: {member['id']}")
+          print('H2H profile catalog valid: group + 8 members + profile photos.')
           PY
       - name: Commit only catalog data files to main
         if: always() && github.event_name != 'pull_request'
