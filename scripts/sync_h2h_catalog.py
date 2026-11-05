@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 import json, subprocess, sys
-import urllib.request
-import re
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
@@ -11,6 +9,7 @@ MONTHLY = ROOT / 'data/h2h-monthly.json'
 STATUS = ROOT / 'data/h2h-sync-status.json'
 CHANNEL = 'https://www.youtube.com/@hearts2hearts.official'
 CHANNEL_ID = 'UC7Q3HUnJA3nvjZR2JeMn2Cw'
+SHORTS_PLAYLIST_ID = 'UUSH' + CHANNEL_ID[2:]
 UTC = timezone.utc
 
 def stamp(dt):
@@ -28,29 +27,19 @@ def scrape(tab):
         raise RuntimeError('Daftar YouTube ' + tab + ' kosong/tidak valid')
     return entries
 
-def discover_recent_channel_ids():
-    # Secondary discovery source: public channel page maintained from public
-    # YouTube channel data. IDs are never trusted on their own; each is checked
-    # against the official channel ID by yt-dlp before entering the catalog.
-    url = 'https://topcreadores.com/canal/' + CHANNEL_ID
-    request = urllib.request.Request(
-        url,
-        headers={'User-Agent': 'Mozilla/5.0 (compatible; BBMxH2H-Catalog/1.0)'}
-    )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        page = response.read().decode('utf-8', errors='replace')
-    ids = re.findall(
-        r'(?:youtube\.com/(?:watch\?v=|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})',
-        page
-    )
-    return list(dict.fromkeys(ids))
-
-
-def extract_video(video_id):
-    url = 'https://www.youtube.com/watch?v=' + video_id
-    cmd = ['yt-dlp', '--dump-single-json', '--no-warnings', '--skip-download', url]
-    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=120)
-    return json.loads(result.stdout)
+def scrape_shorts_playlist():
+    # YouTube's generated Shorts-only playlist is a second official discovery
+    # path. Its ID is UUSH + the channel ID without the leading "UC".
+    url = 'https://www.youtube.com/playlist?list=' + SHORTS_PLAYLIST_ID
+    cmd = ['yt-dlp', '--flat-playlist', '--dump-single-json', '--no-warnings', '--skip-download', url]
+    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=240)
+    data = json.loads(result.stdout)
+    entries = data.get('entries')
+    if not isinstance(entries, list) or not entries:
+        raise RuntimeError('Daftar playlist Shorts resmi kosong/tidak valid')
+    if data.get('id') and data['id'] != SHORTS_PLAYLIST_ID:
+        raise RuntimeError('ID playlist Shorts tidak cocok')
+    return [x for x in entries if not x.get('channel_id') or x.get('channel_id') == CHANNEL_ID]
 
 
 def normalize(raw, short):
@@ -113,40 +102,19 @@ def main():
         shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id')}
         added_v, added_s = [], []
 
-        # Secondary discovery catches recent channel uploads missing from
-        # the YouTube tab extractors. Every candidate is re-fetched from
-        # YouTube and must match the official channel ID before being stored.
+        # Merge the channel Shorts tab with YouTube's generated Shorts-only
+        # playlist. The playlist often exposes the newest Shorts before the
+        # channel tab extractor catches up; IDs are deduplicated below.
         try:
-            discovered_ids = discover_recent_channel_ids()
-            discovered_added = 0
-            for video_id in discovered_ids:
-                if video_id in videos or video_id in shorts:
-                    continue
-                try:
-                    metadata = extract_video(video_id)
-                    if metadata.get('channel_id') != CHANNEL_ID:
-                        print('Discovery candidate rejected (channel mismatch): ' + video_id, file=sys.stderr)
-                        continue
-                    duration = metadata.get('duration')
-                    if duration is None:
-                        print('Discovery candidate skipped (duration unavailable): ' + video_id, file=sys.stderr)
-                        continue
-                    is_short = float(duration) <= 180
-                    item = normalize(metadata, is_short)
-                    if not item:
-                        continue
-                    target, added = (shorts, added_s) if is_short else (videos, added_v)
-                    target[video_id] = item
-                    added.append(video_id)
-                    discovered_added += 1
-                    print('Channel-page fallback added ' + ('Short' if is_short else 'video') + ': ' + item['title'])
-                except Exception as discovery_error:
-                    print('Channel-page fallback could not inspect ' + video_id + ': ' + str(discovery_error)[:180], file=sys.stderr)
-            print('Channel-page fallback checked ' + str(len(discovered_ids)) + ' IDs; added ' + str(discovered_added))
-        except Exception as discovery_error:
-            # Primary yt-dlp tab collection remains usable if the secondary
-            # public discovery page is temporarily unavailable.
-            print('Channel-page fallback unavailable: ' + str(discovery_error)[:220], file=sys.stderr)
+            playlist_shorts = scrape_shorts_playlist()
+            by_id = {x.get('id'): x for x in raw_shorts if x.get('id')}
+            for entry in playlist_shorts:
+                if entry.get('id'):
+                    by_id[entry['id']] = entry
+            raw_shorts = list(by_id.values())
+            print('Shorts sources: channel tab + official UUSH playlist; merged ' + str(len(raw_shorts)) + ' unique entries')
+        except Exception as playlist_error:
+            print('Official UUSH Shorts playlist unavailable; keeping channel tab results: ' + str(playlist_error)[:220], file=sys.stderr)
 
         for raw, is_short, target, added in ([(x, False, videos, added_v) for x in raw_videos] + [(x, True, shorts, added_s) for x in raw_shorts]):
             item = normalize(raw, is_short)
