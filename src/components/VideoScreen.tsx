@@ -28,10 +28,21 @@ export const VideoScreen: React.FC = () => {
     let active = true;
     const loadSyncStatus = async () => {
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/h2h-sync-status.json?t=${Date.now()}`, { cache: 'no-store' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        if (active && data && typeof data === 'object') setSyncStatus(data);
+        const sources = [
+          `https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/data/h2h-sync-status.json?t=${Date.now()}`,
+          `https://cdn.jsdelivr.net/gh/SynOwl/Bbm-hybrid-preview@main/data/h2h-sync-status.json?t=${Date.now()}`,
+        ];
+        let loaded: SyncStatus | null = null;
+        for (const url of sources) {
+          try {
+            const response = await fetch(url, { cache: 'no-store' });
+            if (!response.ok) continue;
+            const data = await response.json();
+            if (data && typeof data === 'object') { loaded = data; break; }
+          } catch { /* coba mirror berikutnya */ }
+        }
+        if (!loaded) throw new Error('Semua mirror status GitHub belum dapat dibaca');
+        if (active) setSyncStatus(loaded);
       } catch (error) {
         console.warn('Status sinkronisasi GitHub belum dapat dibaca:', error);
       }
@@ -136,7 +147,7 @@ export const VideoScreen: React.FC = () => {
               Jendela 31 hari: {formatTanggal(cutoff)} – {formatTanggal(now)}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.95, marginTop: '5px', fontWeight: 700 }}>
-              {statusLabel}
+              {catalogRefreshing ? '📲 Perangkat ini sedang mengambil katalog GitHub...' : statusLabel}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '3px' }}>
               🛰️ Pemeriksaan YouTube (server): {syncStatus?.checkedAt ? formatWaktuWIB(new Date(syncStatus.checkedAt)) : 'Belum tersedia'}
@@ -145,7 +156,7 @@ export const VideoScreen: React.FC = () => {
               ☁️ Sinkronisasi GitHub selesai: {syncStatus?.completedAt ? formatWaktuWIB(new Date(syncStatus.completedAt)) : 'Belum tersedia'}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
-              📲 Versi katalog yang dimuat aplikasi: {catalogStats?.updatedAt ? formatWaktuWIB(new Date(catalogStats.updatedAt)) : 'Belum ada katalog'}
+              📲 Versi katalog yang dimuat perangkat ini: {catalogStats?.updatedAt ? formatWaktuWIB(new Date(catalogStats.updatedAt)) : 'Belum ada katalog'} ({catalogStats?.isLiveGitHub ? 'sumber GitHub' : 'cache / mirror cadangan'})
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
               {syncStatus?.message || 'Menunggu status sinkronisasi dari GitHub.'}
