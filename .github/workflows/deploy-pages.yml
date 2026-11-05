@@ -1,5 +1,6 @@
 name: Build and deploy BBM x H2H to GitHub Pages
 
+# Keep the Pages site served from the Vite production bundle in ./dist.
 on:
   pull_request:
     branches: [main]
