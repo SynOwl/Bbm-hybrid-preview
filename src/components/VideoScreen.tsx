@@ -87,7 +87,11 @@ export const VideoScreen: React.FC = () => {
       if (res.status === 'updated') {
         showToast(`🔄 Katalog diperbarui dari ${res.source || 'GitHub'}`);
       } else if (res.status === 'unchanged') {
-        showToast('✅ Katalog sudah versi paling baru');
+        if (syncStatus?.status === 'no_changes' && syncStatus.checkedAt) {
+          showToast(`ℹ️ YouTube terakhir diperiksa ${formatWaktuWIB(new Date(syncStatus.checkedAt))}; belum ada update baru. Video: ${syncStatus.newVideos ?? 0}, Shorts: ${syncStatus.newShorts ?? 0}.`);
+        } else {
+          showToast('✅ Katalog sudah versi paling baru');
+        }
       } else {
         showToast(`⚠️ ${res.message || 'GitHub belum bisa dijangkau. Cache HP tetap digunakan.'}`);
       }
@@ -147,7 +151,10 @@ export const VideoScreen: React.FC = () => {
               {catalogRefreshing ? '📲 Perangkat ini sedang mengambil katalog GitHub...' : statusLabel}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '3px' }}>
-              🛰️ Pemeriksaan YouTube (server): {syncStatus?.checkedAt ? formatWaktuWIB(new Date(syncStatus.checkedAt)) : 'Belum tersedia'}
+              🛰️ {syncStatus?.checkedAt ? `YouTube diperiksa ${formatWaktuWIB(new Date(syncStatus.checkedAt))}` : 'Pemeriksaan YouTube belum tersedia'}{syncStatus?.status === 'no_changes' ? ' — belum ada update terbaru' : ''}
+            </div>
+            <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
+              📊 Hasil pemeriksaan: {`Video baru ${syncStatus?.newVideos ?? '—'} · Shorts baru ${syncStatus?.newShorts ?? '—'}`}
             </div>
             <div style={{ fontSize: '10px', opacity: 0.85, marginTop: '2px' }}>
               ☁️ Sinkronisasi GitHub selesai: {syncStatus?.completedAt ? formatWaktuWIB(new Date(syncStatus.completedAt)) : 'Belum tersedia'}
