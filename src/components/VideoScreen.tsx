@@ -81,17 +81,21 @@ export const VideoScreen: React.FC = () => {
     });
   };
 
-  const handleRefreshClick = () => {
+  const handleRefreshClick = async () => {
     suaraKlik();
-    refreshCatalog(true).then((res) => {
+    try {
+      const res = await refreshCatalog(true);
       if (res.status === 'updated') {
         showToast(`🔄 Katalog diperbarui dari ${res.source || 'GitHub'}`);
       } else if (res.status === 'unchanged') {
         showToast('✅ Katalog sudah versi paling baru');
       } else {
-        showToast('⚠️ Gagal terhubung ke mirror (menggunakan cache HP)');
+        showToast(`⚠️ ${res.message || 'GitHub belum bisa dijangkau. Cache HP tetap digunakan.'}`);
       }
-    });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Kesalahan tidak diketahui';
+      showToast(`⚠️ Pengambilan katalog gagal: ${message}`);
+    }
   };
 
   const currentList = activeCategory === 'videos' ? catalogVideos : catalogShorts;

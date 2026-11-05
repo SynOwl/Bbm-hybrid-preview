@@ -110,7 +110,7 @@ async function fetchSingleMirror(
   const localController = new AbortController();
   const onParentAbort = () => localController.abort();
   parentSignal.addEventListener('abort', onParentAbort);
-  const timeoutId = setTimeout(() => localController.abort(), 4500); // 4.5s per mirror
+  const timeoutId = setTimeout(() => localController.abort(), 12000); // 12s per mirror untuk jaringan HP
 
   try {
     const res = await fetch(targetUrl, {
@@ -150,11 +150,11 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
   const existingCache = ambilDariLocalStorageAman();
   const cachedTime = existingCache ? new Date(existingCache.updatedAt).getTime() : 0;
 
-  // Master controller dengan timeout total 5 detik untuk membatasi waktu tunggu
+  // Master controller memberi waktu cukup untuk jaringan seluler / WebView
   const masterController = new AbortController();
   const masterTimeout = setTimeout(() => {
     masterController.abort();
-  }, 5000);
+  }, 15000);
 
   let successfulCandidates: Array<{ data: RawCatalogData; source: string; timestamp: number }> = [];
 
