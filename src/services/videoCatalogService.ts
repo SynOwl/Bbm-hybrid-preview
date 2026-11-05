@@ -90,8 +90,7 @@ export interface CatalogFetchResult {
 async function fetchSingleMirror(
   mirror: { name: string; url: string; headers?: Record<string, string> },
   nonce: string,
-  parentSignal: AbortSignal,
-
+  parentSignal: AbortSignal
 ): Promise<{ data: RawCatalogData; source: string; timestamp: number }> {
   const sep = mirror.url.includes('?') ? '&' : '?';
   const targetUrl = `${mirror.url}${sep}_t=${nonce}`;
@@ -108,8 +107,6 @@ async function fetchSingleMirror(
       headers: mirror.headers || {}, // Tanpa Cache-Control/Pragma agar tidak memicu CORS Preflight OPTIONS
       signal: localController.signal,
     });
-
-    const elapsed = Math.round(performance.now() - startTime);
 
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}`);
@@ -144,7 +141,7 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
   // Master controller dengan timeout total 5 detik untuk membatasi waktu tunggu
   const masterController = new AbortController();
   const masterTimeout = setTimeout(() => {
-        masterController.abort();
+    masterController.abort();
   }, 5000);
 
   let successfulCandidates: Array<{ data: RawCatalogData; source: string; timestamp: number }> = [];
