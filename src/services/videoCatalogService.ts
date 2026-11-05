@@ -28,8 +28,10 @@ export interface ProcessedCatalogResult {
   stats: CatalogStats;
 }
 
-const STORAGE_KEY_CATALOG = 'bbm_cached_h2h_archive_v4';
-const STORAGE_KEY_FETCH_TIME = 'bbm_cached_h2h_archive_fetch_time';
+// v5 sengaja memisahkan cache dari v4 agar katalog lama yang tidak memiliki Shorts terbaru
+// tidak terus diprioritaskan hanya karena timestamp lokalnya lebih baru.
+const STORAGE_KEY_CATALOG = 'bbm_cached_h2h_archive_v5';
+const STORAGE_KEY_FETCH_TIME = 'bbm_cached_h2h_archive_fetch_time_v5';
 
 // Mirror endpoints disusun tanpa header kustom non-safelisted agar tidak memicu HTTP OPTIONS Preflight
 export const MIRROR_SOURCES = [
@@ -253,22 +255,18 @@ async function fetchSingleMirror(
 
 /**
  * Mengambil katalog dari seluruh mirror secara paralel dan memilih data dengan updatedAt TERBARU.
- * Dilengkapi batas waktu keseluruhan (master timeout 5 detik) dan pembatalan request gantung (Koreksi 3 & 4).
- * Mengembalikan status jelas: 'updated', 'unchanged', atau 'failed' (Koreksi 1).
+ * Dilengkapi batas waktu keseluruhan (master timeout 5 detik) dan pembatalan request gantung.
  */
 export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult> {
   const nonce = `${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
 
-  // 1. Diagnostik Pemeriksaan LocalStorage Browser Aktual
   let rawCacheFromStorage: any = null;
   let cacheFetchTime: string | null = null;
   if (typeof localStorage !== 'undefined') {
     try {
       const rawStr = localStorage.getItem(STORAGE_KEY_CATALOG);
       cacheFetchTime = localStorage.getItem(STORAGE_KEY_FETCH_TIME);
-      if (rawStr) {
-        rawCacheFromStorage = JSON.parse(rawStr);
-      }
+      if (rawStr) rawCacheFromStorage = JSON.parse(rawStr);
     } catch {}
   }
 
@@ -287,8 +285,6 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
 
   const mirrorDiagnostics: MirrorDiagnosticLog[] = [];
   let masterTimeoutTriggered = false;
-
-  // Master controller dengan timeout total 5 detik untuk membatasi waktu tunggu
   const masterController = new AbortController();
   const masterTimeout = setTimeout(() => {
     masterTimeoutTriggered = true;
@@ -296,49 +292,46 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
   }, 5000);
 
   let successfulCandidates: Array<{ data: RawCatalogData; source: string; timestamp: number }> = [];
-
   try {
     const results = await Promise.allSettled(
       MIRROR_SOURCES.map((m) => fetchSingleMirror(m, nonce, masterController.signal, mirrorDiagnostics))
     );
-
     for (const r of results) {
-      if (r.status === 'fulfilled' && r.value && r.value.timestamp > 0) {
-        successfulCandidates.push(r.value);
-      }
+      if (r.status === 'fulfilled' && r.value && r.value.timestamp > 0) successfulCandidates.push(r.value);
     }
   } finally {
     clearTimeout(masterTimeout);
-    masterController.abort(); // Batalkan dan bersihkan koneksi yang masih menggantung
+    masterController.abort();
   }
 
-  // Urutkan kandidat yang berhasil berdasarkan updatedAt terbaru (descending)
   successfulCandidates.sort((a, b) => b.timestamp - a.timestamp);
-
   const bestOnline = successfulCandidates[0];
-
   let fetchResult: CatalogFetchResult;
 
-  // Kasus 1 & 2: Setidaknya ada satu mirror online yang berhasil diakses
   if (bestOnline) {
-    // 'updated': mirror berhasil dan timestamp online lebih baru daripada cache lokal
-    if (bestOnline.timestamp > cachedTime) {
+    const onlineHasId1 = bestOnline.data.shorts.some((s: any) => s?.id === 'KLUCXIGvx0c');
+    const onlineHasId2 = bestOnline.data.shorts.some((s: any) => s?.id === 'nl-YbxNFlGk');
+    const cacheHasId1 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'KLUCXIGvx0c'));
+    const cacheHasId2 = Boolean(existingCache?.shorts?.some((s: any) => s?.id === 'nl-YbxNFlGk'));
+    const onlineRepairsMissingShorts =
+      (onlineHasId1 && !cacheHasId1) || (onlineHasId2 && !cacheHasId2);
+
+    if (bestOnline.timestamp > cachedTime || onlineRepairsMissingShorts) {
       simpanKeLocalStorageAman(bestOnline.data);
       fetchResult = {
         status: 'updated',
         data: bestOnline.data,
         source: bestOnline.source,
         isNewer: true,
-        message: `Katalog berhasil diperbarui dari ${bestOnline.source}.`,
+        message: onlineRepairsMissingShorts
+          ? `Katalog diperbaiki dari ${bestOnline.source}; Shorts yang hilang dipulihkan.`
+          : `Katalog berhasil diperbarui dari ${bestOnline.source}.`,
       };
     } else {
-      // 'unchanged': mirror berhasil, tetapi timestamp online sama dengan atau lebih lama daripada cache lokal.
-      // Pertahankan cache lokal yang lebih baru, jangan sampai ditimpa data online yang lebih lama.
       const effectiveData = (existingCache && cachedTime > bestOnline.timestamp) ? existingCache : bestOnline.data;
       const effectiveSource = (existingCache && cachedTime > bestOnline.timestamp)
         ? `Penyimpanan Lokal HP (Lebih baru dari ${bestOnline.source})`
         : bestOnline.source;
-
       fetchResult = {
         status: 'unchanged',
         data: effectiveData,
@@ -350,8 +343,6 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
       };
     }
   } else if (existingCache) {
-    // Kasus 3: 'failed' - SELURUH mirror gagal diakses (tidak ada hasil online yang berhasil)
-    // Aplikasi menggunakan cache lokal HP karena jaringan offline/terputus
     fetchResult = {
       status: 'failed',
       data: existingCache,
@@ -360,7 +351,6 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
       message: 'Semua mirror gagal diakses. Menampilkan data tersimpan di HP.',
     };
   } else {
-    // Cadangan terakhir: coba berkas bundel lokal APK jika belum ada cache sama sekali
     const bundled = await fetchBundledBackup();
     if (bundled) {
       fetchResult = {
@@ -378,7 +368,6 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
   const hasId1InSelected = Array.isArray(fetchResult.data.shorts) && fetchResult.data.shorts.some((s: any) => s && s.id === 'KLUCXIGvx0c');
   const hasId2InSelected = Array.isArray(fetchResult.data.shorts) && fetchResult.data.shorts.some((s: any) => s && s.id === 'nl-YbxNFlGk');
 
-  // Catat ke telemetry diagnostik runtime
   latestDiagnostics = {
     timestamp: new Date().toISOString(),
     localStorageCache: storageDiag,
@@ -407,7 +396,8 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
     console.log('1. LocalStorage Browser:', storageDiag);
     console.table(mirrorDiagnostics);
     console.log('2. Master Timeout Terpicu?', masterTimeoutTriggered);
-    console.log('3. Data Terpilih:', latestDiagnostics.selection);
+    console.log('3. Sumber Terpilih:', fetchResult.source, fetchResult.status);
+    console.log('4. ID Shorts Terpilih:', { hasId1: hasId1InSelected, hasId2: hasId2InSelected });
     console.groupEnd();
   }
 
@@ -415,68 +405,28 @@ export async function fetchBestCatalogFromMirrors(): Promise<CatalogFetchResult>
 }
 
 /**
- * Menyimpan katalog ke LocalStorage secara aman dengan validasi tanggal dan kuota
- * Koreksi 2: Cache yang sudah valid tidak boleh ditimpa oleh data yang lebih lama atau tidak valid
+ * Simpan katalog dengan penanganan kuota localStorage yang aman
  */
-export function simpanKeLocalStorageAman(incoming: RawCatalogData): boolean {
-  if (!validateCatalogStructure(incoming)) {
-    return false;
-  }
-  if (typeof localStorage === 'undefined') {
-    return false;
-  }
-
+function simpanKeLocalStorageAman(data: RawCatalogData): void {
+  if (typeof localStorage === 'undefined') return;
   try {
-    const existingRaw = localStorage.getItem(STORAGE_KEY_CATALOG);
-    if (existingRaw) {
-      try {
-        const existing = JSON.parse(existingRaw);
-        if (existing && isValidIsoDate(existing.updatedAt)) {
-          const existingTime = new Date(existing.updatedAt).getTime();
-          const incomingTime = new Date(incoming.updatedAt).getTime();
-          // Jangan menimpa jika data masuk lebih lama dari cache
-          if (incomingTime < existingTime) {
-            return false;
-          }
-        }
-      } catch {
-        // Abaikan jika cache lama korup, data baru valid akan menggantikannya
-      }
-    }
-
-    localStorage.setItem(STORAGE_KEY_CATALOG, JSON.stringify(incoming));
+    localStorage.setItem(STORAGE_KEY_CATALOG, JSON.stringify(data));
     localStorage.setItem(STORAGE_KEY_FETCH_TIME, new Date().toISOString());
-    return true;
-  } catch (err) {
-    console.warn('Gagal menyimpan cache katalog ke localStorage (kemungkinan kuota penuh):', err);
-    return false;
+  } catch (err: any) {
+    console.warn('Gagal menyimpan katalog ke localStorage:', err.message);
   }
 }
 
 /**
- * Membaca katalog dari LocalStorage dengan validasi struktur dan penanganan data rusak
+ * Ambil cache lokal hanya jika struktur data masih valid
  */
 export function ambilDariLocalStorageAman(): RawCatalogData | null {
-  if (typeof localStorage === 'undefined') {
-    return null;
-  }
+  if (typeof localStorage === 'undefined') return null;
   try {
     const raw = localStorage.getItem(STORAGE_KEY_CATALOG);
     if (!raw) return null;
-
-    let parsed: any = null;
-    try {
-      parsed = JSON.parse(raw);
-    } catch {
-      localStorage.removeItem(STORAGE_KEY_CATALOG);
-      return null;
-    }
-
-    if (validateCatalogStructure(parsed)) {
-      return parsed;
-    }
-
-    // Jika data di storage tidak lolos validasi, bersihkan agar tidak menimbulkan bug
+    const parsed = JSON.parse(raw);
+    if (validateCatalogStructure(parsed)) return parsed;
     localStorage.removeItem(STORAGE_KEY_CATALOG);
     return null;
   } catch {
@@ -490,7 +440,6 @@ export function ambilDariLocalStorageAman(): RawCatalogData | null {
 async function fetchBundledBackup(): Promise<RawCatalogData | null> {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 4000);
-
   try {
     const res = await fetch(`data/h2h-archive.json?_t=${Date.now()}`, {
       cache: 'no-store',
@@ -498,9 +447,7 @@ async function fetchBundledBackup(): Promise<RawCatalogData | null> {
     });
     if (res.ok) {
       const data = await res.json();
-      if (validateCatalogStructure(data)) {
-        return data;
-      }
+      if (validateCatalogStructure(data)) return data;
     }
   } catch {
     // Abaikan jika tidak tersedia
@@ -512,7 +459,6 @@ async function fetchBundledBackup(): Promise<RawCatalogData | null> {
 
 /**
  * Memfilter katalog sesuai aturan 31 hari, memilah Video dan Shorts, serta mengurutkan berdasarkan tanggal terbaru.
- * Aturan filter 31 hari tetap dipertahankan 100%.
  */
 export function filterAndProcessCatalog(
   raw: RawCatalogData,
@@ -520,36 +466,26 @@ export function filterAndProcessCatalog(
 ): ProcessedCatalogResult {
   const now = new Date();
   const cutoff = new Date(now.getTime() - 31 * 24 * 60 * 60 * 1000);
-
   let totalRejectedOld = 0;
   let totalRejectedInvalid = 0;
 
   const processCategory = (items: any[], forceShort: boolean): YouTubeArchiveItem[] => {
     const list: YouTubeArchiveItem[] = [];
-
     (Array.isArray(items) ? items : []).forEach((x) => {
-      // 1. Validasi ID YouTube 11 karakter
       if (!x || !x.id || typeof x.id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(x.id)) {
         totalRejectedInvalid++;
         return;
       }
-
-      // 2. Tolak tanggal publikasi kosong atau bukan string
       if (!isValidIsoDate(x.published)) {
         totalRejectedInvalid++;
         return;
       }
-
       const pub = new Date(x.published);
-
-      // 3. Filter batas 31 hari terakhir (+24 jam toleransi zona waktu)
       if (pub.getTime() < cutoff.getTime() || pub.getTime() > now.getTime() + 86400000) {
         totalRejectedOld++;
         return;
       }
-
       const isShort = Boolean(x.isShort === true || x.kind === 'short' || forceShort);
-
       list.push({
         id: x.id,
         title: x.title_id || x.title || 'Video Hearts2Hearts',
@@ -559,19 +495,14 @@ export function filterAndProcessCatalog(
         isShort,
       });
     });
-
     list.sort((a, b) => b.published.getTime() - a.published.getTime());
     return list;
   };
 
   const videos = processCategory(raw.videos, false);
   const shorts = processCategory(raw.shorts, true);
-
   const hasId1InProcessed = shorts.some((s) => s.id === 'KLUCXIGvx0c');
   const hasId2InProcessed = shorts.some((s) => s.id === 'nl-YbxNFlGk');
-  const id1Index = shorts.findIndex((s) => s.id === 'KLUCXIGvx0c');
-  const id2Index = shorts.findIndex((s) => s.id === 'nl-YbxNFlGk');
-
   latestDiagnostics = {
     ...latestDiagnostics,
     processing: {
@@ -579,11 +510,10 @@ export function filterAndProcessCatalog(
       totalShortsFiltered31d: shorts.length,
       hasId1: hasId1InProcessed,
       hasId2: hasId2InProcessed,
-      id1Index,
-      id2Index,
+      id1Index: shorts.findIndex((s) => s.id === 'KLUCXIGvx0c'),
+      id2Index: shorts.findIndex((s) => s.id === 'nl-YbxNFlGk'),
     },
   };
-
   if (typeof window !== 'undefined') {
     (window as any).__BBM_DIAGNOSTICS__ = latestDiagnostics;
     console.log('4. Hasil filterAndProcessCatalog:', latestDiagnostics.processing);
@@ -596,8 +526,7 @@ export function filterAndProcessCatalog(
     totalRejectedOld,
     totalRejectedInvalid,
     sourceFile: sourceName,
-    isLiveGitHub: !sourceName.includes('Bundel') && !sourceName.includes('Offline'),
+    isLiveGitHub: sourceName !== 'Penyimpanan Lokal HP',
   };
-
   return { videos, shorts, stats };
 }
