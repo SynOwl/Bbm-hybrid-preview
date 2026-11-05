@@ -103,11 +103,14 @@ export const VideoScreen: React.FC = () => {
 
   const handlePlayYouTube = (item: YouTubeArchiveItem) => {
     suaraKlik();
+    const index = filteredList.findIndex((video) => video.id === item.id);
     openVideoPlayer(
       `https://www.youtube.com/watch?v=${item.id}`,
       item.title,
       true,
-      item.id
+      item.id,
+      filteredList,
+      index
     );
   };
 

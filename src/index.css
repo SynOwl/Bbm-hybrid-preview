@@ -2228,6 +2228,38 @@ body.has-custom-bg::before {
 }
 
 /* Instagram Reels Style Video Modal */
+.ig-swipe-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: transparent;
+  touch-action: none;
+  cursor: pointer;
+}
+
+.ig-swipe-hint {
+  margin-top: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  opacity: .78;
+}
+
+.ig-video-position {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  color: #fff;
+  background: rgba(0,0,0,.48);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 18px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
 .ig-reels-modal {
   position: fixed;
   inset: 0;

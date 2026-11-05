@@ -4,8 +4,11 @@ import { suaraKlik } from '../../utils/audio';
 import { bukaWA, fallbackClipboard } from '../../utils/whatsapp';
 
 export const VideoReelsModal: React.FC = () => {
-  const { videoModal, closeVideoPlayer, showToast } = useApp();
+  const { videoModal, closeVideoPlayer, showToast, navigateVideo, currentVideoIndex, videoQueue } = useApp();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const touchStartY = useRef<number | null>(null);
+  const suppressTap = useRef<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [showPlayIcon, setShowPlayIcon] = useState<boolean>(false);
   const [isLandscape, setIsLandscape] = useState<boolean>(false);
@@ -15,13 +18,18 @@ export const VideoReelsModal: React.FC = () => {
       videoRef.current.play().catch(() => {});
       setIsPlaying(true);
     }
-  }, [videoModal.show, videoModal.isYouTube]);
+    if (videoModal.show && videoModal.isYouTube) setIsPlaying(true);
+  }, [videoModal.show, videoModal.isYouTube, videoModal.youtubeId]);
 
   if (!videoModal.show) return null;
 
   const togglePlayPause = () => {
-    if (videoModal.isYouTube || !videoRef.current) return;
-    if (videoRef.current.paused) {
+    if (videoModal.isYouTube) {
+      const command = isPlaying ? 'pauseVideo' : 'playVideo';
+      iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: command, args: [] }), 'https://www.youtube-nocookie.com');
+      setIsPlaying(!isPlaying);
+    } else if (!videoRef.current) return;
+    else if (videoRef.current.paused) {
       videoRef.current.play();
       setIsPlaying(true);
     } else {
@@ -30,6 +38,25 @@ export const VideoReelsModal: React.FC = () => {
     }
     setShowPlayIcon(true);
     setTimeout(() => setShowPlayIcon(false), 600);
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartY.current = event.touches[0]?.clientY ?? null;
+    suppressTap.current = false;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartY.current === null) return;
+    const deltaY = (event.changedTouches[0]?.clientY ?? touchStartY.current) - touchStartY.current;
+    touchStartY.current = null;
+    if (Math.abs(deltaY) < 55) return;
+    suppressTap.current = true;
+    navigateVideo(deltaY < 0 ? 1 : -1);
+  };
+
+  const handleSwipeLayerClick = () => {
+    if (suppressTap.current) { suppressTap.current = false; return; }
+    togglePlayPause();
   };
 
   const toggleOrientation = () => {
@@ -69,11 +96,13 @@ export const VideoReelsModal: React.FC = () => {
   };
 
   return (
-    <div className="ig-reels-modal show">
+    <div className="ig-reels-modal show" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       {videoModal.isYouTube && videoModal.youtubeId ? (
         <iframe
+          ref={iframeRef}
+          key={videoModal.youtubeId}
           title="Pemutar YouTube H2H"
-          src={`https://www.youtube-nocookie.com/embed/${videoModal.youtubeId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/${videoModal.youtubeId}?autoplay=1&rel=0&enablejsapi=1&playsinline=1&controls=0`}
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
           style={{
@@ -94,9 +123,11 @@ export const VideoReelsModal: React.FC = () => {
           playsInline
           autoPlay
           style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#000' }}
-          onClick={togglePlayPause}
         />
       )}
+
+      {/* Lapisan gesture: usap atas/bawah untuk pindah video, ketuk untuk jeda/putar */}
+      <div className="ig-swipe-layer" onClick={handleSwipeLayerClick} />
 
       {/* Floating UI overlay */}
       <div className="ig-reels-ui">
@@ -150,8 +181,13 @@ export const VideoReelsModal: React.FC = () => {
             </span>
           </div>
           <div className="ig-desc">{videoModal.title}</div>
+          <div className="ig-swipe-hint">Usap ↑ video berikutnya · ↓ sebelumnya</div>
         </div>
       </div>
+
+      {videoQueue.length > 1 && (
+        <div className="ig-video-position">{currentVideoIndex + 1} / {videoQueue.length}</div>
+      )}
 
       {showPlayIcon && (
         <div className="play-pause-icon">
