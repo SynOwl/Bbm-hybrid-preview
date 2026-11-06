@@ -166,8 +166,16 @@
       "hewan": "",
       "julukan": "",
       "fun": "Stella merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "",
-      "photoGallery": []
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/4.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/5.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/6.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/stella/7.jpg"
+      ]
     },
     {
       "id": "juun",
