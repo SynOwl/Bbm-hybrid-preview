@@ -18,12 +18,12 @@ export default defineConfig({
         const target = resolve(process.cwd(), 'dist/data');
         mkdirSync(target, { recursive: true });
         cpSync(source, target, { recursive: true });
-        // Foto Ian disertakan di bundle lokal agar tampil di APK/WebView tanpa
-        // bergantung pada pemuatan gambar dari host eksternal.
-        const ianSource = resolve(process.cwd(), 'assets/h2h/ian');
-        const ianTarget = resolve(process.cwd(), 'dist/assets/h2h/ian');
-        mkdirSync(ianTarget, { recursive: true });
-        cpSync(ianSource, ianTarget, { recursive: true });
+        // Seluruh aset H2H (logo, foto grup, dan foto semua member) ikut
+        // masuk ke bundle agar APK/WebView dapat membacanya secara lokal.
+        const h2hAssetsSource = resolve(process.cwd(), 'assets/h2h');
+        const h2hAssetsTarget = resolve(process.cwd(), 'dist/assets/h2h');
+        mkdirSync(h2hAssetsTarget, { recursive: true });
+        cpSync(h2hAssetsSource, h2hAssetsTarget, { recursive: true });
       },
     },
   ],
