@@ -74,6 +74,12 @@
         "title": "Candy Box Lover",
         "description": "OST anime (2026)"
       }
+    ],
+    "photoGallery": [
+      "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/ot8/1.jpg",
+      "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/ot8/2.jpg",
+      "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/ot8/3.jpg",
+      "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/ot8/4.jpg"
     ]
   },
   "members": [
@@ -241,13 +247,8 @@
       "hewan": "",
       "julukan": "",
       "fun": "Ian merupakan salah satu dari delapan anggota Hearts2Hearts.",
-      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/1.jpg",
-      "photoGallery": [
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/1.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/2.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/3.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/ian/4.jpg"
-      ]
+      "photoUrl": "",
+      "photoGallery": []
     },
     {
       "id": "yeon",
@@ -265,13 +266,8 @@
       "hewan": "",
       "julukan": "",
       "fun": "Ye-on adalah anggota termuda dalam formasi Hearts2Hearts.",
-      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/1.jpg",
-      "photoGallery": [
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/1.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/2.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/3.jpg",
-        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/feat/youtube-data-api-sync/assets/h2h/yeon/4.jpg"
-      ]
+      "photoUrl": "",
+      "photoGallery": []
     }
   ]
 }

@@ -156,6 +156,7 @@ export interface H2HProfile {
     hangul: string;
     logoUrl: string;
     groupPhotoUrl: string;
+    photoGallery?: string[];
     debutDate: string;
     agency: string;
     memberCount: number;

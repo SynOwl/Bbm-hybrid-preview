@@ -23,6 +23,7 @@ export const MemberScreen: React.FC = () => {
   const members = h2hProfile?.members?.length === 8 ? h2hProfile.members : MEMBER;
   const defaultGroupPhoto = h2hProfile?.group?.groupPhotoUrl || 'https://hips.hearstapps.com/hmg-prod/images/eee8b03c-98a3-4740-b83b-b0953f98fd68.png?crop=0.492xw%3A0.984xh%3B0.00489xw%2C0.00977xh&resize=1200%3A%2A';
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [showGroupAlbum, setShowGroupAlbum] = useState(false);
   const [activeUploadMemberId, setActiveUploadMemberId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const groupFileInputRef = useRef<HTMLInputElement>(null);
@@ -111,6 +112,41 @@ export const MemberScreen: React.FC = () => {
           </div>
         )}
       </div>
+
+      <button
+        type="button"
+        className="btn-s"
+        style={{ width: '100%', marginTop: '10px', marginBottom: showGroupAlbum ? '8px' : '14px' }}
+        onClick={() => {
+          suaraKlik();
+          setShowGroupAlbum((open) => !open);
+        }}
+      >
+        {showGroupAlbum ? '✕ Tutup Album Foto OT8' : `📸 Album Foto OT8 (${h2hProfile?.group?.photoGallery?.length || 0})`}
+      </button>
+
+      {showGroupAlbum && (
+        <div className="member-detail" style={{ marginBottom: '14px' }}>
+          <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>💖 Galeri Foto Hearts2Hearts OT8</div>
+          {(h2hProfile?.group?.photoGallery || []).length > 0 ? (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '7px' }}>
+              {h2hProfile!.group.photoGallery!.map((photo, index) => (
+                <img
+                  key={photo}
+                  src={photo}
+                  alt={`Foto grup OT8 ${index + 1}`}
+                  loading="lazy"
+                  onClick={() => openLightbox(photo)}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  style={{ width: '100%', aspectRatio: '1 / 1', objectFit: 'cover', borderRadius: '10px', cursor: 'zoom-in', border: '1px solid rgba(255,255,255,.35)' }}
+                />
+              ))}
+            </div>
+          ) : (
+            <div style={{ fontSize: '12px', opacity: .85 }}>Album OT8 belum berisi foto.</div>
+          )}
+        </div>
+      )}
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px' }}>
         <button
