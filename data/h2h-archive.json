@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-06T04:26:11Z",
+  "updatedAt": "2026-11-07T09:45:00Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "S7R46oVu-iA",
+      "title": "repeat after me! #whatsinmydrafts",
+      "title_id": "repeat after me! #whatsinmydrafts",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-07T08:30:29Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=S7R46oVu-iA",
+      "thumbnail": "https://img.youtube.com/vi/S7R46oVu-iA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "zOz1XKXgy5k",
       "title": "backseat 꽉 찼다 #Hearts2Hearts #하츠투하츠 #NCTDREAM @NCTDREAM  #Moonride #Hearts2Hearts_Moonride",
@@ -4165,6 +4177,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "S7R46oVu-iA",
+      "title": "repeat after me! #whatsinmydrafts",
+      "title_id": "repeat after me! #whatsinmydrafts",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-07T08:30:29Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=S7R46oVu-iA",
+      "thumbnail": "https://img.youtube.com/vi/S7R46oVu-iA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "zOz1XKXgy5k",
       "title": "backseat 꽉 찼다 #Hearts2Hearts #하츠투하츠 #NCTDREAM @NCTDREAM  #Moonride #Hearts2Hearts_Moonride",

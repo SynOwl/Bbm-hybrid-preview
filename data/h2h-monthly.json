@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-06T04:26:11Z",
+  "updatedAt": "2026-11-07T09:45:00Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "S7R46oVu-iA",
+      "title": "repeat after me! #whatsinmydrafts",
+      "title_id": "repeat after me! #whatsinmydrafts",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-07T08:30:29Z",
+      "url": "https://www.youtube.com/watch?v=S7R46oVu-iA",
+      "thumbnail": "https://img.youtube.com/vi/S7R46oVu-iA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "S7R46oVu-iA",
+      "title": "repeat after me! #whatsinmydrafts",
+      "title_id": "repeat after me! #whatsinmydrafts",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-07T08:30:29Z",
+      "url": "https://www.youtube.com/watch?v=S7R46oVu-iA",
+      "thumbnail": "https://img.youtube.com/vi/S7R46oVu-iA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "zOz1XKXgy5k",
       "title": "backseat 꽉 찼다 #Hearts2Hearts #하츠투하츠 #NCTDREAM @NCTDREAM  #Moonride #Hearts2Hearts_Moonride",
@@ -1805,30 +1829,6 @@
       "published": "2026-10-08T10:04:43Z",
       "url": "https://www.youtube.com/watch?v=JCngqkL_3ZA",
       "thumbnail": "https://img.youtube.com/vi/JCngqkL_3ZA/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "FNQfLaayR98",
-      "title": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
-      "title_id": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-08T08:30:22Z",
-      "url": "https://www.youtube.com/watch?v=FNQfLaayR98",
-      "thumbnail": "https://img.youtube.com/vi/FNQfLaayR98/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "FNQfLaayR98",
-      "title": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
-      "title_id": "WOW keren banget ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship #ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-08T08:30:22Z",
-      "url": "https://www.youtube.com/watch?v=FNQfLaayR98",
-      "thumbnail": "https://img.youtube.com/vi/FNQfLaayR98/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
