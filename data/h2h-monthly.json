@@ -1782,30 +1782,6 @@
       "url": "https://www.youtube.com/watch?v=clIGsw-4qW0",
       "thumbnail": "https://img.youtube.com/vi/clIGsw-4qW0/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "CdbImJh_ud8",
-      "title": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
-      "title_id": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-08T13:50:11Z",
-      "url": "https://www.youtube.com/watch?v=CdbImJh_ud8",
-      "thumbnail": "https://img.youtube.com/vi/CdbImJh_ud8/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "CdbImJh_ud8",
-      "title": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
-      "title_id": "memasuki malam jazz di NYC seperti #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-08T13:50:11Z",
-      "url": "https://www.youtube.com/watch?v=CdbImJh_ud8",
-      "thumbnail": "https://img.youtube.com/vi/CdbImJh_ud8/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
