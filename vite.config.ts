@@ -18,6 +18,12 @@ export default defineConfig({
         const target = resolve(process.cwd(), 'dist/data');
         mkdirSync(target, { recursive: true });
         cpSync(source, target, { recursive: true });
+        // Foto Ian disertakan di bundle lokal agar tampil di APK/WebView tanpa
+        // bergantung pada pemuatan gambar dari host eksternal.
+        const ianSource = resolve(process.cwd(), 'assets/h2h/ian');
+        const ianTarget = resolve(process.cwd(), 'dist/assets/h2h/ian');
+        mkdirSync(ianTarget, { recursive: true });
+        cpSync(ianSource, ianTarget, { recursive: true });
       },
     },
   ],
