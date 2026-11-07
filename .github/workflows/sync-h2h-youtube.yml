@@ -82,8 +82,24 @@ jobs:
               for key in ('nama', 'namaLengkap', 'tgl', 'posisi', 'photoUrl'):
                   if not member.get(key):
                       raise SystemExit(f"Missing {key} for member {member.get('id')}")
-              if not member['photoUrl'].startswith('https://'):
-                  raise SystemExit(f"Photo URL must use HTTPS: {member['id']}")
+              photo_url = member['photoUrl']
+              if photo_url.startswith('https://'):
+                  pass
+              elif photo_url.startswith('assets/h2h/'):
+                  photo_path = Path(photo_url)
+                  if not photo_path.is_file() or not photo_path.resolve().is_relative_to(Path('assets/h2h').resolve()):
+                      raise SystemExit(f"Local photo file is missing or outside assets/h2h: {member['id']} -> {photo_url}")
+              else:
+                  raise SystemExit(f"Photo URL must be HTTPS or a valid local assets/h2h path: {member['id']}")
+
+              for gallery_photo in member.get('photoGallery') or []:
+                  if gallery_photo.startswith('https://'):
+                      continue
+                  if not gallery_photo.startswith('assets/h2h/'):
+                      raise SystemExit(f"Invalid gallery photo path: {member['id']} -> {gallery_photo}")
+                  gallery_path = Path(gallery_photo)
+                  if not gallery_path.is_file() or not gallery_path.resolve().is_relative_to(Path('assets/h2h').resolve()):
+                      raise SystemExit(f"Local gallery photo is missing or outside assets/h2h: {member['id']} -> {gallery_photo}")
           print('H2H profile catalog valid: group + 8 members + profile photos.')
           PY
       - name: Commit only catalog data files to main
