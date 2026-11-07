@@ -3,7 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { suaraKlik } from '../../utils/audio';
 
 export const GoodbyeModal: React.FC = () => {
-  const { goodbyeModal, setGoodbyeModal, saving } = useApp();
+  const { goodbyeModal, setGoodbyeModal, saving, showToast } = useApp();
 
   if (!goodbyeModal) return null;
 
@@ -16,8 +16,38 @@ export const GoodbyeModal: React.FC = () => {
 
   const handleKeluar = () => {
     suaraKlik();
+
+    // Pulihkan penghubung native yang dipakai versi BBM sebelum migrasi React.
+    // Jangan memakai history.back(): pada WebView itu justru bisa kembali ke beranda APK.
+    const nativeWindow = window as any;
+    const panggilSalahSatu = (target: any, names: string[]): boolean => {
+      if (!target) return false;
+      for (const name of names) {
+        if (typeof target[name] === 'function') {
+          try {
+            target[name]();
+            return true;
+          } catch {
+            // Coba nama fungsi native berikutnya.
+          }
+        }
+      }
+      return false;
+    };
+
+    const berhasil =
+      panggilSalahSatu(nativeWindow.WebToApk, [
+        'closeApp', 'finish', 'quit', 'close', 'kill', 'killApp',
+        'exitApplication', 'exitApp', 'exit', 'closeApplication',
+      ]) ||
+      panggilSalahSatu(nativeWindow.Android, ['exitApp', 'closeApp']) ||
+      panggilSalahSatu(nativeWindow.AppMint, ['closeApp']);
+
     setGoodbyeModal(false);
-    window.alert('Terima kasih Grace sudah belajar dengan rajin hari ini! 💖');
+
+    if (!berhasil) {
+      showToast('Fitur keluar otomatis tidak terdeteksi. Gunakan tombol Back HP untuk keluar.');
+    }
   };
 
   return (
