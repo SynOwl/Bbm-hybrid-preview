@@ -1806,30 +1806,6 @@
       "url": "https://www.youtube.com/watch?v=CdbImJh_ud8",
       "thumbnail": "https://img.youtube.com/vi/CdbImJh_ud8/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "JCngqkL_3ZA",
-      "title": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-08T10:04:43Z",
-      "url": "https://www.youtube.com/watch?v=JCngqkL_3ZA",
-      "thumbnail": "https://img.youtube.com/vi/JCngqkL_3ZA/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "JCngqkL_3ZA",
-      "title": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "pesta di taman pusat #Hearts2Hearts #하츠투하츠 #H2H",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-08T10:04:43Z",
-      "url": "https://www.youtube.com/watch?v=JCngqkL_3ZA",
-      "thumbnail": "https://img.youtube.com/vi/JCngqkL_3ZA/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
