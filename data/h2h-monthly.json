@@ -1830,30 +1830,6 @@
       "url": "https://www.youtube.com/watch?v=FNQfLaayR98",
       "thumbnail": "https://img.youtube.com/vi/FNQfLaayR98/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "QmD54lZR0QI",
-      "title": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
-      "title_id": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-08T03:00:16Z",
-      "url": "https://www.youtube.com/watch?v=QmD54lZR0QI",
-      "thumbnail": "https://img.youtube.com/vi/QmD54lZR0QI/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "QmD54lZR0QI",
-      "title": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
-      "title_id": "*lagu kebangsaan minggu ini* #Hearts2Hearts #Hearts2Hearts #H2H #STELLA #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-08T03:00:16Z",
-      "url": "https://www.youtube.com/watch?v=QmD54lZR0QI",
-      "thumbnail": "https://img.youtube.com/vi/QmD54lZR0QI/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
