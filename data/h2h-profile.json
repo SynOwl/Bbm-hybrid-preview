@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-07",
   "source": "BBM x H2H profile catalog; member photos from the existing Weverse profile-image catalog. Verify future biography edits against official SM Entertainment and Hearts2Hearts channels.",
   "sourceUrl": "https://www.smentertainment.com/artist/",
   "group": {
@@ -118,8 +118,15 @@
       "hewan": "",
       "julukan": "",
       "fun": "Carmen berasal dari Indonesia dan menjadi bagian dari formasi debut Hearts2Hearts.",
-      "photoUrl": "",
-      "photoGallery": []
+      "photoUrl": "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/1.jpg",
+      "photoGallery": [
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/1.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/2.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/3.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/4.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/5.jpg",
+        "https://raw.githubusercontent.com/SynOwl/Bbm-hybrid-preview/main/assets/h2h/carmen/6.jpg"
+      ]
     },
     {
       "id": "yuha",
