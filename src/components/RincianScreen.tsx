@@ -39,6 +39,8 @@ export const RincianScreen: React.FC = () => {
     if (currentMetode.startsWith('HTML')) {
       pesan += '\n📄 Mami, tolong kirim file HTML soal untuk Grace ya 💖\n';
       pesan += '⏳ Grace tunggu minimal 30 menit ya Mami...\n';
+      // Simpan pesan lengkap agar tombol kirim ulang memakai rincian yang sama.
+      localStorage.setItem('pesanPermintaanHTML', pesan + '\n✍️ Dari Grace 💖');
     }
     pesan += '\n✍️ Dari Grace 💖';
 
@@ -69,6 +71,11 @@ export const RincianScreen: React.FC = () => {
       <button className="btn-p" onClick={handleKirimKeMami}>
         💬 Kirim ke WhatsApp Mami
       </button>
+      {currentMetode.startsWith('HTML') && (
+        <p style={{ fontSize: '12px', textAlign: 'center', margin: '8px 0', opacity: 0.9 }}>
+          📲 Setelah WhatsApp terbuka, tekan tombol <b>Kirim</b> agar pesan sampai ke Mami ya 💖
+        </p>
+      )}
 
       <button
         className="btn-s"
