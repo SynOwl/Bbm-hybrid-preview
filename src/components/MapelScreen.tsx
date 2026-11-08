@@ -56,15 +56,33 @@ export const MapelScreen: React.FC = () => {
     }
     const nextCoba = cobaKirimUlang + 1;
     setCobaKirimUlang(nextCoba);
-    const batasBaru = Date.now() + 30 * 60 * 1000;
+    const now = new Date();
+    const batasBaru = now.getTime() + 30 * 60 * 1000;
     localStorage.setItem('cobaKirimUlang', String(nextCoba));
     localStorage.setItem('waktuBatasTunggu', String(batasBaru));
     setMenunggu(true);
     setWaktuSisaDetik(30 * 60);
 
-    // Pakai kembali rincian lengkap dari permintaan pertama.
-    // Pesan singkat hanya menjadi cadangan untuk sesi aplikasi versi lama.
-    const pesanLengkap = localStorage.getItem('pesanPermintaanHTML');
+    // Gunakan isi pesan lengkap, tetapi perbarui tanggal dan jam
+    // sesuai waktu perangkat saat tombol kirim ulang ditekan.
+    const pesanTersimpan = localStorage.getItem('pesanPermintaanHTML');
+    const hariBaru = now.toLocaleDateString('id-ID', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+    const jamBaru = now.toLocaleTimeString('id-ID', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    const pesanLengkap = pesanTersimpan
+      ? pesanTersimpan
+          .replace(/^📅 Hari: .*$/m, '📅 Hari: ' + hariBaru)
+          .replace(/^🕐 Jam: .*$/m, '🕐 Jam: ' + jamBaru + ' WIB')
+      : null;
+
+    // Pesan singkat menjadi cadangan untuk sesi dari versi aplikasi lama.
     const pesan =
       pesanLengkap ||
       '💖 BELAJAR BARENG MAMI 💖\n\n' +
