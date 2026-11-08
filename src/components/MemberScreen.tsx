@@ -53,7 +53,7 @@ const GroupPhotoAlbum: React.FC<{
       </div>
     ) : (
       <div style={{ fontSize: '12px', opacity: .8 }}>
-        Belum ada foto. Tambahkan foto ke folder assets/h2h/{title.toLowerCase()}/.
+        Belum ada foto di kategori ini. Tambahkan foto ke folder kategori yang sesuai.
       </div>
     )}
   </section>
@@ -422,6 +422,16 @@ export const MemberScreen: React.FC = () => {
           go('s-dash');
         }}
         aria-label="Kembali ke menu sebelumnya"
+        style={{
+          position: 'fixed',
+          right: 'max(18px, env(safe-area-inset-right))',
+          bottom: 'max(18px, env(safe-area-inset-bottom))',
+          zIndex: 1500,
+          width: 'auto',
+          minWidth: '112px',
+          margin: 0,
+          boxShadow: '0 4px 18px rgba(0,0,0,.4)',
+        }}
       >
         ← Kembali
       </button>
