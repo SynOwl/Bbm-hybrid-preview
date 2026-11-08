@@ -64,7 +64,7 @@ export const AIScreen: React.FC = () => {
       </div>
 
       <button
-        className="btn-s"
+        className="btn-s back-button-floating"
         onClick={() => {
           suaraKlik();
           go('s-dash');
@@ -111,7 +111,7 @@ export const AIScreen: React.FC = () => {
             </button>
 
             <button
-              className="modal-btn"
+              className="modal-btn back-button-floating"
               style={{
                 background: '#FFF',
                 color: '#EC407A',
