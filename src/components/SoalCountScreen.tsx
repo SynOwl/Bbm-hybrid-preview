@@ -34,7 +34,7 @@ export const SoalCountScreen: React.FC = () => {
       </div>
 
       <button
-        className="btn-s"
+        className="btn-s back-button-floating"
         onClick={() => {
           suaraKlik();
           go('s-mapel');
