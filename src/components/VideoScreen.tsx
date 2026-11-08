@@ -252,7 +252,7 @@ export const VideoScreen: React.FC = () => {
 
       {/* Navigasi Kembali */}
       <button
-        className="btn-s"
+        className="btn-s back-button-floating"
         onClick={() => {
           suaraKlik();
           go('s-dash');
