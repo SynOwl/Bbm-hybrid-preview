@@ -4,6 +4,30 @@ import { MEMBER } from '../data/constants';
 import { hitungUsiaMember } from '../utils/storage';
 import { suaraKlik } from '../utils/audio';
 
+// Semua album lokal diurutkan secara numerik agar 1, 2, ... 10 tampil benar.
+const sortPhotoEntries = (entries: Record<string, string>) =>
+  Object.entries(entries)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([, src]) => src);
+
+// Foto per member memakai nama folder yang sama dengan ID member.
+const memberPhotos: Record<string, string[]> = {
+  ana: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/ana/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  carmen: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/carmen/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  ian: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/ian/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  jiwoo: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/jiwoo/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  juun: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/juun/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  stella: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/stella/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  yeon: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/yeon/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+  yuha: sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/yuha/*.{jpg,jpeg,png,webp,avif}', { eager: true, query: '?url', import: 'default' })),
+};
+
+const ot8Photos = sortPhotoEntries(import.meta.glob<string>('../../assets/h2h/ot8/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}));
+
 // Foto grup disimpan berdasarkan jumlah anggota, tanpa perlu nama member.
 const duoPhotos = Object.entries(import.meta.glob<string>('../../assets/h2h/duo/*.{jpg,jpeg,png,webp,avif}', {
   eager: true,
@@ -188,10 +212,10 @@ export const MemberScreen: React.FC = () => {
 
       {showGroupAlbum && (
         <div className="member-detail" style={{ marginBottom: '14px' }}>
-          <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>💖 Galeri Foto Hearts2Hearts OT8</div>
-          {(h2hProfile?.group?.photoGallery || []).length > 0 ? (
+          <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>💖 Galeri Foto Hearts2Hearts OT8 ({(h2hProfile?.group?.photoGallery || []).length + ot8Photos.length})</div>
+          {((h2hProfile?.group?.photoGallery || []).length + ot8Photos.length) > 0 ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '7px' }}>
-              {h2hProfile!.group.photoGallery!.map((photo, index) => (
+              {[...(h2hProfile?.group?.photoGallery || []), ...ot8Photos].map((photo, index) => (
                 <img
                   key={photo}
                   src={photo}
@@ -342,17 +366,20 @@ export const MemberScreen: React.FC = () => {
                     💡 {m.fun}
                   </div>
 
-                  {m.photoGallery && m.photoGallery.length > 1 && (
+                  {((m.photoGallery || []).length + (memberPhotos[m.id] || []).length) > 0 && (
                     <div style={{ marginTop: '10px' }}>
-                      <div style={{ fontSize: '12px', fontWeight: 800, marginBottom: '7px' }}>📷 Galeri Foto {m.nama}</div>
+                      <div style={{ fontSize: '12px', fontWeight: 800, marginBottom: '7px' }}>
+                        📷 Galeri Foto {m.nama} ({(m.photoGallery || []).length + (memberPhotos[m.id] || []).length})
+                      </div>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '6px' }}>
-                        {m.photoGallery.map((photo, index) => (
+                        {[...(m.photoGallery || []), ...(memberPhotos[m.id] || [])].map((photo, index) => (
                           <img
                             key={photo}
                             src={photo}
                             alt={`Foto ${m.nama} ${index + 1}`}
                             loading="lazy"
                             onClick={() => openLightbox(photo)}
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                             style={{ width: '100%', aspectRatio: '1 / 1', objectFit: 'cover', borderRadius: '9px', cursor: 'zoom-in', border: '1px solid rgba(255,255,255,.35)' }}
                           />
                         ))}
