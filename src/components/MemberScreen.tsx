@@ -4,6 +4,61 @@ import { MEMBER } from '../data/constants';
 import { hitungUsiaMember } from '../utils/storage';
 import { suaraKlik } from '../utils/audio';
 
+// Foto grup disimpan berdasarkan jumlah anggota, tanpa perlu nama member.
+const duoPhotos = Object.values(import.meta.glob('../../assets/h2h/duo/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})).filter((src): src is string => typeof src === 'string');
+const trioPhotos = Object.values(import.meta.glob('../../assets/h2h/trio/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})).filter((src): src is string => typeof src === 'string');
+const unitPhotos = Object.values(import.meta.glob('../../assets/h2h/unit/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})).filter((src): src is string => typeof src === 'string');
+
+const GroupPhotoAlbum: React.FC<{
+  title: string;
+  emoji: string;
+  photos: string[];
+  openLightbox: (src: string) => void;
+}> = ({ title, emoji, photos, openLightbox }) => (
+  <section className="member-detail" style={{ marginBottom: '12px' }}>
+    <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>
+      {emoji} Foto {title} <span style={{ opacity: .8 }}>({photos.length})</span>
+    </div>
+    {photos.length > 0 ? (
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '7px' }}>
+        {photos.map((photo, index) => (
+          <img
+            key={photo}
+            src={photo}
+            alt={`Foto ${title} ${index + 1}`}
+            loading="lazy"
+            onClick={() => openLightbox(photo)}
+            style={{
+              width: '100%',
+              aspectRatio: '1 / 1',
+              objectFit: 'cover',
+              borderRadius: '9px',
+              cursor: 'zoom-in',
+              border: '1px solid rgba(255,255,255,.35)',
+            }}
+          />
+        ))}
+      </div>
+    ) : (
+      <div style={{ fontSize: '12px', opacity: .8 }}>
+        Belum ada foto. Tambahkan foto ke folder assets/h2h/{title.toLowerCase()}/.
+      </div>
+    )}
+  </section>
+);
+
 export const MemberScreen: React.FC = () => {
   const {
     go,
@@ -350,13 +405,23 @@ export const MemberScreen: React.FC = () => {
         })}
       </div>
 
+      {/* Galeri foto grup: diletakkan di bagian paling bawah profil member */}
+      <div className="head" style={{ marginTop: '18px' }}>📸 Galeri Foto Grup</div>
+      <div className="info" style={{ fontSize: '12px' }}>
+        Foto bersama disusun berdasarkan jumlah member. Nama file bebas, tidak perlu nama member.
+      </div>
+      <GroupPhotoAlbum title="Duo" emoji="👭" photos={duoPhotos} openLightbox={openLightbox} />
+      <GroupPhotoAlbum title="Trio" emoji="👭" photos={trioPhotos} openLightbox={openLightbox} />
+      <GroupPhotoAlbum title="Unit (4–7 member)" emoji="💖" photos={unitPhotos} openLightbox={openLightbox} />
+
       <button
-        className="btn-s"
-        style={{ marginTop: '14px' }}
+        type="button"
+        className="btn-s member-back-floating"
         onClick={() => {
           suaraKlik();
           go('s-dash');
         }}
+        aria-label="Kembali ke menu sebelumnya"
       >
         ← Kembali
       </button>
