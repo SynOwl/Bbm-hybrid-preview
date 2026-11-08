@@ -449,7 +449,7 @@ export const MemberScreen: React.FC = () => {
 
       <button
         type="button"
-        className="btn-s member-back-floating"
+        className="btn-s member-back-floating back-button-floating"
         onClick={() => {
           suaraKlik();
           go('s-dash');
