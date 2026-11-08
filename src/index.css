@@ -2423,3 +2423,15 @@ body.has-custom-bg::before {
   10% { opacity: .8; }
   100% { transform: translateY(-250px) scale(1.1); opacity: 0; }
 }
+
+/* Tombol kembali selalu terlihat tanpa perlu scroll ke bawah. */
+.back-button-floating {
+  position: fixed !important;
+  right: max(18px, env(safe-area-inset-right)) !important;
+  bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  z-index: 1500 !important;
+  width: auto !important;
+  min-width: 112px;
+  margin: 0 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .4);
+}
