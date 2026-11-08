@@ -5,21 +5,27 @@ import { hitungUsiaMember } from '../utils/storage';
 import { suaraKlik } from '../utils/audio';
 
 // Foto grup disimpan berdasarkan jumlah anggota, tanpa perlu nama member.
-const duoPhotos = Object.values(import.meta.glob('../../assets/h2h/duo/*.{jpg,jpeg,png,webp,avif}', {
+const duoPhotos = Object.entries(import.meta.glob<string>('../../assets/h2h/duo/*.{jpg,jpeg,png,webp,avif}', {
   eager: true,
   query: '?url',
   import: 'default',
-})).filter((src): src is string => typeof src === 'string');
-const trioPhotos = Object.values(import.meta.glob('../../assets/h2h/trio/*.{jpg,jpeg,png,webp,avif}', {
+}))
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, src]) => src);
+const trioPhotos = Object.entries(import.meta.glob<string>('../../assets/h2h/trio/*.{jpg,jpeg,png,webp,avif}', {
   eager: true,
   query: '?url',
   import: 'default',
-})).filter((src): src is string => typeof src === 'string');
-const unitPhotos = Object.values(import.meta.glob('../../assets/h2h/unit/*.{jpg,jpeg,png,webp,avif}', {
+}))
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, src]) => src);
+const unitPhotos = Object.entries(import.meta.glob<string>('../../assets/h2h/unit/*.{jpg,jpeg,png,webp,avif}', {
   eager: true,
   query: '?url',
   import: 'default',
-})).filter((src): src is string => typeof src === 'string');
+}))
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([, src]) => src);
 
 const GroupPhotoAlbum: React.FC<{
   title: string;
