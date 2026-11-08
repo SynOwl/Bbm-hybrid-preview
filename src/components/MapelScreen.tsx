@@ -62,11 +62,15 @@ export const MapelScreen: React.FC = () => {
     setMenunggu(true);
     setWaktuSisaDetik(30 * 60);
 
+    // Pakai kembali rincian lengkap dari permintaan pertama.
+    // Pesan singkat hanya menjadi cadangan untuk sesi aplikasi versi lama.
+    const pesanLengkap = localStorage.getItem('pesanPermintaanHTML');
     const pesan =
+      pesanLengkap ||
       '💖 BELAJAR BARENG MAMI 💖\n\n' +
-      'Mami, tolong kirim file HTML soal untuk Grace ya 💖\n' +
-      '⏳ Grace tunggu 30 menit ya Mami...\n\n' +
-      '✍️ Dari Grace 💖';
+        'Mami, tolong kirim file HTML soal untuk Grace ya 💖\n' +
+        '⏳ Grace tunggu 30 menit ya Mami...\n\n' +
+        '✍️ Dari Grace 💖';
     bukaWA(pesan, showToast);
     showToast(`📤 Permintaan dikirim ulang ke Mami (${nextCoba}/3)`);
   };
