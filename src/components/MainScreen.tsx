@@ -135,7 +135,7 @@ export const MainScreen: React.FC<MainScreenProps> = ({ onOpenQuiz }) => {
         📋 Lihat Daftar Klaim
       </button>
 
-      <button className="btn-s" onClick={() => handleNav('s-dash')}>
+      <button className="btn-s back-button-floating" onClick={() => handleNav('s-dash')}>
         ← Kembali
       </button>
     </div>
