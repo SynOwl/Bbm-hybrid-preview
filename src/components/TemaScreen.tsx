@@ -175,7 +175,7 @@ export const TemaScreen: React.FC = () => {
       </div>
 
       <button
-        className="btn-s"
+        className="btn-s back-button-floating"
         style={{ marginTop: '14px' }}
         onClick={() => {
           suaraKlik();
