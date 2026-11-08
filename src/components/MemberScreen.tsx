@@ -207,15 +207,15 @@ export const MemberScreen: React.FC = () => {
           setShowGroupAlbum((open) => !open);
         }}
       >
-        {showGroupAlbum ? '✕ Tutup Album Foto OT8' : `📸 Album Foto OT8 (${h2hProfile?.group?.photoGallery?.length || 0})`}
+        {showGroupAlbum ? '✕ Tutup Album Foto OT8' : `📸 Album Foto OT8 (${ot8Photos.length || h2hProfile?.group?.photoGallery?.length || 0})`}
       </button>
 
       {showGroupAlbum && (
         <div className="member-detail" style={{ marginBottom: '14px' }}>
-          <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>💖 Galeri Foto Hearts2Hearts OT8 ({(h2hProfile?.group?.photoGallery || []).length + ot8Photos.length})</div>
-          {((h2hProfile?.group?.photoGallery || []).length + ot8Photos.length) > 0 ? (
+          <div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '8px' }}>💖 Galeri Foto Hearts2Hearts OT8 ({(ot8Photos.length ? ot8Photos : (h2hProfile?.group?.photoGallery || [])).length})</div>
+          {(ot8Photos.length || (h2hProfile?.group?.photoGallery || []).length) > 0 ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '7px' }}>
-              {[...(h2hProfile?.group?.photoGallery || []), ...ot8Photos].map((photo, index) => (
+              {(ot8Photos.length ? ot8Photos : (h2hProfile?.group?.photoGallery || [])).map((photo, index) => (
                 <img
                   key={photo}
                   src={photo}
@@ -366,13 +366,13 @@ export const MemberScreen: React.FC = () => {
                     💡 {m.fun}
                   </div>
 
-                  {((m.photoGallery || []).length + (memberPhotos[m.id] || []).length) > 0 && (
+                  {((memberPhotos[m.id] || []).length || (m.photoGallery || []).length) > 0 && (
                     <div style={{ marginTop: '10px' }}>
                       <div style={{ fontSize: '12px', fontWeight: 800, marginBottom: '7px' }}>
-                        📷 Galeri Foto {m.nama} ({(m.photoGallery || []).length + (memberPhotos[m.id] || []).length})
+                        📷 Galeri Foto {m.nama} ({(memberPhotos[m.id] || []).length || (m.photoGallery || []).length})
                       </div>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '6px' }}>
-                        {[...(m.photoGallery || []), ...(memberPhotos[m.id] || [])].map((photo, index) => (
+                        {((memberPhotos[m.id] || []).length ? memberPhotos[m.id] : (m.photoGallery || [])).map((photo, index) => (
                           <img
                             key={photo}
                             src={photo}
