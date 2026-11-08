@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-07T09:45:00Z",
+  "updatedAt": "2026-11-08T14:24:37Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "F0_J7lqVGV4",
+      "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-08T13:00:30Z",
+      "url": "https://www.youtube.com/watch?v=F0_J7lqVGV4",
+      "thumbnail": "https://img.youtube.com/vi/F0_J7lqVGV4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "F0_J7lqVGV4",
+      "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-08T13:00:30Z",
+      "url": "https://www.youtube.com/watch?v=F0_J7lqVGV4",
+      "thumbnail": "https://img.youtube.com/vi/F0_J7lqVGV4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "S7R46oVu-iA",
       "title": "repeat after me! #whatsinmydrafts",
@@ -1697,66 +1721,6 @@
       "published": "2026-10-10T05:01:03Z",
       "url": "https://www.youtube.com/watch?v=XVqIN-xEnkE",
       "thumbnail": "https://img.youtube.com/vi/XVqIN-xEnkE/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "ni1QNOlIvYk",
-      "title": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
-      "title_id": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-09T13:00:23Z",
-      "url": "https://www.youtube.com/watch?v=ni1QNOlIvYk",
-      "thumbnail": "https://img.youtube.com/vi/ni1QNOlIvYk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "ni1QNOlIvYk",
-      "title": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
-      "title_id": "kehidupan #Hati2Hati #Hati2Hati #H2H #STELLA #Stella",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-09T13:00:23Z",
-      "url": "https://www.youtube.com/watch?v=ni1QNOlIvYk",
-      "thumbnail": "https://img.youtube.com/vi/ni1QNOlIvYk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "YkSmzyw2V7w",
-      "title": "안녕하세요 2학년 3반 김다현이라고 합니다아~ l 2026 KM Chart Awards & K-WORLD DREAM AWARDS BH2ND",
-      "title_id": "Halo, nama saya Dahyun Kim, kelas 2, kelas 3~ l 2026 KM Chart Awards & K-WORLD DREAM AWARDS BH2ND",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-09T11:00:30Z",
-      "url": "https://www.youtube.com/watch?v=YkSmzyw2V7w",
-      "thumbnail": "https://img.youtube.com/vi/YkSmzyw2V7w/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "5KSbZpVJCOk",
-      "title": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
-      "title_id": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-09T08:00:27Z",
-      "url": "https://www.youtube.com/watch?v=5KSbZpVJCOk",
-      "thumbnail": "https://img.youtube.com/vi/5KSbZpVJCOk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "5KSbZpVJCOk",
-      "title": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
-      "title_id": "Bunga emosi mekar dalam sekejap #Hearts2Hearts #Hearts2Hearts #H2H #JIWOO #A_NA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-09T08:00:27Z",
-      "url": "https://www.youtube.com/watch?v=5KSbZpVJCOk",
-      "thumbnail": "https://img.youtube.com/vi/5KSbZpVJCOk/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

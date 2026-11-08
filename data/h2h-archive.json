@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-07T09:45:00Z",
+  "updatedAt": "2026-11-08T14:24:37Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "F0_J7lqVGV4",
+      "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-08T13:00:30Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=F0_J7lqVGV4",
+      "thumbnail": "https://img.youtube.com/vi/F0_J7lqVGV4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "S7R46oVu-iA",
       "title": "repeat after me! #whatsinmydrafts",
@@ -4177,6 +4189,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "F0_J7lqVGV4",
+      "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-08T13:00:30Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=F0_J7lqVGV4",
+      "thumbnail": "https://img.youtube.com/vi/F0_J7lqVGV4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "S7R46oVu-iA",
       "title": "repeat after me! #whatsinmydrafts",
