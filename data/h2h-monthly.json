@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-08T14:24:37Z",
+  "updatedAt": "2026-11-09T08:47:15Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "GMG12fhsNH0",
+      "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T08:01:22Z",
+      "url": "https://www.youtube.com/watch?v=GMG12fhsNH0",
+      "thumbnail": "https://img.youtube.com/vi/GMG12fhsNH0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "GMG12fhsNH0",
+      "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-09T08:01:22Z",
+      "url": "https://www.youtube.com/watch?v=GMG12fhsNH0",
+      "thumbnail": "https://img.youtube.com/vi/GMG12fhsNH0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "F0_J7lqVGV4",
       "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
@@ -1697,30 +1721,6 @@
       "published": "2026-10-10T09:00:04Z",
       "url": "https://www.youtube.com/watch?v=63ghDobqnw8",
       "thumbnail": "https://img.youtube.com/vi/63ghDobqnw8/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "XVqIN-xEnkE",
-      "title": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
-      "title_id": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-10T05:01:03Z",
-      "url": "https://www.youtube.com/watch?v=XVqIN-xEnkE",
-      "thumbnail": "https://img.youtube.com/vi/XVqIN-xEnkE/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "XVqIN-xEnkE",
-      "title": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
-      "title_id": "ingatlah itu #Hearts2Hearts #Hearts2Hearts #H2H #CARMEN #JUUN",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-10T05:01:03Z",
-      "url": "https://www.youtube.com/watch?v=XVqIN-xEnkE",
-      "thumbnail": "https://img.youtube.com/vi/XVqIN-xEnkE/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

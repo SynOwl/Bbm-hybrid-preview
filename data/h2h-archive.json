@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-08T14:24:37Z",
+  "updatedAt": "2026-11-09T08:47:15Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "GMG12fhsNH0",
+      "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T08:01:22Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=GMG12fhsNH0",
+      "thumbnail": "https://img.youtube.com/vi/GMG12fhsNH0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "F0_J7lqVGV4",
       "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
@@ -4189,6 +4201,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "GMG12fhsNH0",
+      "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-09T08:01:22Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=GMG12fhsNH0",
+      "thumbnail": "https://img.youtube.com/vi/GMG12fhsNH0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "F0_J7lqVGV4",
       "title": "BEYOND YOUR EXPECTATIONS#Hearts2Hearts #하츠투하츠 #H2H",
