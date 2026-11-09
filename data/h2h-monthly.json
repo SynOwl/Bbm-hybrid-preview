@@ -1,12 +1,48 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-09T08:47:15Z",
+  "updatedAt": "2026-11-09T19:13:33Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "GWyItlPPNAI",
+      "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T12:30:24Z",
+      "url": "https://www.youtube.com/watch?v=GWyItlPPNAI",
+      "thumbnail": "https://img.youtube.com/vi/GWyItlPPNAI/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "GWyItlPPNAI",
+      "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-09T12:30:24Z",
+      "url": "https://www.youtube.com/watch?v=GWyItlPPNAI",
+      "thumbnail": "https://img.youtube.com/vi/GWyItlPPNAI/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "644Cy2a1apA",
+      "title": "나에게 이런 동생이? 부럽죠?! ദ്ദി ˉ͈̀꒳ˉ͈́ ) | Hearts2Hearts 하츠투하츠 'ICONIC HEART' Music Show BH2ND",
+      "title_id": "나에게 이런 동생이? 부럽죠?! ദ്ദി ˉ͈̀꒳ˉ͈́ ) | Hearts2Hearts 하츠투하츠 'ICONIC HEART' Music Show BH2ND",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T11:00:35Z",
+      "url": "https://www.youtube.com/watch?v=644Cy2a1apA",
+      "thumbnail": "https://img.youtube.com/vi/644Cy2a1apA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "GMG12fhsNH0",
       "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
@@ -1697,30 +1733,6 @@
       "published": "2026-10-11T03:00:05Z",
       "url": "https://www.youtube.com/watch?v=DGVd3zMnBwo",
       "thumbnail": "https://img.youtube.com/vi/DGVd3zMnBwo/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "63ghDobqnw8",
-      "title": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
-      "title_id": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-10T09:00:04Z",
-      "url": "https://www.youtube.com/watch?v=63ghDobqnw8",
-      "thumbnail": "https://img.youtube.com/vi/63ghDobqnw8/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "63ghDobqnw8",
-      "title": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
-      "title_id": "apakah itu kita lagi? #Hati2Hati #Hati2Hati #H2H #JUUN #A_NA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-10T09:00:04Z",
-      "url": "https://www.youtube.com/watch?v=63ghDobqnw8",
-      "thumbnail": "https://img.youtube.com/vi/63ghDobqnw8/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-09T08:47:15Z",
+  "updatedAt": "2026-11-09T19:13:33Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,30 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "GWyItlPPNAI",
+      "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T12:30:24Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=GWyItlPPNAI",
+      "thumbnail": "https://img.youtube.com/vi/GWyItlPPNAI/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "644Cy2a1apA",
+      "title": "나에게 이런 동생이? 부럽죠?! ദ്ദി ˉ͈̀꒳ˉ͈́ ) | Hearts2Hearts 하츠투하츠 'ICONIC HEART' Music Show BH2ND",
+      "title_id": "나에게 이런 동생이? 부럽죠?! ദ്ദി ˉ͈̀꒳ˉ͈́ ) | Hearts2Hearts 하츠투하츠 'ICONIC HEART' Music Show BH2ND",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-09T11:00:35Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=644Cy2a1apA",
+      "thumbnail": "https://img.youtube.com/vi/644Cy2a1apA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "GMG12fhsNH0",
       "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
@@ -4201,6 +4225,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "GWyItlPPNAI",
+      "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-09T12:30:24Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=GWyItlPPNAI",
+      "thumbnail": "https://img.youtube.com/vi/GWyItlPPNAI/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "GMG12fhsNH0",
       "title": "love me?# Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
