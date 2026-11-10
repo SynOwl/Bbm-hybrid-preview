@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-10T09:42:09Z",
+  "updatedAt": "2026-11-10T17:18:45Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "_cw7q5gkOCE",
+      "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "title_id": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-10T12:30:10Z",
+      "url": "https://www.youtube.com/watch?v=_cw7q5gkOCE",
+      "thumbnail": "https://img.youtube.com/vi/_cw7q5gkOCE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "_cw7q5gkOCE",
+      "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "title_id": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-10T12:30:10Z",
+      "url": "https://www.youtube.com/watch?v=_cw7q5gkOCE",
+      "thumbnail": "https://img.youtube.com/vi/_cw7q5gkOCE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "1e7cAWYFAwg",
       "title": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
@@ -1685,54 +1709,6 @@
       "published": "2026-10-12T05:00:21Z",
       "url": "https://www.youtube.com/watch?v=bbnLEtPdpLE",
       "thumbnail": "https://img.youtube.com/vi/bbnLEtPdpLE/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "OVSw8ME7xvk",
-      "title": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
-      "title_id": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-11T13:01:04Z",
-      "url": "https://www.youtube.com/watch?v=OVSw8ME7xvk",
-      "thumbnail": "https://img.youtube.com/vi/OVSw8ME7xvk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "OVSw8ME7xvk",
-      "title": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
-      "title_id": "kita sepanjang hari #Hearts2Hearts #Hearts2Hearts #H2H #YUHA #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-11T13:01:04Z",
-      "url": "https://www.youtube.com/watch?v=OVSw8ME7xvk",
-      "thumbnail": "https://img.youtube.com/vi/OVSw8ME7xvk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "oRssAsGCl1s",
-      "title": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-11T12:00:08Z",
-      "url": "https://www.youtube.com/watch?v=oRssAsGCl1s",
-      "thumbnail": "https://img.youtube.com/vi/oRssAsGCl1s/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "oRssAsGCl1s",
-      "title": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "aku masih di sini #Hearts2Hearts #Hearts2Hearts #H2H #IAN #Ian",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-11T12:00:08Z",
-      "url": "https://www.youtube.com/watch?v=oRssAsGCl1s",
-      "thumbnail": "https://img.youtube.com/vi/oRssAsGCl1s/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-10T09:42:09Z",
+  "updatedAt": "2026-11-10T17:18:45Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "_cw7q5gkOCE",
+      "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "title_id": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-10T12:30:10Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=_cw7q5gkOCE",
+      "thumbnail": "https://img.youtube.com/vi/_cw7q5gkOCE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "1e7cAWYFAwg",
       "title": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
@@ -4237,6 +4249,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "_cw7q5gkOCE",
+      "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "title_id": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-10T12:30:10Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=_cw7q5gkOCE",
+      "thumbnail": "https://img.youtube.com/vi/_cw7q5gkOCE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "1e7cAWYFAwg",
       "title": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
