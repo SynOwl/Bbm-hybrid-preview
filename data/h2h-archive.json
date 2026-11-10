@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-09T19:13:33Z",
+  "updatedAt": "2026-11-10T09:42:09Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "1e7cAWYFAwg",
+      "title": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
+      "title_id": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-10T08:00:20Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=1e7cAWYFAwg",
+      "thumbnail": "https://img.youtube.com/vi/1e7cAWYFAwg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "GWyItlPPNAI",
       "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
@@ -4225,6 +4237,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "1e7cAWYFAwg",
+      "title": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
+      "title_id": "jealous much? #Hearts2Hearts #하츠투하츠 #JIWOO #A_NA #YE_ON",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-10T08:00:20Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=1e7cAWYFAwg",
+      "thumbnail": "https://img.youtube.com/vi/1e7cAWYFAwg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "GWyItlPPNAI",
       "title": "나 달라진 거 없어? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
