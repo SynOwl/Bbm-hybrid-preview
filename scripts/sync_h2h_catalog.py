@@ -198,7 +198,8 @@ def translate_catalog_titles(items):
             continue
         original = str(item['title'])
         existing = str(item.get('title_id') or '').strip()
-        if not existing or existing == original:
+        has_manual_translation = any(original.startswith(source) for source in TITLE_PREFIX_TRANSLATIONS)
+        if not existing or existing == original or has_manual_translation:
             localized = translate_title_to_indonesian(original)
             if localized:
                 item['title_id'] = localized
