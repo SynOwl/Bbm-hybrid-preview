@@ -72,11 +72,15 @@ export const VideoReelsModal: React.FC = () => {
             playsinline: 1,
             rel: 0,
             enablejsapi: 1,
-            origin: window.location.origin,
+            ...(window.location.protocol === 'http:' || window.location.protocol === 'https:' ? { origin: window.location.origin } : {}),
+            widget_referrer: window.location.href,
           },
           events: {
             onReady: (event: any) => {
-              if (!cancelled) event.target.playVideo();
+              if (!cancelled) {
+                try { event.target.getIframe()?.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin'); } catch { /* tidak semua WebView mendukung */ }
+                event.target.playVideo();
+              }
             },
             onStateChange: (event: any) => {
               if (!cancelled && YT.PlayerState) {
@@ -92,7 +96,9 @@ export const VideoReelsModal: React.FC = () => {
                   ? 'Video sudah dihapus atau dibuat pribadi oleh pemiliknya.'
                   : code === 2
                     ? 'ID video tidak valid.'
-                    : 'Video gagal dimuat. Periksa koneksi lalu coba lagi.';
+                    : code === 153
+                      ? 'YouTube tidak menerima identitas sumber pemutar dari aplikasi. Muat ulang aplikasi lalu coba lagi.'
+                      : `Video gagal dimuat (kode ${code}). Periksa koneksi lalu coba lagi.`;
               setYoutubeError(message);
               setIsPlaying(false);
             },
@@ -236,7 +242,10 @@ export const VideoReelsModal: React.FC = () => {
                         ? 'Video ini tidak mengizinkan pemutaran melalui aplikasi.'
                         : 'Video tetap tidak bisa dimuat. Coba video berikutnya.'
                     ),
-                    onReady: (event: any) => event.target.playVideo(),
+                    onReady: (event: any) => {
+                      try { event.target.getIframe()?.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin'); } catch { /* abaikan */ }
+                      event.target.playVideo();
+                    },
                   },
                 });
               }).catch(() => setYoutubeError('Pemutar YouTube gagal dimuat. Periksa koneksi internet.'));
@@ -252,7 +261,7 @@ export const VideoReelsModal: React.FC = () => {
       )}
 
       {/* Lapisan gesture: usap atas/bawah untuk pindah video, ketuk untuk jeda/putar */}
-      <div className="ig-swipe-layer" onClick={handleSwipeLayerClick} />
+      <div className="ig-swipe-layer" onClick={handleSwipeLayerClick} style={videoModal.isYouTube ? { pointerEvents: 'none' } : undefined} />
 
       <div className="ig-reels-ui">
         <div className="ig-top-bar">
