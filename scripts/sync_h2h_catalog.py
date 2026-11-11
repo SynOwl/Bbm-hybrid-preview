@@ -89,7 +89,7 @@ def translate_title_to_indonesian(title):
     protected = re.sub(r'#[A-Za-z0-9_]+', protect, title)
     try:
         query = urllib.parse.urlencode({
-            'client': 'gtx', 'sl': 'auto', 'tl': 'id', 'dt': 't', 'q': protected
+            'client': 'gtx', 'sl': ('auto' if re.search(r'[\\uac00-\\ud7af]', protected) else 'en'), 'tl': 'id', 'dt': 't', 'q': protected
         })
         request = urllib.request.Request(
             'https://translate.googleapis.com/translate_a/single?' + query,
