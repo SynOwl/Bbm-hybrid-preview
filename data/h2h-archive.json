@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-11T11:30:44Z",
+  "updatedAt": "2026-11-11T11:33:41Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -9,9 +9,21 @@
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
     {
+      "id": "yKsGhsb97u4",
+      "title": "제1회 하투하 볼링대회 : 일본 편의점 내기🎳",
+      "title_id": "Kompetisi Bowling Hatuha Pertama: Taruhan Toko Serba Ada Jepang🎳",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T11:00:29Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=yKsGhsb97u4",
+      "thumbnail": "https://img.youtube.com/vi/yKsGhsb97u4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
       "id": "FqpYYVcTRWY",
       "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
-      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright  #Hearts2Hearts  #하츠투하츠   #H2H   #JUUN   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-11T08:00:25Z",
@@ -323,7 +335,7 @@
     {
       "id": "0cX7fffXook",
       "title": "\"Rise and shine upper east siders its officially fall”",
-      "title_id": "\"Rise and shine upper east siders its officially fall”",
+      "title_id": "\"Bangkit dan bersinarlah di wilayah timur atas yang secara resmi telah jatuh\"",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-27T12:00:25Z",
@@ -407,7 +419,7 @@
     {
       "id": "yJpG1qVjLpQ",
       "title": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
-      "title_id": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "S2U sayang #Hearts2Hearts #HeartsToHearts #H2H #CARMEN #Carmen",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-24T03:30:24Z",
@@ -911,7 +923,7 @@
     {
       "id": "bbnLEtPdpLE",
       "title": "rawrrr #Hearts2Hearts #하츠투하츠 #H2H  #STELLA #IAN",
-      "title_id": "rawrrr #Hearts2Hearts #하츠투하츠 #H2H  #STELLA #IAN",
+      "title_id": "rawrrr  #Hearts2Hearts  #하츠투하츠  #H2H    #STELLA   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-12T05:00:21Z",
@@ -923,7 +935,7 @@
     {
       "id": "OVSw8ME7xvk",
       "title": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
-      "title_id": "us all day #Hearts2Hearts #하츠투하츠 #H2H  #YUHA #YE_ON",
+      "title_id": "us all day  #Hearts2Hearts  #하츠투하츠  #H2H    #YUHA   #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-11T13:01:04Z",
@@ -935,7 +947,7 @@
     {
       "id": "oRssAsGCl1s",
       "title": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "i’m still here #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "aku masih di sini #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-11T12:00:08Z",
@@ -947,7 +959,7 @@
     {
       "id": "DGVd3zMnBwo",
       "title": "2027 Hearts2Hearts SEASON’S GREETINGS TRAILER",
-      "title_id": "2027 Hearts2Hearts SEASON’S GREETINGS TRAILER",
+      "title_id": "TRAILER SALAM MUSIM Hearts2Hearts 2027",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-11T03:00:05Z",
@@ -959,7 +971,7 @@
     {
       "id": "63ghDobqnw8",
       "title": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
-      "title_id": "it's us again? #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
+      "title_id": "it's us again?  #Hearts2Hearts  #하츠투하츠  #H2H   #JUUN   #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-10T09:00:04Z",
@@ -971,7 +983,7 @@
     {
       "id": "XVqIN-xEnkE",
       "title": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
-      "title_id": "keep that in mind #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JUUN",
+      "title_id": "keep that in mind  #Hearts2Hearts  #하츠투하츠  #H2H   #CARMEN   #JUUN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-10T05:01:03Z",
@@ -983,7 +995,7 @@
     {
       "id": "ni1QNOlIvYk",
       "title": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
-      "title_id": "a life #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "kehidupan #Hearts2Hearts #HeartsToHearts #H2H #STELLA #Stella",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-09T13:00:23Z",
@@ -1007,7 +1019,7 @@
     {
       "id": "5KSbZpVJCOk",
       "title": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
-      "title_id": "감정이란 꽃은 짧은 순간 피어나는 걸 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "title_id": "Bunga emosi mekar dalam sekejap #Hearts2Hearts #HeartsToHearts #H2H #JIWOO #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-09T08:00:27Z",
@@ -1019,7 +1031,7 @@
     {
       "id": "clIGsw-4qW0",
       "title": "attempt: do not let her know #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "attempt: do not let her know #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "attempt: do not let her know  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-09T03:00:03Z",
@@ -1031,7 +1043,7 @@
     {
       "id": "CdbImJh_ud8",
       "title": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
-      "title_id": "stepping into a jazz night in nyc be like #Hearts2Hearts #하츠투하츠 #CARMEN #IAN #YE_ON",
+      "title_id": "stepping into a jazz night in nyc be like  #Hearts2Hearts  #하츠투하츠  #CARMEN   #IAN   #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-08T13:50:11Z",
@@ -1043,7 +1055,7 @@
     {
       "id": "JCngqkL_3ZA",
       "title": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "party in THE central park #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "pesta di taman pusat #Hearts2Hearts #Hearts2Hearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-08T10:04:43Z",
@@ -1055,7 +1067,7 @@
     {
       "id": "FNQfLaayR98",
       "title": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
-      "title_id": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.· #Hearts2Hearts #하츠투하츠 #IVE @IVEstarship  #ICONICHEART",
+      "title_id": "WOW so cooool ⟡.· ⸝⸝◉◉⸝⸝ ⟡.·  #Hearts2Hearts  #하츠투하츠  #IVE  @IVEstarship   #ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-08T08:30:22Z",
@@ -1067,7 +1079,7 @@
     {
       "id": "QmD54lZR0QI",
       "title": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
-      "title_id": "*anthem of the week* #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA #YE_ON",
+      "title_id": "*anthem of the week*  #Hearts2Hearts  #하츠투하츠  #H2H   #STELLA   #A_NA   #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-08T03:00:16Z",
@@ -1079,7 +1091,7 @@
     {
       "id": "QbQgDJI0l8c",
       "title": "so you coming back or what #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
-      "title_id": "so you coming back or what #Hearts2Hearts #하츠투하츠 #H2H #JUUN #IAN",
+      "title_id": "so you coming back or what  #Hearts2Hearts  #하츠투하츠  #H2H   #JUUN   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T13:00:12Z",
@@ -1091,7 +1103,7 @@
     {
       "id": "LeOL4sv2zFU",
       "title": "even the wind loves us here! #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "even the wind loves us here! #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "even the wind loves us here!  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T10:30:11Z",
@@ -1103,7 +1115,7 @@
     {
       "id": "bx5e3t_h0qA",
       "title": "can we join you zara unnie??!!? #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "can we join you zara unnie??!!? #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "bisakah kami bergabung denganmu zara unnie??!!?  #Hearts2Hearts #HatiUntukHati #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T09:32:17Z",
@@ -1115,7 +1127,7 @@
     {
       "id": "svhMgHQXZ_E",
       "title": "say hi! *shakes shoulders* #Hearts2Hearts #하츠투하츠 #Billlie @Billlie  #ICONICHEART",
-      "title_id": "say hi! *shakes shoulders* #Hearts2Hearts #하츠투하츠 #Billlie @Billlie  #ICONICHEART",
+      "title_id": "sapa! *mengguncang bahu* #Hearts2Hearts #HeartsToHearts #Billlie @Billlie #ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T08:30:31Z",
@@ -1127,7 +1139,7 @@
     {
       "id": "XxCP3DMNr_s",
       "title": "산책길이 지루하신가요 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "산책길이 지루하신가요 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Apakah Anda bosan dengan jalan-jalan? #Hearts2Hearts #HatiUntukHati #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T05:03:13Z",
@@ -1139,7 +1151,7 @@
     {
       "id": "QB06cB7WL-E",
       "title": "YES! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
-      "title_id": "YES! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "YA!  #Hearts2Hearts #HeartsToHearts #H2H #A_NA #Aina",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-07T03:00:19Z",
@@ -1151,7 +1163,7 @@
     {
       "id": "TmgDKJyEbhU",
       "title": "all i wanna do #Hearts2Hearts #하츠투하츠 #IAN #이안",
-      "title_id": "all i wanna do #Hearts2Hearts #하츠투하츠 #IAN #이안",
+      "title_id": "semua yang ingin aku lakukan #Hearts2Hearts #HeartsToHearts #IAN #Ian",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-06T13:00:00Z",
@@ -1163,7 +1175,7 @@
     {
       "id": "P_PEqKUd8cQ",
       "title": "time to step up #Hearts2Hearts #하츠투하츠 #H2H#CARMEN #카르멘",
-      "title_id": "time to step up #Hearts2Hearts #하츠투하츠 #H2H#CARMEN #카르멘",
+      "title_id": "saatnya untuk meningkatkan #Hearts2Hearts #HeartsToHearts #H2H #CARMEN #Carmen",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-06T11:30:06Z",
@@ -1175,7 +1187,7 @@
     {
       "id": "3ceZcvZQEAM",
       "title": "draft from girls night #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "draft from girls night #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "draft from girls night  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-06T09:30:21Z",
@@ -1187,7 +1199,7 @@
     {
       "id": "y-RAgmXJ01Q",
       "title": "here's the bts #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "here's the bts #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "here's the bts  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-06T08:30:18Z",
@@ -1199,7 +1211,7 @@
     {
       "id": "DKsrSyX5WDo",
       "title": "the city needs to be aware of this shoulder move #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART",
-      "title_id": "the city needs to be aware of this shoulder move #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART",
+      "title_id": "kota perlu mewaspadai gerakan bahu ini #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-06T05:30:37Z",
@@ -1211,7 +1223,7 @@
     {
       "id": "frApx6bjvTM",
       "title": "꺼드럭닉하트 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "꺼드럭닉하트 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Hati Gila #Hearts2Hearts #HeartsToHearts #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-05T12:30:11Z",
@@ -1223,7 +1235,7 @@
     {
       "id": "aZFAaKxpYw4",
       "title": "me every time this part hits #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "me every time this part hits #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "me every time this part hits  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-05T11:30:08Z",
@@ -1235,7 +1247,7 @@
     {
       "id": "Q_QcdRH-Tcc",
       "title": "다 모였지? #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "다 모였지? #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Semua orang berkumpul, kan?  #Hearts2Hearts #HatiUntukHati #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-05T09:17:38Z",
@@ -1247,7 +1259,7 @@
     {
       "id": "DHdFd_i4kg4",
       "title": "언니강아 동생강아 #Hearts2Hearts #하츠투하츠 #aespa #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "언니강아 동생강아 #Hearts2Hearts #하츠투하츠 #aespa #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Kakak perempuan, adik laki-laki, #Hearts2Hearts #HeartsToHearts #aespa #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-04T13:00:03Z",
@@ -1271,7 +1283,7 @@
     {
       "id": "yggAU7TJy4Y",
       "title": "낼 봥 ㅋㅋ ♡ #Hearts2Hearts #하츠투하츠 #H2H  #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "낼 봥 ㅋㅋ ♡ #Hearts2Hearts #하츠투하츠 #H2H  #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Sampai jumpa besok haha ​​♡ #Hearts2Hearts #HeartsToHearts #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-04T09:00:35Z",
@@ -1283,7 +1295,7 @@
     {
       "id": "rHa8IOx9b40",
       "title": "like if I can't help falling in love with you? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
-      "title_id": "like if I can't help falling in love with you? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "seperti apakah aku tak kuasa untuk tidak jatuh cinta padamu?  #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-04T05:30:08Z",
@@ -1295,7 +1307,7 @@
     {
       "id": "YTo8w-PUlZM",
       "title": "it’s oct 3rd yk #Hearts2Hearts #하츠투하츠 #H2H #STELLA #JUUN",
-      "title_id": "it’s oct 3rd yk #Hearts2Hearts #하츠투하츠 #H2H #STELLA #JUUN",
+      "title_id": "ini tanggal 3 Oktober yk #Hearts2Hearts #HeartsToHearts #H2H #STELLA #JUUN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-03T14:30:27Z",
@@ -1307,7 +1319,7 @@
     {
       "id": "rKPNsOmtYRE",
       "title": "different #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
-      "title_id": "different #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "different  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #JUUN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-03T13:30:37Z",
@@ -1319,7 +1331,7 @@
     {
       "id": "ms_QLPLeM58",
       "title": "오오 잘노네 ጿ ኈ ቼ ጿ #Hearts2Hearts #하츠투하츠 #H2H#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "오오 잘노네 ጿ ኈ ቼ ጿ #Hearts2Hearts #하츠투하츠 #H2H#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Oh, aku bersenang-senang ጿ ኈ ቼ ጿ #Hearts2Hearts #HeartsToHeats #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-03T03:30:29Z",
@@ -1331,7 +1343,7 @@
     {
       "id": "fa6dpotGy-o",
       "title": "CLOSER🖤 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "CLOSER🖤 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "CLOSER🖤  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-02T11:59:08Z",
@@ -1343,7 +1355,7 @@
     {
       "id": "176E6Hb5Y3c",
       "title": "missing vacay #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
-      "title_id": "missing vacay #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "liburan yang hilang #Hearts2Hearts #HeartsToHearts #H2H #CARMEN #Carmen",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-02T05:00:04Z",
@@ -1367,7 +1379,7 @@
     {
       "id": "ctnRz9wxAWo",
       "title": "one two check dc: @xelyna1 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #IAN",
-      "title_id": "one two check dc: @xelyna1 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #IAN",
+      "title_id": "one two check dc: @xelyna1  #Hearts2Hearts  #하츠투하츠  #H2H   #A_NA   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-01T08:30:11Z",
@@ -1379,7 +1391,7 @@
     {
       "id": "tqYG8ciETJI",
       "title": "너는 나의 애기얌ㅋㅋ #Hearts2Hearts #하츠투하츠#A_NA #에이나 #ICONICHEART",
-      "title_id": "너는 나의 애기얌ㅋㅋ #Hearts2Hearts #하츠투하츠#A_NA #에이나 #ICONICHEART",
+      "title_id": "Kamu adalah sayangku haha ​​​​#Hearts2Hearts #HeartsToHearts #A_NA #Aina ​​​​#ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-10-01T03:30:21Z",
@@ -1391,7 +1403,7 @@
     {
       "id": "F5PrldjwzcE",
       "title": "달리기 🐢 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
-      "title_id": "달리기 🐢 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
+      "title_id": "Berlari 🐢 #Hearts2Hearts #HeartsToHearts #H2H #YUHA #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-30T08:30:38Z",
@@ -1403,7 +1415,7 @@
     {
       "id": "_xPD24o0t3w",
       "title": "a Bali girl in 🌴 #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
-      "title_id": "a Bali girl in 🌴 #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "seorang gadis Bali di 🌴 #Hearts2Hearts #HeartsToHeats #H2H #CARMEN #Carmen",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-30T03:30:17Z",
@@ -1415,7 +1427,7 @@
     {
       "id": "hxj0x9cc72Q",
       "title": "that one hotpot night.. #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "that one hotpot night.. #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "malam hotpot itu.. #Hearts2Hearts #HeartsToHearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-29T03:30:23Z",
@@ -1427,7 +1439,7 @@
     {
       "id": "EX5ZgEiDPRc",
       "title": "빨리 빨리 피해 right #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "빨리 빨리 피해 right #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "Cepat, cepat, hindari #Hearts2Hearts #HeartsToHearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-28T13:00:39Z",
@@ -1451,7 +1463,7 @@
     {
       "id": "wyMOX-ooseo",
       "title": "cutie spotted #whatsinmydrafts",
-      "title_id": "cutie spotted #whatsinmydrafts",
+      "title_id": "manis melihat #whatsinmydrafts",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-27T08:30:12Z",
@@ -1463,7 +1475,7 @@
     {
       "id": "egNAQCGmJDY",
       "title": "sorry we are that generation #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #IAN",
-      "title_id": "sorry we are that generation #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #IAN",
+      "title_id": "sorry we are that generation  #Hearts2Hearts  #하츠투하츠  #STELLA   #JUUN   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-26T08:30:15Z",
@@ -1475,7 +1487,7 @@
     {
       "id": "OdtaOEQnLis",
       "title": "lucky to have a friend who gets me  #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA",
-      "title_id": "lucky to have a friend who gets me  #Hearts2Hearts #하츠투하츠 #H2H #STELLA #A_NA",
+      "title_id": "lucky to have a friend who gets me   #Hearts2Hearts  #하츠투하츠  #H2H   #STELLA   #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-25T08:30:27Z",
@@ -1487,7 +1499,7 @@
     {
       "id": "T3MHHmYWZRA",
       "title": "ICONIC ENOUGH? #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "ICONIC ENOUGH? #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "ICONIC ENOUGH?  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-24T10:30:16Z",
@@ -1499,7 +1511,7 @@
     {
       "id": "NO_hBSVrS_0",
       "title": "뀨뀨 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
-      "title_id": "뀨뀨 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
+      "title_id": "Kkkyun #Hearts2Hearts #HeartsToHearts #H2H #YUHA #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-24T08:38:12Z",
@@ -1523,7 +1535,7 @@
     {
       "id": "Izp8KQeEzDc",
       "title": "다 모여 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
-      "title_id": "다 모여 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
+      "title_id": "Semuanya berkumpul bersama #Hearts2Hearts #HeartsToHearts #JUUN #A_NA #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-23T04:00:28Z",
@@ -1535,7 +1547,7 @@
     {
       "id": "KEUkvsOo090",
       "title": "ICONIC通信完了🤓🤓🤓 @sasasasasasa078 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "ICONIC通信完了🤓🤓🤓 @sasasasasasa078 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "PEMUDA IKON🤓🤓🤓 @sasasasasasa078 #Hearts2Hearts #HastAGTOKEN1 #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-22T05:00:26Z",
@@ -1547,7 +1559,7 @@
     {
       "id": "3oPiwIvT1qo",
       "title": "ダンスしよう！ @anoofficialchannel  #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "ダンスしよう！ @anoofficialchannel  #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "Ayo menari! @anoofficialchannel #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-22T04:00:29Z",
@@ -1559,7 +1571,7 @@
     {
       "id": "1btsAq04JAQ",
       "title": "ICONIC HEART 見つけた! @akb48  #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "ICONIC HEART 見つけた! @akb48  #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "HATI IKON 見つけた! @akb48 #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-22T03:00:25Z",
@@ -1571,7 +1583,7 @@
     {
       "id": "9eOpdzgzyo0",
       "title": "뽀삐뽀삐뽀뽀삐뽀 #whatsinmydrafts",
-      "title_id": "뽀삐뽀삐뽀뽀삐뽀 #whatsinmydrafts",
+      "title_id": "Poppipoppipopipippo #whatsinmydrafts",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-21T08:00:18Z",
@@ -1583,7 +1595,7 @@
     {
       "id": "_Ejsz8_2e8w",
       "title": "21st september #Hearts2Hearts #하츠투하츠 #STELLA #A_NA #YE_ON",
-      "title_id": "21st september #Hearts2Hearts #하츠투하츠 #STELLA #A_NA #YE_ON",
+      "title_id": "21st september  #Hearts2Hearts  #하츠투하츠  #STELLA   #A_NA   #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-20T15:03:35Z",
@@ -1595,7 +1607,7 @@
     {
       "id": "3FovWti-iww",
       "title": "쇼미더하트ㅋㅋ #Hearts2Hearts #하츠투하츠 #STELLA #A_NA #YE_ON",
-      "title_id": "쇼미더하트ㅋㅋ #Hearts2Hearts #하츠투하츠 #STELLA #A_NA #YE_ON",
+      "title_id": "Tunjukkan Hatikuㅋㅋ #Hearts2Hearts #HeartsToHearts #STELLA #A_NA #YE_ON",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-20T08:00:38Z",
@@ -1607,7 +1619,7 @@
     {
       "id": "K5vTwF90w5k",
       "title": "L♡VE G♡♡D TIME #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "L♡VE G♡♡D TIME #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "L♡VE G♡♡D TIME #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-20T06:00:12Z",
@@ -1619,7 +1631,7 @@
     {
       "id": "_QNNlHcUXfo",
       "title": "너무좋아해 ♡(˃͈ ˂͈ ) #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
-      "title_id": "너무좋아해 ♡(˃͈ ˂͈ ) #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #A_NA",
+      "title_id": "Aku sangat menyukainya ♡(˃ˈ ˂͈ ) #Hearts2Hearts #HeartsToHearts #H2H #JIWOO #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-20T03:00:34Z",
@@ -1631,7 +1643,7 @@
     {
       "id": "BfEn4x1E0Jc",
       "title": "wadidaw #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "title_id": "wadidaw #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
+      "title_id": "wadidaw  #Hearts2Hearts  #하츠투하츠  #H2H   #CARMEN   #YUHA",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-19T13:30:01Z",
@@ -1643,7 +1655,7 @@
     {
       "id": "0H3X3zTZd1k",
       "title": "all the girls go 🤩 #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "all the girls go 🤩 #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "semua cewek pergi 🤩 #Hearts2Hearts #HeartsToHearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-19T11:30:01Z",
@@ -1655,7 +1667,7 @@
     {
       "id": "rhWHu893u8A",
       "title": "dc by us #Hearts2Hearts #하츠투하츠#Moonride #JUUN #IAN",
-      "title_id": "dc by us #Hearts2Hearts #하츠투하츠#Moonride #JUUN #IAN",
+      "title_id": "dc by us  #Hearts2Hearts  #하츠투하츠 #Moonride   #JUUN   #IAN",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-19T03:30:25Z",
@@ -1679,7 +1691,7 @@
     {
       "id": "ePhyKlRcUsg",
       "title": "진실은 언제나 하나! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
-      "title_id": "진실은 언제나 하나! #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "Selalu ada satu kebenaran!  #Hearts2Hearts #HeartsToHearts #H2H #A_NA #Aina",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-18T09:30:14Z",
@@ -1691,7 +1703,7 @@
     {
       "id": "f2L9bAbyhQ4",
       "title": "pov: listening to THE SONG in public #Hearts2Hearts #하츠투하츠 #H2H #RUDE! #Hearts2Hearts_RUDE!",
-      "title_id": "pov: listening to THE SONG in public #Hearts2Hearts #하츠투하츠 #H2H #RUDE! #Hearts2Hearts_RUDE!",
+      "title_id": "pov: listening to THE SONG in public  #Hearts2Hearts  #하츠투하츠  #H2H   #RUDE !  #Hearts2Hearts_RUDE !",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-18T08:32:48Z",
@@ -1703,7 +1715,7 @@
     {
       "id": "s9xwVUBFTbc",
       "title": "somebody explain this #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "somebody explain this #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "seseorang jelaskan #Hearts2Hearts ini #HeartsToHearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-18T04:00:03Z",
@@ -1715,7 +1727,7 @@
     {
       "id": "NxL7lK-zhr0",
       "title": "punk and ballet (edited by stell♡) #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
-      "title_id": "punk and ballet (edited by stell♡) #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
+      "title_id": "punk and ballet (edited by stell♡)  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #YUHA",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-17T12:30:20Z",
@@ -1727,7 +1739,7 @@
     {
       "id": "igOhmeE857E",
       "title": "tokyo-log #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "tokyo-log #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "tokyo-log #Hearts2Hearts #HeartsToHearts #H2H",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-16T03:30:35Z",
@@ -1739,7 +1751,7 @@
     {
       "id": "leLQOq8rhVY",
       "title": "Callmethe #Hearts2Hearts #하츠투하츠 #H2H #STELLA #JUUN",
-      "title_id": "Callmethe #Hearts2Hearts #하츠투하츠 #H2H #STELLA #JUUN",
+      "title_id": "Callmethe  #Hearts2Hearts  #하츠투하츠  #H2H   #STELLA   #JUUN",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-15T03:30:52Z",
@@ -1763,7 +1775,7 @@
     {
       "id": "6L6ywJraIyI",
       "title": "스텔랑이💕💕 #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
-      "title_id": "스텔랑이💕💕 #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "Stellarangi💕💕 #Hearts2Hearts #HeartsToHeats #H2H #STELLA #Stella",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-13T04:00:05Z",
@@ -1787,7 +1799,7 @@
     {
       "id": "R_oOSbbKS7E",
       "title": "얘 나 좋아하나; #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
-      "title_id": "얘 나 좋아하나; #Hearts2Hearts #하츠투하츠 #H2H #JUUN #A_NA",
+      "title_id": "Apakah dia menyukaiku?  #Hearts2Hearts #HatiUntukHati #H2H #JUUN #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-10T09:00:16Z",
@@ -1799,7 +1811,7 @@
     {
       "id": "cYK6F0s_JDM",
       "title": "hop on already#Hearts2Hearts #하츠투하츠 #H2H #Moonride #Hearts2Hearts_Moonride",
-      "title_id": "hop on already#Hearts2Hearts #하츠투하츠 #H2H #Moonride #Hearts2Hearts_Moonride",
+      "title_id": "hop on already #Hearts2Hearts  #하츠투하츠  #H2H   #Moonride   #Hearts2Hearts_Moonride",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-09T10:01:04Z",
@@ -1811,7 +1823,7 @@
     {
       "id": "ZFHi5awCZfQ",
       "title": "자리 비었으니까 타든지ㅋ #Hearts2Hearts #하츠투하츠 #H2H #Moonride #Hearts2Hearts_Moonride",
-      "title_id": "자리 비었으니까 타든지ㅋ #Hearts2Hearts #하츠투하츠 #H2H #Moonride #Hearts2Hearts_Moonride",
+      "title_id": "Karena kursinya kosong, kamu bisa naik haha ​​​​#Hearts2Hearts #HeartsToHearts #H2H #Moonride #Hearts2Hearts_Moonride",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-09T10:00:06Z",
@@ -1835,7 +1847,7 @@
     {
       "id": "LzDQ_6qiewY",
       "title": "저기 있잖아🤭 #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "저기 있잖아🤭 #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "Ada disana🤭 #Hearts2Hearts #HeartsToHearts #H2H #YE_ON #Yeon",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-08T10:30:02Z",
@@ -1859,7 +1871,7 @@
     {
       "id": "ZLwWkGDyOKQ",
       "title": "cute or not? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JIWOO",
-      "title_id": "cute or not? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #JIWOO",
+      "title_id": "cute or not?  #Hearts2Hearts  #하츠투하츠  #H2H   #CARMEN   #JIWOO",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-07T10:00:35Z",
@@ -1883,7 +1895,7 @@
     {
       "id": "rLzxJ1RKKqE",
       "title": "yes, your jaw #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "yes, your jaw #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "ya, rahangmu #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
       "kind": "video",
       "isShort": false,
       "published": "2026-09-05T03:30:07Z",
@@ -4252,7 +4264,7 @@
     {
       "id": "FqpYYVcTRWY",
       "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
-      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright  #Hearts2Hearts  #하츠투하츠   #H2H   #JUUN   #IAN",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-11T08:00:25Z",
@@ -5428,7 +5440,7 @@
     {
       "id": "fa6dpotGy-o",
       "title": "CLOSER🖤 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "CLOSER🖤 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "CLOSER🖤  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-10-02T11:59:08Z",
@@ -6508,7 +6520,7 @@
     {
       "id": "h1lXobqkV7s",
       "title": "𐙚💛❤️💚🩷 ⋆˚ #Hearts2Hearts #하츠투하츠 #SWEETSTEADY @SWEET_STEADY #ICONICHEART",
-      "title_id": "𐙚💛❤️💚🩷 ⋆˚ #Hearts2Hearts #하츠투하츠 #SWEETSTEADY @SWEET_STEADY #ICONICHEART",
+      "title_id": "𐙚💛❤️💚🩷 ⋆˚ #Hearts2Hearts #HeartsToHearts #SWEETSTEADY @SWEET_STEADY #ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-08-21T03:30:25Z",
@@ -6544,7 +6556,7 @@
     {
       "id": "XcfJF8ewl3U",
       "title": "꿍싯 ᴴᴱᴬᴿᵀ#Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "꿍싯 ᴴᴱᴬᴿᵀ#Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "꿍싯 ᴴᴱᴬᴿᵀ #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-08-20T12:00:07Z",
@@ -6712,7 +6724,7 @@
     {
       "id": "5EGtarKDGJU",
       "title": ".·:*¨༺ 🖤💛 ༻¨*:·. #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": ".·:*¨༺ 🖤💛 ༻¨*:·. #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": ".·:*¨༺ 🖤💛 ༻¨*:·.  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-08-18T07:04:36Z",
@@ -6856,7 +6868,7 @@
     {
       "id": "bVKm7dDha5Y",
       "title": "魔法 loading•••💖 #Hearts2Hearts #하츠투하츠 #STELLA#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "魔法 loading•••💖 #Hearts2Hearts #하츠투하츠 #STELLA#ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "魔法 loading•••💖  #Hearts2Hearts  #하츠투하츠  #STELLA  #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-08-13T05:00:13Z",
@@ -7132,7 +7144,7 @@
     {
       "id": "Z8zjAJXveX0",
       "title": "𝓌ℴ𝓌 𝓈ℴ 𝒸ℴℴ𝓁 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "𝓌ℴ𝓌 𝓈ℴ 𝒸ℴℴ𝓁 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "𝓌ℴ𝓌 𝓈ℴ 𝒸ℴℴ𝓁  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-08-07T03:06:10Z",
@@ -7252,7 +7264,7 @@
     {
       "id": "1_EnlHhpL9Q",
       "title": "😝 #whatsinmydrafts",
-      "title_id": "😝 #whatsinmydrafts",
+      "title_id": "😝  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2026-07-31T08:01:23Z",
@@ -7435,7 +7447,7 @@
     {
       "id": "8vjxKrsry3g",
       "title": "𝗜𝗖𝗢𝗡𝗜𝗖 𝗛𝗘𝗔𝗥𝗧 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "𝗜𝗖𝗢𝗡𝗜𝗖 𝗛𝗘𝗔𝗥𝗧 #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
+      "title_id": "𝗜𝗖𝗢𝗡𝗜𝗖 𝗛𝗘𝗔𝗥𝗧  #Hearts2Hearts  #하츠투하츠  #H2H   #ICONICHEART   #Hearts2Hearts_ICONICHEART",
       "kind": "short",
       "isShort": true,
       "published": "2026-07-20T15:02:48Z",
@@ -7809,7 +7821,7 @@
     {
       "id": "xuldK6AFxmI",
       "title": "꿍싯꿍싯 #Hearts2Hearts #YUHA #STELLA #JUUN #LemonTang",
-      "title_id": "꿍싯꿍싯 #Hearts2Hearts #YUHA #STELLA #JUUN #LemonTang",
+      "title_id": "꿍싯꿍싯  #Hearts2Hearts   #YUHA   #STELLA   #JUUN   #LemonTang",
       "kind": "short",
       "isShort": true,
       "published": "2026-07-09T03:00:14Z",
@@ -8656,7 +8668,7 @@
     {
       "id": "roUHuD3edJk",
       "title": "마레몬땡 #Hearts2Hearts #JUUN #YE_ON #LemonTang #Hearts2Hearts_LemonTang",
-      "title_id": "마레몬땡 #Hearts2Hearts #JUUN #YE_ON #LemonTang #Hearts2Hearts_LemonTang",
+      "title_id": "마레몬땡  #Hearts2Hearts   #JUUN   #YE_ON   #LemonTang   #Hearts2Hearts_LemonTang",
       "kind": "short",
       "isShort": true,
       "published": "2026-06-22T10:01:33Z",
@@ -8953,7 +8965,7 @@
     {
       "id": "eafAo8FRomQ",
       "title": "Tang…Tang…Tang… #Hearts2Hearts #하츠투하츠 #H2H #LemonTang #Hearts2Hearts_LemonTang",
-      "title_id": "Tang…Tang…Tang… #Hearts2Hearts #하츠투하츠 #H2H #LemonTang #Hearts2Hearts_LemonTang",
+      "title_id": "Pemakaman…Tang…Tang… #Hearts2Hearts #하츠투하츠 #H2H #LemonTang #Hearts2Hearts_LemonTang",
       "kind": "short",
       "isShort": true,
       "published": "2026-06-08T04:00:32Z",
@@ -9063,7 +9075,7 @@
     {
       "id": "9osy5h67kdk",
       "title": "★☆ kogyarudesu ★☆ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #STELLA",
-      "title_id": "★☆ kogyarudesu ★☆ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #STELLA",
+      "title_id": "★☆ kogyarudesu ★☆  #Hearts2Hearts  #하츠투하츠  #H2H   #YUHA   #STELLA",
       "kind": "short",
       "isShort": true,
       "published": "2026-05-24T03:35:22Z",
@@ -9602,7 +9614,7 @@
     {
       "id": "PtFwzTBroSo",
       "title": "#08 #09",
-      "title_id": "#08 #09",
+      "title_id": "#08   #09",
       "kind": "short",
       "isShort": true,
       "published": "2026-04-08T08:30:20Z",
@@ -10240,7 +10252,7 @@
     {
       "id": "ogzSbyFpUJA",
       "title": "❌♥️❌♥️ #whatsinmydrafts",
-      "title_id": "❌♥️❌♥️ #whatsinmydrafts",
+      "title_id": "❌♥️❌♥️  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2026-03-13T07:02:38Z",
@@ -11142,7 +11154,7 @@
     {
       "id": "D6Vy2qGt7pE",
       "title": "𝐸-𝐸-𝐸-𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐 𝑆ℎ𝑜𝑐𝑘 ⚡︎#Hearts2Hearts #하츠투하츠 #HEARTS2HOUSE",
-      "title_id": "𝐸-𝐸-𝐸-𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐 𝑆ℎ𝑜𝑐𝑘 ⚡︎#Hearts2Hearts #하츠투하츠 #HEARTS2HOUSE",
+      "title_id": "𝐸-𝐸-𝐸-𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐 𝑆ℎ𝑜𝑐𝑘 ⚡︎ #Hearts2Hearts #HeartsToHearts #HEARTS2HOUSE",
       "kind": "short",
       "isShort": true,
       "published": "2026-02-21T11:00:59Z",
@@ -11461,7 +11473,7 @@
     {
       "id": "5W9Q1T6CCTc",
       "title": "고구마땡 #Hearts2Hearts #YE_ON #TheChase #Hearts2Hearts_TheChase",
-      "title_id": "고구마땡 #Hearts2Hearts #YE_ON #TheChase #Hearts2Hearts_TheChase",
+      "title_id": "고구마땡  #Hearts2Hearts   #YE_ON   #TheChase   #Hearts2Hearts_TheChase",
       "kind": "short",
       "isShort": true,
       "published": "2026-02-09T05:30:03Z",
@@ -11483,7 +11495,7 @@
     {
       "id": "wRxQpHgQljE",
       "title": "너만~ 😘 #Hearts2Hearts #STELLA #TheChase #Hearts2Hearts_TheChase",
-      "title_id": "너만~ 😘 #Hearts2Hearts #STELLA #TheChase #Hearts2Hearts_TheChase",
+      "title_id": "너만~ 😘  #Hearts2Hearts   #STELLA   #TheChase   #Hearts2Hearts_TheChase",
       "kind": "short",
       "isShort": true,
       "published": "2026-02-08T09:01:22Z",
@@ -11659,7 +11671,7 @@
     {
       "id": "DzutnSW9LRQ",
       "title": "😎 #whatsinmydrafts",
-      "title_id": "😎 #whatsinmydrafts",
+      "title_id": "😎  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2026-01-28T11:00:20Z",
@@ -11835,7 +11847,7 @@
     {
       "id": "zr-wLRAQZAQ",
       "title": "/ᐠ. .ᐟ\\ Ⳋ #whatsinmydrafts",
-      "title_id": "/ᐠ. .ᐟ\\ Ⳋ #whatsinmydrafts",
+      "title_id": "/ᐠ. .ᐟ\\ Ⳋ  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2026-01-16T08:30:38Z",
@@ -11912,7 +11924,7 @@
     {
       "id": "vQ3thLHq8j0",
       "title": "🕊️🥧?;; #Hearts2Hearts #하츠투하츠 #H2H #ApplePie #Hearts2Hearts_ApplePie",
-      "title_id": "🕊️🥧?;; #Hearts2Hearts #하츠투하츠 #H2H #ApplePie #Hearts2Hearts_ApplePie",
+      "title_id": "🕊️🥧?;;  #Hearts2Hearts  #하츠투하츠  #H2H   #ApplePie   #Hearts2Hearts_ApplePie",
       "kind": "short",
       "isShort": true,
       "published": "2026-01-12T08:30:28Z",
@@ -11956,7 +11968,7 @@
     {
       "id": "pkpzzE87l7M",
       "title": "oppa³ #whatsinmydrafts",
-      "title_id": "oppa³ #whatsinmydrafts",
+      "title_id": "oppa³  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2026-01-05T03:30:48Z",
@@ -12671,7 +12683,7 @@
     {
       "id": "RkypCKH8UUY",
       "title": "mae kkeun mae kkeun hada (dc: ​⁠@gwangseries remxi: ​⁠@HappyPizzaBread ) #Hearts2Hearts #하츠투하츠",
-      "title_id": "mae kkeun mae kkeun hada (dc: ​⁠@gwangseries remxi: ​⁠@HappyPizzaBread ) #Hearts2Hearts #하츠투하츠",
+      "title_id": "mae kkeun mae kkeun hada (dc: ​⁠@gwangseries remxi: ​⁠@HappyPizzaBread ) #Hearts2Hearts #하즈투하즈",
       "kind": "short",
       "isShort": true,
       "published": "2025-11-09T07:30:12Z",
@@ -14145,7 +14157,7 @@
     {
       "id": "BiNIf_Hjm9k",
       "title": "🤔😻 #whatsinmydrafts",
-      "title_id": "🤔😻 #whatsinmydrafts",
+      "title_id": "🤔😻  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2025-09-11T10:00:15Z",
@@ -16235,7 +16247,7 @@
     {
       "id": "1R0wp6G4qaY",
       "title": "🔕🔕 #whatsinmydrafts",
-      "title_id": "🔕🔕 #whatsinmydrafts",
+      "title_id": "🔕🔕  #whatsinmydrafts",
       "kind": "short",
       "isShort": true,
       "published": "2025-04-11T10:00:05Z",

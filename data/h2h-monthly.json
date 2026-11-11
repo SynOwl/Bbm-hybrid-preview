@@ -1,16 +1,28 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-11T11:30:44Z",
+  "updatedAt": "2026-11-11T11:33:41Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
     {
+      "id": "yKsGhsb97u4",
+      "title": "제1회 하투하 볼링대회 : 일본 편의점 내기🎳",
+      "title_id": "Kompetisi Bowling Hatuha Pertama: Taruhan Toko Serba Ada Jepang🎳",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T11:00:29Z",
+      "url": "https://www.youtube.com/watch?v=yKsGhsb97u4",
+      "thumbnail": "https://img.youtube.com/vi/yKsGhsb97u4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
       "id": "FqpYYVcTRWY",
       "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
-      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright  #Hearts2Hearts  #하츠투하츠   #H2H   #JUUN   #IAN",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -22,7 +34,7 @@
     {
       "id": "FqpYYVcTRWY",
       "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
-      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright  #Hearts2Hearts  #하츠투하츠   #H2H   #JUUN   #IAN",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
@@ -598,7 +610,7 @@
     {
       "id": "0cX7fffXook",
       "title": "\"Rise and shine upper east siders its officially fall”",
-      "title_id": "\"Rise and shine upper east siders its officially fall”",
+      "title_id": "\"Bangkit dan bersinarlah di wilayah timur atas yang secara resmi telah jatuh\"",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -742,7 +754,7 @@
     {
       "id": "yJpG1qVjLpQ",
       "title": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
-      "title_id": "S2U sayang #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "S2U sayang #Hearts2Hearts #HeartsToHearts #H2H #CARMEN #Carmen",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -1625,66 +1637,6 @@
       "published": "2026-10-12T12:30:06Z",
       "url": "https://www.youtube.com/watch?v=QhmHBEChurk",
       "thumbnail": "https://img.youtube.com/vi/QhmHBEChurk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "s6V262NBfhg",
-      "title": "오디세이를 이을 새로운 신화🏛️ 누가 가장 아름다운 신이지?! ˗ˏˋ 숭프로디테 등장ˎˊ˗ 하리스로마신화🏹 | 둘셋하투하 EP.6",
-      "title_id": "Mitos baru penerus Odyssey🏛️ 누가 가장 아름다운 신이지?! ˗ˏˋ 숭프로디테 등장ˎˊ˗ 하리스로마신화🏹 | 둘셋하투하 EP.6",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-12T11:00:07Z",
-      "url": "https://www.youtube.com/watch?v=s6V262NBfhg",
-      "thumbnail": "https://img.youtube.com/vi/s6V262NBfhg/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "-0MvvjwPnaU",
-      "title": "it’s too ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Ini sangat ikonik #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-12T10:33:57Z",
-      "url": "https://www.youtube.com/watch?v=-0MvvjwPnaU",
-      "thumbnail": "https://img.youtube.com/vi/-0MvvjwPnaU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "-0MvvjwPnaU",
-      "title": "it’s too ICONIC #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Ini sangat ikonik #Hearts2Hearts #하츠투하츠 #H2H #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-12T10:33:57Z",
-      "url": "https://www.youtube.com/watch?v=-0MvvjwPnaU",
-      "thumbnail": "https://img.youtube.com/vi/-0MvvjwPnaU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "WaxAJEx1y1c",
-      "title": "need some ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "Butuh sedikit cinta ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-12T09:30:30Z",
-      "url": "https://www.youtube.com/watch?v=WaxAJEx1y1c",
-      "thumbnail": "https://img.youtube.com/vi/WaxAJEx1y1c/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "WaxAJEx1y1c",
-      "title": "need some ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "Butuh sedikit cinta ♡ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-12T09:30:30Z",
-      "url": "https://www.youtube.com/watch?v=WaxAJEx1y1c",
-      "thumbnail": "https://img.youtube.com/vi/WaxAJEx1y1c/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
