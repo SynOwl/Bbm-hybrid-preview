@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-11T09:15:28Z",
+  "updatedAt": "2026-11-11T11:30:44Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
@@ -245,30 +245,6 @@
       "published": "2026-11-04T11:30:01Z",
       "url": "https://www.youtube.com/watch?v=TgxtTjOCK3I",
       "thumbnail": "https://img.youtube.com/vi/TgxtTjOCK3I/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "2ISiz1gSCvQ",
-      "title": "it's basically christmas already",
-      "title_id": "Rasanya sudah seperti Natal",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-11-04T10:30:28Z",
-      "url": "https://www.youtube.com/watch?v=2ISiz1gSCvQ",
-      "thumbnail": "https://img.youtube.com/vi/2ISiz1gSCvQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "2ISiz1gSCvQ",
-      "title": "it's basically christmas already",
-      "title_id": "Rasanya sudah seperti Natal",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-11-04T10:30:28Z",
-      "url": "https://www.youtube.com/watch?v=2ISiz1gSCvQ",
-      "thumbnail": "https://img.youtube.com/vi/2ISiz1gSCvQ/hqdefault.jpg",
       "source": "youtube-official"
     },
     {
