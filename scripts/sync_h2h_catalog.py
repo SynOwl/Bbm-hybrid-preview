@@ -72,6 +72,80 @@ def api_playlist_entries(playlist_id, max_pages=4):
     return result
 
 
+TITLE_PREFIX_TRANSLATIONS = {
+    'no charlie, but angels': 'Tidak ada Charlie, tetapi ada malaikat',
+    'jealous much?': 'Cemburu, ya?',
+    '나 달라진 거 없어?': 'Apa aku terlihat berbeda?',
+    '나에게 이런 동생이? 부럽죠?!': 'Punya adik seperti ini? Iri, kan?!',
+    'love me?': 'Sayang aku?',
+    'BEYOND YOUR EXPECTATIONS': 'Melampaui ekspektasimu',
+    'repeat after me!': 'Ikuti ucapanku!',
+    'backseat 꽉 찼다': 'Kursi belakang sudah penuh',
+    'XOXO, GOS2IP GIRL': 'XOXO, Gadis Gosip',
+    'daily routine': 'Rutinitas harian',
+    "it's basically christmas already": 'Rasanya sudah seperti Natal',
+    'summer daydream': 'Lamunan musim panas',
+    '너 어디야': 'Kamu di mana?',
+    'take the backseat': 'Duduk di kursi belakang',
+    'we on a moonride': 'Kita sedang naik Moonride',
+    'gotta serve the face first': 'Harus tampil maksimal dulu',
+    'thumbs up if u like it': 'Beri jempol kalau kamu suka',
+    '나정이안이라구!!나좋아하지마..': 'Ini Najeong Ian!! Jangan suka aku..',
+    'just feel it': 'Rasakan saja',
+    "don't start with me": 'Jangan mulai denganku',
+    'being an it girl': 'Menjadi gadis trendi',
+    'rate our fit': 'Nilai penampilan kami',
+    'girl what?': 'Hah, apa?',
+    'always.': 'Selalu.',
+    'are you ready?': 'Apakah kamu siap?',
+    'Rise and shine upper east siders its officially fall': 'Bangun dan bersinar, warga Upper East Side, musim gugur resmi tiba',
+    '우리가 제일 사랑하는 차는?': 'Mobil apa yang paling kami sukai?',
+    'hop on the moonride': 'Ayo naik Moonride',
+    'heard you like it': 'Katanya kamu suka',
+    '울지 말아요, 장미의 아가씨': 'Jangan menangis, nona mawar',
+    '기억하나요?': 'Apakah kamu ingat?',
+    'you dont want it, you need it': 'Kamu bukan hanya menginginkannya, kamu membutuhkannya',
+    '뭐야 이거': 'Apa ini?',
+    '웅웅': 'Iya, iya',
+    '감당할 수 있겠니': 'Sanggupkah kamu menghadapinya?',
+    'couldnt be more iconic': 'Sangat ikonik',
+    "who's next": 'Siapa berikutnya?',
+    'which one is your favorite?': 'Mana yang paling kamu suka?',
+    '얼만큼 귀여워요?': 'Seberapa imut?',
+    'the quotes': 'Kutipan-kutipan',
+    'never miss a frame': 'Jangan lewatkan satu momen pun',
+    'gotcha': 'Ketahuan!',
+    'she always play like that': 'Dia selalu bermain seperti itu',
+    '나 이러면 다 먹어 진짜!!!': 'Kalau begini, aku akan makan semuanya, sungguh!!!',
+    '잘먹었다ㅋ': 'Terima kasih makanannya, hehe',
+    'met my match': 'Akhirnya bertemu tandinganku',
+    'manifesting': 'Sedang mewujudkan keinginan',
+    'lesson learned from the master of cuteness': 'Pelajaran dari ahli keimutan',
+    '냐옹': 'Meong',
+    'wow so guinea': 'Wah, keren sekali',
+    'GIRL. WALK.': 'GIRL, JALAN!',
+    '안싸웠어요': 'Kami tidak bertengkar',
+    '막내로 살아남기': 'Bertahan hidup sebagai anggota termuda',
+    'you know my move': 'Kamu tahu gerakanku',
+    '같이 할 친구': 'Teman untuk melakukannya bersama',
+    'Next chapter, now begins': 'Bab berikutnya dimulai sekarang',
+    'Tap into the world': 'Masuki dunia ini',
+    "Hearts2Hearts 하츠투하츠 'Next Chapter' MV": "MV 'Next Chapter' Hearts2Hearts",
+    "can't help myself": 'Tak bisa menahan diri',
+    'u think we glitching': 'Kamu pikir kami sedang glitch?',
+    'the iconic intro': 'Intro yang ikonik',
+    '2027 Hearts2Hearts SEASON’S GREETINGS BEHIND': 'Di balik layar Season’s Greetings Hearts2Hearts 2027',
+    'not this song but': 'Bukan lagu ini, tapi...',
+    'who did best?': 'Siapa yang paling bagus?',
+    'real or fake?': 'Asli atau palsu?',
+    'jack n rose': 'Jack dan Rose',
+    'don’t u dare forget abt this line': 'Jangan sampai kamu lupa kalimat ini',
+    '사랑의 화살을 받아랏': 'Terimalah panah cinta!',
+    '오디세이를 이을 새로운 신화': 'Mitos baru penerus Odyssey',
+    'it’s too ICONIC': 'Ini sangat ikonik',
+    'need some ♡': 'Butuh sedikit cinta ♡',
+}
+
 _TRANSLATION_CACHE = {}
 
 def translate_title_to_indonesian(title):
@@ -81,6 +155,12 @@ def translate_title_to_indonesian(title):
         return title
     if title in _TRANSLATION_CACHE:
         return _TRANSLATION_CACHE[title]
+
+    for source, localized in sorted(TITLE_PREFIX_TRANSLATIONS.items(), key=lambda pair: len(pair[0]), reverse=True):
+        if title.startswith(source):
+            result = localized + title[len(source):]
+            _TRANSLATION_CACHE[title] = result
+            return result
 
     hashtags = []
     def protect(match):
