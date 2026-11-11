@@ -10,6 +10,8 @@ STATUS = ROOT / 'data/h2h-sync-status.json'
 CHANNEL = 'https://www.youtube.com/@hearts2hearts.official'
 CHANNEL_ID = 'UC7Q3HUnJA3nvjZR2JeMn2Cw'
 SHORTS_PLAYLIST_ID = 'UUSH' + CHANNEL_ID[2:]
+# Permanently omit videos blocked for in-app playback / rights restrictions.
+EXCLUDED_VIDEO_IDS = {'2ISiz1gSCvQ'}
 UTC = timezone.utc
 YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY', '').strip()
 YOUTUBE_API = 'https://www.googleapis.com/youtube/v3'
@@ -331,8 +333,8 @@ def main():
                 api_status = 'shorts_fallback' if api_status == 'videos_ok' else api_status
         else:
             raw_videos, raw_shorts = scrape('videos'), scrape('shorts')
-        videos = {x['id']: x for x in archive['videos'] if isinstance(x, dict) and x.get('id')}
-        shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id')}
+        videos = {x['id']: x for x in archive['videos'] if isinstance(x, dict) and x.get('id') and x['id'] not in EXCLUDED_VIDEO_IDS}
+        shorts = {x['id']: x for x in archive['shorts'] if isinstance(x, dict) and x.get('id') and x['id'] not in EXCLUDED_VIDEO_IDS}
         added_v, added_s = [], []
 
         # Merge the channel Shorts tab with YouTube's generated Shorts-only
@@ -349,6 +351,9 @@ def main():
                 print('Shorts sources: channel tab + official UUSH playlist; merged ' + str(len(raw_shorts)) + ' unique entries')
             except Exception as playlist_error:
                 print('Official UUSH Shorts playlist unavailable; keeping channel tab results: ' + str(playlist_error)[:220], file=sys.stderr)
+
+        raw_videos = [x for x in raw_videos if x.get('id') not in EXCLUDED_VIDEO_IDS]
+        raw_shorts = [x for x in raw_shorts if x.get('id') not in EXCLUDED_VIDEO_IDS]
 
         new_short_candidates = [
             {'id': x.get('id'), 'title': x.get('title'), 'timestamp': x.get('timestamp'),
