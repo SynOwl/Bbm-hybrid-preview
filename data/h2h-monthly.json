@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-10T17:18:45Z",
+  "updatedAt": "2026-11-11T09:15:28Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "FqpYYVcTRWY",
+      "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T08:00:25Z",
+      "url": "https://www.youtube.com/watch?v=FqpYYVcTRWY",
+      "thumbnail": "https://img.youtube.com/vi/FqpYYVcTRWY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "FqpYYVcTRWY",
+      "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-11T08:00:25Z",
+      "url": "https://www.youtube.com/watch?v=FqpYYVcTRWY",
+      "thumbnail": "https://img.youtube.com/vi/FqpYYVcTRWY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "_cw7q5gkOCE",
       "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",

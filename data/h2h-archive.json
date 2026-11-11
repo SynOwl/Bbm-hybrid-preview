@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-10T17:18:45Z",
+  "updatedAt": "2026-11-11T09:15:28Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "FqpYYVcTRWY",
+      "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T08:00:25Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=FqpYYVcTRWY",
+      "thumbnail": "https://img.youtube.com/vi/FqpYYVcTRWY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "_cw7q5gkOCE",
       "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
@@ -4249,6 +4261,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "FqpYYVcTRWY",
+      "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "title_id": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-11T08:00:25Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=FqpYYVcTRWY",
+      "thumbnail": "https://img.youtube.com/vi/FqpYYVcTRWY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "_cw7q5gkOCE",
       "title": "no charlie, but angels #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #STELLA",
