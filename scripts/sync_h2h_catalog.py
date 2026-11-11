@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, subprocess, sys, urllib.parse, urllib.request, urllib.error
+import json, os, re, subprocess, sys, time, urllib.parse, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
@@ -70,6 +70,62 @@ def api_playlist_entries(playlist_id, max_pages=4):
                     'channel_id': snippet.get('channelId'), 'timestamp': timestamp,
                     'release_timestamp': timestamp})
     return result
+
+
+_TRANSLATION_CACHE = {}
+
+def translate_title_to_indonesian(title):
+    """Translate display titles while preserving hashtags; original title remains untouched."""
+    title = str(title or '').strip()
+    if not title:
+        return title
+    if title in _TRANSLATION_CACHE:
+        return _TRANSLATION_CACHE[title]
+
+    hashtags = []
+    def protect(match):
+        hashtags.append(match.group(0))
+        return ' HASTAGTOKEN' + str(len(hashtags) - 1) + ' '
+    protected = re.sub(r'#[A-Za-z0-9_]+', protect, title)
+    try:
+        query = urllib.parse.urlencode({
+            'client': 'gtx', 'sl': 'auto', 'tl': 'id', 'dt': 't', 'q': protected
+        })
+        request = urllib.request.Request(
+            'https://translate.googleapis.com/translate_a/single?' + query,
+            headers={'User-Agent': 'Mozilla/5.0'}
+        )
+        with urllib.request.urlopen(request, timeout=12) as response:
+            payload = json.loads(response.read().decode('utf-8'))
+        translated = ''.join(part[0] for part in (payload[0] or []) if part and part[0])
+        if not translated.strip():
+            translated = title
+        for index, hashtag in enumerate(hashtags):
+            translated = translated.replace('HASTAGTOKEN' + str(index), hashtag)
+        translated = re.sub(r'\\s+', ' ', translated).strip()
+    except Exception as exc:
+        print('Title translation unavailable; keeping original: ' + str(exc)[:160], file=sys.stderr)
+        translated = title
+    _TRANSLATION_CACHE[title] = translated
+    time.sleep(0.12)
+    return translated
+
+
+def translate_catalog_titles(items):
+    translated_count = 0
+    for item in items:
+        if not isinstance(item, dict) or not item.get('title'):
+            continue
+        original = str(item['title'])
+        existing = str(item.get('title_id') or '').strip()
+        if not existing or existing == original:
+            localized = translate_title_to_indonesian(original)
+            if localized:
+                item['title_id'] = localized
+                if localized != original:
+                    translated_count += 1
+        # Keep title as the official/original source title.
+    return translated_count
 
 
 def stamp(dt):
@@ -252,6 +308,8 @@ def main():
             else:
                 added.append(item['id'])
             target[item['id']] = item
+        translated_titles = translate_catalog_titles(list(videos.values()) + list(shorts.values()))
+        print('Indonesian display titles translated: ' + str(translated_titles))
         now = datetime.now(UTC)
         all_v = sorted(videos.values(), key=lambda x: x.get('published', ''), reverse=True)
         all_s = sorted(shorts.values(), key=lambda x: x.get('published', ''), reverse=True)
