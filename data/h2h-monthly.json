@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-11T11:33:41Z",
+  "updatedAt": "2026-11-11T17:08:46Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "qorvG8TYFL8",
+      "title": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T12:00:07Z",
+      "url": "https://www.youtube.com/watch?v=qorvG8TYFL8",
+      "thumbnail": "https://img.youtube.com/vi/qorvG8TYFL8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "qorvG8TYFL8",
+      "title": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-11T12:00:07Z",
+      "url": "https://www.youtube.com/watch?v=qorvG8TYFL8",
+      "thumbnail": "https://img.youtube.com/vi/qorvG8TYFL8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "yKsGhsb97u4",
       "title": "제1회 하투하 볼링대회 : 일본 편의점 내기🎳",
@@ -1613,30 +1637,6 @@
       "published": "2026-10-13T03:00:04Z",
       "url": "https://www.youtube.com/watch?v=IIQN3Z0VAp0",
       "thumbnail": "https://img.youtube.com/vi/IIQN3Z0VAp0/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "QhmHBEChurk",
-      "title": "사랑의 화살을 받아랏 #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "Terimalah panah cinta! #Hearts2Hearts #하츠투하츠 #H2H",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-12T12:30:06Z",
-      "url": "https://www.youtube.com/watch?v=QhmHBEChurk",
-      "thumbnail": "https://img.youtube.com/vi/QhmHBEChurk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "QhmHBEChurk",
-      "title": "사랑의 화살을 받아랏 #Hearts2Hearts #하츠투하츠 #H2H",
-      "title_id": "Terimalah panah cinta! #Hearts2Hearts #하츠투하츠 #H2H",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-12T12:30:06Z",
-      "url": "https://www.youtube.com/watch?v=QhmHBEChurk",
-      "thumbnail": "https://img.youtube.com/vi/QhmHBEChurk/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

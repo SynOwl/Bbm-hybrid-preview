@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-11T11:33:41Z",
+  "updatedAt": "2026-11-11T17:08:46Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "qorvG8TYFL8",
+      "title": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-11T12:00:07Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=qorvG8TYFL8",
+      "thumbnail": "https://img.youtube.com/vi/qorvG8TYFL8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "yKsGhsb97u4",
       "title": "제1회 하투하 볼링대회 : 일본 편의점 내기🎳",
@@ -4261,6 +4273,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "qorvG8TYFL8",
+      "title": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "title_id": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-11T12:00:07Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=qorvG8TYFL8",
+      "thumbnail": "https://img.youtube.com/vi/qorvG8TYFL8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "FqpYYVcTRWY",
       "title": "we been alright #Hearts2Hearts #하츠투하츠  #H2H #JUUN #IAN",
