@@ -1554,30 +1554,6 @@
       "url": "https://www.youtube.com/watch?v=caVYwJgmjig",
       "thumbnail": "https://img.youtube.com/vi/caVYwJgmjig/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "UP9vIOPRpPo",
-      "title": "real or fake? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "Asli atau palsu? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-13T12:30:39Z",
-      "url": "https://www.youtube.com/watch?v=UP9vIOPRpPo",
-      "thumbnail": "https://img.youtube.com/vi/UP9vIOPRpPo/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "UP9vIOPRpPo",
-      "title": "real or fake? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "Asli atau palsu? #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-13T12:30:39Z",
-      "url": "https://www.youtube.com/watch?v=UP9vIOPRpPo",
-      "thumbnail": "https://img.youtube.com/vi/UP9vIOPRpPo/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
