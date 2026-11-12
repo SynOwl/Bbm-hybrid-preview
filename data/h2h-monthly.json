@@ -1578,42 +1578,6 @@
       "url": "https://www.youtube.com/watch?v=UP9vIOPRpPo",
       "thumbnail": "https://img.youtube.com/vi/UP9vIOPRpPo/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "w8x0KaNUnz4",
-      "title": "Hearts2Hearts 하츠투하츠 'Next Chapter' MV Teaser",
-      "title_id": "MV 'Next Chapter' Hearts2Hearts Teaser",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-13T09:00:12Z",
-      "url": "https://www.youtube.com/watch?v=w8x0KaNUnz4",
-      "thumbnail": "https://img.youtube.com/vi/w8x0KaNUnz4/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "KwndWYBIBhw",
-      "title": "jack n rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
-      "title_id": "Jack dan Rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-13T05:00:28Z",
-      "url": "https://www.youtube.com/watch?v=KwndWYBIBhw",
-      "thumbnail": "https://img.youtube.com/vi/KwndWYBIBhw/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "KwndWYBIBhw",
-      "title": "jack n rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
-      "title_id": "Jack dan Rose #Hearts2Hearts #하츠투하츠 #H2H #STELLA #YUHA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-13T05:00:28Z",
-      "url": "https://www.youtube.com/watch?v=KwndWYBIBhw",
-      "thumbnail": "https://img.youtube.com/vi/KwndWYBIBhw/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
