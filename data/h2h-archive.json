@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-11T17:08:46Z",
+  "updatedAt": "2026-11-13T15:32:40Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "OSs7tSLzIRY",
+      "title": "우리 연기 안 되겠는데…? (´•ω•`; ) | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #3",
+      "title_id": "우리 연기 안 되겠는데…? (´•ω•`; ) | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #3",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-13T11:00:15Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=OSs7tSLzIRY",
+      "thumbnail": "https://img.youtube.com/vi/OSs7tSLzIRY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "qorvG8TYFL8",
       "title": "meowㅋㅋ #Hearts2Hearts #하츠투하츠 #H2H #STELLA #스텔라",
