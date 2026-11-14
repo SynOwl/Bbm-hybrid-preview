@@ -1542,30 +1542,6 @@
       "url": "https://www.youtube.com/watch?v=r5-EXCbGGuA",
       "thumbnail": "https://img.youtube.com/vi/r5-EXCbGGuA/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "caVYwJgmjig",
-      "title": "who did best? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
-      "title_id": "Siapa yang paling bagus? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-15T03:30:01Z",
-      "url": "https://www.youtube.com/watch?v=caVYwJgmjig",
-      "thumbnail": "https://img.youtube.com/vi/caVYwJgmjig/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "caVYwJgmjig",
-      "title": "who did best? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
-      "title_id": "Siapa yang paling bagus? #Hearts2Hearts #하츠투하츠 #CARMEN #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-15T03:30:01Z",
-      "url": "https://www.youtube.com/watch?v=caVYwJgmjig",
-      "thumbnail": "https://img.youtube.com/vi/caVYwJgmjig/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
