@@ -37,7 +37,11 @@ export const MancingGame: React.FC = () => {
   const [fishList, setFishList] = useState<Array<{ id: number; emoji: string; x: number; y: number; vx: number; flip: boolean }>>([]);
 
   useEffect(() => {
-    const emojis = ['🐟', '🐠', '🐡', '🦈', '🐙', '🦐'];
+    if (!gameMode) {
+      setFishList([]);
+      return;
+    }
+    const emojis = ['🐠', '🐡', '🐬', '🐙', '🐢', '🐟'];
     const initial = emojis.map((e, idx) => ({
       id: idx,
       emoji: e,
@@ -66,10 +70,10 @@ export const MancingGame: React.FC = () => {
           return { ...f, x: nx, vx: nvx, flip: nflip };
         })
       );
-    }, 50);
+    }, 90);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [gameMode]);
 
   const resetGame = () => {
     if (biteTimeoutRef.current) clearTimeout(biteTimeoutRef.current);
@@ -278,7 +282,7 @@ export const MancingGame: React.FC = () => {
 
   return (
     <div className="screen">
-      <div className="head">💖 🎣 MEMANCING</div>
+      <div className="head">🎣 Mancing Ikan Lucu 🐠</div>
 
       {!gameMode ? (
         <div>
@@ -311,7 +315,7 @@ export const MancingGame: React.FC = () => {
 
           <div
             ref={sceneRef}
-            className={`scene ${isSceneShaking ? 'shake' : ''}`}
+            className={`scene fishing-scene ${isSceneShaking ? 'shake' : ''}`}
             onClick={handleSceneClick}
           >
             <div className="sky">
