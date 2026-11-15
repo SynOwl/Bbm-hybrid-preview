@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useApp } from './context/AppContext';
 import { Header } from './components/Header';
 import { HariScreen } from './components/HariScreen';
@@ -43,6 +43,30 @@ import { Toast } from './components/Modals/Toast';
 export const App: React.FC = () => {
   const { screen } = useApp();
   const [activeHtml, setActiveHtml] = useState<string>('');
+  useEffect(() => {
+    // Ringankan galeri panjang: browser memuat gambar saat mendekati layar.
+    const prepareImages = (root: ParentNode) => {
+      root.querySelectorAll('img').forEach((img, index) => {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', index < 2 ? 'eager' : 'lazy');
+        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+      });
+    };
+    prepareImages(document);
+    const observer = new MutationObserver((records) => {
+      records.forEach((record) => record.addedNodes.forEach((node) => {
+        if (node instanceof HTMLElement) {
+          if (node.tagName === 'IMG') {
+            if (!node.hasAttribute('loading')) node.setAttribute('loading', 'lazy');
+            node.setAttribute('decoding', 'async');
+          }
+          prepareImages(node);
+        }
+      }));
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
+
   const [activeQuiz, setActiveQuiz] = useState<
     'hitung' | 'pola' | 'angka' | 'urutan' | 'kata' | 'teka' | null
   >(null);

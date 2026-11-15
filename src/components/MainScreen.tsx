@@ -21,19 +21,19 @@ export const MainScreen: React.FC<MainScreenProps> = ({ onOpenQuiz }) => {
 
   return (
     <div className="screen">
-      <div className="head">💖 Main & Klaim Bonus</div>
+      <div className="head">🎮 Game & Bonus Grace</div>
       <div className="info" style={{ textAlign: 'center', fontWeight: 700 }}>
-        🎮 Pilih game 💖<br />
+        🎮 Pilih permainan yang kamu suka 💖<br />
         <span style={{ fontSize: '11px', opacity: 0.9 }}>
           Semua game bisa klaim waktu atau seru-seruan ✨
         </span>
       </div>
 
       <div className="game-list">
-        <div className="game-card" onClick={() => handleNav('s-mancing')}>
+        <div className="game-card game-card-featured" onClick={() => handleNav('s-mancing')}>
           <div className="g-icon">🎣</div>
           <div>
-            <div className="g-title">1. MEMANCING</div>
+            <div className="g-title">1. MANCING IKAN LUCU</div>
             <div className="g-sub">⏱️ Klaim waktu / ✨ Seru-seruan</div>
           </div>
         </div>

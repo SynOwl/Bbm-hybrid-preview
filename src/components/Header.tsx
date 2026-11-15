@@ -1,10 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { suaraKlik } from '../utils/audio';
 
 export const Header: React.FC = () => {
   const { fotoAvatar, setFotoAvatar, openLightbox, showToast } = useApp();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    try { return localStorage.getItem('bbm_dark_mode') === '1'; } catch { return false; }
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+    try { localStorage.setItem('bbm_dark_mode', darkMode ? '1' : '0'); } catch {}
+  }, [darkMode]);
 
   const handleAvatarClick = () => {
     suaraKlik();
@@ -58,6 +66,16 @@ export const Header: React.FC = () => {
         <h2>Belajar Bareng Mami</h2>
         <p>Hai, Grace · Kelas 4 SD · Hearts2Hearts ✨</p>
       </div>
+      <button
+        type="button"
+        className="theme-toggle"
+        onClick={() => setDarkMode((value) => !value)}
+        aria-label={darkMode ? 'Pakai mode terang' : 'Pakai mode gelap'}
+        title={darkMode ? 'Pakai mode terang' : 'Pakai mode gelap'}
+      >
+        <span aria-hidden="true">{darkMode ? '☀️' : '🌙'}</span>
+        <span>{darkMode ? 'Terang' : 'Gelap'}</span>
+      </button>
 
       <input
         type="file"

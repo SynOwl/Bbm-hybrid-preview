@@ -90,7 +90,7 @@ export const DashboardScreen: React.FC = () => {
         </div>
         <div className="grid-item" onClick={() => handleNav('s-main')}>
           <span className="g-icon">🎮</span>
-          <div className="g-title">Main & Bonus</div>
+          <div className="g-title">Game</div>
         </div>
         <div className="grid-item" onClick={() => handleNav('s-video')}>
           <span className="g-icon">🎬</span>
