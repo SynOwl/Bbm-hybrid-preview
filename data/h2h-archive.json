@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-15T16:59:12Z",
+  "updatedAt": "2026-11-16T17:58:46Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,42 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "NIVIoNmurJs",
+      "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "title_id": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T11:00:02Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=NIVIoNmurJs",
+      "thumbnail": "https://img.youtube.com/vi/NIVIoNmurJs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "u-0J0GgFQTA",
+      "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T10:30:16Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=u-0J0GgFQTA",
+      "thumbnail": "https://img.youtube.com/vi/u-0J0GgFQTA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Te14NdT14i8",
+      "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T09:30:01Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=Te14NdT14i8",
+      "thumbnail": "https://img.youtube.com/vi/Te14NdT14i8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "VWaj6xPHo1M",
       "title": "いいじゃん🖤 #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
@@ -4345,6 +4381,30 @@
     }
   ],
   "shorts": [
+    {
+      "id": "u-0J0GgFQTA",
+      "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-16T10:30:16Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=u-0J0GgFQTA",
+      "thumbnail": "https://img.youtube.com/vi/u-0J0GgFQTA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Te14NdT14i8",
+      "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-16T09:30:01Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=Te14NdT14i8",
+      "thumbnail": "https://img.youtube.com/vi/Te14NdT14i8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "VWaj6xPHo1M",
       "title": "いいじゃん🖤 #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",

@@ -1,12 +1,72 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-15T16:59:12Z",
+  "updatedAt": "2026-11-16T17:58:46Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "NIVIoNmurJs",
+      "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "title_id": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T11:00:02Z",
+      "url": "https://www.youtube.com/watch?v=NIVIoNmurJs",
+      "thumbnail": "https://img.youtube.com/vi/NIVIoNmurJs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "u-0J0GgFQTA",
+      "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T10:30:16Z",
+      "url": "https://www.youtube.com/watch?v=u-0J0GgFQTA",
+      "thumbnail": "https://img.youtube.com/vi/u-0J0GgFQTA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "u-0J0GgFQTA",
+      "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-16T10:30:16Z",
+      "url": "https://www.youtube.com/watch?v=u-0J0GgFQTA",
+      "thumbnail": "https://img.youtube.com/vi/u-0J0GgFQTA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Te14NdT14i8",
+      "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-16T09:30:01Z",
+      "url": "https://www.youtube.com/watch?v=Te14NdT14i8",
+      "thumbnail": "https://img.youtube.com/vi/Te14NdT14i8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Te14NdT14i8",
+      "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-16T09:30:01Z",
+      "url": "https://www.youtube.com/watch?v=Te14NdT14i8",
+      "thumbnail": "https://img.youtube.com/vi/Te14NdT14i8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "VWaj6xPHo1M",
       "title": "いいじゃん🖤 #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
@@ -1361,78 +1421,6 @@
       "published": "2026-10-18T03:30:25Z",
       "url": "https://www.youtube.com/watch?v=QEj9pEi1B6Q",
       "thumbnail": "https://img.youtube.com/vi/QEj9pEi1B6Q/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "EG0XcjDyboo",
-      "title": "GIRL. WALK. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
-      "title_id": "GIRL, JALAN! #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-17T11:30:30Z",
-      "url": "https://www.youtube.com/watch?v=EG0XcjDyboo",
-      "thumbnail": "https://img.youtube.com/vi/EG0XcjDyboo/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "EG0XcjDyboo",
-      "title": "GIRL. WALK. #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
-      "title_id": "GIRL, JALAN! #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-17T11:30:30Z",
-      "url": "https://www.youtube.com/watch?v=EG0XcjDyboo",
-      "thumbnail": "https://img.youtube.com/vi/EG0XcjDyboo/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "-KjoYcss_-s",
-      "title": "안싸웠어요 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
-      "title_id": "Kami tidak bertengkar #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-17T10:30:30Z",
-      "url": "https://www.youtube.com/watch?v=-KjoYcss_-s",
-      "thumbnail": "https://img.youtube.com/vi/-KjoYcss_-s/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "-KjoYcss_-s",
-      "title": "안싸웠어요 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
-      "title_id": "Kami tidak bertengkar #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-17T10:30:30Z",
-      "url": "https://www.youtube.com/watch?v=-KjoYcss_-s",
-      "thumbnail": "https://img.youtube.com/vi/-KjoYcss_-s/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "6hoq6RdKZmE",
-      "title": "막내로 살아남기 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Bertahan hidup sebagai anggota termuda #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-17T09:30:16Z",
-      "url": "https://www.youtube.com/watch?v=6hoq6RdKZmE",
-      "thumbnail": "https://img.youtube.com/vi/6hoq6RdKZmE/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "6hoq6RdKZmE",
-      "title": "막내로 살아남기 #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Bertahan hidup sebagai anggota termuda #Hearts2Hearts #하츠투하츠#ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-17T09:30:16Z",
-      "url": "https://www.youtube.com/watch?v=6hoq6RdKZmE",
-      "thumbnail": "https://img.youtube.com/vi/6hoq6RdKZmE/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
