@@ -1434,30 +1434,6 @@
       "url": "https://www.youtube.com/watch?v=6hoq6RdKZmE",
       "thumbnail": "https://img.youtube.com/vi/6hoq6RdKZmE/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "hvjjMqg_2eQ",
-      "title": "you know my move #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "title_id": "Kamu tahu gerakanku #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-17T03:30:12Z",
-      "url": "https://www.youtube.com/watch?v=hvjjMqg_2eQ",
-      "thumbnail": "https://img.youtube.com/vi/hvjjMqg_2eQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "hvjjMqg_2eQ",
-      "title": "you know my move #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "title_id": "Kamu tahu gerakanku #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-17T03:30:12Z",
-      "url": "https://www.youtube.com/watch?v=hvjjMqg_2eQ",
-      "thumbnail": "https://img.youtube.com/vi/hvjjMqg_2eQ/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
