@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-17T09:35:09Z",
+  "updatedAt": "2026-11-17T18:44:25Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "ZnKKZZjOBUA",
+      "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-17T10:30:39Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=ZnKKZZjOBUA",
+      "thumbnail": "https://img.youtube.com/vi/ZnKKZZjOBUA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
@@ -4393,6 +4405,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "ZnKKZZjOBUA",
+      "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-17T10:30:39Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=ZnKKZZjOBUA",
+      "thumbnail": "https://img.youtube.com/vi/ZnKKZZjOBUA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",

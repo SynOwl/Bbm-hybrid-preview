@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-17T09:35:09Z",
+  "updatedAt": "2026-11-17T18:44:25Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "ZnKKZZjOBUA",
+      "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-17T10:30:39Z",
+      "url": "https://www.youtube.com/watch?v=ZnKKZZjOBUA",
+      "thumbnail": "https://img.youtube.com/vi/ZnKKZZjOBUA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "ZnKKZZjOBUA",
+      "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-17T10:30:39Z",
+      "url": "https://www.youtube.com/watch?v=ZnKKZZjOBUA",
+      "thumbnail": "https://img.youtube.com/vi/ZnKKZZjOBUA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
@@ -1349,54 +1373,6 @@
       "published": "2026-10-19T03:30:01Z",
       "url": "https://www.youtube.com/watch?v=gcxFETsYLlU",
       "thumbnail": "https://img.youtube.com/vi/gcxFETsYLlU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "1Kf9iR2csr4",
-      "title": "manifesting #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "title_id": "Sedang mewujudkan keinginan #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-18T14:01:23Z",
-      "url": "https://www.youtube.com/watch?v=1Kf9iR2csr4",
-      "thumbnail": "https://img.youtube.com/vi/1Kf9iR2csr4/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "1Kf9iR2csr4",
-      "title": "manifesting #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "title_id": "Sedang mewujudkan keinginan #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-18T14:01:23Z",
-      "url": "https://www.youtube.com/watch?v=1Kf9iR2csr4",
-      "thumbnail": "https://img.youtube.com/vi/1Kf9iR2csr4/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "vjYp3X3ItpM",
-      "title": "lesson learned from the master of cuteness #Hearts2Hearts #하츠투하츠 #ICONICHEART",
-      "title_id": "Pelajaran dari ahli keimutan #Hearts2Hearts #하츠투하츠 #ICONICHEART",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-18T10:40:35Z",
-      "url": "https://www.youtube.com/watch?v=vjYp3X3ItpM",
-      "thumbnail": "https://img.youtube.com/vi/vjYp3X3ItpM/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "vjYp3X3ItpM",
-      "title": "lesson learned from the master of cuteness #Hearts2Hearts #하츠투하츠 #ICONICHEART",
-      "title_id": "Pelajaran dari ahli keimutan #Hearts2Hearts #하츠투하츠 #ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-18T10:40:35Z",
-      "url": "https://www.youtube.com/watch?v=vjYp3X3ItpM",
-      "thumbnail": "https://img.youtube.com/vi/vjYp3X3ItpM/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
