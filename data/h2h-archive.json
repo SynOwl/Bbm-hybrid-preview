@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-16T17:58:46Z",
+  "updatedAt": "2026-11-17T09:35:09Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "d3lDJZPzuIs",
+      "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-17T09:30:34Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=d3lDJZPzuIs",
+      "thumbnail": "https://img.youtube.com/vi/d3lDJZPzuIs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "NIVIoNmurJs",
       "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
@@ -4381,6 +4393,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "d3lDJZPzuIs",
+      "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-17T09:30:34Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=d3lDJZPzuIs",
+      "thumbnail": "https://img.youtube.com/vi/d3lDJZPzuIs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "u-0J0GgFQTA",
       "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",

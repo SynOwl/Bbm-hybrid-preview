@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-16T17:58:46Z",
+  "updatedAt": "2026-11-17T09:35:09Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "d3lDJZPzuIs",
+      "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-17T09:30:34Z",
+      "url": "https://www.youtube.com/watch?v=d3lDJZPzuIs",
+      "thumbnail": "https://img.youtube.com/vi/d3lDJZPzuIs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "d3lDJZPzuIs",
+      "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-17T09:30:34Z",
+      "url": "https://www.youtube.com/watch?v=d3lDJZPzuIs",
+      "thumbnail": "https://img.youtube.com/vi/d3lDJZPzuIs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "NIVIoNmurJs",
       "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
@@ -1373,54 +1397,6 @@
       "published": "2026-10-18T10:40:35Z",
       "url": "https://www.youtube.com/watch?v=vjYp3X3ItpM",
       "thumbnail": "https://img.youtube.com/vi/vjYp3X3ItpM/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "ybmjWyp4KFQ",
-      "title": "냐옹 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "Meong #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-18T08:30:16Z",
-      "url": "https://www.youtube.com/watch?v=ybmjWyp4KFQ",
-      "thumbnail": "https://img.youtube.com/vi/ybmjWyp4KFQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "ybmjWyp4KFQ",
-      "title": "냐옹 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "title_id": "Meong #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-18T08:30:16Z",
-      "url": "https://www.youtube.com/watch?v=ybmjWyp4KFQ",
-      "thumbnail": "https://img.youtube.com/vi/ybmjWyp4KFQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "QEj9pEi1B6Q",
-      "title": "wow so guinea #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Wah, keren sekali #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-18T03:30:25Z",
-      "url": "https://www.youtube.com/watch?v=QEj9pEi1B6Q",
-      "thumbnail": "https://img.youtube.com/vi/QEj9pEi1B6Q/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "QEj9pEi1B6Q",
-      "title": "wow so guinea #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "title_id": "Wah, keren sekali #NCTWISH @NCTWISH #Hearts2Hearts #하츠투하츠 #ICONICHEART #Hearts2Hearts_ICONICHEART",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-18T03:30:25Z",
-      "url": "https://www.youtube.com/watch?v=QEj9pEi1B6Q",
-      "thumbnail": "https://img.youtube.com/vi/QEj9pEi1B6Q/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
