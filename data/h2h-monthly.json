@@ -1,16 +1,88 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-17T18:44:25Z",
+  "updatedAt": "2026-11-18T17:31:23Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
     {
+      "id": "d0ezHRmyHXw",
+      "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "wanna join?  #Hearts2Hearts  #하츠투하츠  #H2H  #CandyBoxLover   #Hearts2Hearts_CandyBoxLover",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T12:30:13Z",
+      "url": "https://www.youtube.com/watch?v=d0ezHRmyHXw",
+      "thumbnail": "https://img.youtube.com/vi/d0ezHRmyHXw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "d0ezHRmyHXw",
+      "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "wanna join?  #Hearts2Hearts  #하츠투하츠  #H2H  #CandyBoxLover   #Hearts2Hearts_CandyBoxLover",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T12:30:13Z",
+      "url": "https://www.youtube.com/watch?v=d0ezHRmyHXw",
+      "thumbnail": "https://img.youtube.com/vi/d0ezHRmyHXw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "dpFHltHEPn0",
+      "title": "i get obsessed #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
+      "title_id": "i get obsessed  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #YUHA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T10:30:07Z",
+      "url": "https://www.youtube.com/watch?v=dpFHltHEPn0",
+      "thumbnail": "https://img.youtube.com/vi/dpFHltHEPn0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "dpFHltHEPn0",
+      "title": "i get obsessed #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
+      "title_id": "i get obsessed  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #YUHA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T10:30:07Z",
+      "url": "https://www.youtube.com/watch?v=dpFHltHEPn0",
+      "thumbnail": "https://img.youtube.com/vi/dpFHltHEPn0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-ahLqJOaGzU",
+      "title": "究極のアイドル ! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Idola terhebat! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T09:30:12Z",
+      "url": "https://www.youtube.com/watch?v=-ahLqJOaGzU",
+      "thumbnail": "https://img.youtube.com/vi/-ahLqJOaGzU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-ahLqJOaGzU",
+      "title": "究極のアイドル ! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Idola terhebat! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T09:30:12Z",
+      "url": "https://www.youtube.com/watch?v=-ahLqJOaGzU",
+      "thumbnail": "https://img.youtube.com/vi/-ahLqJOaGzU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
       "id": "ZnKKZZjOBUA",
       "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　 #Hearts2Hearts #HeartsToHearts #H2H #YUHA #Yuha",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -22,7 +94,7 @@
     {
       "id": "ZnKKZZjOBUA",
       "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　 #Hearts2Hearts #HeartsToHearts #H2H #YUHA #Yuha",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
@@ -34,7 +106,7 @@
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "Halo ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -46,7 +118,7 @@
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "Halo ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
@@ -58,7 +130,7 @@
     {
       "id": "NIVIoNmurJs",
       "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
-      "title_id": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "title_id": "Apakah kamu menerimaku sebagai putrimu? (σ̴̶̷ ̫σ̴̶̷ )✧ | Acara Promosi Hearts2Hearts 'ICONIC HEART' di Jepang BH2ND #4",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -70,7 +142,7 @@
     {
       "id": "u-0J0GgFQTA",
       "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
-      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "Siapa yang paling keren?ㅋㅋ #Hearts2Hearts #HeartsToHearts #STELLA #JUUN #A_NA",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -82,7 +154,7 @@
     {
       "id": "u-0J0GgFQTA",
       "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
-      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "Siapa yang paling keren?ㅋㅋ #Hearts2Hearts #HeartsToHearts #STELLA #JUUN #A_NA",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
@@ -94,7 +166,7 @@
     {
       "id": "Te14NdT14i8",
       "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
-      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "Saya ☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
@@ -106,7 +178,7 @@
     {
       "id": "Te14NdT14i8",
       "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
-      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "Saya ☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
       "type": "youtube",
       "kind": "short",
       "isShort": true,
@@ -1289,42 +1361,6 @@
       "published": "2026-10-20T08:00:31Z",
       "url": "https://www.youtube.com/watch?v=OzEJsMfGI5s",
       "thumbnail": "https://img.youtube.com/vi/OzEJsMfGI5s/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "f6sX-ZG7H9M",
-      "title": "she always play like that #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "title_id": "Dia selalu bermain seperti itu #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-19T14:36:39Z",
-      "url": "https://www.youtube.com/watch?v=f6sX-ZG7H9M",
-      "thumbnail": "https://img.youtube.com/vi/f6sX-ZG7H9M/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "f6sX-ZG7H9M",
-      "title": "she always play like that #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "title_id": "Dia selalu bermain seperti itu #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #YUHA",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-19T14:36:39Z",
-      "url": "https://www.youtube.com/watch?v=f6sX-ZG7H9M",
-      "thumbnail": "https://img.youtube.com/vi/f6sX-ZG7H9M/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "CjQkg-CQGKY",
-      "title": "나 이러면 다 먹어 진짜!!! 절제력 0 배신력 100 배고픈 신들의 처절한 의리 게임🍴하리스로마신화🏹 | 둘셋하투하 EP.7",
-      "title_id": "Kalau begini, aku akan makan semuanya, sungguh!!! 절제력 0 배신력 100 배고픈 신들의 처절한 의리 게임🍴하리스로마신화🏹 | 둘셋하투하 EP.7",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-19T11:00:09Z",
-      "url": "https://www.youtube.com/watch?v=CjQkg-CQGKY",
-      "thumbnail": "https://img.youtube.com/vi/CjQkg-CQGKY/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

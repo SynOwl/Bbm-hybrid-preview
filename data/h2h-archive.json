@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-17T18:44:25Z",
+  "updatedAt": "2026-11-18T17:31:23Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -9,9 +9,45 @@
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
     {
+      "id": "d0ezHRmyHXw",
+      "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "wanna join?  #Hearts2Hearts  #하츠투하츠  #H2H  #CandyBoxLover   #Hearts2Hearts_CandyBoxLover",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T12:30:13Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=d0ezHRmyHXw",
+      "thumbnail": "https://img.youtube.com/vi/d0ezHRmyHXw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "dpFHltHEPn0",
+      "title": "i get obsessed #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
+      "title_id": "i get obsessed  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #YUHA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T10:30:07Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=dpFHltHEPn0",
+      "thumbnail": "https://img.youtube.com/vi/dpFHltHEPn0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-ahLqJOaGzU",
+      "title": "究極のアイドル ! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Idola terhebat! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-18T09:30:12Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=-ahLqJOaGzU",
+      "thumbnail": "https://img.youtube.com/vi/-ahLqJOaGzU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
       "id": "ZnKKZZjOBUA",
       "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　 #Hearts2Hearts #HeartsToHearts #H2H #YUHA #Yuha",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-17T10:30:39Z",
@@ -23,7 +59,7 @@
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "Halo ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-17T09:30:34Z",
@@ -35,7 +71,7 @@
     {
       "id": "NIVIoNmurJs",
       "title": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
-      "title_id": "저를 딸로 받아주신다고요?(σ̴̶̷  ̫σ̴̶̷ )✧ | Hearts2Hearts 하츠투하츠 ‘ICONIC HEART’ Promotion Event in Japan BH2ND #4",
+      "title_id": "Apakah kamu menerimaku sebagai putrimu? (σ̴̶̷ ̫σ̴̶̷ )✧ | Acara Promosi Hearts2Hearts 'ICONIC HEART' di Jepang BH2ND #4",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-16T11:00:02Z",
@@ -47,7 +83,7 @@
     {
       "id": "u-0J0GgFQTA",
       "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
-      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "Siapa yang paling keren?ㅋㅋ #Hearts2Hearts #HeartsToHearts #STELLA #JUUN #A_NA",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-16T10:30:16Z",
@@ -59,7 +95,7 @@
     {
       "id": "Te14NdT14i8",
       "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
-      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "Saya ☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
       "kind": "video",
       "isShort": false,
       "published": "2026-11-16T09:30:01Z",
@@ -4406,9 +4442,45 @@
   ],
   "shorts": [
     {
+      "id": "d0ezHRmyHXw",
+      "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "wanna join?  #Hearts2Hearts  #하츠투하츠  #H2H  #CandyBoxLover   #Hearts2Hearts_CandyBoxLover",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T12:30:13Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=d0ezHRmyHXw",
+      "thumbnail": "https://img.youtube.com/vi/d0ezHRmyHXw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "dpFHltHEPn0",
+      "title": "i get obsessed #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #YUHA",
+      "title_id": "i get obsessed  #Hearts2Hearts  #하츠투하츠  #H2H   #JIWOO   #YUHA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T10:30:07Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=dpFHltHEPn0",
+      "thumbnail": "https://img.youtube.com/vi/dpFHltHEPn0/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "-ahLqJOaGzU",
+      "title": "究極のアイドル ! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Idola terhebat! #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-18T09:30:12Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=-ahLqJOaGzU",
+      "thumbnail": "https://img.youtube.com/vi/-ahLqJOaGzU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
       "id": "ZnKKZZjOBUA",
       "title": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "🌸🍒　#Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
+      "title_id": "🌸🍒　 #Hearts2Hearts #HeartsToHearts #H2H #YUHA #Yuha",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-17T10:30:39Z",
@@ -4420,7 +4492,7 @@
     {
       "id": "d3lDJZPzuIs",
       "title": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "もしもし ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
+      "title_id": "Halo ♡ #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-17T09:30:34Z",
@@ -4432,7 +4504,7 @@
     {
       "id": "u-0J0GgFQTA",
       "title": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
-      "title_id": "누가 제일 멋져?ㅋ #Hearts2Hearts #하츠투하츠 #STELLA #JUUN #A_NA",
+      "title_id": "Siapa yang paling keren?ㅋㅋ #Hearts2Hearts #HeartsToHearts #STELLA #JUUN #A_NA",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-16T10:30:16Z",
@@ -4444,7 +4516,7 @@
     {
       "id": "Te14NdT14i8",
       "title": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
-      "title_id": "私は☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "Saya ☆ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
       "kind": "short",
       "isShort": true,
       "published": "2026-11-16T09:30:01Z",
