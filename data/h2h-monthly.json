@@ -1326,54 +1326,6 @@
       "url": "https://www.youtube.com/watch?v=CjQkg-CQGKY",
       "thumbnail": "https://img.youtube.com/vi/CjQkg-CQGKY/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "p5DWavL-7Ro",
-      "title": "잘먹었다ㅋ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
-      "title_id": "Terima kasih makanannya, hehe #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-19T07:55:02Z",
-      "url": "https://www.youtube.com/watch?v=p5DWavL-7Ro",
-      "thumbnail": "https://img.youtube.com/vi/p5DWavL-7Ro/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "p5DWavL-7Ro",
-      "title": "잘먹었다ㅋ #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
-      "title_id": "Terima kasih makanannya, hehe #Hearts2Hearts #하츠투하츠 #H2H #YUHA #IAN",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-19T07:55:02Z",
-      "url": "https://www.youtube.com/watch?v=p5DWavL-7Ro",
-      "thumbnail": "https://img.youtube.com/vi/p5DWavL-7Ro/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "gcxFETsYLlU",
-      "title": "met my match #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
-      "title_id": "Akhirnya bertemu tandinganku #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-19T03:30:01Z",
-      "url": "https://www.youtube.com/watch?v=gcxFETsYLlU",
-      "thumbnail": "https://img.youtube.com/vi/gcxFETsYLlU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "gcxFETsYLlU",
-      "title": "met my match #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
-      "title_id": "Akhirnya bertemu tandinganku #Hearts2Hearts #하츠투하츠 #STELLA #JIWOO #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-19T03:30:01Z",
-      "url": "https://www.youtube.com/watch?v=gcxFETsYLlU",
-      "thumbnail": "https://img.youtube.com/vi/gcxFETsYLlU/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
