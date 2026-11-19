@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-18T17:31:23Z",
+  "updatedAt": "2026-11-19T13:41:47Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,42 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "yRwImzwPuuA",
+      "title": "이 영상 10번 넘게 보시면? 꿈에서 이 사람(?)이 나올 거예요ʚɞ | Hearts2Hearts 하츠투하츠 'Next Chapter’ MV BH2ND",
+      "title_id": "이 영상 10번 넘게 보시면? 꿈에서 이 사람(?)이 나올 거예요ʚɞ | Hearts2Hearts 하츠투하츠 'Next Chapter’ MV BH2ND",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-19T11:00:00Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=yRwImzwPuuA",
+      "thumbnail": "https://img.youtube.com/vi/yRwImzwPuuA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "_gOTUebsnUg",
+      "title": "자작곡 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "자작곡 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-19T10:30:31Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=_gOTUebsnUg",
+      "thumbnail": "https://img.youtube.com/vi/_gOTUebsnUg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "iW26ZSbEG5c",
+      "title": "did you understand desuka? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "did you understand desuka? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-19T09:30:05Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=iW26ZSbEG5c",
+      "thumbnail": "https://img.youtube.com/vi/iW26ZSbEG5c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "d0ezHRmyHXw",
       "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
@@ -4441,6 +4477,30 @@
     }
   ],
   "shorts": [
+    {
+      "id": "_gOTUebsnUg",
+      "title": "자작곡 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "자작곡 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-19T10:30:31Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=_gOTUebsnUg",
+      "thumbnail": "https://img.youtube.com/vi/_gOTUebsnUg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "iW26ZSbEG5c",
+      "title": "did you understand desuka? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "title_id": "did you understand desuka? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #STELLA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-19T09:30:05Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=iW26ZSbEG5c",
+      "thumbnail": "https://img.youtube.com/vi/iW26ZSbEG5c/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "d0ezHRmyHXw",
       "title": "wanna join? #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
