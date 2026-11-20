@@ -1326,30 +1326,6 @@
       "url": "https://www.youtube.com/watch?v=nLcpfm-dp5E",
       "thumbnail": "https://img.youtube.com/vi/nLcpfm-dp5E/hqdefault.jpg",
       "source": "youtube-official"
-    },
-    {
-      "id": "x209MzeMeYs",
-      "title": "얼만큼 귀여워요? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "Seberapa imut? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-21T03:30:08Z",
-      "url": "https://www.youtube.com/watch?v=x209MzeMeYs",
-      "thumbnail": "https://img.youtube.com/vi/x209MzeMeYs/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "x209MzeMeYs",
-      "title": "얼만큼 귀여워요? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "title_id": "Seberapa imut? #Hearts2Hearts #하츠투하츠 #H2H #YE_ON #예온",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-21T03:30:08Z",
-      "url": "https://www.youtube.com/watch?v=x209MzeMeYs",
-      "thumbnail": "https://img.youtube.com/vi/x209MzeMeYs/hqdefault.jpg",
-      "source": "youtube-official"
     }
   ]
 }
