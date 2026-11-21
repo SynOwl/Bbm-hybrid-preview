@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-21T07:16:28Z",
+  "updatedAt": "2026-11-21T15:23:58Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,30 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "8L63OqeO_M8",
+      "title": "잘 놀았다 #whatsinmydrafts",
+      "title_id": "잘 놀았다 #whatsinmydrafts",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-21T12:00:37Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=8L63OqeO_M8",
+      "thumbnail": "https://img.youtube.com/vi/8L63OqeO_M8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "QkglQRtsXCE",
+      "title": "[vlog] 제주부터 강원도까지 먹방 브이로그🍴 (With 에이나, 예온)ㅣ제주도 여행・수영장 달리기・흑돼지 먹방・속초에서 물회 한 그릇・행복해지는 소원빌기ㅣ어느 주은 날 EP.2",
+      "title_id": "[vlog] 제주부터 강원도까지 먹방 브이로그🍴 (With 에이나, 예온)ㅣ제주도 여행・수영장 달리기・흑돼지 먹방・속초에서 물회 한 그릇・행복해지는 소원빌기ㅣ어느 주은 날 EP.2",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-21T11:00:30Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=QkglQRtsXCE",
+      "thumbnail": "https://img.youtube.com/vi/QkglQRtsXCE/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "sjWBG844WGU",
       "title": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
@@ -4549,6 +4573,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "8L63OqeO_M8",
+      "title": "잘 놀았다 #whatsinmydrafts",
+      "title_id": "잘 놀았다 #whatsinmydrafts",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-21T12:00:37Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=8L63OqeO_M8",
+      "thumbnail": "https://img.youtube.com/vi/8L63OqeO_M8/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "sjWBG844WGU",
       "title": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
