@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-20T18:42:56Z",
+  "updatedAt": "2026-11-21T07:16:28Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,30 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "sjWBG844WGU",
+      "title": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-21T04:30:01Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=sjWBG844WGU",
+      "thumbnail": "https://img.youtube.com/vi/sjWBG844WGU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "H61xjsPAjLs",
+      "title": "how to pop pop poppin’ #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "how to pop pop poppin’ #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-21T03:30:33Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=H61xjsPAjLs",
+      "thumbnail": "https://img.youtube.com/vi/H61xjsPAjLs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "rzFp-zIzSAw",
       "title": "print(\"thank you S2U🏆\") #Hearts2Hearts #하츠투하츠 #H2H #MAMAAWARDS #2026MAMAAWARDS",
@@ -4525,6 +4549,30 @@
     }
   ],
   "shorts": [
+    {
+      "id": "sjWBG844WGU",
+      "title": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "not exactly but.. #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-21T04:30:01Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=sjWBG844WGU",
+      "thumbnail": "https://img.youtube.com/vi/sjWBG844WGU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "H61xjsPAjLs",
+      "title": "how to pop pop poppin’ #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "title_id": "how to pop pop poppin’ #Hearts2Hearts #하츠투하츠 #H2H#CandyBoxLover #Hearts2Hearts_CandyBoxLover",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-21T03:30:33Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=H61xjsPAjLs",
+      "thumbnail": "https://img.youtube.com/vi/H61xjsPAjLs/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "rzFp-zIzSAw",
       "title": "print(\"thank you S2U🏆\") #Hearts2Hearts #하츠투하츠 #H2H #MAMAAWARDS #2026MAMAAWARDS",
