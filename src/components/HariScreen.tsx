@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useApp } from '../context/AppContext';
 
 type FormKind = 'ibadah' | 'kegiatan' | 'libur' | null;
@@ -8,9 +8,17 @@ export const HariScreen: React.FC = () => {
   const [form, setForm] = useState<FormKind>(null);
   const [detail, setDetail] = useState('');
   const [reason, setReason] = useState('');
+  const detailInput = useRef<HTMLInputElement>(null);
   const todayFormatted = new Date().toLocaleDateString('id-ID', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
   });
+
+  useEffect(() => {
+    if (form) {
+      detailInput.current?.focus();
+      detailInput.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [form]);
 
   const submit = () => {
     const value = detail.trim();
@@ -76,7 +84,7 @@ export const HariScreen: React.FC = () => {
             </div>
           )}
           <label htmlFor="day-context-detail">{form === 'ibadah' ? 'Jenis ibadah' : form === 'kegiatan' ? 'Kegiatan' : 'Keterangan'}</label>
-          <input id="day-context-detail" value={detail} onChange={(e) => setDetail(e.target.value)}
+          <input ref={detailInput} id="day-context-detail" value={detail} onChange={(e) => setDetail(e.target.value)}
             placeholder={form === 'ibadah' ? 'Contoh: Sekolah Minggu' : form === 'kegiatan' ? 'Contoh: Latihan paduan suara' : 'Tuliskan keterangan'}
             style={{ width: '100%', boxSizing: 'border-box', padding: 12, marginTop: 8 }} />
           <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
