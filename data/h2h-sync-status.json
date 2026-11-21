@@ -1,23 +1,14 @@
 {
   "schemaVersion": 1,
-  "status": "updated",
-  "message": "Katalog GitHub diperbarui dari kanal YouTube resmi.",
-  "checkedAt": "2026-11-20T18:42:42Z",
-  "completedAt": "2026-11-20T18:42:56Z",
+  "status": "no_changes",
+  "message": "Pemeriksaan berhasil; belum ada upload baru.",
+  "checkedAt": "2026-11-21T00:18:04Z",
+  "completedAt": "2026-11-21T00:18:07Z",
   "catalogUpdatedAt": "2026-11-20T18:42:56Z",
-  "newVideos": 4,
-  "newShorts": 3,
-  "newVideoIds": [
-    "rzFp-zIzSAw",
-    "XKo65ZqapTU",
-    "cHgYaKdIAws",
-    "zfky3wm_K5A"
-  ],
-  "newShortIds": [
-    "rzFp-zIzSAw",
-    "cHgYaKdIAws",
-    "zfky3wm_K5A"
-  ],
+  "newVideos": 0,
+  "newShorts": 0,
+  "newVideoIds": [],
+  "newShortIds": [],
   "archiveVideos": 394,
   "archiveShorts": 1204,
   "monthlyItems": 115,
