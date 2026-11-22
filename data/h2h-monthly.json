@@ -1,12 +1,60 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-21T15:23:58Z",
+  "updatedAt": "2026-11-22T07:36:05Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "f8HMEeeCriU",
+      "title": "아니 걸으라매 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "title_id": "아니 걸으라매 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-22T06:30:22Z",
+      "url": "https://www.youtube.com/watch?v=f8HMEeeCriU",
+      "thumbnail": "https://img.youtube.com/vi/f8HMEeeCriU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "f8HMEeeCriU",
+      "title": "아니 걸으라매 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "title_id": "아니 걸으라매 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-22T06:30:22Z",
+      "url": "https://www.youtube.com/watch?v=f8HMEeeCriU",
+      "thumbnail": "https://img.youtube.com/vi/f8HMEeeCriU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "cmSqOpYuFHg",
+      "title": "describing me? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "describing me? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-22T03:30:24Z",
+      "url": "https://www.youtube.com/watch?v=cmSqOpYuFHg",
+      "thumbnail": "https://img.youtube.com/vi/cmSqOpYuFHg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "cmSqOpYuFHg",
+      "title": "describing me? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "title_id": "describing me? #Hearts2Hearts #하츠투하츠 #H2H #CARMEN #카르멘",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-22T03:30:24Z",
+      "url": "https://www.youtube.com/watch?v=cmSqOpYuFHg",
+      "thumbnail": "https://img.youtube.com/vi/cmSqOpYuFHg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "8L63OqeO_M8",
       "title": "잘 놀았다 #whatsinmydrafts",
