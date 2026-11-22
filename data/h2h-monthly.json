@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-22T07:36:05Z",
+  "updatedAt": "2026-11-22T15:38:04Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "wZQ1TlU2YT4",
+      "title": "tooooooo good to be RUDE! #Hearts2Hearts #하츠투하츠 #H2H#RUDE! #Hearts2Hearts_RUDE!",
+      "title_id": "tooooooo good to be RUDE! #Hearts2Hearts #하츠투하츠 #H2H#RUDE! #Hearts2Hearts_RUDE!",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-22T12:51:09Z",
+      "url": "https://www.youtube.com/watch?v=wZQ1TlU2YT4",
+      "thumbnail": "https://img.youtube.com/vi/wZQ1TlU2YT4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "wZQ1TlU2YT4",
+      "title": "tooooooo good to be RUDE! #Hearts2Hearts #하츠투하츠 #H2H#RUDE! #Hearts2Hearts_RUDE!",
+      "title_id": "tooooooo good to be RUDE! #Hearts2Hearts #하츠투하츠 #H2H#RUDE! #Hearts2Hearts_RUDE!",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-22T12:51:09Z",
+      "url": "https://www.youtube.com/watch?v=wZQ1TlU2YT4",
+      "thumbnail": "https://img.youtube.com/vi/wZQ1TlU2YT4/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "f8HMEeeCriU",
       "title": "아니 걸으라매 #Hearts2Hearts #하츠투하츠 #H2H #YUHA #A_NA",
@@ -1373,78 +1397,6 @@
       "published": "2026-10-24T03:30:24Z",
       "url": "https://www.youtube.com/watch?v=yJpG1qVjLpQ",
       "thumbnail": "https://img.youtube.com/vi/yJpG1qVjLpQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "pUEQtxxPcHU",
-      "title": "you dont want it, you need it #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "title_id": "Kamu bukan hanya menginginkannya, kamu membutuhkannya #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-23T12:30:30Z",
-      "url": "https://www.youtube.com/watch?v=pUEQtxxPcHU",
-      "thumbnail": "https://img.youtube.com/vi/pUEQtxxPcHU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "pUEQtxxPcHU",
-      "title": "you dont want it, you need it #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "title_id": "Kamu bukan hanya menginginkannya, kamu membutuhkannya #Hearts2Hearts #하츠투하츠 #H2H #JUUN #주은",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-23T12:30:30Z",
-      "url": "https://www.youtube.com/watch?v=pUEQtxxPcHU",
-      "thumbnail": "https://img.youtube.com/vi/pUEQtxxPcHU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "fQDl-VFSsDI",
-      "title": "뭐야 이거 #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
-      "title_id": "Apa ini? #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-23T10:30:11Z",
-      "url": "https://www.youtube.com/watch?v=fQDl-VFSsDI",
-      "thumbnail": "https://img.youtube.com/vi/fQDl-VFSsDI/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "fQDl-VFSsDI",
-      "title": "뭐야 이거 #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
-      "title_id": "Apa ini? #Hearts2Hearts #하츠투하츠#CARMEN #A_NA #YE_ON",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-23T10:30:11Z",
-      "url": "https://www.youtube.com/watch?v=fQDl-VFSsDI",
-      "thumbnail": "https://img.youtube.com/vi/fQDl-VFSsDI/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "jSE1go9P9ak",
-      "title": "웅웅 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
-      "title_id": "Iya, iya #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-23T08:32:32Z",
-      "url": "https://www.youtube.com/watch?v=jSE1go9P9ak",
-      "thumbnail": "https://img.youtube.com/vi/jSE1go9P9ak/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "jSE1go9P9ak",
-      "title": "웅웅 #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
-      "title_id": "Iya, iya #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #IAN",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-23T08:32:32Z",
-      "url": "https://www.youtube.com/watch?v=jSE1go9P9ak",
-      "thumbnail": "https://img.youtube.com/vi/jSE1go9P9ak/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
