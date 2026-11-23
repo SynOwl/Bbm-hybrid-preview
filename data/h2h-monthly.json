@@ -1,20 +1,68 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-23T09:50:13Z",
+  "updatedAt": "2026-11-23T21:44:43Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
     {
-      "id": "Dl23K3PGiI4",
-      "title": "이안이 혓바닥이 왜…그래?👅 충격! 수업 중 몰래 두쫀 먹는 학생들이 있다? 나를 맞혀봐부터 선생님 몰래 간식 먹기까지! 🏫수능 특집🏫 대환장 배꼽빠지高 | 둘셋하투하 EP.8",
-      "title_id": "이안이 혓바닥이 왜…그래?👅 충격! 수업 중 몰래 두쫀 먹는 학생들이 있다? 나를 맞혀봐부터 선생님 몰래 간식 먹기까지! 🏫수능 특집🏫 대환장 배꼽빠지高 | 둘셋하투하 EP.8",
+      "id": "aBbpRLuM3uc",
+      "title": "기억하고 싶어 #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "Saya ingin mengingat #Hearts2Hearts #HeartsToHearts #H2H",
       "type": "youtube",
       "kind": "video",
       "isShort": false,
-      "published": "2026-11-23T06:52:32Z",
+      "published": "2026-11-23T16:15:04Z",
+      "url": "https://www.youtube.com/watch?v=aBbpRLuM3uc",
+      "thumbnail": "https://img.youtube.com/vi/aBbpRLuM3uc/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "aBbpRLuM3uc",
+      "title": "기억하고 싶어 #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "Saya ingin mengingat #Hearts2Hearts #HeartsToHearts #H2H",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-23T16:15:04Z",
+      "url": "https://www.youtube.com/watch?v=aBbpRLuM3uc",
+      "thumbnail": "https://img.youtube.com/vi/aBbpRLuM3uc/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "R0GHUJWxZEg",
+      "title": "쌤몰래 dab #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "Guru diam-diam mengoleskan #Hearts2Hearts #HeartsToHearts #H2H",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-23T12:00:08Z",
+      "url": "https://www.youtube.com/watch?v=R0GHUJWxZEg",
+      "thumbnail": "https://img.youtube.com/vi/R0GHUJWxZEg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "R0GHUJWxZEg",
+      "title": "쌤몰래 dab #Hearts2Hearts #하츠투하츠 #H2H",
+      "title_id": "Guru diam-diam mengoleskan #Hearts2Hearts #HeartsToHearts #H2H",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-23T12:00:08Z",
+      "url": "https://www.youtube.com/watch?v=R0GHUJWxZEg",
+      "thumbnail": "https://img.youtube.com/vi/R0GHUJWxZEg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "Dl23K3PGiI4",
+      "title": "이안이 혓바닥이 왜…그래?👅 충격! 수업 중 몰래 두쫀 먹는 학생들이 있다? 나를 맞혀봐부터 선생님 몰래 간식 먹기까지! 🏫수능 특집🏫 대환장 배꼽빠지高 | 둘셋하투하 EP.8",
+      "title_id": "Kenapa Lidah Ian… Benarkah?👅 Kaget! Apakah ada siswa yang diam-diam memakan Dojjok saat pelajaran berlangsung? Dari menebak-nebak hingga makan jajan tanpa sepengetahuan guru! 🏫Spesial CSAT🏫 Sekolah Tinggi Daging Perut yang Luar Biasa | Dua Set Hatuha EP.8",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-23T11:00:07Z",
       "url": "https://www.youtube.com/watch?v=Dl23K3PGiI4",
       "thumbnail": "https://img.youtube.com/vi/Dl23K3PGiI4/hqdefault.jpg",
       "source": "youtube-official"
@@ -1349,42 +1397,6 @@
       "published": "2026-10-25T03:30:05Z",
       "url": "https://www.youtube.com/watch?v=gMKjXgU01fc",
       "thumbnail": "https://img.youtube.com/vi/gMKjXgU01fc/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "JMp29HQI-rM",
-      "title": "Hotel Room Tour in Hong Kong ⌂*:･ & Our First-Ever Afternoon Tea!🫖 S2cret Diary ꒰ EP.10 ꒱",
-      "title_id": "Tur Kamar Hotel di Hong Kong ⌂*:･ & Teh Sore Pertama Kami!🫖 S2cret Diary ꒰ EP.10 ꒱",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-24T11:00:26Z",
-      "url": "https://www.youtube.com/watch?v=JMp29HQI-rM",
-      "thumbnail": "https://img.youtube.com/vi/JMp29HQI-rM/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "4oPOtuUzFLk",
-      "title": "기억하나요? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "Apakah kamu ingat? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-24T10:00:30Z",
-      "url": "https://www.youtube.com/watch?v=4oPOtuUzFLk",
-      "thumbnail": "https://img.youtube.com/vi/4oPOtuUzFLk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "4oPOtuUzFLk",
-      "title": "기억하나요? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "title_id": "Apakah kamu ingat? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #유하",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-24T10:00:30Z",
-      "url": "https://www.youtube.com/watch?v=4oPOtuUzFLk",
-      "thumbnail": "https://img.youtube.com/vi/4oPOtuUzFLk/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
