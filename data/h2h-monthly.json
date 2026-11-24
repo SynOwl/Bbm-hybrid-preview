@@ -1,12 +1,60 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-23T21:44:43Z",
+  "updatedAt": "2026-11-24T16:17:38Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "IIRN08ad7TM",
+      "title": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "title_id": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-24T11:30:09Z",
+      "url": "https://www.youtube.com/watch?v=IIRN08ad7TM",
+      "thumbnail": "https://img.youtube.com/vi/IIRN08ad7TM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "IIRN08ad7TM",
+      "title": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "title_id": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-24T11:30:09Z",
+      "url": "https://www.youtube.com/watch?v=IIRN08ad7TM",
+      "thumbnail": "https://img.youtube.com/vi/IIRN08ad7TM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "L9CDkoGpVdw",
+      "title": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-24T08:30:13Z",
+      "url": "https://www.youtube.com/watch?v=L9CDkoGpVdw",
+      "thumbnail": "https://img.youtube.com/vi/L9CDkoGpVdw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "L9CDkoGpVdw",
+      "title": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-24T08:30:13Z",
+      "url": "https://www.youtube.com/watch?v=L9CDkoGpVdw",
+      "thumbnail": "https://img.youtube.com/vi/L9CDkoGpVdw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "aBbpRLuM3uc",
       "title": "기억하고 싶어 #Hearts2Hearts #하츠투하츠 #H2H",

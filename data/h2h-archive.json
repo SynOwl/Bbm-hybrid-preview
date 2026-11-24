@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-23T21:44:43Z",
+  "updatedAt": "2026-11-24T16:17:38Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,30 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "IIRN08ad7TM",
+      "title": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "title_id": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-24T11:30:09Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=IIRN08ad7TM",
+      "thumbnail": "https://img.youtube.com/vi/IIRN08ad7TM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "L9CDkoGpVdw",
+      "title": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-24T08:30:13Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=L9CDkoGpVdw",
+      "thumbnail": "https://img.youtube.com/vi/L9CDkoGpVdw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "aBbpRLuM3uc",
       "title": "기억하고 싶어 #Hearts2Hearts #하츠투하츠 #H2H",
@@ -4645,6 +4669,30 @@
     }
   ],
   "shorts": [
+    {
+      "id": "IIRN08ad7TM",
+      "title": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "title_id": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-24T11:30:09Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=IIRN08ad7TM",
+      "thumbnail": "https://img.youtube.com/vi/IIRN08ad7TM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "L9CDkoGpVdw",
+      "title": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "어떻게 그래? #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-24T08:30:13Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=L9CDkoGpVdw",
+      "thumbnail": "https://img.youtube.com/vi/L9CDkoGpVdw/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "aBbpRLuM3uc",
       "title": "기억하고 싶어 #Hearts2Hearts #하츠투하츠 #H2H",
