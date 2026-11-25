@@ -1,12 +1,72 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-24T16:17:38Z",
+  "updatedAt": "2026-11-25T19:17:16Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "kRowbbEGLQM",
+      "title": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
+      "title_id": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-25T12:30:31Z",
+      "url": "https://www.youtube.com/watch?v=kRowbbEGLQM",
+      "thumbnail": "https://img.youtube.com/vi/kRowbbEGLQM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "kRowbbEGLQM",
+      "title": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
+      "title_id": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-25T12:30:31Z",
+      "url": "https://www.youtube.com/watch?v=kRowbbEGLQM",
+      "thumbnail": "https://img.youtube.com/vi/kRowbbEGLQM/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "7bkcfXCRLrY",
+      "title": "[vlog] 어머니와 제주도 여행 브이로그 🍊 | 5분 단위 스케줄 · 갈치조림 먹방 · 기니피그와의 만남 · 소품샵 투어 · 월정리 해수욕장 | 방가방가예온이 EP.2",
+      "title_id": "[vlog] 어머니와 제주도 여행 브이로그 🍊 | 5분 단위 스케줄 · 갈치조림 먹방 · 기니피그와의 만남 · 소품샵 투어 · 월정리 해수욕장 | 방가방가예온이 EP.2",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-25T11:00:09Z",
+      "url": "https://www.youtube.com/watch?v=7bkcfXCRLrY",
+      "thumbnail": "https://img.youtube.com/vi/7bkcfXCRLrY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "hzCQHMoTkMA",
+      "title": "주먹 맛 좀 볼래 #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #YE_ON",
+      "title_id": "주먹 맛 좀 볼래 #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-25T09:30:34Z",
+      "url": "https://www.youtube.com/watch?v=hzCQHMoTkMA",
+      "thumbnail": "https://img.youtube.com/vi/hzCQHMoTkMA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "hzCQHMoTkMA",
+      "title": "주먹 맛 좀 볼래 #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #YE_ON",
+      "title_id": "주먹 맛 좀 볼래 #Hearts2Hearts #하츠투하츠 #CARMEN #YUHA #YE_ON",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-25T09:30:34Z",
+      "url": "https://www.youtube.com/watch?v=hzCQHMoTkMA",
+      "thumbnail": "https://img.youtube.com/vi/hzCQHMoTkMA/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "IIRN08ad7TM",
       "title": "チューしよ~♥︎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #STELLA",
@@ -1373,54 +1433,6 @@
       "published": "2026-10-27T11:00:39Z",
       "url": "https://www.youtube.com/watch?v=vSjsCvEAb0M",
       "thumbnail": "https://img.youtube.com/vi/vSjsCvEAb0M/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "_9of7zm0Prs",
-      "title": "hop on the moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
-      "title_id": "Ayo naik Moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-26T13:30:13Z",
-      "url": "https://www.youtube.com/watch?v=_9of7zm0Prs",
-      "thumbnail": "https://img.youtube.com/vi/_9of7zm0Prs/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "_9of7zm0Prs",
-      "title": "hop on the moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
-      "title_id": "Ayo naik Moonride 🌙 #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JIWOO",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-26T13:30:13Z",
-      "url": "https://www.youtube.com/watch?v=_9of7zm0Prs",
-      "thumbnail": "https://img.youtube.com/vi/_9of7zm0Prs/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "2fxmRgdzekQ",
-      "title": "heard you like it #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
-      "title_id": "Katanya kamu suka #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-26T12:30:27Z",
-      "url": "https://www.youtube.com/watch?v=2fxmRgdzekQ",
-      "thumbnail": "https://img.youtube.com/vi/2fxmRgdzekQ/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "2fxmRgdzekQ",
-      "title": "heard you like it #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
-      "title_id": "Katanya kamu suka #Hearts2Hearts #하츠투하츠 #H2H #Moonride #JUUN",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-26T12:30:27Z",
-      "url": "https://www.youtube.com/watch?v=2fxmRgdzekQ",
-      "thumbnail": "https://img.youtube.com/vi/2fxmRgdzekQ/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
