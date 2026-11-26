@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-26T10:55:44Z",
+  "updatedAt": "2026-11-26T19:54:54Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "RIZMBX8F07A",
+      "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-26T12:30:26Z",
+      "url": "https://www.youtube.com/watch?v=RIZMBX8F07A",
+      "thumbnail": "https://img.youtube.com/vi/RIZMBX8F07A/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "RIZMBX8F07A",
+      "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-26T12:30:26Z",
+      "url": "https://www.youtube.com/watch?v=RIZMBX8F07A",
+      "thumbnail": "https://img.youtube.com/vi/RIZMBX8F07A/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "LggaG2xwBAY",
       "title": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
@@ -1397,66 +1421,6 @@
       "published": "2026-10-28T09:00:06Z",
       "url": "https://www.youtube.com/watch?v=odaFGmi69bA",
       "thumbnail": "https://img.youtube.com/vi/odaFGmi69bA/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "Tw-bhPwwTxk",
-      "title": "are you ready?",
-      "title_id": "Apakah kamu siap?",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-27T13:00:00Z",
-      "url": "https://www.youtube.com/watch?v=Tw-bhPwwTxk",
-      "thumbnail": "https://img.youtube.com/vi/Tw-bhPwwTxk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "Tw-bhPwwTxk",
-      "title": "are you ready?",
-      "title_id": "Apakah kamu siap?",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-27T13:00:00Z",
-      "url": "https://www.youtube.com/watch?v=Tw-bhPwwTxk",
-      "thumbnail": "https://img.youtube.com/vi/Tw-bhPwwTxk/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "0cX7fffXook",
-      "title": "\"Rise and shine upper east siders its officially fall”",
-      "title_id": "\"Bangkit dan bersinarlah di wilayah timur atas yang secara resmi telah jatuh\"",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-27T12:00:25Z",
-      "url": "https://www.youtube.com/watch?v=0cX7fffXook",
-      "thumbnail": "https://img.youtube.com/vi/0cX7fffXook/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "0cX7fffXook",
-      "title": "\"Rise and shine upper east siders its officially fall”",
-      "title_id": "\"Bangkit dan bersinarlah di wilayah timur atas yang secara resmi telah jatuh\"",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-27T12:00:25Z",
-      "url": "https://www.youtube.com/watch?v=0cX7fffXook",
-      "thumbnail": "https://img.youtube.com/vi/0cX7fffXook/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "vSjsCvEAb0M",
-      "title": "우리가 제일 사랑하는 차는? Kia…✮ | Hearts2Hearts 하츠투하츠 'Moonride' MV BH2ND",
-      "title_id": "Mobil apa yang paling kami sukai? Kia…✮ | Hearts2Hearts 하츠투하츠 'Moonride' MV BH2ND",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-27T11:00:39Z",
-      "url": "https://www.youtube.com/watch?v=vSjsCvEAb0M",
-      "thumbnail": "https://img.youtube.com/vi/vSjsCvEAb0M/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]

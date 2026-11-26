@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-26T10:55:44Z",
+  "updatedAt": "2026-11-26T19:54:54Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "RIZMBX8F07A",
+      "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-26T12:30:26Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=RIZMBX8F07A",
+      "thumbnail": "https://img.youtube.com/vi/RIZMBX8F07A/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "LggaG2xwBAY",
       "title": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
@@ -4717,6 +4729,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "RIZMBX8F07A",
+      "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "title_id": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-26T12:30:26Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=RIZMBX8F07A",
+      "thumbnail": "https://img.youtube.com/vi/RIZMBX8F07A/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "LggaG2xwBAY",
       "title": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
