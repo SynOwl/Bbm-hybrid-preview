@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-25T19:17:16Z",
+  "updatedAt": "2026-11-26T10:55:44Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "LggaG2xwBAY",
+      "title": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-26T10:30:23Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=LggaG2xwBAY",
+      "thumbnail": "https://img.youtube.com/vi/LggaG2xwBAY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "kRowbbEGLQM",
       "title": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
@@ -4705,6 +4717,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "LggaG2xwBAY",
+      "title": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "title_id": "아진짜 #Hearts2Hearts #하츠투하츠 #H2H #A_NA #에이나",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-26T10:30:23Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=LggaG2xwBAY",
+      "thumbnail": "https://img.youtube.com/vi/LggaG2xwBAY/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "kRowbbEGLQM",
       "title": "흥 #Hearts2Hearts #하츠투하츠 #JUUN #A_NA #IAN",
