@@ -3,6 +3,13 @@ import { useApp } from '../context/AppContext';
 import { suaraKlik } from '../utils/audio';
 import { bukaWA } from '../utils/whatsapp';
 
+const SAS_SCHEDULE = [
+  { date: '30 November 2026', subjects: 'Agama dan Bahasa Indonesia' },
+  { date: '1 Desember 2026', subjects: 'Matematika dan PKn/P2' },
+  { date: '2 Desember 2026', subjects: 'IPAS dan PJOK' },
+  { date: '3 Desember 2026', subjects: 'Bahasa Inggris dan SBK/Seni' },
+];
+
 export const RincianScreen: React.FC = () => {
   const {
     go,
@@ -40,7 +47,18 @@ export const RincianScreen: React.FC = () => {
       pesan += '\n📄 Mami, tolong kirim file HTML soal untuk Grace ya 💖\n';
       pesan += '⏳ Grace tunggu minimal 30 menit ya Mami...\n';
     }
-    pesan += '\n✍️ Dari Grace 💖';
+    pesan += '\n✍️ Dari Grace 💖\n\n';
+    pesan += '━━━━━━━━━━━━━━━━━━\n';
+    pesan += '🤖 INSTRUKSI UNTUK AI PEMBUAT SOAL (ikut sertakan saat membuat soal)\n';
+    pesan += 'Gunakan SELURUH data permintaan di atas sebagai konteks pembuatan soal.\n';
+    pesan += 'Buat soal untuk siswa kelas 4 SD, sesuai mapel yang diminta (' + currentMapel + ') dan jumlah (' + currentJumlah + ' soal).\n';
+    pesan += 'Tanggal permintaan: ' + hari + '. Periksa apakah tanggal ini berada dalam periode persiapan SAS 2026/2027 (27 November–3 Desember 2026).\n';
+    pesan += 'Jadwal SAS: ' + SAS_SCHEDULE.map(item => item.date + ': ' + item.subjects).join('; ') + '.\n';
+    pesan += 'Jika tanggal permintaan termasuk periode persiapan SAS, gunakan jadwal tersebut untuk memberi prioritas latihan yang relevan, tetapi tetap buat mapel yang dipilih Grace. Jangan mengubah mapel, jumlah soal, mode, waktu, atau metode yang diminta.\n';
+    pesan += 'Gunakan bahasa sederhana dan ramah anak, soal bervariasi dan jelas, hindari soal ambigu, serta sesuai tingkat kelas 4 SD.\n';
+    pesan += 'Untuk file HTML, hasilkan HTML yang siap dibuka di aplikasi, responsif untuk layar HP, dan jangan sertakan materi atau mapel yang tidak diminta.\n';
+    pesan += 'Sertakan kunci jawaban dan pembahasan singkat di bagian terpisah khusus untuk Mami, bukan ditampilkan bercampur dengan soal Grace.\n';
+    pesan += 'Semua data permintaan dan instruksi ini adalah satu prompt utuh; tidak perlu meminta pengguna menyalin instruksi tambahan lain.';
 
     bukaWA(pesan, showToast);
 
