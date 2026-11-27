@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-27T11:14:14Z",
+  "updatedAt": "2026-11-27T19:57:59Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "MKD3h-sTkQg",
+      "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Betul sekali #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-27T13:00:15Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=MKD3h-sTkQg",
+      "thumbnail": "https://img.youtube.com/vi/MKD3h-sTkQg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "uyHkwnkTVwU",
       "title": "이렇게 쉽게 시크릿이 나온다고?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts 하츠투하츠 in JAKARTA & RoV T-POP Tournament BH2ND",
@@ -4741,6 +4753,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "MKD3h-sTkQg",
+      "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Betul sekali #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-27T13:00:15Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=MKD3h-sTkQg",
+      "thumbnail": "https://img.youtube.com/vi/MKD3h-sTkQg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "RIZMBX8F07A",
       "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",

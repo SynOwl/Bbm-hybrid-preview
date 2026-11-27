@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-27T11:14:14Z",
+  "updatedAt": "2026-11-27T19:57:59Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "MKD3h-sTkQg",
+      "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Betul sekali #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-27T13:00:15Z",
+      "url": "https://www.youtube.com/watch?v=MKD3h-sTkQg",
+      "thumbnail": "https://img.youtube.com/vi/MKD3h-sTkQg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "MKD3h-sTkQg",
+      "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
+      "title_id": "Betul sekali #Hearts2Hearts #HeartsToHearts #H2H #IAN #Ian",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-27T13:00:15Z",
+      "url": "https://www.youtube.com/watch?v=MKD3h-sTkQg",
+      "thumbnail": "https://img.youtube.com/vi/MKD3h-sTkQg/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "uyHkwnkTVwU",
       "title": "이렇게 쉽게 시크릿이 나온다고?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts 하츠투하츠 in JAKARTA & RoV T-POP Tournament BH2ND",
@@ -1265,54 +1289,6 @@
       "published": "2026-10-30T08:02:50Z",
       "url": "https://www.youtube.com/watch?v=qwzdHudtTC0",
       "thumbnail": "https://img.youtube.com/vi/qwzdHudtTC0/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "JCxRa5yW-qU",
-      "title": "나정이안이라구!!나좋아하지마.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
-      "title_id": "Ini Najeong Ian!! Jangan suka aku.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T14:00:00Z",
-      "url": "https://www.youtube.com/watch?v=JCxRa5yW-qU",
-      "thumbnail": "https://img.youtube.com/vi/JCxRa5yW-qU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "JCxRa5yW-qU",
-      "title": "나정이안이라구!!나좋아하지마.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
-      "title_id": "Ini Najeong Ian!! Jangan suka aku.. #Hearts2Hearts #하츠투하츠 #H2H#IAN #이안",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T14:00:00Z",
-      "url": "https://www.youtube.com/watch?v=JCxRa5yW-qU",
-      "thumbnail": "https://img.youtube.com/vi/JCxRa5yW-qU/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "tNnBos7sx-E",
-      "title": "just feel it",
-      "title_id": "Rasakan saja",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T11:30:01Z",
-      "url": "https://www.youtube.com/watch?v=tNnBos7sx-E",
-      "thumbnail": "https://img.youtube.com/vi/tNnBos7sx-E/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "tNnBos7sx-E",
-      "title": "just feel it",
-      "title_id": "Rasakan saja",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T11:30:01Z",
-      "url": "https://www.youtube.com/watch?v=tNnBos7sx-E",
-      "thumbnail": "https://img.youtube.com/vi/tNnBos7sx-E/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
