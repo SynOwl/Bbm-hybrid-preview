@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-26T19:54:54Z",
+  "updatedAt": "2026-11-27T11:14:14Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "uyHkwnkTVwU",
+      "title": "이렇게 쉽게 시크릿이 나온다고?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts 하츠투하츠 in JAKARTA & RoV T-POP Tournament BH2ND",
+      "title_id": "Rahasianya terungkap begitu mudah?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts Hearts to Hearts di Turnamen T-POP JAKARTA & RoV BH2ND",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-27T11:00:37Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=uyHkwnkTVwU",
+      "thumbnail": "https://img.youtube.com/vi/uyHkwnkTVwU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "RIZMBX8F07A",
       "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",

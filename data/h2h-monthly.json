@@ -1,12 +1,24 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-26T19:54:54Z",
+  "updatedAt": "2026-11-27T11:14:14Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "uyHkwnkTVwU",
+      "title": "이렇게 쉽게 시크릿이 나온다고?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts 하츠투하츠 in JAKARTA & RoV T-POP Tournament BH2ND",
+      "title_id": "Rahasianya terungkap begitu mudah?₍ᐢ◉0◉ᐢ₎ | Hearts2Hearts Hearts to Hearts di Turnamen T-POP JAKARTA & RoV BH2ND",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-27T11:00:37Z",
+      "url": "https://www.youtube.com/watch?v=uyHkwnkTVwU",
+      "thumbnail": "https://img.youtube.com/vi/uyHkwnkTVwU/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "RIZMBX8F07A",
       "title": "너랑ㅎㅎ #Hearts2Hearts #하츠투하츠 #H2H #JIWOO #JUUN",
@@ -1301,126 +1313,6 @@
       "published": "2026-10-28T11:30:01Z",
       "url": "https://www.youtube.com/watch?v=tNnBos7sx-E",
       "thumbnail": "https://img.youtube.com/vi/tNnBos7sx-E/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "1ASoYBKsLc0",
-      "title": "don't start with me",
-      "title_id": "Jangan mulai denganku",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T11:00:34Z",
-      "url": "https://www.youtube.com/watch?v=1ASoYBKsLc0",
-      "thumbnail": "https://img.youtube.com/vi/1ASoYBKsLc0/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "1ASoYBKsLc0",
-      "title": "don't start with me",
-      "title_id": "Jangan mulai denganku",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T11:00:34Z",
-      "url": "https://www.youtube.com/watch?v=1ASoYBKsLc0",
-      "thumbnail": "https://img.youtube.com/vi/1ASoYBKsLc0/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "9ifa1Rzhn-U",
-      "title": "being an it girl",
-      "title_id": "Menjadi gadis trendi",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T10:30:34Z",
-      "url": "https://www.youtube.com/watch?v=9ifa1Rzhn-U",
-      "thumbnail": "https://img.youtube.com/vi/9ifa1Rzhn-U/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "9ifa1Rzhn-U",
-      "title": "being an it girl",
-      "title_id": "Menjadi gadis trendi",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T10:30:34Z",
-      "url": "https://www.youtube.com/watch?v=9ifa1Rzhn-U",
-      "thumbnail": "https://img.youtube.com/vi/9ifa1Rzhn-U/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "fYsmgcLhZxY",
-      "title": "rate our fit",
-      "title_id": "Nilai penampilan kami",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T10:00:04Z",
-      "url": "https://www.youtube.com/watch?v=fYsmgcLhZxY",
-      "thumbnail": "https://img.youtube.com/vi/fYsmgcLhZxY/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "fYsmgcLhZxY",
-      "title": "rate our fit",
-      "title_id": "Nilai penampilan kami",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T10:00:04Z",
-      "url": "https://www.youtube.com/watch?v=fYsmgcLhZxY",
-      "thumbnail": "https://img.youtube.com/vi/fYsmgcLhZxY/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "rHzVGsoo4QY",
-      "title": "girl what?",
-      "title_id": "Hah, apa?",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T09:30:39Z",
-      "url": "https://www.youtube.com/watch?v=rHzVGsoo4QY",
-      "thumbnail": "https://img.youtube.com/vi/rHzVGsoo4QY/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "rHzVGsoo4QY",
-      "title": "girl what?",
-      "title_id": "Hah, apa?",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T09:30:39Z",
-      "url": "https://www.youtube.com/watch?v=rHzVGsoo4QY",
-      "thumbnail": "https://img.youtube.com/vi/rHzVGsoo4QY/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "odaFGmi69bA",
-      "title": "always.",
-      "title_id": "Selalu.",
-      "type": "youtube",
-      "kind": "video",
-      "isShort": false,
-      "published": "2026-10-28T09:00:06Z",
-      "url": "https://www.youtube.com/watch?v=odaFGmi69bA",
-      "thumbnail": "https://img.youtube.com/vi/odaFGmi69bA/hqdefault.jpg",
-      "source": "youtube-official"
-    },
-    {
-      "id": "odaFGmi69bA",
-      "title": "always.",
-      "title_id": "Selalu.",
-      "type": "youtube",
-      "kind": "short",
-      "isShort": true,
-      "published": "2026-10-28T09:00:06Z",
-      "url": "https://www.youtube.com/watch?v=odaFGmi69bA",
-      "thumbnail": "https://img.youtube.com/vi/odaFGmi69bA/hqdefault.jpg",
       "source": "youtube-official"
     }
   ]
