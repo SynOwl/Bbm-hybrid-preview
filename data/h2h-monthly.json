@@ -1,12 +1,36 @@
 {
   "schemaVersion": 3,
   "windowDays": 31,
-  "updatedAt": "2026-11-27T19:57:59Z",
+  "updatedAt": "2026-11-28T10:42:09Z",
   "source": {
     "youtube": "https://www.youtube.com/@hearts2hearts.official"
   },
   "collectionPolicy": "Official Hearts2Hearts uploads from today and previous 30 days (31 calendar dates), including videos and Shorts. Older entries expire automatically.",
   "videos": [
+    {
+      "id": "dpbw2HRgO4M",
+      "title": "미안이제곶감라고하면단감?지금이게몇시야홍시야연시야미안이제곶감라고하면단감?지금이게몇시야홍시야연시야괜찮으세요손? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
+      "title_id": "Maaf kalau saya bilang kesemek kering, itu kesemek yang manis. Jam berapa sekarang? Apakah warnanya merah? Saya minta maaf. Kalau saya bilang kesemek kering, itu kesemek yang manis? Jam berapa ini? Itu kesemek merah yang manis. Apakah kamu baik-baik saja?  #Hearts2Hearts #HatiUntukHati #H2H #YUHA #YE_ON",
+      "type": "youtube",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-28T08:30:09Z",
+      "url": "https://www.youtube.com/watch?v=dpbw2HRgO4M",
+      "thumbnail": "https://img.youtube.com/vi/dpbw2HRgO4M/hqdefault.jpg",
+      "source": "youtube-official"
+    },
+    {
+      "id": "dpbw2HRgO4M",
+      "title": "미안이제곶감라고하면단감?지금이게몇시야홍시야연시야미안이제곶감라고하면단감?지금이게몇시야홍시야연시야괜찮으세요손? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
+      "title_id": "Maaf kalau saya bilang kesemek kering, itu kesemek yang manis. Jam berapa sekarang? Apakah warnanya merah? Saya minta maaf. Kalau saya bilang kesemek kering, itu kesemek yang manis? Jam berapa ini? Itu kesemek merah yang manis. Apakah kamu baik-baik saja?  #Hearts2Hearts #HatiUntukHati #H2H #YUHA #YE_ON",
+      "type": "youtube",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-28T08:30:09Z",
+      "url": "https://www.youtube.com/watch?v=dpbw2HRgO4M",
+      "thumbnail": "https://img.youtube.com/vi/dpbw2HRgO4M/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "MKD3h-sTkQg",
       "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",

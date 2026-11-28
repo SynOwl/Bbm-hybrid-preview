@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-27T19:57:59Z",
+  "updatedAt": "2026-11-28T10:42:09Z",
   "channel": {
     "name": "Hearts2Hearts",
     "id": "UC7Q3HUnJA3nvjZR2JeMn2Cw",
@@ -8,6 +8,18 @@
   },
   "collectionPolicy": "Permanent archive of public official channel uploads, separated into videos and Shorts. The archive is rebuilt using complete paginated playlist reads.",
   "videos": [
+    {
+      "id": "dpbw2HRgO4M",
+      "title": "미안이제곶감라고하면단감?지금이게몇시야홍시야연시야미안이제곶감라고하면단감?지금이게몇시야홍시야연시야괜찮으세요손? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
+      "title_id": "Maaf kalau saya bilang kesemek kering, itu kesemek yang manis. Jam berapa sekarang? Apakah warnanya merah? Saya minta maaf. Kalau saya bilang kesemek kering, itu kesemek yang manis? Jam berapa ini? Itu kesemek merah yang manis. Apakah kamu baik-baik saja?  #Hearts2Hearts #HatiUntukHati #H2H #YUHA #YE_ON",
+      "kind": "video",
+      "isShort": false,
+      "published": "2026-11-28T08:30:09Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=dpbw2HRgO4M",
+      "thumbnail": "https://img.youtube.com/vi/dpbw2HRgO4M/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "MKD3h-sTkQg",
       "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
@@ -4753,6 +4765,18 @@
     }
   ],
   "shorts": [
+    {
+      "id": "dpbw2HRgO4M",
+      "title": "미안이제곶감라고하면단감?지금이게몇시야홍시야연시야미안이제곶감라고하면단감?지금이게몇시야홍시야연시야괜찮으세요손? #Hearts2Hearts #하츠투하츠 #H2H #YUHA #YE_ON",
+      "title_id": "Maaf kalau saya bilang kesemek kering, itu kesemek yang manis. Jam berapa sekarang? Apakah warnanya merah? Saya minta maaf. Kalau saya bilang kesemek kering, itu kesemek yang manis? Jam berapa ini? Itu kesemek merah yang manis. Apakah kamu baik-baik saja?  #Hearts2Hearts #HatiUntukHati #H2H #YUHA #YE_ON",
+      "kind": "short",
+      "isShort": true,
+      "published": "2026-11-28T08:30:09Z",
+      "publishedDateOnly": false,
+      "url": "https://www.youtube.com/watch?v=dpbw2HRgO4M",
+      "thumbnail": "https://img.youtube.com/vi/dpbw2HRgO4M/hqdefault.jpg",
+      "source": "youtube-official"
+    },
     {
       "id": "MKD3h-sTkQg",
       "title": "맞지 #Hearts2Hearts #하츠투하츠 #H2H #IAN #이안",
